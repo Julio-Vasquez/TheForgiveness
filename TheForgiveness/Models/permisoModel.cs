@@ -11,23 +11,20 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
-        [DisplayName("Escribir El Titulo De La Pagina")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
+        [Required(ErrorMessage ="{0} Requerido")]
+        [DisplayName("Titulo De La Pagina")]
+        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9\s]+$/",ErrorMessage ="Solo se aceptan NUmeros y letras")]
+        [StringLength(40, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2}. y Maximo de {1}", MinimumLength = 4)]
         [DataType(DataType.Text)]
         public string Titulo { get; set; }
 
-        [Required]
-        [DisplayName("Escribir La Url De La Pagina")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
+        [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Url De La Pagina")]
+        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9]+$/",ErrorMessage ="No se Admiten Espacios")]
+        [MinLength(4,ErrorMessage ="Minimo {2} Caracteres")]
         [DataType(DataType.Text)]
         public string Url { get; set; }
 
-        [Required]
-        [DisplayName("Seleccione El Estado")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
-        [DataType(DataType.Text)]
-        public string State { get; set; }
 	    public int Vista { get; set; }
 
         public permisoModel()
@@ -35,20 +32,18 @@ namespace TheForgiveness.Models
 
         }
 
-        public permisoModel(int ID, string Titulo,string Url,string State,int Vista)
+        public permisoModel(int ID, string Titulo,string Url,int Vista)
         {
             this.ID = ID;
             this.Titulo = Titulo;
             this.Url = Url;
-            this.State = State;
             this.Vista = Vista;
         }
 
-        public permisoModel(string Titulo, string Url, string State, int Vista)
+        public permisoModel(string Titulo, string Url, int Vista)
         {
             this.Titulo = Titulo;
             this.Url = Url;
-            this.State = State;
             this.Vista = Vista;
         }
     }

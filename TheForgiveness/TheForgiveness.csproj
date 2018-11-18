@@ -146,6 +146,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\departamentoModel.cs" />
+    <Compile Include="Models\generoModel.cs" />
+    <Compile Include="Models\municipioModel.cs" />
+    <Compile Include="Models\notasModel.cs" />
+    <Compile Include="Models\paisModel.cs" />
+    <Compile Include="Models\permisoModel.cs" />
+    <Compile Include="Models\personaModel.cs" />
+    <Compile Include="Models\rolModel.cs" />
+    <Compile Include="Models\rolpermisoModel.cs" />
+    <Compile Include="Models\tipodocumentoModel.cs" />
+    <Compile Include="Models\vistaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

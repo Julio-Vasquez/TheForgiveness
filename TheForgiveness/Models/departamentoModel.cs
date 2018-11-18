@@ -11,22 +11,36 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="{0} Requerido")]
+        [RegularExpression("/[^a-zA-ZáéíóúAÉÍÓÚÑñ]*$/", ErrorMessage ="No se Admiten Espacios, Ni numeros")]
         [DisplayName("Nombre del Departamento")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 3)]
+        [StringLength(30, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 3)]
         [DataType(DataType.Text)]
         public string Departamento { get; set; }
         //[Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
         // [Range(0, float.MaxValue, ErrorMessage = "Please enter valid float Number")]
         //[Range(0, double.MaxValue, ErrorMessage = "Please enter valid doubleNumber")]
-        [Required]
+        //[CompareAttribute("NewPassword", ErrorMessage = "The New Password and Confirm New Password fields did not match.")]
+        //[RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ]*$/", ErrorMessage ="No se Admiten Espacios, Ni numeros")]   -> solo palabras
+        //  /[^a-zA-ZáéíóúAÉÍÓÚÑñ]*$/ -> solo palabras sn espacio
+        /// /^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/  -> palabras con espacio
+        /// /[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9]*$/ -> letras y numeros sin espacio
+        /// /[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9\s]*$/ -> LEtras y numeros con espacios
+        /// /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9\.]{2,})\.([a-z]{2,3})$/     -> Email
+        /// /^[0-9]*$/  -> SOlo numerois sin espacio
+        /// /[^0-9\s]*$/
+
+        [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Seleccione pais!")]
+        [Range(10,999,ErrorMessage ="XD")]
+        [RegularExpression(@"/^[0-9]+$/", ErrorMessage ="ERR")]
         public int Pais { get; set; }
 
         public departamentoModel()
         {
 
         }
+
         public departamentoModel(string Departamento, int Pais)
         {
             this.Departamento = Departamento;

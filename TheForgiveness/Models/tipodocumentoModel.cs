@@ -11,33 +11,27 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Nombre Del Tipo De Documento")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
+        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ]+$/",ErrorMessage ="No se admiten NUmeros")]
+        [StringLength(100, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 6)]
         [DataType(DataType.Text)]
         public string TipoDocumento { get; set; }
-
-        [Required]
-        [DisplayName("Seleccione El Estado")]
-        [DataType(DataType.Text)]
-        public string State { get; set; }
 
         public tipodocumentoModel()
         {
 
         }
 
-        public tipodocumentoModel(int ID, string TipoDocumento, string State)
+        public tipodocumentoModel(int ID, string TipoDocumento)
         {
             this.ID = ID;
             this.TipoDocumento = TipoDocumento;
-            this.State = State;
         }
 
-        public tipodocumentoModel(string Genero, string State)
+        public tipodocumentoModel(string Genero)
         {
             this.TipoDocumento = TipoDocumento;
-            this.State = State;
         }
     }
 }

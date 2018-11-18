@@ -11,33 +11,27 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Nombre Del Genero")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
+        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ]+$/", ErrorMessage = "No se Admiten Espacios ni numeros")]
+        [StringLength(20, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 4)]
         [DataType(DataType.Text)]
         public string Genero { get; set; }
-
-        [Required]
-        [DisplayName("Seleccione El Estado")]
-        [DataType(DataType.Text)]
-        public string State { get; set; }
 
         public generoModel()
         {
 
         }
 
-        public generoModel(int ID,string Genero,string State)
+        public generoModel(int ID, string Genero)
         {
             this.ID = ID;
             this.Genero = Genero;
-            this.State = State;
         }
 
-        public generoModel(string Genero, string State)
+        public generoModel(string Genero)
         {
             this.Genero = Genero;
-            this.State = State;
         }
     }
 }

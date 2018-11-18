@@ -11,18 +11,14 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Nombre Del Municipio")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
+        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]+$/", ErrorMessage = "No se Admiten Numeros")]
+        [StringLength(50, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 3)]
         [DataType(DataType.Text)]
         public string Municipio { get; set; }
 
-        [Required]
-        [DisplayName("Seleccione El Estado")]
-        [DataType(DataType.Text)]
-        public string State { get; set; }
-
-        [Required]
+        [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Seleccione El Departamento")]
         public int Departamento { get; set; }
 
@@ -31,18 +27,17 @@ namespace TheForgiveness.Models
 
         }
 
-        public municipioModel(int ID,string Municipio,string State,int Departamento)
+        public municipioModel(int ID,string Municipio,int Departamento)
         {
             this.ID = ID;
             this.Municipio = Municipio;
-            this.State = State;
-            this.Municipio=Municipio;
+            this.Departamento = Departamento;
         }
-        public municipioModel(string Municipio, string State, int Departamento)
+
+        public municipioModel(string Municipio, int Departamento)
         {
             this.Municipio = Municipio;
-            this.State = State;
-            this.Municipio = Municipio;
+            this.Departamento = Departamento;
         }
     }
 }

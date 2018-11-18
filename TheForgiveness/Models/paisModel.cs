@@ -11,9 +11,10 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Nombre del Pais")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 3)]
+        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]+$/", ErrorMessage ="Solo se aceptan letras")]
+        [StringLength(30, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 3)]
         [DataType(DataType.Text)]
         public string Pais { get; set; }
 
@@ -21,15 +22,16 @@ namespace TheForgiveness.Models
         {
 
         }
+
         public paisModel(string Pais)
         {
             this.Pais = Pais;
         }
+
         public paisModel(int ID, string Pais)
         {
             this.ID = ID;
             this.Pais = Pais;
         }
-
     }
 }

@@ -11,40 +11,36 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
-        [DisplayName("Escribir El Titulo De La Pagina")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
+        [Required(ErrorMessage ="{0} Requerido")]
+        [DisplayName("Titulo De La Pagina")]
+        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9\s]+$/",ErrorMessage ="No se admiten caracteres raros")]
+        [StringLength(40, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 4)]
         [DataType(DataType.Text)]
         public string Titulo { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="{0} Requerido")]
+        [DisplayName("Icono De La Pagina")]
         [DataType(DataType.Text)]
+        [MinLength(4,ErrorMessage ="Minimo {2}")]
         public string Icon { get; set; }
 
-        [Required]
-        [DisplayName("Selecione El Estado")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
-        [DataType(DataType.Text)]
-        public string State { get; set; }
 
         public vistaModel()
         {
 
         }
 
-        public vistaModel(int ID, string Titulo, string Icon, string State)
+        public vistaModel(int ID, string Titulo, string Icon)
         {
             this.ID = ID;
             this.Titulo = Titulo;
             this.Icon = Icon;
-            this.State = State;
         }
 
-        public vistaModel(string Titulo, string Icon, string State)
+        public vistaModel(string Titulo, string Icon)
         {
             this.Titulo = Titulo;
             this.Icon = Icon;
-            this.State = State;
         }
     }
 }

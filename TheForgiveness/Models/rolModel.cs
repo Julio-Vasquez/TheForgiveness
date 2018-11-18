@@ -11,34 +11,27 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
-        [Required]
-        [DisplayName("Escribir El Rol")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
+        [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Rol :")]
+        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]+$/",ErrorMessage ="NO se admiten NUmeros")]
+        [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 4)]
         [DataType(DataType.Text)]
         public string Rol { get; set; }
-
-        [Required]
-        [DisplayName("Selecione El Estado")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
-        [DataType(DataType.Text)]
-        public string State { get; set; }
 
         public rolModel()
         {
 
         }
 
-        public rolModel(int ID, string Rol, string State)
+        public rolModel(int ID, string Rol)
         {
             this.ID = ID;
             this.Rol = Rol;
-            this.State = State;
         }
 
-        public rolModel(string Rol, string State)
+        public rolModel(string Rol)
         {
             this.Rol = Rol;
-            this.State = State;
         }
     }
 }
