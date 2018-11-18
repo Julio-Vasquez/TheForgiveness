@@ -1,0 +1,7 @@
+C:\Users\jualv\documents\visual studio 2017\Projects\TheForgiveness\ConnectionDB\bin\Debug\ConnectionDB.dll
+C:\Users\jualv\documents\visual studio 2017\Projects\TheForgiveness\ConnectionDB\bin\Debug\ConnectionDB.pdb
+C:\Users\jualv\documents\visual studio 2017\Projects\TheForgiveness\ConnectionDB\bin\Debug\MySql.Data.dll
+C:\Users\jualv\documents\visual studio 2017\Projects\TheForgiveness\ConnectionDB\bin\Debug\MySql.Web.v20.dll
+C:\Users\jualv\documents\visual studio 2017\Projects\TheForgiveness\ConnectionDB\obj\Debug\ConnectionDB.csprojResolveAssemblyReference.cache
+C:\Users\jualv\documents\visual studio 2017\Projects\TheForgiveness\ConnectionDB\obj\Debug\ConnectionDB.dll
+C:\Users\jualv\documents\visual studio 2017\Projects\TheForgiveness\ConnectionDB\obj\Debug\ConnectionDB.pdb
