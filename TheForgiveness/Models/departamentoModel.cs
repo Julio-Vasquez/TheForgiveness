@@ -17,11 +17,26 @@ namespace TheForgiveness.Models
         [DataType(DataType.Text)]
         public string Departamento { get; set; }
         //[Range(0, int.MaxValue, ErrorMessage = "Please enter valid integer Number")]
-       // [Range(0, float.MaxValue, ErrorMessage = "Please enter valid float Number")]
+        // [Range(0, float.MaxValue, ErrorMessage = "Please enter valid float Number")]
         //[Range(0, double.MaxValue, ErrorMessage = "Please enter valid doubleNumber")]
         [Required]
         [DisplayName("Seleccione pais!")]
         public int Pais { get; set; }
 
+        public departamentoModel()
+        {
+
+        }
+        public departamentoModel(string Departamento, int Pais)
+        {
+            this.Departamento = Departamento;
+            this.Pais = Pais;
+        }
+        public departamentoModel(int ID, string Departamento, int Pais)
+        {
+            this.ID = ID;
+            this.Departamento = Departamento;
+            this.Pais = Pais;
+        }
     }
 }
