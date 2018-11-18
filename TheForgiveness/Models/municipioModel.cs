@@ -7,49 +7,43 @@ using System.Web;
 
 namespace TheForgiveness.Models
 {
-    public class permisoModel
+    public class municipioModel
     {
         public int ID { get; set; }
 
         [Required]
-        [DisplayName("Escribir El Titulo De La Pagina")]
+        [DisplayName("Nombre Del Municipio")]
         [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
         [DataType(DataType.Text)]
-        public string Titulo { get; set; }
-
-        [Required]
-        [DisplayName("Escribir La Url De La Pagina")]
-        [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
-        [DataType(DataType.Text)]
-        public string Url { get; set; }
+        public string Municipio { get; set; }
 
         [Required]
         [DisplayName("Seleccione El Estado")]
         [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
         [DataType(DataType.Text)]
         public string State { get; set; }
-	    public int Vista { get; set; }
 
-        public permisoModel()
+        [Required]
+        [DisplayName("Seleccione El Departamento")]
+        public int Departamento { get; set; }
+
+        public municipioModel()
         {
 
         }
 
-        public permisoModel(int ID, string Titulo,string Url,string State,int Vista)
+        public municipioModel(int ID,string Municipio,string State,int Departamento)
         {
             this.ID = ID;
-            this.Titulo = Titulo;
-            this.Url = Url;
+            this.Municipio = Municipio;
             this.State = State;
-            this.Vista = Vista;
+            this.Municipio=Municipio;
         }
-
-        public permisoModel(string Titulo, string Url, string State, int Vista)
+        public municipioModel(string Municipio, string State, int Departamento)
         {
-            this.Titulo = Titulo;
-            this.Url = Url;
+            this.Municipio = Municipio;
             this.State = State;
-            this.Vista = Vista;
+            this.Municipio = Municipio;
         }
     }
 }
