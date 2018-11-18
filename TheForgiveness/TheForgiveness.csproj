@@ -141,6 +141,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\tempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,11 +160,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\404\Style.css" />
     <Content Include="Assets\Css\Fonts\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
     <Content Include="Assets\Css\Login\validation.css" />
     <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
+    <Content Include="Assets\Img\404\404.png" />
+    <Content Include="Assets\Img\404\favicon.png" />
     <Content Include="Assets\Img\Login\Login.png" />
     <Content Include="Assets\Img\SignUp\basica.gif" />
     <Content Include="Assets\Img\SignUp\bg.jpeg" />
@@ -194,8 +198,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

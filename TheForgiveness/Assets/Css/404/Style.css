@@ -1,0 +1,45 @@
+.error-404 {
+    text-align: center;
+}
+a{
+	text-decoration: none;;
+}
+.error-404 h2 {
+    font-size: 6em;
+    color: #63C5CA;
+}
+.error-404 h2 {
+    font-size:3em;
+    color:#FC8213;
+    margin: 0.5em 0em;
+    font-family: 'Carrois Gothic', sans-serif;
+}
+.error-404 a {
+    font-size: 1em;
+    color: #fff;
+    margin-top: 2em;
+    background: #68AE00;
+    padding: 0.5em 1em;
+    display: inline-block;
+}
+.error-404 a:hover {
+	background:#80D500;
+}
+.error-404 {
+    min-height: 620px;
+    margin-top:2em;
+}
+.error-right h4 {
+    font-size: 1.3em;
+    color: #000;
+}
+
+.error-page-left img {
+    width: 35%;
+}
+.error-404 h2 {
+    font-size: 2em;
+}
+.error-404 a {
+    margin-top: 1em;
+}

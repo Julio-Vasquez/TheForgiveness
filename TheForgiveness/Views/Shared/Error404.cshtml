@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+ }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <title>Error 404</title>
+    <link rel="icon" href="~/Assets/Img/404/favicon.png">
+    <link rel="stylesheet" href="~/Assets/Css/404/Style.css">
+</head>
+<body>
+    <div class="error-404">
+        <div class="error-page-left">
+            <img src="~/Assets/Img/404/404.png" alt="">
+        </div>
+        <div class="error-right">
+            <h2>Oops! Página no encontrada</h2>
+            <h4>¡Nada se encuentra aquí!!</h4>
+            @Html.ActionLink("Go Back", "Login", "Home")
+
+        </div>
+    </div>
+</body>
+</html>
