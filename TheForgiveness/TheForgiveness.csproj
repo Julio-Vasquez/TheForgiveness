@@ -210,9 +210,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Login.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\temp\creardepartamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\SignUp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

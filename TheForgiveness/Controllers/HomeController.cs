@@ -19,12 +19,18 @@ namespace TheForgiveness.Controllers
             //logic
             return View();
         }
-        [HttpGet]
+
+
         public ActionResult SignUp()
         {
             return View();
         }
 
-
+        [HttpPost]
+        public ActionResult SignUp(int i)
+        {
+            //logic
+            return View();
+        }
     }
 }
