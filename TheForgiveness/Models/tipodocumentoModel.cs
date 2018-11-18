@@ -7,42 +7,37 @@ using System.Web;
 
 namespace TheForgiveness.Models
 {
-    public class municipioModel
+    public class tipodocumentoModel
     {
         public int ID { get; set; }
 
         [Required]
-        [DisplayName("Nombre Del Municipio")]
+        [DisplayName("Nombre Del Tipo De Documento")]
         [StringLength(30, ErrorMessage = "{0} = El número de caracteres de {1} debe ser al menos {2}.", MinimumLength = 1)]
         [DataType(DataType.Text)]
-        public string Municipio { get; set; }
+        public string TipoDocumento { get; set; }
 
         [Required]
         [DisplayName("Seleccione El Estado")]
         [DataType(DataType.Text)]
         public string State { get; set; }
 
-        [Required]
-        [DisplayName("Seleccione El Departamento")]
-        public int Departamento { get; set; }
-
-        public municipioModel()
+        public tipodocumentoModel()
         {
 
         }
 
-        public municipioModel(int ID,string Municipio,string State,int Departamento)
+        public tipodocumentoModel(int ID, string TipoDocumento, string State)
         {
             this.ID = ID;
-            this.Municipio = Municipio;
+            this.TipoDocumento = TipoDocumento;
             this.State = State;
-            this.Municipio=Municipio;
         }
-        public municipioModel(string Municipio, string State, int Departamento)
+
+        public tipodocumentoModel(string Genero, string State)
         {
-            this.Municipio = Municipio;
+            this.TipoDocumento = TipoDocumento;
             this.State = State;
-            this.Municipio = Municipio;
         }
     }
 }
