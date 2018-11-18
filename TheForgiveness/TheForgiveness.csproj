@@ -159,8 +159,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\Fonts\font-awesome.min.css" />
+    <Content Include="Assets\Css\Login\Style.css" />
+    <Content Include="Assets\Css\Login\validation.css" />
+    <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
+    <Content Include="Assets\Css\SignUp\wizard.min.css" />
+    <Content Include="Assets\Img\Login\Login.png" />
+    <Content Include="Assets\Img\SignUp\basica.gif" />
+    <Content Include="Assets\Img\SignUp\bg.jpeg" />
+    <Content Include="Assets\Img\SignUp\heart.ico" />
+    <Content Include="Assets\Img\SignUp\house.ico" />
+    <Content Include="Assets\Js\Login\validation.js" />
+    <Content Include="Assets\Js\Login\validationFunctions.js" />
+    <Content Include="Assets\Js\SignUp\bootstrap.min.js" />
+    <Content Include="Assets\Js\SignUp\jquery-2.2.4.min.js" />
+    <Content Include="Assets\Js\SignUp\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Assets\Js\SignUp\jquery.validate.min.js" />
+    <Content Include="Assets\Js\SignUp\wizard.js" />
     <Content Include="Assets\Js\Validation\jquery-3.3.1.min.js" />
-    <Content Include="favicon.ico" />
+    <Content Include="favicon.jpg" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -182,9 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Css\" />
-    <Folder Include="Assets\Fonts\" />
-    <Folder Include="Assets\Img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -200,6 +214,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\temp\creardepartamento.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\Fonts\fontawesome-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\SignUp.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

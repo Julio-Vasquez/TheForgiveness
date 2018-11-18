@@ -1,0 +1,17 @@
+.alert-validate {
+    font-family: monospace;
+    color: red;
+    padding-left: 8px;
+}
+
+.alert-validate:hover {
+    transform: scale(1.1);
+}
+
+.bi-red {
+    border-color: red;
+}
+
+.lb-red {
+    color: red;
+}

@@ -1,3 +1,76 @@
 ﻿@{ 
     Layout = null;
 }
+
+<!DOCTYPE html>
+<html lang="Es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="icon" type="image/jpg" href="~/favicon.jpg" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/Css/Fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Assets/Css/Login/Style.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Css/Login/validation.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="Content">
+            <div class="Left">
+                <br>
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @accept_charset = "utf-8" }))
+                {
+                    <div class="form-group">
+                        <label class="lb-bold">Nombre de Usuario:</label>
+                        <div class="wrap-input" data-validate="UserName is required">
+                            <input class="input" type="text" name="UserName" placeholder="Nombre de Usuario:" value="">
+                            <span class="focus-input"></span>
+                            <span class="symbol-input">
+                                <i class="fa fa-address-book" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="lb-bold">Contraseña:</label>
+                        <div class="wrap-input" data-validate="Password is required">
+                            <input class="input" type="password" name="Password" placeholder="Contraseña" value="">
+                            <span class="focus-input"></span>
+                            <span class="symbol-input">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group div-sub">
+                        <input type="submit" name="" class="btn-click lb-bold" id="btn" onclick="return validateForm();" value="Iniciar sesión">
+                    </div>
+                }
+                <br>
+                <hr>
+                <br>
+                <div class="NoUser">
+                    <span><b>¿Aun no tienes cuenta? @Html.ActionLink("Regístrate aquí.", "SingUp", "Home")</b></span>
+                   
+                </div>
+                <div class="NoUser Nopassword">
+                   
+                    <span><a href="#" class="np"><b>¿Olvidaste tu constraseña?</b></a></span>
+                </div>
+                <br>
+            </div>
+            <div class="Right">
+                <h1 class="c-b">Bienvenido a  NombreAPP</h1>
+                <span class="c-b"><p>Inicia sesión para acceder a tus cursos</p></span>
+                <figure>
+                    <img src="~/Assets/Img/Login/Login.png" width="420" height="440">
+                </figure>
+                <br>
+            </div>
+        </div>
+    </div>
+    <script src="~/Assets/Js/Login/validationFunctions.js"></script>
+    <script src="~/Assets/Js/Login/validation.js"></script>
+</body>
+</html>

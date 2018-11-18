@@ -1,0 +1,167 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="Es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/jpg" href="~/favicon.jpg">
+    <title>SignUP</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Assets/Css/SignUp/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Assets/Css/SignUp/wizard.min.css" />
+</head>
+
+<body>
+    <div class="image-container set-full-height" style="background-image: url('../../Assets/Img/SignUp/bg.jpeg')">
+        <a href="#"> <div class="logo-container"> <div class="logo"> <img src="~/Assets/Img/new_logo.png"> </div><div class="brand"> aqui va el logo </div></div></a> <a href="@Html.Action("SignUp", "Home")" class="made-with-mk"> <div class="brand"> <img src="~/Assets/Img/SignUp/house.ico" width="28" alt="Alternate Text" /> </div><div class="made-with"> Volver a<strong> Inicio</strong> </div></a>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="green" id="wizardProfile">
+                            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post, new { @accept_charset = "utf-8" }))
+                            {
+                                <div class="wizard-header">
+                                    <h3 class="wizard-title"> Build Your Profile</h3> <h5>Esta información nos permitirá saber más acerca de usted</h5>
+                                </div>
+                                <div class="wizard-navigation">
+                                    <ul>
+                                        <li><a href="#about" data-toggle="tab">Datos Personales</a></li>
+                                        <li><a href="#account" data-toggle="tab">Account</a></li>
+                                        <li><a href="#address" data-toggle="tab">Contacto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="about">
+                                        <div class="row">
+                                            <h4 class="info-text">Comencemos con su información básica.</h4>
+                                            <div class="col-sm-10 col-sm-offset-1">
+                                                <div class="col-sm-5">
+                                                    <div class="picture-container">
+                                                        <div class="picture"> <img src="~/Assets/Img/SignUp/basica.gif" class="picture-src" id="wizardPicturePreview" title="" /> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <div class="form-group"> <label class="control-label">Primer Nombre<small>(required)</small></label> <input name="PriNombre" type="text" class="form-control"> </div>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <div class="form-group"> <label class="control-label">Segundo Nombre<small>(no required)</small></label> <input name="SegNombre" type="text" class="form-control"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-10 col-sm-offset-1">
+                                                <div class="col-sm-5">
+                                                    <div class="form-group"> <label class="control-label">Fecha de Nacimiento <small>(required)</small></label> <input name="FechaNacimiento" type="date" class="form-control" value=""> </div>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <div class="form-group"> <label class="control-label">Primer Apellido <small>(required)</small></label> <input name="PriApellido" type="text" class="form-control"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-10 col-sm-offset-1">
+                                                <div class="col-sm-5">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Seleccione Genero<small>(required)</small></label> <select class="form-control input100 v" id="Genero" name="Genero" data-validate="Genero is required">
+                                                            <option value="default"></option>
+                                                            <option value="1">Masculino</option>
+                                                            <option value="2">Femenino</option>
+                                                            <option value="3">Transgenero</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <div class="form-group"> <label class="control-label">Segundo Apellido<small>(required)</small></label> <input name="SegApellido" type="text" class="form-control"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-10 col-sm-offset-1">
+                                                <div class="col-sm-5">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Tipo de Documento<small>(required)</small></label> <select class="form-control " id="" name="Identificacion">
+                                                            <option value="default"></option>
+                                                            <option value="1">TI</option>
+                                                            <option value="2">CC</option>
+                                                            <option value="3">CE</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <div class="form-group"> <label class="control-label">Numero Identificación <small>(required)</small></label> <input name="NumIdentificacion" class="form-control"> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="account">
+                                        <h4 class="info-text">Datos de su cuenta!</h4>
+                                        <div class="row">
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group"> <label class="control-label">Nombre de Usuario<small>(required)</small></label> <input name="UserName" id="UN" type="text" class="form-control"> </div>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group"> <label class="control-label">Confirmar Nombre de Usuario<small>(required)</small></label> <input name="ConfirmUserName" type="text" class="form-control"> </div>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group label-floating"> <label class="control-label">Contraseña<small>(required)</small></label> <input name="PassWord" id="PW" type="password" class="form-control"> </div>
+                                            </div>
+                                            <div class="col-sm-5 ">
+                                                <div class="form-group label-floating"> <label class="control-label">Confirmar Contraseña<small>(required)</small></label> <input name="ConfirmPassWord" type="password" class="form-control"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="address">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text"> Finalmente sus datos de contacto. </h4>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group"> <label class="control-label"> Numero Telefonico<small>(required)</small> </label> <input name="Telefono" type="number" class="form-control"> </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group"> <label class="control-label"> Email <small>(required)</small> </label> <input name="email" type="email" class="form-control"> </div>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label class="control-label">Departamento</label> <select name="Departamento" class="form-control ">
+                                                        <option value="default"></option>
+                                                        <option value="1">Caqueta</option>
+                                                        <option value="2">Caldas</option>
+                                                        <option value="3">Cundinamarca</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label class="control-label">Municipio</label> <select name="Municipio" class="form-control ">
+                                                        <option value="default"></option>
+                                                        <option value="Florencia">Florencia</option>
+                                                        <option value="Doncello">Doncello</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wizard-footer">
+                                    <div class="pull-right"> <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' /> <input type='submit' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' /> </div>
+                                    <div class="pull-left"> <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' /> </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container"> Made with <img src="~/Assets/Img/SignUp/heart.ico" alt="" width="50"> by Universidad de la amazonia. </div>
+        </div>
+    </div>
+    <script src="~/Assets/Js/SignUp/jquery-2.2.4.min.js"></script>
+    <script src="~/Assets/Js/SignUp/bootstrap.min.js"></script>
+    <script src="~/Assets/Js/SignUp/jquery.bootstrap.wizard.min.js"></script>
+    <script src="~/Assets/Js/SignUp/wizard.js"></script>
+    <script src="~/Assets/Js/SignUp/jquery.validate.min.js"></script>
+</body>
+
+
+</html>
