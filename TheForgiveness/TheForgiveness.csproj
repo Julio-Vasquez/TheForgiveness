@@ -141,8 +141,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
-    <Compile Include="Controllers\tempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,18 +161,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Css\404\Style.css" />
+    <Content Include="Assets\Css\DashBoard\jquery.steps.min.css" />
+    <Content Include="Assets\Css\DashBoard\steps.min.css" />
+    <Content Include="Assets\Css\DashBoard\bootstrap.min.css" />
     <Content Include="Assets\Css\Fonts\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
     <Content Include="Assets\Css\Login\validation.css" />
     <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
+    <Content Include="Assets\Css\DashBoard\fontawesome-all.min.css" />
+    <Content Include="Assets\Css\DashBoard\materialdesignicons.min.css" />
+    <Content Include="Assets\Css\DashBoard\themify-icons.min.css" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
+    <Content Include="Assets\Img\DashBoard\d3.jpg" />
+    <Content Include="Assets\Img\DashBoard\favicon.png" />
+    <Content Include="Assets\Img\DashBoard\logo-icon.png" />
+    <Content Include="Assets\Img\DashBoard\logo-text.png" />
     <Content Include="Assets\Img\Login\Login.png" />
     <Content Include="Assets\Img\SignUp\basica.gif" />
     <Content Include="Assets\Img\SignUp\bg.jpeg" />
     <Content Include="Assets\Img\SignUp\heart.ico" />
     <Content Include="Assets\Img\SignUp\house.ico" />
+    <Content Include="Assets\Js\DashBoard\bootstrap.min.js" />
+    <Content Include="Assets\Js\DashBoard\custom.min.js" />
+    <Content Include="Assets\Js\DashBoard\jquery.steps.min.js" />
+    <Content Include="Assets\Js\DashBoard\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Assets\Js\DashBoard\popper.min.js" />
+    <Content Include="Assets\Js\DashBoard\sidebarmenu.min.js" />
+    <Content Include="Assets\Js\DashBoard\sparkline.min.js" />
+    <Content Include="Assets\Js\DashBoard\waves.min.js" />
     <Content Include="Assets\Js\Login\validation.js" />
     <Content Include="Assets\Js\Login\validationFunctions.js" />
     <Content Include="Assets\Js\SignUp\bootstrap.min.js" />
@@ -213,9 +231,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\temp\creardepartamento.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Assets\Fonts\Fonts\fontawesome-webfont.ttf" />
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +238,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DashBoard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Assets\Fonts\DashBoard\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Assets\Fonts\DashBoard\themify-icons\fonts\themify.ttf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace TheForgiveness.Controllers
 {
-    public class tempController : Controller
+    public class ProfileController : Controller
     {
-        // GET: temp
-        public ActionResult creardepartamento()
+        // GET: Profile
+        public ActionResult Index()
         {
             return View();
         }
