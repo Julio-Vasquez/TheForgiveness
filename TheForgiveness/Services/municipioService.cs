@@ -10,7 +10,7 @@ namespace TheForgiveness.Services
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
         public System.Data.DataTable queryMunicipio()
         {
-            return MySQL.Querys("SELECT ID,Municipio FROM Municipio");
+            return MySQL.Querys("SELECT ID,Municipio,Departamento FROM Municipio");
         }
     }
 }

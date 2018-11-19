@@ -120,34 +120,40 @@
                                             <div class="col-sm-12">
                                                 <h4 class="info-text"> Finalmente sus datos de contacto. </h4>
                                             </div>
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <div class="form-group"> <label class="control-label"> Numero Telefonico<small>(required)</small> </label> <input name="Telefono" type="number" class="form-control"> </div>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group"> <label class="control-label"> Email <small>(required)</small> </label> <input name="email" type="email" class="form-control"> </div>
-                                            </div>
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <div class="form-group">
-                                                    <label class="control-label">Departamento</label> <select name="Departamento" class="form-control ">
-                                                        <option value="default"></option>
-                                                        @foreach (System.Data.DataRow row in ViewBag.departamento.Rows)
-                                                        {
-                                                            <option value=@row["ID"]>@row["Departamento"]</option>
-                                                        }
-                                                    </select>
+                                            <div class="row">
+                                                
+                                                <div class="col-sm-5 col-sm-offset-1">
+                                                    <div class="form-group"> <label class="control-label"> Numero Telefonico<small>(required)</small> </label> <input name="Telefono" type="number" class="form-control"> </div>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <div class="form-group"> <label class="control-label"> Email <small>(required)</small> </label> <input name="email" type="email" class="form-control"> </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <label class="control-label">Municipio</label> <select name="Municipio" class="form-control ">
-                                                        <option value="default"></option>
-                                                        @foreach (System.Data.DataRow row in ViewBag.municipio.Rows)
-                                                        {
-                                                            <option value=@row["ID"]>@row["Municipio"]</option>
-                                                        }
-                                                    </select>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-sm-offset-1">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Departamento</label>
+                                                        <select name="Departamento" class="form-control" onchange="cargar(this.value)">
+                                                            <option value="default"></option>
+                                                            @foreach (System.Data.DataRow row in ViewBag.departamento.Rows)
+                                                            {
+                                                                <option value=@row["ID"]>@row["Departamento"]</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-5">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Municipio</label>
+                                                        <select name="Municipio" class="form-control " id="Municipio">
+                                                            <option value="default"></option>
+
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -166,6 +172,53 @@
             <div class="container"> Made with <img src="~/Assets/Img/SignUp/heart.ico" alt="" width="50"> by Universidad de la amazonia. </div>
         </div>
     </div>
+    <script>
+        var municipio = [
+        @{
+            int j = 0;
+            foreach (System.Data.DataRow row in ViewBag.municipio.Rows)
+            {
+                if (j != 0)
+                {
+                    @:, {
+                         @:id: @row["ID"],
+                         @:Municipio: '@row["Municipio"]',
+                         @:Departamento: @row["Departamento"]
+                        @:}
+                }
+                else
+                {
+                    @:{
+                         @:id: @row["ID"],
+                         @:Municipio: '@row["Municipio"]',
+                         @:Departamento: @row["Departamento"]
+                    @:}
+                }
+                j++;
+            }
+         }
+    ];
+
+        function cargar(id) {
+            let ele = document.getElementById('Municipio');
+            if (ele.length > 1) {
+                let limite = ele.length;//defino variable, sino el length se refresca
+                for (let i = 0; i < limite; i++) {
+                    ele.remove(ele.children[i]);
+                }
+                let option = document.createElement("option");
+                ele.add(option);
+            }
+            for (let i = 0; i < municipio.length; i++) {
+                if (municipio[i].Departamento === parseInt(id)) {
+                    let option = document.createElement("option");
+                    option.text = municipio[i].Municipio;
+                    option.value = municipio[i].id;
+                    ele.add(option);
+                }
+            }
+        }
+    </script>
     <script src="~/Assets/Js/SignUp/jquery-2.2.4.min.js"></script>
     <script src="~/Assets/Js/SignUp/bootstrap.min.js"></script>
     <script src="~/Assets/Js/SignUp/jquery.bootstrap.wizard.min.js"></script>
