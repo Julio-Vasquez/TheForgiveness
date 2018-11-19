@@ -8,10 +8,20 @@ namespace TheForgiveness.Controllers
 {
     public class ProfileController : Controller
     {
+        private Util.Util util = new Util.Util();
         // GET: Profile
         public ActionResult Index()
         {
-            return View();
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+            {
+                ViewBag.Rol = util.getRole(Session["username"].ToString());
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Error404", "Shared");
+            }
+
         }
     }
 }

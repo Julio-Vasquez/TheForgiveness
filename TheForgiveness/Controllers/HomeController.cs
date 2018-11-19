@@ -10,14 +10,27 @@ namespace TheForgiveness.Controllers
     {
         public ActionResult Login()
         {
+            Session["username"] = "";
+            Session["control"] = "Logout";
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(int id)
+        public ActionResult Login(Models.usuarioModel um)
         {
-            //logic
-            return View();
+            Services.usuarioService us = new Services.usuarioService();
+            if (us.login(um))
+            {
+                Session["username"] = um.UserName;
+                Session["control"] = "Login";
+                Session["idAccount"] = us.idcuenta(um.UserName);
+                return RedirectToAction("Index", "Profile");
+            }
+            else
+            {
+                return View();
+            }
+
         }
 
 
