@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -63,9 +63,11 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Seleccione Genero<small>(required)</small></label> <select class="form-control input100 v" id="Genero" name="Genero" data-validate="Genero is required">
                                                             <option value="default"></option>
-                                                            <option value="1">Masculino</option>
-                                                            <option value="2">Femenino</option>
-                                                            <option value="3">Transgenero</option>
+                                                            @foreach (System.Data.DataRow row in ViewBag.genero.Rows)
+                                                            {
+                                                                <option value=@row["ID"]>@row["Genero"]</option>
+                                                            }
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -78,14 +80,15 @@
                                                     <div class="form-group">
                                                         <label class="control-label">Tipo de Documento<small>(required)</small></label> <select class="form-control " id="" name="Identificacion">
                                                             <option value="default"></option>
-                                                            <option value="1">TI</option>
-                                                            <option value="2">CC</option>
-                                                            <option value="3">CE</option>
+                                                            @foreach (System.Data.DataRow row in ViewBag.documento.Rows)
+                                                            {
+                                                                <option value=@row["ID"]>@row["TipoDocumento"]</option>
+                                                            }
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-7">
-                                                    <div class="form-group"> <label class="control-label">Numero Identificación <small>(required)</small></label> <input name="NumIdentificacion" class="form-control"> </div>
+                                                    <div class="form-group"> <label class="control-label">Numero Identificación <small>(required)</small></label> <input name="NumIdentificacion" class="form-control" type="number"> </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,18 +96,23 @@
                                     <div class="tab-pane" id="account">
                                         <h4 class="info-text">Datos de su cuenta!</h4>
                                         <div class="row">
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <div class="form-group"> <label class="control-label">Nombre de Usuario<small>(required)</small></label> <input name="UserName" id="UN" type="text" class="form-control"> </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-sm-offset-1">
+                                                    <div class="form-group"> <label class="control-label">Nombre de Usuario<small>(required)</small></label> <input name="UserName" id="UN" type="text" class="form-control"> </div>
+                                                </div>
+                                                <div class="col-sm-5 ">
+                                                    <div class="form-group"> <label class="control-label">Confirmar Nombre de Usuario<small>(required)</small></label> <input name="ConfirmUserName" type="text" class="form-control"> </div>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <div class="form-group"> <label class="control-label">Confirmar Nombre de Usuario<small>(required)</small></label> <input name="ConfirmUserName" type="text" class="form-control"> </div>
+                                            <div class="row">
+                                                <div class="col-sm-5 col-sm-offset-1">
+                                                    <div class="form-group label-floating"> <label class="control-label">Contraseña<small>(required)</small></label> <input name="PassWord" id="PW" type="password" class="form-control"> </div>
+                                                </div>
+                                                <div class="col-sm-5 ">
+                                                    <div class="form-group label-floating"> <label class="control-label">Confirmar Contraseña<small>(required)</small></label> <input name="ConfirmPassWord" type="password" class="form-control"> </div>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-5 col-sm-offset-1">
-                                                <div class="form-group label-floating"> <label class="control-label">Contraseña<small>(required)</small></label> <input name="PassWord" id="PW" type="password" class="form-control"> </div>
-                                            </div>
-                                            <div class="col-sm-5 ">
-                                                <div class="form-group label-floating"> <label class="control-label">Confirmar Contraseña<small>(required)</small></label> <input name="ConfirmPassWord" type="password" class="form-control"> </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="address">
@@ -122,9 +130,10 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Departamento</label> <select name="Departamento" class="form-control ">
                                                         <option value="default"></option>
-                                                        <option value="1">Caqueta</option>
-                                                        <option value="2">Caldas</option>
-                                                        <option value="3">Cundinamarca</option>
+                                                        @foreach (System.Data.DataRow row in ViewBag.departamento.Rows)
+                                                        {
+                                                            <option value=@row["ID"]>@row["Departamento"]</option>
+                                                        }
                                                     </select>
                                                 </div>
                                             </div>
@@ -132,8 +141,10 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Municipio</label> <select name="Municipio" class="form-control ">
                                                         <option value="default"></option>
-                                                        <option value="Florencia">Florencia</option>
-                                                        <option value="Doncello">Doncello</option>
+                                                        @foreach (System.Data.DataRow row in ViewBag.municipio.Rows)
+                                                        {
+                                                            <option value=@row["ID"]>@row["Municipio"]</option>
+                                                        }
                                                     </select>
                                                 </div>
                                             </div>
@@ -164,4 +175,3 @@
 
 
 </html>
-

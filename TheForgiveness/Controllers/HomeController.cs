@@ -36,6 +36,14 @@ namespace TheForgiveness.Controllers
 
         public ActionResult SignUp()
         {
+            Services.generoService gs = new Services.generoService();
+            Services.tipoDocumentoService tds = new Services.tipoDocumentoService();
+            Services.departamentoService ds = new Services.departamentoService();
+            Services.municipioService ms = new Services.municipioService();
+            ViewBag.genero = gs.queryGenero();
+            ViewBag.documento = tds.queryTipoDocumento();
+            ViewBag.departamento = ds.queryDepartamento();
+            ViewBag.municipio = ms.queryMunicipio();
             return View();
         }
 

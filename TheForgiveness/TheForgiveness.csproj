@@ -155,10 +155,14 @@
     <Compile Include="Models\personaModel.cs" />
     <Compile Include="Models\rolModel.cs" />
     <Compile Include="Models\rolpermisoModel.cs" />
-    <Compile Include="Models\tipodocumentoModel.cs" />
+    <Compile Include="Models\tipoDocumentoModel.cs" />
     <Compile Include="Models\usuarioModel.cs" />
     <Compile Include="Models\vistaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\departamentoService.cs" />
+    <Compile Include="Services\generoService.cs" />
+    <Compile Include="Services\municipioService.cs" />
+    <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />
     <Compile Include="Util\Util.cs" />
   </ItemGroup>

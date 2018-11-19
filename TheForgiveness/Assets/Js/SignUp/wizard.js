@@ -24,13 +24,13 @@ rules: {
             },
             PriApellido: {
                 required: true,
-                minlength: 4,
+                minlength: 3,
                 maxlength: 55,
                 text: true
             },
             SegApellido: {
                 required: true,
-                minlength: 4,
+                minlength: 3,
                 maxlength: 55,
                 text: true
             },
