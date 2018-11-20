@@ -9,6 +9,10 @@ namespace TheForgiveness.Controllers
     public class HomeController : Controller
     {
         private Services.usuarioService us = new Services.usuarioService();
+        private Services.generoService gs = new Services.generoService();
+        private Services.tipoDocumentoService tds = new Services.tipoDocumentoService();
+        private Services.departamentoService ds = new Services.departamentoService();
+        private Services.municipioService ms = new Services.municipioService();
         public ActionResult Login()
         {
             Session["username"] = "";
@@ -19,7 +23,7 @@ namespace TheForgiveness.Controllers
         [HttpPost]
         public ActionResult Login(Models.usuarioModel um)
         {
-           
+
             if (us.login(um))
             {
                 Session["username"] = um.UserName;
@@ -37,10 +41,6 @@ namespace TheForgiveness.Controllers
 
         public ActionResult SignUp()
         {
-            Services.generoService gs = new Services.generoService();
-            Services.tipoDocumentoService tds = new Services.tipoDocumentoService();
-            Services.departamentoService ds = new Services.departamentoService();
-            Services.municipioService ms = new Services.municipioService();
             ViewBag.genero = gs.queryGenero();
             ViewBag.documento = tds.queryTipoDocumento();
             ViewBag.departamento = ds.queryDepartamento();
@@ -53,31 +53,35 @@ namespace TheForgiveness.Controllers
         {
             Models.personaModel pm = new Models.personaModel
                 (
-                    int.Parse(Request.Form["NumIdentificacion"]),
+                    long.Parse(Request.Form["NumIdentificacion"]),
                     Request.Form["PriNombre"],
                     Request.Form["SegNombre"],
                     Request.Form["PriApellido"],
                     Request.Form["SegApellido"],
-                    Request.Form["FechaNacimiento"],
+                    Convert.ToDateTime(Request.Form["FechaNacimiento"]),
                     int.Parse(Request.Form["Genero"]),
-                    Request.Form["Identificacion"],
+                    int.Parse(Request.Form["Identificacion"]),
                     int.Parse(Request.Form["Municipio"])
                 );
 
             Models.usuarioModel um = new Models.usuarioModel
                 (
                     Request.Form["username"],
-                    Request.Form["password"],
-                    Request.Form["confirmpassword"],
-                    urldbProfile
+                    Request.Form["password"]
                 );
-            if (us.signup(um,pm, int.Parse(Request.Form["NumIdentificacion"]), int.Parse(Request.Form["Genero"]), int.Parse(Request.Form["Telefono"]), Request.Form["email"],int.Parse(Request.Form["Municipio"]))) {
+            if (us.signup(um, pm, long.Parse(Request.Form["Telefono"]), Request.Form["email"]))
+            {
                 return RedirectToAction("Login");
             }
-            else {
+            else
+            {
+                ViewBag.genero = gs.queryGenero();
+                ViewBag.documento = tds.queryTipoDocumento();
+                ViewBag.departamento = ds.queryDepartamento();
+                ViewBag.municipio = ms.queryMunicipio();
                 return View();
             }
-            
+
         }
     }
 }

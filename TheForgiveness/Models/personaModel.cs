@@ -15,7 +15,7 @@ namespace TheForgiveness.Models
         [DisplayName("Numero De Identificacion")]
         [RegularExpression(@"/^[0-9]+$/", ErrorMessage = "SOlo Numeros")]
         [Range(100000, int.MaxValue, ErrorMessage = "NUmero no valido")]
-        public int NumIdentificacion { get; set; }
+        public long NumIdentificacion { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Primer Nombre")]
@@ -68,7 +68,7 @@ namespace TheForgiveness.Models
 
         }
 
-        public personaModel(int ID, int NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, DateTime FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
+        public personaModel(int ID, long NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, DateTime FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
         {
             this.ID = ID;
             this.NumIdentificacion = NumIdentificacion;
@@ -82,7 +82,7 @@ namespace TheForgiveness.Models
             this.Municipio = Municipio;
         }
 
-        public personaModel(int NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, DateTime FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
+        public personaModel(long NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, DateTime FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
         {
             this.NumIdentificacion = NumIdentificacion;
             this.PriNombre = PriNombre;

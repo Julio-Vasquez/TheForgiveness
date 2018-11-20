@@ -21,7 +21,7 @@ namespace TheForgiveness.Services
             return MySQL.Querys("CALL Login('" + um.UserName + "','" + um.PassWord + "')").Rows.Count > 0;
         }
 
-        public bool signup(Models.usuarioModel um, Models.personaModel pm, int td, int gender, int tel, string email, int municipio)
+        public bool signup(Models.usuarioModel um, Models.personaModel pm, long tel, string email)
         {
             try
             {
@@ -33,9 +33,9 @@ namespace TheForgiveness.Services
                     + "','" + pm.PriApellido
                     + "','" + pm.SegApellido
                     + "','" + pm.FechaNacimiento
-                    + "'," + gender
-                    + "," + td
-                    + "," + municipio
+                    + "'," + pm.Genero
+                    + "," + pm.TipoDocumento
+                    + "," + pm.Municipio
                     + ",'" + um.UserName 
                     + "','" + um.PassWord 
                     + "'," + tel + ",'" 
