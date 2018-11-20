@@ -74,3 +74,4 @@ D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.Deployme
 D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.Razor.resources.dll
 D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.dll
 D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.pdb
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csprojResolveAssemblyReference.cache

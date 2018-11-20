@@ -141,7 +141,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -250,14 +250,14 @@
     <Content Include="Views\Shared\DashBoard.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Profile\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-brands-400.ttf" />
     <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-regular-400.ttf" />
     <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Assets\Fonts\DashBoard\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
     <Content Include="Assets\Fonts\DashBoard\themify-icons\fonts\themify.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DashBoard\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

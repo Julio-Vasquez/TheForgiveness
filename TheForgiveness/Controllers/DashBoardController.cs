@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace TheForgiveness.Controllers
 {
-    public class ProfileController : Controller
+    public class DashBoardController : Controller
     {
         private Util.Util util = new Util.Util();
         // GET: Profile
