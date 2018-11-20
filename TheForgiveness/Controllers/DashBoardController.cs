@@ -23,5 +23,19 @@ namespace TheForgiveness.Controllers
             }
 
         }
+
+        public ActionResult Crearstudent()
+        {
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+            {
+                ViewBag.Rol = util.getRole(Session["username"].ToString());
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Error404", "Shared");
+            }
+
+        }
     }
 }

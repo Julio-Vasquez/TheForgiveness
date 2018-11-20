@@ -15,14 +15,14 @@ namespace TheForgiveness
                 ));
 
             bundles.Add(new ScriptBundle("~/DashBoardJS").Include(
-                "~/Assets/Js/DashBoard/popper.min.js",
-                "~/Assets/Js/DashBoard/bootstrap.min.js",
-                "~/Assets/Js/DashBoard/perfect-scrollbar.jquery.min.js",
-                "~/Assets/Js/DashBoard/sparkline.min.js",
-                "~/Assets/Js/DashBoard/waves.min.js",
-                "~/Assets/Js/DashBoard/sidebarmenu.min.js",
-                "~/Assets/Js/DashBoard/custom.min.js",
-                "~/Assets/Js/DashBoard/jquery.steps.min.js"
+                "~/Assets/Js/DashBoardP/popper.min.js",
+                "~/Assets/Js/DashBoardP/bootstrap.min.js",
+                "~/Assets/Js/DashBoardP/perfect-scrollbar.jquery.min.js",
+                "~/Assets/Js/DashBoardP/sparkline.min.js",
+                "~/Assets/Js/DashBoardP/waves.min.js",
+                "~/Assets/Js/DashBoardP/sidebarmenu.min.js",
+                "~/Assets/Js/DashBoardP/custom.min.js",
+                "~/Assets/Js/DashBoardP/jquery.steps.min.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/Validation").Include(

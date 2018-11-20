@@ -191,14 +191,15 @@
     <Content Include="Assets\Img\SignUp\bg.jpeg" />
     <Content Include="Assets\Img\SignUp\heart.ico" />
     <Content Include="Assets\Img\SignUp\house.ico" />
-    <Content Include="Assets\Js\DashBoard\bootstrap.min.js" />
-    <Content Include="Assets\Js\DashBoard\custom.min.js" />
-    <Content Include="Assets\Js\DashBoard\jquery.steps.min.js" />
-    <Content Include="Assets\Js\DashBoard\perfect-scrollbar.jquery.min.js" />
-    <Content Include="Assets\Js\DashBoard\popper.min.js" />
-    <Content Include="Assets\Js\DashBoard\sidebarmenu.min.js" />
-    <Content Include="Assets\Js\DashBoard\sparkline.min.js" />
-    <Content Include="Assets\Js\DashBoard\waves.min.js" />
+    <Content Include="Assets\Js\DashBoardP\bootstrap.min.js" />
+    <Content Include="Assets\Js\DashBoardP\custom.min.js" />
+    <Content Include="Assets\Js\DashBoardP\jquery.steps.min.js" />
+    <Content Include="Assets\Js\DashBoardP\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Assets\Js\DashBoardP\popper.min.js" />
+    <Content Include="Assets\Js\DashBoardP\sidebarmenu.min.js" />
+    <Content Include="Assets\Js\DashBoardP\sparkline.min.js" />
+    <Content Include="Assets\Js\DashBoardP\waves.min.js" />
+    <Content Include="Assets\Js\DashBoard\wizard.js" />
     <Content Include="Assets\Js\Login\validation.js" />
     <Content Include="Assets\Js\Login\validationFunctions.js" />
     <Content Include="Assets\Js\SignUp\bootstrap.min.js" />
@@ -259,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DashBoard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DashBoard\Crearstudent.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
