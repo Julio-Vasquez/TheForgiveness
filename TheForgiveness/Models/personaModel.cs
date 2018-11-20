@@ -75,7 +75,7 @@ namespace TheForgiveness.Models
             this.PriNombre = PriNombre;
             this.SegNombre = SegNombre;
             this.PriApellido = PriApellido;
-            this.SegNombre = SegNombre;
+            this.SegNombre = SegApellido;
             this.FechaNacimiento = FechaNacimiento;
             this.Genero = Genero;
             this.TipoDocumento = TipoDocumento;
@@ -88,7 +88,7 @@ namespace TheForgiveness.Models
             this.PriNombre = PriNombre;
             this.SegNombre = SegNombre;
             this.PriApellido = PriApellido;
-            this.SegNombre = SegNombre;
+            this.SegNombre = SegApellido;
             this.FechaNacimiento = FechaNacimiento;
             this.Genero = Genero;
             this.TipoDocumento = TipoDocumento;

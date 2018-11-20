@@ -21,5 +21,32 @@ namespace TheForgiveness.Services
             return MySQL.Querys("CALL Login('" + um.UserName + "','" + um.PassWord + "')").Rows.Count > 0;
         }
 
+        public bool signup(Models.usuarioModel um, Models.personaModel pm, int td, int gender, int tel, string email, int municipio)
+        {
+            try
+            {
+                return MySQL.Operations(
+                    "CALL Create_Cuenta("
+                    + pm.NumIdentificacion
+                    + ",'" + pm.PriNombre
+                    + "','" + pm.SegNombre
+                    + "','" + pm.PriApellido
+                    + "','" + pm.SegApellido
+                    + "','" + pm.FechaNacimiento
+                    + "'," + gender
+                    + "," + td
+                    + "," + municipio
+                    + ",'" + um.UserName 
+                    + "','" + um.PassWord 
+                    + "'," + tel + ",'" 
+                    + email + "',3);");
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
     }
 }

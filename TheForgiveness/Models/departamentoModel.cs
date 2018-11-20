@@ -32,7 +32,6 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Seleccione pais!")]
-        [Range(10,999,ErrorMessage ="XD")]
         [RegularExpression(@"/^[0-9]+$/", ErrorMessage ="ERR")]
         public int Pais { get; set; }
 

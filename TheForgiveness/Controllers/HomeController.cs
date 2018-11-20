@@ -8,6 +8,7 @@ namespace TheForgiveness.Controllers
 {
     public class HomeController : Controller
     {
+        private Services.usuarioService us = new Services.usuarioService();
         public ActionResult Login()
         {
             Session["username"] = "";
@@ -18,7 +19,7 @@ namespace TheForgiveness.Controllers
         [HttpPost]
         public ActionResult Login(Models.usuarioModel um)
         {
-            Services.usuarioService us = new Services.usuarioService();
+           
             if (us.login(um))
             {
                 Session["username"] = um.UserName;
@@ -48,10 +49,35 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignUp(int i)
+        public ActionResult SignUp(Models.usuarioModel ums)
         {
-            //logic
-            return View();
+            Models.personaModel pm = new Models.personaModel
+                (
+                    int.Parse(Request.Form["NumIdentificacion"]),
+                    Request.Form["PriNombre"],
+                    Request.Form["SegNombre"],
+                    Request.Form["PriApellido"],
+                    Request.Form["SegApellido"],
+                    Request.Form["FechaNacimiento"],
+                    int.Parse(Request.Form["Genero"]),
+                    Request.Form["Identificacion"],
+                    int.Parse(Request.Form["Municipio"])
+                );
+
+            Models.usuarioModel um = new Models.usuarioModel
+                (
+                    Request.Form["username"],
+                    Request.Form["password"],
+                    Request.Form["confirmpassword"],
+                    urldbProfile
+                );
+            if (us.signup(um,pm, int.Parse(Request.Form["NumIdentificacion"]), int.Parse(Request.Form["Genero"]), int.Parse(Request.Form["Telefono"]), Request.Form["email"],int.Parse(Request.Form["Municipio"]))) {
+                return RedirectToAction("Login");
+            }
+            else {
+                return View();
+            }
+            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="Es">
 <head>
@@ -78,7 +79,8 @@
                                             <div class="col-sm-10 col-sm-offset-1">
                                                 <div class="col-sm-5">
                                                     <div class="form-group">
-                                                        <label class="control-label">Tipo de Documento<small>(required)</small></label> <select class="form-control " id="" name="Identificacion">
+                                                        <label class="control-label">Tipo de Documento<small>(required)</small></label>
+                                                        <select class="form-control " id="" name="Identificacion">
                                                             <option value="default"></option>
                                                             @foreach (System.Data.DataRow row in ViewBag.documento.Rows)
                                                             {
@@ -88,7 +90,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-7">
-                                                    <div class="form-group"> <label class="control-label">Numero Identificación <small>(required)</small></label> <input name="NumIdentificacion" class="form-control" type="number"> </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Numero Identificación <small>(required)</small></label>
+                                                        <input name="NumIdentificacion" class="form-control" type="number">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,18 +103,30 @@
                                         <div class="row">
                                             <div class="row">
                                                 <div class="col-sm-5 col-sm-offset-1">
-                                                    <div class="form-group"> <label class="control-label">Nombre de Usuario<small>(required)</small></label> <input name="UserName" id="UN" type="text" class="form-control"> </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Nombre de Usuario<small>(required)</small></label>
+                                                        <input name="UserName" id="UN" type="text" class="form-control">
+                                                    </div>
                                                 </div>
                                                 <div class="col-sm-5 ">
-                                                    <div class="form-group"> <label class="control-label">Confirmar Nombre de Usuario<small>(required)</small></label> <input name="ConfirmUserName" type="text" class="form-control"> </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">Confirmar Nombre de Usuario<small>(required)</small></label>
+                                                        <input name="ConfirmUserName" type="text" class="form-control">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-5 col-sm-offset-1">
-                                                    <div class="form-group label-floating"> <label class="control-label">Contraseña<small>(required)</small></label> <input name="PassWord" id="PW" type="password" class="form-control"> </div>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Contraseña<small>(required)</small></label>
+                                                        <input name="PassWord" id="PW" type="password" class="form-control">
+                                                    </div>
                                                 </div>
                                                 <div class="col-sm-5 ">
-                                                    <div class="form-group label-floating"> <label class="control-label">Confirmar Contraseña<small>(required)</small></label> <input name="ConfirmPassWord" type="password" class="form-control"> </div>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Confirmar Contraseña<small>(required)</small></label>
+                                                        <input name="ConfirmPassWord" type="password" class="form-control">
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -121,12 +138,18 @@
                                                 <h4 class="info-text"> Finalmente sus datos de contacto. </h4>
                                             </div>
                                             <div class="row">
-                                                
+
                                                 <div class="col-sm-5 col-sm-offset-1">
-                                                    <div class="form-group"> <label class="control-label"> Numero Telefonico<small>(required)</small> </label> <input name="Telefono" type="number" class="form-control"> </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Numero Telefonico<small>(required)</small> </label>
+                                                        <input name="Telefono" type="number" class="form-control">
+                                                    </div>
                                                 </div>
                                                 <div class="col-sm-5">
-                                                    <div class="form-group"> <label class="control-label"> Email <small>(required)</small> </label> <input name="email" type="email" class="form-control"> </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label"> Email <small>(required)</small> </label>
+                                                        <input name="email" type="email" class="form-control">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -153,7 +176,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
