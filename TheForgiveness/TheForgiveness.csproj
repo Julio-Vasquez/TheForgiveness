@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,14 +173,12 @@
     <Content Include="Assets\Css\DashBoard\jquery.steps.min.css" />
     <Content Include="Assets\Css\DashBoard\steps.min.css" />
     <Content Include="Assets\Css\DashBoard\bootstrap.min.css" />
-    <Content Include="Assets\Css\Fonts\font-awesome.min.css" />
+    <Content Include="Assets\Css\Login\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
     <Content Include="Assets\Css\Login\validation.css" />
     <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
-    <Content Include="Assets\Css\DashBoard\fontawesome-all.min.css" />
     <Content Include="Assets\Css\DashBoard\materialdesignicons.min.css" />
-    <Content Include="Assets\Css\DashBoard\themify-icons.min.css" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
     <Content Include="Assets\Img\DashBoard\d3.jpg" />
@@ -252,11 +251,7 @@
     <Content Include="Views\Shared\DashBoard.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-brands-400.ttf" />
-    <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-regular-400.ttf" />
-    <Content Include="Assets\Fonts\DashBoard\font-awesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Assets\Fonts\DashBoard\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
-    <Content Include="Assets\Fonts\DashBoard\themify-icons\fonts\themify.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DashBoard\Index.cshtml" />

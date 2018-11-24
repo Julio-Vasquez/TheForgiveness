@@ -72,6 +72,8 @@ D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.Razor.resources.d
 D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.resources.dll
 D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csprojAssemblyReference.cache
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csproj.CoreCompileInputs.cache
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csproj.CopyComplete
 D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.dll
 D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.pdb
-D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csprojResolveAssemblyReference.cache
