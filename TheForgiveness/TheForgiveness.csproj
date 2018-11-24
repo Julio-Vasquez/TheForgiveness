@@ -141,12 +141,16 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ForgivenessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\PerceptionController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\conceptoVictimaModel.cs" />
     <Compile Include="Models\departamentoModel.cs" />
     <Compile Include="Models\generoModel.cs" />
     <Compile Include="Models\municipioModel.cs" />
@@ -258,6 +262,48 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DashBoard\Crearstudent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\Profile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\UpdateUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\UpdatePerfil.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\User.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\RegisterPerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\SearchPerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\UpdatePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\DeletePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\RegisterForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\SearchForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\UpdateForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\RegisterFinalForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\DeleteForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\ChangePassword.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
