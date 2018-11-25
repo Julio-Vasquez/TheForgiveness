@@ -141,6 +141,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ForgivenessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
@@ -152,6 +153,7 @@
     </Compile>
     <Compile Include="Models\conceptoVictimaModel.cs" />
     <Compile Include="Models\departamentoModel.cs" />
+    <Compile Include="Models\emailModel.cs" />
     <Compile Include="Models\generoModel.cs" />
     <Compile Include="Models\municipioModel.cs" />
     <Compile Include="Models\notasModel.cs" />
@@ -304,6 +306,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Profile\ChangePassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact\MyContact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact\UpdateContact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact\DeleteContact.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

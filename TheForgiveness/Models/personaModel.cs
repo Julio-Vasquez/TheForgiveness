@@ -48,7 +48,7 @@ namespace TheForgiveness.Models
         [DisplayName("Fecha De Nacimiento")]
         [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
         [DataType(DataType.Date)]
-        public DateTime FechaNacimiento { get; set; }
+        public string FechaNacimiento { get; set; }
 
 
         [Required(ErrorMessage = "{0} Requerido")]
@@ -68,7 +68,7 @@ namespace TheForgiveness.Models
 
         }
 
-        public personaModel(int ID, long NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, DateTime FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
+        public personaModel(int ID, long NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, string FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
         {
             this.ID = ID;
             this.NumIdentificacion = NumIdentificacion;
@@ -82,13 +82,13 @@ namespace TheForgiveness.Models
             this.Municipio = Municipio;
         }
 
-        public personaModel(long NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, DateTime FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
+        public personaModel(long NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, string FechaNacimiento, int Genero, int TipoDocumento, int Municipio)
         {
             this.NumIdentificacion = NumIdentificacion;
             this.PriNombre = PriNombre;
             this.SegNombre = SegNombre;
             this.PriApellido = PriApellido;
-            this.SegNombre = SegApellido;
+            this.SegApellido = SegApellido;
             this.FechaNacimiento = FechaNacimiento;
             this.Genero = Genero;
             this.TipoDocumento = TipoDocumento;

@@ -6,7 +6,7 @@ $(document).ready(function(){
         return this.optional(e) || /^[a-zA-Z\u00F1\u00D1\s]+$/i.test(v);
     }, "Solo letras!"); 
     jQuery.validator.addMethod("valueNotEquals", function (v, e) { // Adding rules for Amount(Not equal to zero)
-        return this.optional(e) || v != 'default';
+        return this.optional(e) || v !== 'default';
     });
     var $validator = $('.wizard-card form').validate({
 rules: {

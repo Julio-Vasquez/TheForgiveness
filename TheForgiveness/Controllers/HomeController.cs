@@ -58,18 +58,12 @@ namespace TheForgiveness.Controllers
                     Request.Form["SegNombre"],
                     Request.Form["PriApellido"],
                     Request.Form["SegApellido"],
-                    Convert.ToDateTime(Request.Form["FechaNacimiento"]),
+                    Request.Form["FechaNacimiento"],
                     int.Parse(Request.Form["Genero"]),
                     int.Parse(Request.Form["Identificacion"]),
                     int.Parse(Request.Form["Municipio"])
                 );
-
-            Models.usuarioModel um = new Models.usuarioModel
-                (
-                    Request.Form["username"],
-                    Request.Form["password"]
-                );
-            if (us.signup(um, pm, long.Parse(Request.Form["Telefono"]), Request.Form["email"]))
+            if (us.signup(ums, pm, long.Parse(Request.Form["Telefono"]), Request.Form["email"]))
             {
                 return RedirectToAction("Login");
             }
