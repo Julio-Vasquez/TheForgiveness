@@ -26,7 +26,9 @@ namespace TheForgiveness.Models
         public int AñoEscolar { get; set; }
 
         public int Docente { get; set; }
+
         public int Asignatura { get; set; }
+
         public int Colegio { get; set; }
 
         public grupoModel()
@@ -34,7 +36,7 @@ namespace TheForgiveness.Models
 
         }
 
-        public grupoModel(int Codigo,string Nombre,int AñoEscolar,int Docente,int Asignatura,int Colegio)
+        public grupoModel(int Codigo, string Nombre, int AñoEscolar, int Docente, int Asignatura, int Colegio)
         {
             this.Codigo = Codigo;
             this.Nombre = Nombre;

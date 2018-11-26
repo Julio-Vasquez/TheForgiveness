@@ -9,7 +9,8 @@ namespace TheForgiveness.Models
 {
     public class grupopersonaModel
     {
-        public int Grup { get; set; }
+        public int Grupo { get; set; }
+
         public int Estudiante { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
@@ -23,14 +24,9 @@ namespace TheForgiveness.Models
 
         }
 
-        public grupopersonaModel(string CodigoEstudiante)
+        public grupopersonaModel(int Grupo, int Estudiante, string CodigoEstudiante)
         {
-            this.CodigoEstudiante = CodigoEstudiante;
-        }
-
-        public grupopersonaModel(int Grup,int Estudiante,string CodigoEstudiante)
-        {
-            this.Grup = Grup;
+            this.Grupo = Grupo;
             this.Estudiante = Estudiante;
             this.CodigoEstudiante = CodigoEstudiante;
         }

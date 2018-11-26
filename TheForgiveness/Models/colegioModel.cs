@@ -27,13 +27,13 @@ namespace TheForgiveness.Models
 
         }
 
-        public colegioModel(string Nombre,int Municipio)
+        public colegioModel(string Nombre, int Municipio)
         {
             this.Nombre = Nombre;
             this.Municipio = Municipio;
         }
 
-        public colegioModel(int ID,string Nombre)
+        public colegioModel(int ID, string Nombre)
         {
             this.ID = ID;
             this.Nombre = Nombre;
