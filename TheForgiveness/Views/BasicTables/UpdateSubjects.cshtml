@@ -1,27 +1,27 @@
-﻿@model TheForgiveness.Models.generoModel
+﻿@model TheForgiveness.Models.asignaturaModel
 
 @{
-    ViewBag.Title = "UpdateGenders";
+    ViewBag.Title = "UpdateSubjects";
     Layout = "~/Views/Shared/DashBoard.cshtml";
 }
 
-<h2>UpdateGenders</h2>
+<h2>UpdateSubjects</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>generoModel</h4>
+        <h4>asignaturaModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
             </div>
         </div>
 

@@ -149,6 +149,7 @@
     <Compile Include="Controllers\PerceptionController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\VictimologyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,7 +165,6 @@
     <Compile Include="Models\emailModel.cs" />
     <Compile Include="Models\escenariosModel.cs" />
     <Compile Include="Models\experienciaModel.cs" />
-    <Compile Include="Models\generoModel.cs" />
     <Compile Include="Models\grupoModel.cs" />
     <Compile Include="Models\grupopersonaModel.cs" />
     <Compile Include="Models\metasModel.cs" />
@@ -371,16 +371,28 @@
     <Content Include="Views\BasicTables\DeleteIdentifications.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\BasicTables\Genders.cshtml" />
+    <Content Include="Views\BasicTables\Subjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\BasicTables\CreateGenders.cshtml" />
+    <Content Include="Views\BasicTables\CreateSubjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\BasicTables\UpdateGenders.cshtml" />
+    <Content Include="Views\BasicTables\UpdateSubjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\BasicTables\DeleteGenders.cshtml" />
+    <Content Include="Views\BasicTables\DeleteSubjects.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\Update.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\Delete.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

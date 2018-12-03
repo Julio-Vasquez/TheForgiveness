@@ -14,17 +14,17 @@ namespace TheForgiveness.Controllers
             return View();
         }
 
-        public ActionResult CreateGenders()
-        {
-            return View();
-        }
-
         public ActionResult CreateIdentifications()
         {
             return View();
         }
 
         public ActionResult CreateMunicipality()
+        {
+            return View();
+        }
+
+        public ActionResult CreateSubjects()
         {
             return View();
         }
@@ -39,12 +39,13 @@ namespace TheForgiveness.Controllers
             return View();
         }
 
-        public ActionResult DeleteGenders()
+
+        public ActionResult DeleteMunicipality()
         {
             return View();
         }
 
-        public ActionResult DeleteMunicipality()
+        public ActionResult DeleteSubjects()
         {
             return View();
         }
@@ -54,10 +55,6 @@ namespace TheForgiveness.Controllers
             return View();
         }
 
-        public ActionResult Genders()
-        {
-            return View();
-        }
 
         public ActionResult Identifications()
         {
@@ -69,15 +66,16 @@ namespace TheForgiveness.Controllers
             return View();
         }
 
+        public ActionResult Subjects()
+        {
+            return View();
+        }
+
         public ActionResult UpdateDepartments()
         {
             return View();
         }
 
-        public ActionResult UpdateGenders()
-        {
-            return View();
-        }
 
         public ActionResult UpdateIdentifications()
         {
@@ -85,6 +83,11 @@ namespace TheForgiveness.Controllers
         }
 
         public ActionResult UpdateMunicipality()
+        {
+            return View();
+        }
+
+        public ActionResult UpdateSubjects()
         {
             return View();
         }
