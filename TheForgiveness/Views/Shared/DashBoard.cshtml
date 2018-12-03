@@ -99,7 +99,7 @@
                                     <i class="ti-settings m-r-5 m-l-5"></i> Account Setting
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="@Url.Action("Login","Home")" onclick="@Session["control"] = 'Logout';">
+                                <a class="dropdown-item" href="@Url.Action("Login", "Home")" onclick="@Session["control"] = 'Logout';">
                                     <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout
                                 </a>
                                 <div class="dropdown-divider"></div>
@@ -115,72 +115,63 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "DashBoard")" aria-expanded="false">
                                 <i class="mdi mdi-view-dashboard"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false">
-                                <i class="mdi mdi-blur-linear"></i>
-                                <span class="hide-menu">Full Width</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-receipt"></i>
-                                <span class="hide-menu">Forms </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="form-basic.html" class="sidebar-link">
-                                        <i class="mdi mdi-note-outline"></i>
-                                        <span class="hide-menu"> Form Basic </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="form-wizard.html" class="sidebar-link">
-                                        <i class="mdi mdi-note-plus"></i>
-                                        <span class="hide-menu"> Form Wizard </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-move-resize-variant"></i>
-                                <span class="hide-menu">Addons </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
-                                        <i class="mdi mdi-view-dashboard"></i>
-                                        <span class="hide-menu"> Dashboard-2 </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-gallery.html" class="sidebar-link"><i class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Gallery </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-calendar.html" class="sidebar-link">
-                                        <i class="mdi mdi-calendar-check"></i>
-                                        <span class="hide-menu"> Calendar </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-invoice.html" class="sidebar-link">
-                                        <i class="mdi mdi-bulletin-board"></i>
-                                        <span class="hide-menu"> Invoice </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="pages-chat.html" class="sidebar-link">
-                                        <i class="mdi mdi-message-outline"></i>
-                                        <span class="hide-menu"> Chat Option </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        @{
+                                var name = "";
+                                int i = 1;
+                                bool firts = true;
+                                if (ViewBag.dinMen.Rows.Count > 0)
+                                {
+                                    foreach (System.Data.DataRow item in ViewBag.dinMen.Rows)
+                                    {
+                                        if (name != Convert.ToString(item["Titulo_Vista"]))
+                                        {
+                                            name = Convert.ToString(item["Titulo_Vista"]);
+                                            i = 0;
+                                            if (i == 0 && firts != true)
+                                            {
+                                               @:</ul>
+                                               @:</li>
+                                            }
+                                            else
+                                            {
+                                                firts = false;
+                                            }
+                                          @:<li class="sidebar-item">
+                                                <a href="#" class="sidebar-link has-arrow waves-effect waves-dark">
+                                                    <i class="@item["Icono_Vista"]"></i>
+                                                    <span class="hide-menu">@item["Titulo_Vista"]</span>
+                                                </a>
+                                          @:<ul aria-expanded="false" class="collapse  first-level">
+                                                <li class="sidebar-item">
+                                                    <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
+                                                        <i class="@item["Icono_SubVista"]"></i>
+                                                        <span class="hide-menu">@item["Titulo_SubVista"]</span>
+                                                    </a>
+                                                </li>
+                                                i++;
+                                        }
+                                        else
+                                        {
+                                            <li class="sidebar-item">
+                                                <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
+                                                    <i class="@item["Icono_SubVista"]"></i>
+                                                    <span class="hide-menu">@item["Titulo_SubVista"]</span>
+                                                </a>
+                                            </li>
+                                            i++;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                   <h1>NO tiene PRIVILEGIOS PARA VER ALGO EN EL SISTEMA</h1>
+                                }
+                          }
                     </ul>
                 </nav>
             </div>

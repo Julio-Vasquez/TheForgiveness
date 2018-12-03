@@ -152,24 +152,37 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\actividadesModel.cs" />
     <Compile Include="Models\asignaturaModel.cs" />
+    <Compile Include="Models\autoresModel.cs" />
     <Compile Include="Models\colegioModel.cs" />
+    <Compile Include="Models\conceptoautoresModel.cs" />
+    <Compile Include="Models\conceptoModel.cs" />
     <Compile Include="Models\conceptoVictimaModel.cs" />
     <Compile Include="Models\departamentoModel.cs" />
+    <Compile Include="Models\diplomaModel.cs" />
     <Compile Include="Models\emailModel.cs" />
+    <Compile Include="Models\escenariosModel.cs" />
+    <Compile Include="Models\experienciaModel.cs" />
     <Compile Include="Models\generoModel.cs" />
     <Compile Include="Models\grupoModel.cs" />
     <Compile Include="Models\grupopersonaModel.cs" />
+    <Compile Include="Models\metasModel.cs" />
     <Compile Include="Models\municipioModel.cs" />
     <Compile Include="Models\notasModel.cs" />
     <Compile Include="Models\paisModel.cs" />
+    <Compile Include="Models\palabraclaveModel.cs" />
     <Compile Include="Models\permisoModel.cs" />
     <Compile Include="Models\personaModel.cs" />
+    <Compile Include="Models\plantillaModel.cs" />
+    <Compile Include="Models\progresoModel.cs" />
     <Compile Include="Models\rolModel.cs" />
     <Compile Include="Models\rolpermisoModel.cs" />
+    <Compile Include="Models\subcategoiaModel.cs" />
     <Compile Include="Models\telefonoModel.cs" />
     <Compile Include="Models\tipoDocumentoModel.cs" />
     <Compile Include="Models\usuarioModel.cs" />
+    <Compile Include="Models\victimiologiaModel.cs" />
     <Compile Include="Models\vistaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\departamentoService.cs" />
