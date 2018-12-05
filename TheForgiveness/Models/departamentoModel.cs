@@ -29,7 +29,21 @@ namespace TheForgiveness.Models
         /// /^([a-z]+[a-z1-9._-]*)@{1}([a-z1-9\.]{2,})\.([a-z]{2,3})$/     -> Email
         /// /^[0-9]*$/  -> SOlo numerois sin espacio
         /// /[^0-9\s]*$/
+        /*
+                 [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Su contraseña:")]
+        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
+        [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 8)]
+        [DataType(DataType.Password)]
+        public string PassWord { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Su Nuevo concepto:")]
+        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
+        [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 8)]
+        [DataType(DataType.Password)]
+        [CompareAttribute("NewPassword", ErrorMessage = "The New Password and Confirm New Password fields did not match.")]
+             */
         [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Seleccione pais!")]
         [RegularExpression(@"/^[0-9]+$/", ErrorMessage ="ERR")]

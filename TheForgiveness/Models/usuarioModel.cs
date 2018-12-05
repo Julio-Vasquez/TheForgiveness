@@ -12,14 +12,14 @@ namespace TheForgiveness.Models
         public int ID { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Su concepto:")]
+        [DisplayName("Su Usuario:")]
         [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9]*$/", ErrorMessage = "No se Admiten Espacios")]
         [MinLength(4, ErrorMessage = "Minimo {2}")]
         [DataType(DataType.Text)]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Su Nuevo concepto:")]
+        [DisplayName("Su contraseña:")]
         [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
         [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 8)]
         [DataType(DataType.Password)]

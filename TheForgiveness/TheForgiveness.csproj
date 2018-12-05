@@ -178,6 +178,7 @@
     <Compile Include="Models\progresoModel.cs" />
     <Compile Include="Models\rolModel.cs" />
     <Compile Include="Models\rolpermisoModel.cs" />
+    <Compile Include="Models\studentModel.cs" />
     <Compile Include="Models\subcategoiaModel.cs" />
     <Compile Include="Models\telefonoModel.cs" />
     <Compile Include="Models\tipoDocumentoModel.cs" />
@@ -393,6 +394,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Victimology\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DashBoard\CreateStudent.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

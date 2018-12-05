@@ -29,6 +29,22 @@ namespace TheForgiveness.Controllers
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
             {
+                ViewBag.dinMen = util.getMenu(Session["username"].ToString());
+                ViewBag.Rol = util.getRole(Session["username"].ToString());
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Error404", "Shared");
+            }
+
+        }
+
+        public ActionResult CreateStudent()
+        {
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+            {
+                ViewBag.dinMen = util.getMenu(Session["username"].ToString());
                 ViewBag.Rol = util.getRole(Session["username"].ToString());
                 return View();
             }
