@@ -77,5 +77,26 @@ namespace TheForgiveness.Controllers
             }
 
         }
+        [HttpGet]
+        public ActionResult ResetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ResetPassword(string un)
+        {
+
+            if (us.ResetPassword(Request.Form["userName"].ToString()))
+            {
+                ViewBag.Class = "text-success";
+                ViewBag.Records = "Name : " + Request.Form["userName"].ToString() + " Usuario Existente!!!!";
+            }
+            else {
+                ViewBag.Class = "text-danger";
+                ViewBag.Records = "Name : " + Request.Form["userName"].ToString() + "SubNormal de mierda, no existe eso!!!!!!";
+            }
+            return PartialView("ResetPassword");
+        }
     }
 }

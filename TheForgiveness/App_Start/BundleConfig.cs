@@ -29,6 +29,7 @@ namespace TheForgiveness
                 "~/Assets/Js/Validation/jquery-3.3.1.min.js",
                 "~/Assets/Js/Validation/respond.min.js",
                 "~/Assets/Js/Validation/jquery.validate.min.js",
+                "~/Assets/Js/Validation/jquery.unobtrusive-ajax.min.js",
                 "~/Assets/Js/Validation/jquery.validate.unobtrusive.min.js"
                 ));
         }

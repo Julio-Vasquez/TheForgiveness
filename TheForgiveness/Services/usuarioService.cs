@@ -48,5 +48,9 @@ namespace TheForgiveness.Services
 
         }
 
+        public bool ResetPassword(string un) {
+            return MySQL.Querys("select ID from usuario where UserName = '" + un + "'").Rows.Count > 0;
+        }
+
     }
 }
