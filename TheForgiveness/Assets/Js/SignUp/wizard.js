@@ -8,6 +8,9 @@ $(document).ready(function(){
     jQuery.validator.addMethod("valueNotEquals", function (v, e) { // Adding rules for Amount(Not equal to zero)
         return this.optional(e) || v !== 'default';
     });
+    jQuery.validator.addMethod("NUMID", function (v, e) {
+        return this.optional(e) || /[^a-zA-Z¨¢¨¦¨ª¨®¨²A??????0-9]*$/i.test(v);
+    }, "id error"); 
     var $validator = $('.wizard-card form').validate({
 rules: {
             PriNombre: {
@@ -42,7 +45,7 @@ rules: {
                 required: true,
                 minlength: 6,
                 maxlength: 12,
-                digits: true
+                NUMID: true
             },
             Genero:{
                 required: true,
@@ -97,19 +100,19 @@ rules: {
         messages: {
              PriNombre: {
                 required: "Campo requerido",
-                text: "¡Solo puede digitar letras!"
+                text: "?olo puede digitar letras!"
             },
             SegNombre: {
                 required: "Campo requerido",
-                text: "¡Solo puede digitar letras!"
+                text: "?olo puede digitar letras!"
             },
             PriApellido: {
                 required: "Campo requerido",
-                text: "¡Solo puede digitar letras!"
+                text: "?olo puede digitar letras!"
             },
             SegApellido: {
                 required: "Campo requerido",
-                text: "¡Solo puede digitar letras!"
+                text: "?olo puede digitar letras!"
             },
             Identificacion:{
                 required: "Debe Seleccionar un dato",
@@ -117,7 +120,7 @@ rules: {
             },
             NumIdentificacion: {
                 required: "Campo requerido",  
-                digits: "Solo se aceptan números"
+                NUMID: "Error"
             },
             Genero:{
                 required: "Debe Seleccionar un dato",
@@ -276,3 +279,12 @@ function debounce(func, wait, immediate) {
 		if (immediate && !timeout) func.apply(context, args);
 	};
 };
+
+
+let inpid = document.getElementsByName('NumIdentificacion');
+inpid[0].onkeyup = function() {
+    var patterns = /[^a-zA-Z¨¢¨¦¨ª¨®¨²A??????0-9]*$/;
+    var caretPos = this.selectionStart;
+    this.value = inpid[0].value.replace(patterns, '');
+    this.setSelectionRange(caretPos, caretPos);
+}
