@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{4C52A350-77BA-42AB-9791-134048953A53}|">
   <MonoDevelop.Ide.ItemProperties.TheForgiveness PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TheForgiveness/Assets/Js/SignUp/wizard.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TheForgiveness/Views/Home/ResetPassword.cshtml">
     <Files>
-      <File FileName="TheForgiveness/Views/Home/SignUp.cshtml" Line="1" Column="1" />
-      <File FileName="TheForgiveness/Assets/Js/SignUp/wizard.js" Line="45" Column="21" />
+      <File FileName="TheForgiveness/Views/Home/SignUp.cshtml" Line="90" Column="56" />
+      <File FileName="TheForgiveness/Views/Home/ResetPassword.cshtml" Line="13" Column="70" />
+      <File FileName="TheForgiveness/Assets/Css/ResetPassword/Style.css" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
