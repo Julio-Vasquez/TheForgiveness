@@ -90,7 +90,7 @@ namespace TheForgiveness.Controllers
             if (us.ResetPassword(Request.Form["userName"].ToString()))
             {
                 Util.Email email = new Util.Email();
-                email.SendMail(Request.Form["userName"].ToString());
+                email.SendMail(Request.Form["userName"].ToString(), Request.Form["numIdentificacion"].ToString());
                 ViewBag.Class = "text-success";
                 ViewBag.Records = "Name : " + Request.Form["userName"].ToString() + " Usuario Existente!!!!";
             }
