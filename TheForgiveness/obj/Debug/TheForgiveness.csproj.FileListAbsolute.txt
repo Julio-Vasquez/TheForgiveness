@@ -1,157 +1,79 @@
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/ApplicationInsights.config
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/csc.exe
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/csc.exe.config
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/csc.rsp
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/csi.exe
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/csi.rsp
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CSharp.Core.targets
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.VisualBasic.Core.targets
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/System.AppContext.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/System.Collections.Immutable.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/System.Diagnostics.StackTrace.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/System.IO.FileSystem.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/System.IO.FileSystem.Primitives.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/System.Reflection.Metadata.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/vbc.exe
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/vbc.exe.config
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/vbc.rsp
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/VBCSCompiler.exe
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/roslyn/VBCSCompiler.exe.config
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/TheForgiveness.dll.config
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/TheForgiveness.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/TheForgiveness.pdb
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Antlr3.Runtime.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/ConnectionDB.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.Agent.Intercept.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.DependencyCollector.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.PerfCounterCollector.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.ServerTelemetryChannel.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.Web.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.WindowsServer.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.ApplicationInsights.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.Web.Infrastructure.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Newtonsoft.Json.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Helpers.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Mvc.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Optimization.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Razor.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Deployment.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Razor.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/WebGrease.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/MySql.Data.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/ConnectionDB.pdb
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Helpers.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Mvc.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Optimization.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.Razor.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Deployment.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Razor.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Antlr3.Runtime.pdb
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Newtonsoft.Json.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.ApplicationInsights.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.DependencyCollector.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.ServerTelemetryChannel.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.WindowsServer.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/Microsoft.AI.Web.xml
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/es/System.Web.Helpers.resources.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/es/System.Web.Mvc.resources.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/es/System.Web.Optimization.resources.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/es/System.Web.Razor.resources.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/es/System.Web.WebPages.resources.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/es/System.Web.WebPages.Deployment.resources.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/bin/es/System.Web.WebPages.Razor.resources.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.csproj.CoreCompileInputs.cache
-D:/OptionGrade/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.csproj.CopyComplete
-D:/OptionGrade/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.dll
-D:/OptionGrade/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.pdb
-D:/OptionGrade/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.csprojAssemblyReference.cache
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/ApplicationInsights.config
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/csc.exe
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/csc.exe.config
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/csc.rsp
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/csi.exe
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/csi.rsp
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.CSharp.Core.targets
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/Microsoft.VisualBasic.Core.targets
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/System.AppContext.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/System.Collections.Immutable.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/System.Diagnostics.StackTrace.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/System.IO.FileSystem.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/System.IO.FileSystem.Primitives.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/System.Reflection.Metadata.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/vbc.exe
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/vbc.exe.config
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/vbc.rsp
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/VBCSCompiler.exe
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/roslyn/VBCSCompiler.exe.config
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/TheForgiveness.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/TheForgiveness.pdb
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Antlr3.Runtime.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/ConnectionDB.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.Agent.Intercept.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.DependencyCollector.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.PerfCounterCollector.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.ServerTelemetryChannel.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.Web.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.WindowsServer.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.ApplicationInsights.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.Web.Infrastructure.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Newtonsoft.Json.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Helpers.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Mvc.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Optimization.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Razor.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Deployment.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Razor.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/WebGrease.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/MySql.Data.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/ConnectionDB.pdb
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Razor.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Helpers.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Mvc.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.Optimization.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Deployment.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/System.Web.WebPages.Razor.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Antlr3.Runtime.pdb
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Newtonsoft.Json.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.ApplicationInsights.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.DependencyCollector.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.ServerTelemetryChannel.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.WindowsServer.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/Microsoft.AI.Web.xml
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/es/System.Web.Razor.resources.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/es/System.Web.Helpers.resources.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/es/System.Web.Mvc.resources.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/es/System.Web.Optimization.resources.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/es/System.Web.WebPages.resources.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/es/System.Web.WebPages.Deployment.resources.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/bin/es/System.Web.WebPages.Razor.resources.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.csprojAssemblyReference.cache
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.csproj.CoreCompileInputs.cache
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.csproj.CopyComplete
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.dll
-/Users/darkphurion/Documents/Visual Studio/TheForgiveness/TheForgiveness/obj/Debug/TheForgiveness.pdb
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\ApplicationInsights.config
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\csc.exe
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\csc.exe.config
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\csc.rsp
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\csi.exe
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\csi.rsp
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\System.AppContext.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\System.Collections.Immutable.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\System.IO.FileSystem.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\System.Reflection.Metadata.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\vbc.exe
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\vbc.exe.config
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\vbc.rsp
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\VBCSCompiler.exe
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\roslyn\VBCSCompiler.exe.config
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\TheForgiveness.dll.config
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\TheForgiveness.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\TheForgiveness.pdb
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Antlr3.Runtime.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\ConnectionDB.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.Agent.Intercept.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.DependencyCollector.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.Web.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.WindowsServer.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.ApplicationInsights.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.Web.Infrastructure.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Newtonsoft.Json.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Helpers.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Mvc.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Optimization.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Razor.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.WebPages.Deployment.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.WebPages.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.WebPages.Razor.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\WebGrease.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\MySql.Data.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\ConnectionDB.pdb
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Razor.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Helpers.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Mvc.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.Optimization.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.WebPages.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.WebPages.Deployment.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\System.Web.WebPages.Razor.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Antlr3.Runtime.pdb
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Newtonsoft.Json.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.ApplicationInsights.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.DependencyCollector.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.WindowsServer.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\Microsoft.AI.Web.xml
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.Razor.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.Helpers.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.Mvc.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.Optimization.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csproj.CoreCompileInputs.cache
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csproj.CopyComplete
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.dll
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.pdb
+D:\OptionGrade\TheForgiveness\TheForgiveness\obj\Debug\TheForgiveness.csprojAssemblyReference.cache

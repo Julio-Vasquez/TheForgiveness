@@ -255,7 +255,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Css\ResetPassword\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -283,9 +282,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DashBoard\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\DashBoard\Crearstudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Profile\Profile.cshtml" />

@@ -280,11 +280,11 @@ function debounce(func, wait, immediate) {
 	};
 };
 
-
+/*
 let inpid = document.getElementsByName('NumIdentificacion');
 inpid[0].onkeyup = function() {
     var patterns = /[^a-zA-Zивижикиои▓A??????0-9]*$/;
     var caretPos = this.selectionStart;
     this.value = inpid[0].value.replace(patterns, '');
     this.setSelectionRange(caretPos, caretPos);
-}
+}*/
