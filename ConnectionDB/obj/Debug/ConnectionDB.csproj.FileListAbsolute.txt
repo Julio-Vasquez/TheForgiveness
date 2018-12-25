@@ -5,15 +5,6 @@ C:/Users/jualv/documents/visual studio 2017/Projects/TheForgiveness/ConnectionDB
 C:/Users/jualv/documents/visual studio 2017/Projects/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.csprojResolveAssemblyReference.cache
 C:/Users/jualv/documents/visual studio 2017/Projects/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.dll
 C:/Users/jualv/documents/visual studio 2017/Projects/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.pdb
-D:/OptionGrade/TheForgiveness/ConnectionDB/bin/Debug/ConnectionDB.dll
-D:/OptionGrade/TheForgiveness/ConnectionDB/bin/Debug/ConnectionDB.pdb
-D:/OptionGrade/TheForgiveness/ConnectionDB/bin/Debug/MySql.Data.dll
-D:/OptionGrade/TheForgiveness/ConnectionDB/bin/Debug/MySql.Web.v20.dll
-D:/OptionGrade/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.csprojAssemblyReference.cache
-D:/OptionGrade/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.csproj.CoreCompileInputs.cache
-D:/OptionGrade/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.csproj.CopyComplete
-D:/OptionGrade/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.dll
-D:/OptionGrade/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.pdb
 /Users/darkphurion/Documents/Visual Studio/TheForgiveness/ConnectionDB/bin/Debug/ConnectionDB.dll
 /Users/darkphurion/Documents/Visual Studio/TheForgiveness/ConnectionDB/bin/Debug/ConnectionDB.pdb
 /Users/darkphurion/Documents/Visual Studio/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.csprojAssemblyReference.cache
@@ -21,3 +12,11 @@ D:/OptionGrade/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.pdb
 /Users/darkphurion/Documents/Visual Studio/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.csproj.CopyComplete
 /Users/darkphurion/Documents/Visual Studio/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.dll
 /Users/darkphurion/Documents/Visual Studio/TheForgiveness/ConnectionDB/obj/Debug/ConnectionDB.pdb
+D:\OptionGrade\TheForgiveness\ConnectionDB\bin\Debug\ConnectionDB.dll
+D:\OptionGrade\TheForgiveness\ConnectionDB\bin\Debug\ConnectionDB.pdb
+D:\OptionGrade\TheForgiveness\ConnectionDB\bin\Debug\MySql.Data.dll
+D:\OptionGrade\TheForgiveness\ConnectionDB\bin\Debug\MySql.Web.v20.dll
+D:\OptionGrade\TheForgiveness\ConnectionDB\obj\Debug\ConnectionDB.csproj.CoreCompileInputs.cache
+D:\OptionGrade\TheForgiveness\ConnectionDB\obj\Debug\ConnectionDB.csproj.CopyComplete
+D:\OptionGrade\TheForgiveness\ConnectionDB\obj\Debug\ConnectionDB.dll
+D:\OptionGrade\TheForgiveness\ConnectionDB\obj\Debug\ConnectionDB.pdb

@@ -79,7 +79,7 @@
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="~/Assets/Img/DashBoard/d3.jpg" alt="user" class="rounded-circle" width="31">
                             </a>
-                            
+
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="javascript:void(0)">
                                     <i class="ti-user m-r-5 m-l-5"></i>@Session["username"] / @ViewBag.Rol
@@ -121,39 +121,39 @@
                             </a>
                         </li>
                         @{
-                                var name = "";
-                                int i = 1;
-                                bool firts = true;
-                                if (ViewBag.dinMen.Rows.Count > 0)
+                            var name = "";
+                            int i = 1;
+                            bool firts = true;
+                            if (ViewBag.dinMen.Rows.Count > 0)
+                            {
+                                foreach (System.Data.DataRow item in ViewBag.dinMen.Rows)
                                 {
-                                    foreach (System.Data.DataRow item in ViewBag.dinMen.Rows)
+                                    if (name != Convert.ToString(item["Titulo_Vista"]))
                                     {
-                                        if (name != Convert.ToString(item["Titulo_Vista"]))
+                                        name = Convert.ToString(item["Titulo_Vista"]);
+                                        i = 0;
+                                        if (i == 0 && firts != true)
                                         {
-                                            name = Convert.ToString(item["Titulo_Vista"]);
-                                            i = 0;
-                                            if (i == 0 && firts != true)
-                                            {
-                                               @:</ul>
-                                               @:</li>
-                                            }
-                                            else
-                                            {
-                                                firts = false;
-                                            }
-                                          @:<li class="sidebar-item">
-                                                <a href="#" class="sidebar-link has-arrow waves-effect waves-dark">
-                                                    <i class="@item["Icono_Vista"]"></i>
-                                                    <span class="hide-menu">@item["Titulo_Vista"]</span>
+                                        @:</ul>
+                                        @:</li>
+                                    }
+                                    else
+                                    {
+                                        firts = false;
+                                    }
+                                    @:<li class="sidebar-item">
+                                        <a href="#" class="sidebar-link has-arrow waves-effect waves-dark">
+                                            <i class="@item["Icono_Vista"]"></i>
+                                            <span class="hide-menu">@item["Titulo_Vista"]</span>
+                                        </a>
+                                        @:<ul aria-expanded="false" class="collapse  first-level">
+                                            <li class="sidebar-item">
+                                                <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
+                                                    <i class="@item["Icono_SubVista"]"></i>
+                                                    <span class="hide-menu">@item["Titulo_SubVista"]</span>
                                                 </a>
-                                          @:<ul aria-expanded="false" class="collapse  first-level">
-                                                <li class="sidebar-item">
-                                                    <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
-                                                        <i class="@item["Icono_SubVista"]"></i>
-                                                        <span class="hide-menu">@item["Titulo_SubVista"]</span>
-                                                    </a>
-                                                </li>
-                                                i++;
+                                            </li>
+                                            i++;
                                         }
                                         else
                                         {
@@ -169,34 +169,41 @@
                                 }
                                 else
                                 {
-                                   <h1>NO tiene PRIVILEGIOS PARA VER ALGO EN EL SISTEMA</h1>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">
+                                            <i class=""></i>
+                                            <span class="hide-menu">NO FOUND</span>
+                                        </a>
+                                    </li>
                                 }
-                          }
+                        }
                     </ul>
-                </nav>
-            </div>
-        </aside>
-        <div class="page-wrapper">
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">@ViewBag.Title</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="card">
-                    @RenderBody()
-                </div>
-            </div>
-            <footer class="footer text-center">
-                © All Rights Reserved by Ing Edna Rocio R. S. Designed and Developed by David Calderon && Julio Vásquez
-                <br />
-                Universidad de la Amazonia!
-            </footer>
+            </nav>
         </div>
+    </aside>
+    <div class="page-wrapper">
+
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">@ViewBag.Title</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="card">
+                @RenderBody()
+            </div>
+        </div>
+        <footer class="footer text-center">
+            © All Rights Reserved by Ing Edna Rocio R. S. Designed and Developed by David Calderon && Julio Vásquez
+            <br />
+            Universidad de la Amazonia!
+        </footer>
+
     </div>
-    @Scripts.Render("~/Validation", "~/DashBoardJS")
-    <script src="@ViewBag.Js"></script>
+</div>
+@Scripts.Render("~/Validation", "~/DashBoardJS")
+<script src="@ViewBag.Js"></script>
 </body>
 </html>

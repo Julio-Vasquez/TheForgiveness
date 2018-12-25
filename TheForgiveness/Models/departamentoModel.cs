@@ -89,6 +89,14 @@ LoadingElementId: esta propiedad se utiliza para mostrar el símbolo de carga pa
 
 LoadingElementDuration: esta propiedad se utiliza para definir la duración en miles de segundos para cargar el símbolo.
          */
+        /*
+         para controladores
+         [ValidateAntiForgeryToken] valida el token
+         [AllowAnonymous] para todo get
+            */
+
+
+
         [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Seleccione pais!")]
         [RegularExpression(@"/^[0-9]+$/", ErrorMessage ="ERR")]

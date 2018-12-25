@@ -16,13 +16,16 @@ namespace TheForgiveness.Controllers
             {
                 ViewBag.dinMen = util.getMenu(Session["username"].ToString());
                 ViewBag.Rol = util.getRole(Session["username"].ToString());
-                return View();
+                if (ViewBag.dinMen.Rows.Count > 0)
+                {
+                    return View();
+                }
+                return RedirectToAction("NoFound", "Shared");   
             }
             else
             {
                 return RedirectToAction("Error404", "Shared");
             }
-
         }
 
         public ActionResult Crearstudent()
