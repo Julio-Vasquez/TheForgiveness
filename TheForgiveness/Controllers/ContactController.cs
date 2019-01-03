@@ -23,5 +23,11 @@ namespace TheForgiveness.Controllers
         {
             return View();
         }
+
+        public ActionResult RegisterContact() {
+            return View();
+        }
+
+        // POST: Contact
     }
 }

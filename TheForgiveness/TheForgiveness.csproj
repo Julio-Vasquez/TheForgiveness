@@ -140,15 +140,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\BasicTablesController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\ForgivenessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
-    <Compile Include="Controllers\PerceptionController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
-    <Compile Include="Controllers\VictimologyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -296,33 +292,6 @@
     <Content Include="Views\Profile\User.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Perception\RegisterPerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\SearchPerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\UpdatePerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\DeletePerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Forgiveness\RegisterForgiveness.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Forgiveness\SearchForgiveness.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Forgiveness\UpdateForgiveness.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Forgiveness\RegisterFinalForgiveness.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Forgiveness\DeleteForgiveness.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Profile\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -335,66 +304,6 @@
     <Content Include="Views\Contact\DeleteContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\BasicTables\Departments.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\CreateDepartments.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\UpdateDepartments.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\DeleteDepartments.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\Municipality.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\CreateMunicipality.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\UpdateMunicipality.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\DeleteMunicipality.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\Identifications.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\CreateIdentifications.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\UpdateIdentifications.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\DeleteIdentifications.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\Subjects.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\CreateSubjects.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\UpdateSubjects.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BasicTables\DeleteSubjects.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Victimology\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Victimology\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Victimology\Update.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Victimology\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\DashBoard\CreateStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -402,6 +311,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\NoFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Contact\RegisterContact.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
