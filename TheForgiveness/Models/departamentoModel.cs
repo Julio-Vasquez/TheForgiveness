@@ -43,6 +43,8 @@ namespace TheForgiveness.Models
         [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 8)]
         [DataType(DataType.Password)]
         [CompareAttribute("NewPassword", ErrorMessage = "The New Password and Confirm New Password fields did not match.")]
+        [Phone]
+        [DataType(DataType.PhoneNumber)]
              */
 
         /*
