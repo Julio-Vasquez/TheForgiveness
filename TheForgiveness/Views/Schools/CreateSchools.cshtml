@@ -1,0 +1,107 @@
+﻿@model TheForgiveness.Models.colegioModel
+
+@{
+    ViewBag.Title = "CreateSchools";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>CreateSchools</h2>
+
+@using (Html.BeginForm("CreateSchools","Schools",FormMethod.Post, new { @accept_charset = "utf-8" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>colegioModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <div class="form-group">
+                    <label class="control-label">Departamento</label>
+                    <select name="Departamento" class="form-control" onchange="cargar(this.value)">
+                        <option value="default"></option>
+                        @foreach (System.Data.DataRow row in ViewBag.departamento.Rows)
+                        {
+                            <option value=@row["ID"]>@row["Departamento"]</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label class="control-label">Municipio</label>
+                    <select name="Municipio" class="form-control " id="Municipio">
+                        <option value="default"></option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<script>
+        var municipio = [
+        @{
+            int j = 0;
+            foreach (System.Data.DataRow row in ViewBag.municipio.Rows)
+            {
+                if (j != 0)
+                {
+                    @:, {
+                         @:id: @row["ID"],
+                         @:Municipio: '@row["Municipio"]',
+                         @:Departamento: @row["Departamento"]
+                        @:}
+                }
+                else
+                {
+                    @:{
+                         @:id: @row["ID"],
+                         @:Municipio: '@row["Municipio"]',
+                         @:Departamento: @row["Departamento"]
+                    @:}
+                }
+                j++;
+            }
+         }
+    ];
+
+        function cargar(id) {
+            let ele = document.getElementById('Municipio');
+            if (ele.length > 1) {
+                let limite = ele.length;//defino variable, sino el length se refresca
+                for (let i = 0; i < limite; i++) {
+                    ele.remove(ele.children[i]);
+                }
+                let option = document.createElement("option");
+                ele.add(option);
+            }
+            for (let i = 0; i < municipio.length; i++) {
+                if (municipio[i].Departamento === parseInt(id)) {
+                    let option = document.createElement("option");
+                    option.text = municipio[i].Municipio;
+                    option.value = municipio[i].id;
+                    ele.add(option);
+                }
+            }
+        }
+</script>
+<div>
+    @Html.ActionLink("Back to List", "Index","DashBoard")
+</div>

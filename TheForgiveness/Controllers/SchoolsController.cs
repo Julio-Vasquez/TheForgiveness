@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace TheForgiveness.Controllers
+{
+    public class SchoolsController : Controller
+    {
+        private Util.Util util = new Util.Util();
+        private Services.colegioService schoolsrv = new Services.colegioService();
+        private Services.departamentoService ds = new Services.departamentoService();
+        private Services.municipioService ms = new Services.municipioService();
+        // GET: Schools
+        [HttpGet]
+        public ActionResult CreateSchools()
+        {
+            ViewBag.departamento = ds.queryDepartamento();
+            ViewBag.municipio = ms.queryMunicipio();
+            basic();
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult CreateSchools(Models.colegioModel school) {
+            if (schoolsrv.createSchool(school))
+            {
+                return RedirectToAction("Index", "DashBoard");
+            }
+            else
+            {
+                basic();
+                ViewBag.departamento = ds.queryDepartamento();
+                ViewBag.municipio = ms.queryMunicipio();
+                return View(school);
+            }
+        }
+
+        private void basic()
+        {
+            ViewBag.dinMen = util.getMenu(Session["username"].ToString());
+            ViewBag.Rol = util.getRole(Session["username"].ToString());
+        }
+    }
+}
