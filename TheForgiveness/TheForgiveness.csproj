@@ -201,7 +201,6 @@
     <Content Include="Assets\Css\Login\validation.css" />
     <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
-    <Content Include="Assets\Css\DashBoard\materialdesignicons.min.css" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
     <Content Include="Assets\Img\DashBoard\d3.jpg" />
@@ -276,9 +275,6 @@
     <Content Include="Views\Shared\DashBoard.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Fonts\DashBoard\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\DashBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +315,99 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Schools\CreateSchools.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\Activities.svg" />
+    <Content Include="Assets\Icon\ChangePassword.svg" />
+    <Content Include="Assets\Icon\Contact.svg" />
+    <Content Include="Assets\Icon\CreateActivities.svg" />
+    <Content Include="Assets\Icon\CreateContact.svg" />
+    <Content Include="Assets\Icon\CreateDepartment.svg" />
+    <Content Include="Assets\Icon\CreateDiploma.svg" />
+    <Content Include="Assets\Icon\CreateEvaluation.svg" />
+    <Content Include="Assets\Icon\CreateExperience.svg" />
+    <Content Include="Assets\Icon\CreateForgivenessAuthor.svg" />
+    <Content Include="Assets\Icon\CreateForgivenessStudent.svg" />
+    <Content Include="Assets\Icon\CreateIDocument.svg" />
+    <Content Include="Assets\Icon\CreateMunicipality.svg" />
+    <Content Include="Assets\Icon\CreatePerception.svg" />
+    <Content Include="Assets\Icon\CreateSchool.svg" />
+    <Content Include="Assets\Icon\CreateStage.svg" />
+    <Content Include="Assets\Icon\CreateStudent.svg" />
+    <Content Include="Assets\Icon\CreateSubcategory.svg" />
+    <Content Include="Assets\Icon\CreateSubject.svg" />
+    <Content Include="Assets\Icon\CreateVictimology.svg" />
+    <Content Include="Assets\Icon\DASHBOARD.svg" />
+    <Content Include="Assets\Icon\DeleteActivities.svg" />
+    <Content Include="Assets\Icon\DeleteContact.svg" />
+    <Content Include="Assets\Icon\DeleteDepartment.svg" />
+    <Content Include="Assets\Icon\DeleteDiploma.svg" />
+    <Content Include="Assets\Icon\DeleteEvaluation.svg" />
+    <Content Include="Assets\Icon\DeleteForgivenessAuthor.svg" />
+    <Content Include="Assets\Icon\DeleteForgivenessStudent.svg" />
+    <Content Include="Assets\Icon\DeleteIDocument.svg" />
+    <Content Include="Assets\Icon\DeleteMunicipality.svg" />
+    <Content Include="Assets\Icon\DeletePerception.svg" />
+    <Content Include="Assets\Icon\DeleteSchool.svg" />
+    <Content Include="Assets\Icon\DeleteStage.svg" />
+    <Content Include="Assets\Icon\DeleteStudent.svg" />
+    <Content Include="Assets\Icon\DeleteSubcategory.svg" />
+    <Content Include="Assets\Icon\DeleteSubject.svg" />
+    <Content Include="Assets\Icon\DeleteVictimology.svg" />
+    <Content Include="Assets\Icon\Department.svg" />
+    <Content Include="Assets\Icon\Diploma.svg" />
+    <Content Include="Assets\Icon\Evaluation.svg" />
+    <Content Include="Assets\Icon\experiencia-del-usuario.svg" />
+    <Content Include="Assets\Icon\ForgivenessAuthor.svg" />
+    <Content Include="Assets\Icon\ForgivenessStudent.svg" />
+    <Content Include="Assets\Icon\IDocument.svg" />
+    <Content Include="Assets\Icon\Municipality.svg" />
+    <Content Include="Assets\Icon\Perception.svg" />
+    <Content Include="Assets\Icon\Profile.svg" />
+    <Content Include="Assets\Icon\School.svg" />
+    <Content Include="Assets\Icon\SeeActivities.svg" />
+    <Content Include="Assets\Icon\SeeContact.svg" />
+    <Content Include="Assets\Icon\SeeDepartment.svg" />
+    <Content Include="Assets\Icon\SeeDiploma.svg" />
+    <Content Include="Assets\Icon\SeeEvaluation.svg" />
+    <Content Include="Assets\Icon\SeeExperience.svg" />
+    <Content Include="Assets\Icon\SeeForgivenessAuthor.svg" />
+    <Content Include="Assets\Icon\SeeForgivenessStudent.svg" />
+    <Content Include="Assets\Icon\SeeIDocument.svg" />
+    <Content Include="Assets\Icon\SeeMunicipality.svg" />
+    <Content Include="Assets\Icon\SeePerception.svg" />
+    <Content Include="Assets\Icon\SeeProfile.svg" />
+    <Content Include="Assets\Icon\SeeSchool.svg" />
+    <Content Include="Assets\Icon\SeeStage.svg" />
+    <Content Include="Assets\Icon\SeeStudent.svg" />
+    <Content Include="Assets\Icon\SeeSubcategory.svg" />
+    <Content Include="Assets\Icon\SeeSubject.svg" />
+    <Content Include="Assets\Icon\SeeUser.svg" />
+    <Content Include="Assets\Icon\SeeVictimology.svg" />
+    <Content Include="Assets\Icon\Stage.svg" />
+    <Content Include="Assets\Icon\Student.svg" />
+    <Content Include="Assets\Icon\Subcategory.svg" />
+    <Content Include="Assets\Icon\Subject.svg" />
+    <Content Include="Assets\Icon\Update.svg" />
+    <Content Include="Assets\Icon\UpdateActivities.svg" />
+    <Content Include="Assets\Icon\UpdateContact.svg" />
+    <Content Include="Assets\Icon\UpdateDepartment.svg" />
+    <Content Include="Assets\Icon\UpdateDiploma.svg" />
+    <Content Include="Assets\Icon\UpdateEvaluation.svg" />
+    <Content Include="Assets\Icon\UpdateExperience.svg" />
+    <Content Include="Assets\Icon\UpdateForgivenessAuthor.svg" />
+    <Content Include="Assets\Icon\UpdateForgivenessStudent.svg" />
+    <Content Include="Assets\Icon\UpdateIDocument.svg" />
+    <Content Include="Assets\Icon\UpdateMunicipality.svg" />
+    <Content Include="Assets\Icon\UpdatePerception.svg" />
+    <Content Include="Assets\Icon\UpdateProfile.svg" />
+    <Content Include="Assets\Icon\UpdateStage.svg" />
+    <Content Include="Assets\Icon\UpdateStudent.svg" />
+    <Content Include="Assets\Icon\UpdateSubcategory.svg" />
+    <Content Include="Assets\Icon\UpdateSubject.svg" />
+    <Content Include="Assets\Icon\UpdateUser.svg" />
+    <Content Include="Assets\Icon\UpdateVictimology.svg" />
+    <Content Include="Assets\Icon\Victimology.svg" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

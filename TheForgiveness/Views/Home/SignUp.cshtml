@@ -6,9 +6,12 @@
 <html lang="Es">
 <head>
     <meta charset="utf-8" />
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="icon" type="image/jpg" href="~/favicon.jpg">
     <title>SignUP</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/Assets/Css/SignUp/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Assets/Css/SignUp/wizard.min.css" />
@@ -62,7 +65,7 @@
                                             <div class="col-sm-10 col-sm-offset-1">
                                                 <div class="col-sm-5">
                                                     <div class="form-group">
-                                                        <label class="control-label">Seleccione Genero<small>(required)</small></label> 
+                                                        <label class="control-label">Seleccione Genero<small>(required)</small></label>
                                                         <select class="form-control input100 v" id="Genero" name="Genero" data-validate="Genero is required">
                                                             <option value="default"></option>
                                                             @foreach (System.Data.DataRow row in ViewBag.genero.Rows)
@@ -93,7 +96,7 @@
                                                 <div class="col-sm-7">
                                                     <div class="form-group">
                                                         <label class="control-label">Numero Identificación <small>(required)</small></label>
-                                                        <input name="NumIdentificacion" class="form-control" type="number" >
+                                                        <input name="NumIdentificacion" class="form-control" type="number">
                                                     </div>
                                                 </div>
                                             </div>

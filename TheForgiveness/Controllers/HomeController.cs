@@ -44,7 +44,7 @@ namespace TheForgiveness.Controllers
             ViewBag.genero = gs.queryGenero();
             ViewBag.documento = tds.queryTipoDocumento();
             ViewBag.departamento = ds.queryDepartamento();
-            ViewBag.municipio = ms.queryMunicipio();
+            ViewBag.Municipio= ms.queryMunicipio();
             return View();
         }
 
