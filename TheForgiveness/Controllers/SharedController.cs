@@ -26,5 +26,10 @@ namespace TheForgiveness.Controllers
             return RedirectToAction("Error404", "Shared");
         }
 
+        public ActionResult DashBoard()
+        {
+            return RedirectToAction("Login", "Home");
+        }
+
     }
 }

@@ -12,6 +12,12 @@
 
     <!--Link extra por si se requiere un css especifico-->
     <link href="@ViewBag.Style" rel="stylesheet" />
+    <style>
+    li a i {
+        padding-right: 7.5px;
+    }
+
+  </style>
 </head>
 <body>
     <div class="preloader">
@@ -116,7 +122,7 @@
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "DashBoard")" aria-expanded="false">
-                                <i class="mdi mdi-view-dashboard"></i>
+                                <i class="mdi"> <img src="~/Assets/Icon/DASHBOARD.svg" alt="Inicio" /></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
@@ -143,13 +149,13 @@
                                     }
                                     @:<li class="sidebar-item">
                                         <a href="#" class="sidebar-link has-arrow waves-effect waves-dark">
-                                            <i class="@item["Icono_Vista"]"></i>
+                                            <i class="mdi"> <img src="@item["Icono_Vista"]" alt="" /></i>
                                             <span class="hide-menu">@item["Titulo_Vista"]</span>
                                         </a>
                                         @:<ul aria-expanded="false" class="collapse  first-level">
                                             <li class="sidebar-item">
                                                 <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
-                                                    <i class="@item["Icono_SubVista"]"></i>
+                                                    <i class="mdi"><img src="@item["Icono_SubVista"]" alt="" /></i>
                                                     <span class="hide-menu">@item["Titulo_SubVista"]</span>
                                                 </a>
                                             </li>
@@ -159,7 +165,7 @@
                                         {
                                             <li class="sidebar-item">
                                                 <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
-                                                    <i class="@item["Icono_SubVista"]"></i>
+                                                    <i class="mdi"><img src="@item["Icono_SubVista"]" alt="" /></i>
                                                     <span class="hide-menu">@item["Titulo_SubVista"]</span>
                                                 </a>
                                             </li>
