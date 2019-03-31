@@ -13,14 +13,21 @@ namespace TheForgiveness.Controllers
         private Services.tipoDocumentoService tds = new Services.tipoDocumentoService();
         private Services.departamentoService ds = new Services.departamentoService();
         private Services.municipioService ms = new Services.municipioService();
+
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult Login()
         {
             Session["username"] = "";
             Session["control"] = "Logout";
+            Session["Role"] = "";
+            Session["idAccount"] = 0;
+            Session["dinMenu"] = new System.Data.DataTable();
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(Models.usuarioModel um)
         {
 
@@ -38,7 +45,8 @@ namespace TheForgiveness.Controllers
 
         }
 
-
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult SignUp()
         {
             ViewBag.genero = gs.queryGenero();
@@ -49,6 +57,7 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SignUp(Models.usuarioModel ums)
         {
             Models.personaModel pm = new Models.personaModel
@@ -84,6 +93,7 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult ResetPassword(string un)
         {
 

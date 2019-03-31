@@ -27,6 +27,7 @@
                         <div class="card wizard-card" data-color="green" id="wizardProfile">
                             @using (Html.BeginForm("SignUp", "Home", FormMethod.Post, new { @accept_charset = "utf-8" }))
                             {
+                                @Html.AntiForgeryToken()
                                 <div class="wizard-header">
                                     <h3 class="wizard-title"> Build Your Profile</h3> <h5>Esta información nos permitirá saber más acerca de usted</h5>
                                 </div>

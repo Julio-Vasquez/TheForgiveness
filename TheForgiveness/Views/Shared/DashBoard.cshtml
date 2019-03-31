@@ -13,11 +13,9 @@
     <!--Link extra por si se requiere un css especifico-->
     <link href="@ViewBag.Style" rel="stylesheet" />
     <style>
-    li a i {
-        padding-right: 7.5px;
-    }
-
-  </style>
+    li a i {padding-right: 7.5px;}li a i img{width:28px;height:28px;}
+    </style>
+    
 </head>
 <body>
     <div class="preloader">
@@ -88,7 +86,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="javascript:void(0)">
-                                    <i class="ti-user m-r-5 m-l-5"></i>@Session["username"] / @ViewBag.Rol
+                                    <i class="ti-user m-r-5 m-l-5"></i>@Session["username"] / @Session["Role"]
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="javascript:void(0)">
@@ -120,7 +118,7 @@
             <div class="scroll-sidebar">
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item">
+                        <li class="sidebar-item sbitem">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "DashBoard")" aria-expanded="false">
                                 <i class="mdi"> <img src="~/Assets/Icon/DASHBOARD.svg" alt="Inicio" /></i>
                                 <span class="hide-menu">Dashboard</span>
@@ -130,9 +128,10 @@
                             var name = "";
                             int i = 1;
                             bool firts = true;
-                            if (ViewBag.dinMen.Rows.Count > 0)
+                            System.Data.DataTable menu = Session["dinMenu"] as System.Data.DataTable;
+                            if (menu.Rows.Count > 0)
                             {
-                                foreach (System.Data.DataRow item in ViewBag.dinMen.Rows)
+                                foreach (System.Data.DataRow item in menu.Rows)
                                 {
                                     if (name != Convert.ToString(item["Titulo_Vista"]))
                                     {
@@ -147,7 +146,7 @@
                                     {
                                         firts = false;
                                     }
-                                    @:<li class="sidebar-item">
+                                    @:<li class="sidebar-item sbitem">
                                         <a href="#" class="sidebar-link has-arrow waves-effect waves-dark">
                                             <i class="mdi"> <img src="@item["Icono_Vista"]" alt="" /></i>
                                             <span class="hide-menu">@item["Titulo_Vista"]</span>
@@ -209,6 +208,7 @@
 
     </div>
 </div>
+<script src="~/Assets/Js/Active.js"></script>
 @Scripts.Render("~/Validation", "~/DashBoardJS")
 <script src="@ViewBag.Js"></script>
 </body>

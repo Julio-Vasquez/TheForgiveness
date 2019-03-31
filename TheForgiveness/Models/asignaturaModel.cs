@@ -20,7 +20,6 @@ namespace TheForgiveness.Models
 
         public asignaturaModel()
         {
-
         }
 
         public asignaturaModel(string Nombre)

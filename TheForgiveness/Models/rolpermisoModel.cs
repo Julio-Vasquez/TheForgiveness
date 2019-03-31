@@ -19,7 +19,6 @@ namespace TheForgiveness.Models
 
         public rolpermisoModel()
         {
-
         }
 
         public rolpermisoModel(int Rol,int Permiso)

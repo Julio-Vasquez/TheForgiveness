@@ -33,7 +33,6 @@ namespace TheForgiveness.Models
 
         public diplomaModel()
         {
-
         }
 
         public diplomaModel(string TipoDoploma,string Contenido,DateTime FechaExpedicion,int Plantilla,int Estudiante,int Grupo)
@@ -44,7 +43,7 @@ namespace TheForgiveness.Models
             this.Plantilla = Plantilla;
             this.Estudiante = Estudiante;
             this.Grupo = Grupo;
-    }
+        }
 
         public diplomaModel(int ID, string TipoDoploma, string Contenido, DateTime FechaExpedicion, int Plantilla, int Estudiante, int Grupo)
         {

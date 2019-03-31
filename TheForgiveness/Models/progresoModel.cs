@@ -12,8 +12,7 @@ namespace TheForgiveness.Models
         public double Progreso { get; set; }
 
         public progresoModel()
-        {
-            
+        {   
         }
 
         public progresoModel(double Progreso)

@@ -12,7 +12,6 @@ namespace TheForgiveness.Models
 
         public actividadesModel()
         {
-
         }
 
         public actividadesModel(string Actividad)

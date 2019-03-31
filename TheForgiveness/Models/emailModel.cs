@@ -20,7 +20,6 @@ namespace TheForgiveness.Models
 
         public emailModel()
         {
-
         }
 
         public emailModel(string Email)

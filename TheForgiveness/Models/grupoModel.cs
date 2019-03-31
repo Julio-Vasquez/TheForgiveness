@@ -33,7 +33,6 @@ namespace TheForgiveness.Models
 
         public grupoModel()
         {
-
         }
 
         public grupoModel(int Codigo, string Nombre, int AñoEscolar, int Docente, int Asignatura, int Colegio)

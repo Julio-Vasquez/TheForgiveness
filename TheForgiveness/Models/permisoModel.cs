@@ -29,7 +29,6 @@ namespace TheForgiveness.Models
 
         public permisoModel()
         {
-
         }
 
         public permisoModel(int ID, string Titulo,string Url,int Vista)

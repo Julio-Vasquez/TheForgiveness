@@ -19,7 +19,6 @@ namespace TheForgiveness.Models
 
         public plantillaModel()
         {
-
         }
 
         public plantillaModel(string Plantilla)

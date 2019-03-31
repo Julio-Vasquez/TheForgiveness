@@ -21,7 +21,6 @@ namespace TheForgiveness.Models
 
         public telefonoModel()
         {
-
         }
 
         public telefonoModel(int ID, int Telefono, int Persona)

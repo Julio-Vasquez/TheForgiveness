@@ -24,7 +24,6 @@ namespace TheForgiveness.Models
 
         public municipioModel()
         {
-
         }
 
         public municipioModel(int ID,string Municipio,int Departamento)

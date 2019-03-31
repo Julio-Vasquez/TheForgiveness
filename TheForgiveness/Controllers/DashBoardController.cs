@@ -10,13 +10,19 @@ namespace TheForgiveness.Controllers
     {
         private Util.Util util = new Util.Util();
         // GET: Profile
+        [HttpGet]
         public ActionResult Index()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
             {
-                ViewBag.dinMen = util.getMenu(Session["username"].ToString());
-                ViewBag.Rol = util.getRole(Session["username"].ToString());
-                if (ViewBag.dinMen.Rows.Count > 0)
+                Services.menuService menu = new Services.menuService();
+                Services.rolService rol = new Services.rolService();
+
+                Session["Role"] = rol.getRole(Session["username"].ToString());
+                Session["dinMenu"] = menu.getMenu(Session["username"].ToString());
+
+                System.Data.DataTable dt = Session["dinMenu"] as System.Data.DataTable;
+                if (dt.Rows.Count >0)
                 {
                     return View();
                 }
@@ -28,34 +34,30 @@ namespace TheForgiveness.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult Crearstudent()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
-                ViewBag.dinMen = util.getMenu(Session["username"].ToString());
-                ViewBag.Rol = util.getRole(Session["username"].ToString());
+            { 
                 return View();
             }
             else
             {
                 return RedirectToAction("Error404", "Shared");
             }
-
         }
 
+        [HttpGet]
         public ActionResult CreateStudent()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
             {
-                ViewBag.dinMen = util.getMenu(Session["username"].ToString());
-                ViewBag.Rol = util.getRole(Session["username"].ToString());
                 return View();
             }
             else
             {
                 return RedirectToAction("Error404", "Shared");
             }
-
         }
     }
 }

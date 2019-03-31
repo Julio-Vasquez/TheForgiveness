@@ -9,7 +9,7 @@ namespace TheForgiveness.Models
 {
     public class usuarioModel
     {
-        public int ID { get; set; }
+        public  int ID { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Su Usuario:")]
@@ -20,15 +20,14 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Su contraseña:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
         [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 8)]
         [DataType(DataType.Password)]
         public string PassWord { get; set; }
 
         public usuarioModel()
         {
-
         }
+
         public usuarioModel(string UserName, string PassWord)
         {
             this.UserName = UserName;
@@ -41,10 +40,5 @@ namespace TheForgiveness.Models
             this.UserName = UserName;
             this.PassWord = PassWord;
         }
-
-
     }
-
-
-
 }

@@ -18,7 +18,6 @@ namespace TheForgiveness.Controllers
         {
             ViewBag.departamento = ds.queryDepartamento();
             ViewBag.municipio = ms.queryMunicipio();
-            basic();
             return View();
         }
 
@@ -31,17 +30,10 @@ namespace TheForgiveness.Controllers
             }
             else
             {
-                basic();
                 ViewBag.departamento = ds.queryDepartamento();
                 ViewBag.municipio = ms.queryMunicipio();
                 return View(school);
             }
-        }
-
-        private void basic()
-        {
-            ViewBag.dinMen = util.getMenu(Session["username"].ToString());
-            ViewBag.Rol = util.getRole(Session["username"].ToString());
         }
     }
 }

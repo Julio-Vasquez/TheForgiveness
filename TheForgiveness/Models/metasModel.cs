@@ -21,7 +21,6 @@ namespace TheForgiveness.Models
 
         public metasModel()
         {
-
         }
 
         public metasModel(string Meta,int Escenario)

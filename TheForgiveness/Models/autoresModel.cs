@@ -36,8 +36,7 @@ namespace TheForgiveness.Models
         public string SegApellido { get; set; }
 
         public autoresModel()
-        {
-            
+        {   
         }
 
         public autoresModel(string PriNombre, string SegNombre, string PriApellido, string SegApellido)

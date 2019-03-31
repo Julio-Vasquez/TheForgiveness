@@ -185,7 +185,9 @@
     <Compile Include="Services\colegioService.cs" />
     <Compile Include="Services\departamentoService.cs" />
     <Compile Include="Services\generoService.cs" />
+    <Compile Include="Services\menuService.cs" />
     <Compile Include="Services\municipioService.cs" />
+    <Compile Include="Services\rolService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />
     <Compile Include="Util\Email.cs" />
@@ -212,6 +214,7 @@
     <Content Include="Assets\Img\SignUp\bg.jpeg" />
     <Content Include="Assets\Img\SignUp\heart.ico" />
     <Content Include="Assets\Img\SignUp\house.ico" />
+    <Content Include="Assets\Js\Active.js" />
     <Content Include="Assets\Js\DashBoardP\bootstrap.min.js" />
     <Content Include="Assets\Js\DashBoardP\custom.min.js" />
     <Content Include="Assets\Js\DashBoardP\jquery.steps.min.js" />

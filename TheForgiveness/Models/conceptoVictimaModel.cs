@@ -9,7 +9,6 @@ namespace TheForgiveness.Models
 {
     public class conceptoVictimaModel
     {
-
         public int Victimologia { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
@@ -26,10 +25,8 @@ namespace TheForgiveness.Models
         [DataType(DataType.Text)]
         public string ConceptoFinal { get; set; }
 
-
         public conceptoVictimaModel()
         {
-
         }
 
         public conceptoVictimaModel(int Victimologia, string ConceptoInicial)
@@ -45,6 +42,5 @@ namespace TheForgiveness.Models
             this.ConceptoInicial = ConceptoInicial;
             this.ConceptoFinal = ConceptoFinal;
         }
-
     }
 }

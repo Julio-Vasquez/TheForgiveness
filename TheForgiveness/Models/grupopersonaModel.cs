@@ -21,7 +21,6 @@ namespace TheForgiveness.Models
 
         public grupopersonaModel()
         {
-
         }
 
         public grupopersonaModel(int Grupo, int Estudiante, string CodigoEstudiante)

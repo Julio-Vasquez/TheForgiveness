@@ -50,7 +50,6 @@ namespace TheForgiveness.Models
         [DataType(DataType.Date)]
         public string FechaNacimiento { get; set; }
 
-
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Seleccione El Genero")]
         public int Genero { get; set; }
@@ -65,7 +64,6 @@ namespace TheForgiveness.Models
 
         public personaModel()
         {
-
         }
 
         public personaModel(int ID, long NumIdentificacion, string PriNombre, string SegNombre, string PriApellido, string SegApellido, string FechaNacimiento, int Genero, int TipoDocumento, int Municipio)

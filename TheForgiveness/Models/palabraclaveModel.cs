@@ -18,6 +18,10 @@ namespace TheForgiveness.Models
         public string Palabra { get; set; }
         public int SubCategoria { get; set; }
 
+        public palabraclaveModel()
+        {
+        }
+
         public palabraclaveModel(int ID,string Palabra,int SubCategoria)
         {
             this.ID = ID;

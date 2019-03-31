@@ -20,7 +20,6 @@ namespace TheForgiveness.Models
 
         public rolModel()
         {
-
         }
 
         public rolModel(int ID, string Rol)

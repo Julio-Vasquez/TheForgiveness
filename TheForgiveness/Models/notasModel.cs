@@ -36,7 +36,6 @@ namespace TheForgiveness.Models
 
         public notasModel()
         {
-
         }
 
         public notasModel(int ID, int Nota, DateTime FechaNota, string Concepto, int Grupo, int Estudiante)

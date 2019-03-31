@@ -20,7 +20,6 @@ namespace TheForgiveness.Models
 
         public tipodocumentoModel()
         {
-
         }
 
         public tipodocumentoModel(int ID, string TipoDocumento)

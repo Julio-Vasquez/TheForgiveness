@@ -98,7 +98,6 @@ LoadingElementDuration: esta propiedad se utiliza para definir la duración en m
             */
 
 
-
         [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Seleccione pais!")]
         [RegularExpression(@"/^[0-9]+$/", ErrorMessage ="ERR")]

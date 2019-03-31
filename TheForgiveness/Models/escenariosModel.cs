@@ -26,7 +26,6 @@ namespace TheForgiveness.Models
 
         public escenariosModel()
         {
-
         }
 
         public escenariosModel(string Nombre, string Link, int SubCategoria)
@@ -43,6 +42,5 @@ namespace TheForgiveness.Models
             this.Link = Link;
             this.SubCategoria = SubCategoria;
         }
-
     }
 }

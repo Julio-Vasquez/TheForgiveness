@@ -27,7 +27,6 @@ namespace TheForgiveness.Models
 
         public experienciaModel()
         {
-
         }
 
         public experienciaModel(DateTime FechaExperiencia, string Experiencia, int Persona, int Municipio)

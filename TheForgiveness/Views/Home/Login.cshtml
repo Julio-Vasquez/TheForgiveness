@@ -23,6 +23,7 @@
                 <br>
                 @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @accept_charset = "utf-8" }))
                 {
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
                         <label class="lb-bold">Nombre de Usuario:</label>
                         <div class="wrap-input" data-validate="UserName is required">
@@ -58,7 +59,7 @@
                 </div>
                 <div class="NoUser Nopassword">
                     <span><b>@Html.ActionLink("¿Olvidaste tu constraseña?", "ResetPassword", "Home", new { @class = "np" })</b></span>
-                    
+
                 </div>
                 <br>
             </div>

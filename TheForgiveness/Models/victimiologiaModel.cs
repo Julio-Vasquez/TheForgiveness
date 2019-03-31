@@ -25,7 +25,6 @@ namespace TheForgiveness.Models
 
         public victimiologiaModel()
         {
-
         }
 
         public victimiologiaModel(string Nombre,string Descripcion)

@@ -21,7 +21,6 @@ namespace TheForgiveness.Models
 
         public conceptoautoresModel()
         {
-
         }
 
         public conceptoautoresModel(int AñoPublicacion, int Concepto, int Autor)

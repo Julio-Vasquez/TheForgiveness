@@ -20,7 +20,6 @@ namespace TheForgiveness.Models
 
         public paisModel()
         {
-
         }
 
         public paisModel(string Pais)

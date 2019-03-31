@@ -23,7 +23,6 @@ namespace TheForgiveness.Models
 
         public colegioModel()
         {
-
         }
 
         public colegioModel(string Nombre, int Municipio)

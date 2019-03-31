@@ -9,10 +9,8 @@ namespace TheForgiveness.Models
 {
     public class studentModel
     {
-
         //username = email
         //password = numIdentificacion
-
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Numero De Identificacion")]
         [RegularExpression(@"/^[0-9]+$/", ErrorMessage = "SOlo Numeros")]
@@ -68,5 +66,21 @@ namespace TheForgiveness.Models
         [DisplayName("Seleccione El Municipio")]
         public int Municipio { get; set; }
 
+        public studentModel()
+        {
+        }
+
+        public studentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email, int genero, int municipio)
+        {
+            NumIdentificacion = numIdentificacion;
+            PriNombre = priNombre;
+            SegNombre = segNombre;
+            PriApellido = priApellido;
+            SegApellido = segApellido;
+            FechaNacimiento = fechaNacimiento;
+            Email = email;
+            Genero = genero;
+            Municipio = municipio;
+        }
     }
 }

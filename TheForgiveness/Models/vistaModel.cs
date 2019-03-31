@@ -27,7 +27,6 @@ namespace TheForgiveness.Models
 
         public vistaModel()
         {
-
         }
 
         public vistaModel(int ID, string Titulo, string Icon)
