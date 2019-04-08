@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.5073.29922, Culture=neutral, PublicKeyToken=6bcd409ee6bc9292, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt-Official.0.1.109\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -195,20 +198,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Css\404\Style.css" />
+    <Content Include="Assets\Css\DashBoard\Icons.css" />
     <Content Include="Assets\Css\DashBoard\jquery.steps.min.css" />
     <Content Include="Assets\Css\DashBoard\steps.min.css" />
     <Content Include="Assets\Css\DashBoard\bootstrap.min.css" />
     <Content Include="Assets\Css\Login\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
     <Content Include="Assets\Css\Login\validation.css" />
+    <Content Include="Assets\Css\Profile\profile.css" />
     <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
     <Content Include="Assets\Img\DashBoard\d3.jpg" />
     <Content Include="Assets\Img\DashBoard\favicon.png" />
-    <Content Include="Assets\Img\DashBoard\logo-icon.png" />
-    <Content Include="Assets\Img\DashBoard\logo-text.png" />
+    <Content Include="Assets\Img\DashBoard\logo.PNG" />
     <Content Include="Assets\Img\Login\Login.png" />
     <Content Include="Assets\Img\SignUp\basica.gif" />
     <Content Include="Assets\Img\SignUp\bg.jpeg" />
@@ -226,6 +230,7 @@
     <Content Include="Assets\Js\DashBoard\wizard.js" />
     <Content Include="Assets\Js\Login\validation.js" />
     <Content Include="Assets\Js\Login\validationFunctions.js" />
+    <Content Include="Assets\Js\Menu\menuOcult.js" />
     <Content Include="Assets\Js\SignUp\bootstrap.min.js" />
     <Content Include="Assets\Js\SignUp\jquery-2.2.4.min.js" />
     <Content Include="Assets\Js\SignUp\jquery.bootstrap.wizard.min.js" />
@@ -241,6 +246,7 @@
     <Content Include="Assets\Js\Validation\jquery.validate.unobtrusive.min.js" />
     <Content Include="Assets\Js\Validation\respond.js" />
     <Content Include="Assets\Js\Validation\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="LICENSE.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -360,7 +366,6 @@
     <Content Include="Assets\Icon\Department.svg" />
     <Content Include="Assets\Icon\Diploma.svg" />
     <Content Include="Assets\Icon\Evaluation.svg" />
-    <Content Include="Assets\Icon\experiencia-del-usuario.svg" />
     <Content Include="Assets\Icon\ForgivenessAuthor.svg" />
     <Content Include="Assets\Icon\ForgivenessStudent.svg" />
     <Content Include="Assets\Icon\IDocument.svg" />
@@ -411,6 +416,28 @@
     <Content Include="Assets\Icon\UpdateUser.svg" />
     <Content Include="Assets\Icon\UpdateVictimology.svg" />
     <Content Include="Assets\Icon\Victimology.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\CreateGroup.svg" />
+    <Content Include="Assets\Icon\DeleteGroup.svg" />
+    <Content Include="Assets\Icon\Group.svg" />
+    <Content Include="Assets\Icon\SeeGroup.svg" />
+    <Content Include="Assets\Icon\UpdateGroup.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\Experience.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\Logout.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\k23f8.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\LogoIcon.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\menu.svg" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

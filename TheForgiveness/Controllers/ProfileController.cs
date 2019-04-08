@@ -21,11 +21,7 @@ namespace TheForgiveness.Controllers
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
             {
-                if (ViewBag.dinMen.Rows.Count > 0)
-                {
-                    return View();
-                }
-                return RedirectToAction("NoFound", "Shared");
+                return View();
             }
             else
             {

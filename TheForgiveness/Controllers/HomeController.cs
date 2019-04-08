@@ -30,7 +30,6 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Models.usuarioModel um)
         {
-
             if (us.login(um))
             {
                 Session["username"] = um.UserName;
@@ -42,7 +41,6 @@ namespace TheForgiveness.Controllers
             {
                 return View();
             }
-
         }
 
         [HttpGet]

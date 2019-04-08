@@ -1,0 +1,81 @@
+﻿.bg-img-traslucida {
+    background: url(https://extraimage.net/images/2016/09/21/2e8a805e355a92eeeed5e9bf2d2112ec.jpg) no-repeat center top;
+    background-size: cover;
+    min-height: 750px;
+    position: relative;
+}
+
+.cont-right h1 {
+    font-size: 2.8em;
+    color: #fff;
+    margin: 0.5em 0 0;
+    font-weight: bold;
+}
+
+.cont-right h1 {
+    font-size: 3.2em;
+    color: #FFF;
+    background: #00a78e;
+    display: inline-block;
+    padding: .5em 1.5em;
+    position: relative;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+    .cont-right h1:before {
+        width: 0;
+        height: 0;
+        position: absolute;
+        content: '';
+        bottom: -15px;
+        left: 12px;
+        border-style: solid;
+        border-width: 18px 15px 0 16px;
+        border-color: #00a78e transparent transparent transparent;
+    }
+
+.cont-right h6 {
+    font-size: 3em;
+    color: #C7C7C7;
+    margin-top: 0.8em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.banner {
+    background-color: rgba(23, 20, 20, 0.58);
+    padding: 55px 75px 55px 75px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+}
+
+
+.cont-left {
+    float: right;
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+
+.cont-right {
+    float: left;
+}
+ul[class~="address"] {
+    border-top: 2px solid #fff;
+    padding-top:4px;
+}
+
+ul, ol, li {
+    list-style:none;
+    text-decoration:none;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .cont-right {
+        float: right;
+    }
+
+    .cont-left {
+        float: left;
+    }
+
+}
