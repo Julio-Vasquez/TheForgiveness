@@ -11,27 +11,27 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Primier Nombre:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [MinLength(10, ErrorMessage = "Minimo")]
         [DataType(DataType.Text)]
         public string PriNombre { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Segundo Nombre:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string SegNombre { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Primer Apellido:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string PriApellido { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Segundo Apellido:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string SegApellido { get; set; }
 
@@ -44,6 +44,7 @@ namespace TheForgiveness.Models
             this.PriNombre = PriNombre;
             this.SegNombre = SegNombre;
             this.PriApellido = PriApellido;
+            this.SegApellido = SegApellido;
         }
 
         public autoresModel(int ID, string PriNombre,string SegNombre,string PriApellido,string SegApellido)
@@ -52,6 +53,7 @@ namespace TheForgiveness.Models
             this.PriNombre = PriNombre;
             this.SegNombre = SegNombre;
             this.PriApellido = PriApellido;
+            this.SegApellido = SegApellido;
         }
     }
 }

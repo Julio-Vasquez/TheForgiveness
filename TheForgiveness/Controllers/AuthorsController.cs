@@ -10,10 +10,17 @@ namespace TheForgiveness.Controllers
     {
         private Util.Util util = new Util.Util();
         // GET: Profile
-
+        [HttpGet]
         public ActionResult CreateAuthors()
         {
-            return View();
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Error404", "Shared");
+            }
         }
 
         public ActionResult UpdateAuthors()
