@@ -9,11 +9,19 @@ namespace TheForgiveness.Controllers
     public class ProfileController : Controller
     {
         private Util.Util util = new Util.Util();
+        private Services.usuarioService us = new Services.usuarioService();
         // GET: Profile
         [HttpGet]
         public ActionResult ChangePassword()
         {
-            return View();
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Error404", "Shared");
+            }
         }
 
         [HttpGet]
@@ -47,6 +55,19 @@ namespace TheForgiveness.Controllers
             return View();
         }
 
-        
+        #region POSTMethod
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassword(Models.PasswordModel pm)
+        {
+            if (ModelState.IsValid && us.ResetPassWordUser(pm, Session["username"].ToString()))
+            {
+                return RedirectToAction("Profile");
+            }
+            return View();
+        }
+
+        #endregion POSTMethod
+
     }
 }

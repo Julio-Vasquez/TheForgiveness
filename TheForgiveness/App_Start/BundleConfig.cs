@@ -32,6 +32,8 @@ namespace TheForgiveness
                 "~/Assets/Js/Validation/jquery.unobtrusive-ajax.min.js",
                 "~/Assets/Js/Validation/jquery.validate.unobtrusive.min.js"
                 ));
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

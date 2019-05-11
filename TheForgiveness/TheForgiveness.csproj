@@ -171,6 +171,7 @@
     <Compile Include="Models\notasModel.cs" />
     <Compile Include="Models\paisModel.cs" />
     <Compile Include="Models\palabraclaveModel.cs" />
+    <Compile Include="Models\PasswordModel.cs" />
     <Compile Include="Models\permisoModel.cs" />
     <Compile Include="Models\personaModel.cs" />
     <Compile Include="Models\plantillaModel.cs" />
@@ -205,6 +206,7 @@
     <Content Include="Assets\Css\Login\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
     <Content Include="Assets\Css\Login\validation.css" />
+    <Content Include="Assets\Css\Profile\ChangePassword.css" />
     <Content Include="Assets\Css\Profile\profile.css" />
     <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
@@ -438,6 +440,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icon\menu.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\Author.svg" />
+    <Content Include="Assets\Icon\CreateAuthor.svg" />
+    <Content Include="Assets\Icon\DeleteAuthor.svg" />
+    <Content Include="Assets\Icon\SeeAuthor.svg" />
+    <Content Include="Assets\Icon\UpdateAuthor.svg" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

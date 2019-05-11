@@ -52,5 +52,10 @@ namespace TheForgiveness.Services
             return MySQL.Querys("select ID from usuario where UserName = '" + un + "'").Rows.Count > 0;
         }
 
+        public bool ResetPassWordUser(Models.PasswordModel pm, string un)
+        {
+            return MySQL.Operations("CALL `CambiarContraseña`('"+pm.RepeatPassWord+"','"+un+"')");
+        }
+
     }
 }
