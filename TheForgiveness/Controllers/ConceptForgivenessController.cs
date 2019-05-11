@@ -6,26 +6,22 @@ using System.Web.Mvc;
 
 namespace TheForgiveness.Controllers
 {
-    public class AuthorsController : Controller
+    public class ConceptForgivenessController : Controller
     {
-        private Util.Util util = new Util.Util();
-        // GET: Profile
-
-        public ActionResult CreateAuthors()
+        // GET: ConceptForgiveness
+        public ActionResult CreateConcept()
         {
             return View();
         }
-
-        public ActionResult UpdateAuthors()
+        public ActionResult GetConcept()
         {
             return View();
         }
-
-        public ActionResult DeleteAuthors()
+        public ActionResult UpdateConcept()
         {
             return View();
         }
-        public ActionResult GetAuthors()
+        public ActionResult DeleteConcept()
         {
             return View();
         }
