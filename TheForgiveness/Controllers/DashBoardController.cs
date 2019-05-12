@@ -32,32 +32,6 @@ namespace TheForgiveness.Controllers
             {
                 return RedirectToAction("Error404", "Shared");
             }
-        }
-
-        [HttpGet]
-        public ActionResult Crearstudent()
-        {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-            { 
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
-        }
-
-        [HttpGet]
-        public ActionResult CreateStudent()
-        {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
-        }
+        } 
     }
 }
