@@ -8,6 +8,8 @@ namespace TheForgiveness.Controllers
 {
     public class ConceptForgivenessController : Controller
     {
+        private Util.Util util = new Util.Util();
+        private Services.ConceptoAutosServicios Authoressrv = new Services.ConceptoAutosServicios();
         // GET: ConceptForgiveness
         public ActionResult CreateConcept()
         {
@@ -15,7 +17,9 @@ namespace TheForgiveness.Controllers
         }
         public ActionResult GetConcept()
         {
-            return View();
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+                return View(Authoressrv.listConceptAut());
+            return RedirectToAction("Error404", "Shared");
         }
         public ActionResult UpdateConcept()
         {

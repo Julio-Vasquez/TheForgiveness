@@ -14,7 +14,7 @@ namespace TheForgiveness.Models
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Nombre del Colegio:")]
         [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 8)]
-        [DataType(DataType.Password)]
+        [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
@@ -31,7 +31,7 @@ namespace TheForgiveness.Models
             this.Municipio = Municipio;
         }
 
-        public colegioModel(int ID, string Nombre)
+        public colegioModel(int ID, string Nombre,int Municipio)
         {
             this.ID = ID;
             this.Nombre = Nombre;

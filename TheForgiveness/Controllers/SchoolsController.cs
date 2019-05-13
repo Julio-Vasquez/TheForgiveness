@@ -22,7 +22,9 @@ namespace TheForgiveness.Controllers
         }
         public ActionResult Getschools()
         {
-            return View();
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+                return View(schoolsrv.listSchools());
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpPost]

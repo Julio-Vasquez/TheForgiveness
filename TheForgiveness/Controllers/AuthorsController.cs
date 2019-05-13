@@ -9,6 +9,7 @@ namespace TheForgiveness.Controllers
     public class AuthorsController : Controller
     {
         private Util.Util util = new Util.Util();
+        private Services.autoresService Authoressrv = new Services.autoresService();
         // GET: Profile
         [HttpGet]
         public ActionResult CreateAuthors()
@@ -34,7 +35,9 @@ namespace TheForgiveness.Controllers
         }
         public ActionResult GetAuthors()
         {
-            return View();
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+                return View(Authoressrv.listAuthors());
+            return RedirectToAction("Error404", "Shared");
         }
     }
 }

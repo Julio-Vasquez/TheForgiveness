@@ -15,16 +15,16 @@ namespace TheForgiveness.Models
         [DisplayName("Fecha De Publicacion")]
         [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
         [DataType(DataType.Date)]
-        public int AñoPublicacion { get; set; }
-        [DisplayName("Nombre del Concepto:")]
+        public string AñoPublicacion { get; set; }
+        [DisplayName("Titulo del Concepto:")]
         [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string Titulo { get; set; }
 
         [DisplayName("Descripcion del Concepto:")]
         [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string Descripcion { get; set; }
         public int Autor { get; set; }
@@ -33,7 +33,7 @@ namespace TheForgiveness.Models
         {
         }
 
-        public conceptoautoresModel(int AñoPublicacion, string Titulo, string Descripcion, int Autor)
+        public conceptoautoresModel(string AñoPublicacion, string Titulo, string Descripcion, int Autor)
         {
             this.AñoPublicacion = AñoPublicacion;
             this.Titulo = Titulo;
@@ -41,7 +41,7 @@ namespace TheForgiveness.Models
             this.Autor = Autor;
         }
 
-        public conceptoautoresModel(int ID, int AñoPublicacion, int Concepto, int Autor)
+        public conceptoautoresModel(int ID, string AñoPublicacion, string Titulo, string Descripcion, int Autor)
         {
             this.ID = ID;
             this.AñoPublicacion = AñoPublicacion;
