@@ -1,0 +1,97 @@
+﻿@model TheForgiveness.Models.studentModel
+
+@{
+    ViewBag.Title = "DeleteStudent";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>DeleteStudent</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>studentModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumIdentificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumIdentificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SegNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SegNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SegApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SegApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

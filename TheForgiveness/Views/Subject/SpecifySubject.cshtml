@@ -1,0 +1,27 @@
+﻿@model TheForgiveness.Models.asignaturaModel
+
+@{
+    ViewBag.Title = "SpecifySubject";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>SpecifySubject</h2>
+
+<div>
+    <h4>asignaturaModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "UpdateSubject", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "GetSubjects")
+</p>
