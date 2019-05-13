@@ -158,6 +158,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\MunicipalityController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SchoolsController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
@@ -532,6 +533,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Document\SpecifyDocument.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Municipality\CreateMunicipality.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Municipality\DeleteMunicipality.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Municipality\GetMunicipalities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Municipality\SpecifyMunicipality.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Municipality\UpdateMunicipality.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

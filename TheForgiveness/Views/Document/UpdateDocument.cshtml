@@ -7,7 +7,7 @@
 
 <h2>UpdateDocument</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateDocument","Document",FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     

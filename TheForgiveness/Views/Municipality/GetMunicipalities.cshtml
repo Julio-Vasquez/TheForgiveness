@@ -1,0 +1,55 @@
+﻿@model IEnumerable<TheForgiveness.Models.municipioModel>
+
+@{
+    ViewBag.Title = "GetMunicipalities";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>GetMunicipalities</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateMunicipality")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Indice
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </th>
+
+        <th>
+            Departamento
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipio)
+            </td>
+            <td>
+                @foreach (var item2 in ViewBag.Departamentos.Rows)
+                {
+                    var x = "";
+                    if (item2["ID"] == item.DepartamentoFK)
+                    {
+                        x = item2["Departamento"];
+                    }
+                    @x
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "UpdateMunicipality", new { id = item.ID }) |
+                @Html.ActionLink("Details", "SpecifyMunicipality", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "DeleteMunicipality", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

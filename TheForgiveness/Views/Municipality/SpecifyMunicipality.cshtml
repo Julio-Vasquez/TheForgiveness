@@ -1,0 +1,37 @@
+﻿@model TheForgiveness.Models.municipioModel
+
+@{
+    ViewBag.Title = "SpecifyMunicipality";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>SpecifyMunicipality</h2>
+
+<div>
+    <h4>municipioModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartamentoFK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartamentoFK)
+        </dd>
+        <dd>
+            @ViewBag.Departamento
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

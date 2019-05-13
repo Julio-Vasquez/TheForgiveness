@@ -1,0 +1,41 @@
+﻿@model TheForgiveness.Models.municipioModel
+
+@{
+    ViewBag.Title = "DeleteMunicipality";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>DeleteMunicipality</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>municipioModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartamentoFK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartamentoFK)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "GetMunicipalities")
+        </div>
+    }
+</div>
