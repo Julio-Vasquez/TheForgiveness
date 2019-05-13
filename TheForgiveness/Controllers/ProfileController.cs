@@ -23,7 +23,25 @@ namespace TheForgiveness.Controllers
         public ActionResult Profile()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
+            {
+                Services.perfilServices ps = new Services.perfilServices();
+                var res = ps.myData(Convert.ToString(Session["username"]));
+                return View(
+                        new Models.PerfilModel(
+                                long.Parse(res["Identificación"].ToString()),
+                                res["Primer_Nombre"].ToString(),
+                                res["Segundo_Nombre"].ToString(),
+                                res["Primer_Apellido"].ToString(),
+                                res["Segundo_Apellido"].ToString(),
+                                res["FechaDeNacimeinto"].ToString(),
+                                int.Parse(res["Edad"].ToString()),
+                                res["Genero"].ToString(),
+                                res["Tipo_Documento"].ToString(),
+                                res["Municipio"].ToString()
+                            )
+                    );
+            }
+                
             return RedirectToAction("Error404", "Shared");
         }
 

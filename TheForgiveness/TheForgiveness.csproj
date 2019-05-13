@@ -188,6 +188,7 @@
     <Compile Include="Models\paisModel.cs" />
     <Compile Include="Models\palabraclaveModel.cs" />
     <Compile Include="Models\PasswordModel.cs" />
+    <Compile Include="Models\PerfilModel.cs" />
     <Compile Include="Models\permisoModel.cs" />
     <Compile Include="Models\personaModel.cs" />
     <Compile Include="Models\plantillaModel.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Services\generoService.cs" />
     <Compile Include="Services\menuService.cs" />
     <Compile Include="Services\municipioService.cs" />
+    <Compile Include="Services\perfilServices.cs" />
     <Compile Include="Services\rolService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />

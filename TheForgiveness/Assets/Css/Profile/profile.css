@@ -80,3 +80,11 @@ ul, ol, li {
 
 }
 
+.header-left {
+    padding: 3em;
+}
+
+.header-left img {
+    width: 100%;
+    margin-top: 50px;
+}

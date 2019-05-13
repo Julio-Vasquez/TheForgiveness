@@ -1,4 +1,4 @@
-﻿
+﻿@model TheForgiveness.Models.PerfilModel
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Views/Shared/DashBoard.cshtml";
@@ -9,52 +9,79 @@
 
 
 <div class="bg-img-traslucida">
-    <div class="banner">
-        <div class="col-md-4 col-xs-10 col-xs-offset-1  col-sm-10 col-sm-offset-1 cont-left">
-            
-        </div>
-        <div class="col-md-8 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 cont-right">
+    <div class="banner row">
+
+        <div class="col-md-6 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 cont-right">
             <h1>Hi !</h1>
-            <h6>UX & UI DESIGNER</h6>
+            <h6>@Html.DisplayFor(model => model.PriNombre) @Html.DisplayFor(model => model.PriApellido)</h6>
             <ul class="address">
+               <h3>Tus Datos</h3>
                 <li>
                     <ul class="address-text">
-                        <li><b>NAME</b></li>
-                        <li>I'M ROB LEE</li>
+                        <li><b>@Html.DisplayNameFor(model => model.NumIdentificacion)</b></li>
+                        <li> @Html.DisplayFor(model => model.NumIdentificacion)</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b>D.O.B</b></li>
-                        <li>23-06-1980</li>
+                        <li><b>@Html.DisplayNameFor(model => model.PriNombre)</b></li>
+                        <li>@Html.DisplayFor(model => model.PriNombre)</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b>PHONE </b></li>
-                        <li>+00 111 222 3333</li>
+                        <li><b>@Html.DisplayNameFor(model => model.SegNombre)</b></li>
+                        <li>@Html.DisplayFor(model => model.SegNombre)</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b>ADDRESS </b></li>
-                        <li>756 Global Place,New York.</li>
+                        <li><b>@Html.DisplayNameFor(model => model.PriApellido)</b></li>
+                        <li>@Html.DisplayFor(model => model.PriApellido)</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b>E-MAIL </b></li>
-                        <li><a href="mailto:example@mail.com"> mail@example.com</a></li>
+                        <li><b>@Html.DisplayNameFor(model => model.SegApellido)</b></li>
+                        <li> @Html.DisplayFor(model => model.SegApellido)</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b>WEBSITE </b></li>
-                        <li><a href="http://w3layouts.com">www.myresume.com</a></li>
+                        <li><b> @Html.DisplayNameFor(model => model.FechaNacimiento)</b></li>
+                        <li>@Html.DisplayFor(model => model.FechaNacimiento)</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>@Html.DisplayNameFor(model => model.Edad)</b></li>
+                        <li> @Html.DisplayFor(model => model.Edad)</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>@Html.DisplayNameFor(model => model.Genero)</b></li>
+                        <li>@Html.DisplayFor(model => model.Genero)</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b>@Html.DisplayNameFor(model => model.TipoDocumento)</b></li>
+                        <li>@Html.DisplayFor(model => model.TipoDocumento)</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="address-text">
+                        <li><b> @Html.DisplayNameFor(model => model.Municipio)</b></li>
+                        <li>@Html.DisplayFor(model => model.Municipio)</li>
                     </ul>
                 </li>
             </ul>
         </div>
+        <div class="col-md-6 header-left">
+            <img src="https://img.elcomercio.pe/files/article_content_ec_fotos/uploads/2019/05/02/5ccbb8c670cf5.jpeg" alt="" id="imgprofile">
+        </div>
         <div class="clearfix"></div>
     </div>
 </div>
+
