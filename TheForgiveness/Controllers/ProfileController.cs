@@ -15,26 +15,16 @@ namespace TheForgiveness.Controllers
         public ActionResult ChangePassword()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
         public ActionResult Profile()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
@@ -61,9 +51,7 @@ namespace TheForgiveness.Controllers
         public ActionResult ChangePassword(Models.PasswordModel pm)
         {
             if (ModelState.IsValid && us.ResetPassWordUser(pm, Session["username"].ToString()))
-            {
                 return RedirectToAction("Profile");
-            }
             return View();
         }
 

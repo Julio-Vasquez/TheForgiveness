@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TheForgiveness.Models.tipodocumentoModel>
+
+@{
+    ViewBag.Title = "GetDocuments";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>GetDocuments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateDocument")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDocumento)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDocumento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "UpdateDocument", new { id=item.ID }) |
+            @Html.ActionLink("Details", "SpecifyDocument", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DeleteDocument", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

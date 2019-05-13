@@ -13,7 +13,6 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Nombre Del Tipo De Documento")]
-        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ]+$/",ErrorMessage ="No se admiten NUmeros")]
         [StringLength(100, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 6)]
         [DataType(DataType.Text)]
         public string TipoDocumento { get; set; }
@@ -28,7 +27,7 @@ namespace TheForgiveness.Models
             this.TipoDocumento = TipoDocumento;
         }
 
-        public tipodocumentoModel(string Genero)
+        public tipodocumentoModel(string TipoDocumento)
         {
             this.TipoDocumento = TipoDocumento;
         }

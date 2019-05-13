@@ -37,10 +37,7 @@ namespace TheForgiveness.Controllers
                 Session["idAccount"] = us.idcuenta(um.UserName);
                 return RedirectToAction("Index", "DashBoard");
             }
-            else
-            {
                 return View();
-            }
         }
 
         [HttpGet]

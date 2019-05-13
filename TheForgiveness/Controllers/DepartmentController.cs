@@ -22,54 +22,41 @@ namespace TheForgiveness.Controllers
                 dpm.Pais = dps.Paises();
                 return View(dpm);
             }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
 
         [HttpGet]
-        public ActionResult UpdateDepartment(int id)
+        public ActionResult UpdateDepartment(int? id)
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
             {
-                var res = dps.Department(id);
-                Models.departamentoModel dpm = new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString()));
-                dpm.Pais = dps.Paises();
-                return View(dpm);
+                if (id != null)
+                {
+                    var res = dps.Department(id);
+                    Models.departamentoModel dpm = new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString()));
+                    dpm.Pais = dps.Paises();
+                    return View(dpm);
+                }
+                return RedirectToAction("GetDeparments");
             }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
         public ActionResult GetDepartments()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
-
                 return View(dps.listDepartment());
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
         public ActionResult DeleteDepartment()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
@@ -77,21 +64,15 @@ namespace TheForgiveness.Controllers
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
             {
-                if (id == null)
-                {
-                    return RedirectToAction("GetDepartments");
-                }
-                else
+                if (id != null)
                 {
                     var res = dps.Department(id);
                     ViewBag.Pais = dps.Pais(int.Parse(res["Pais"].ToString()));
                     return View(new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString())));
                 }
+                return RedirectToAction("GetDepartments");
             }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         #endregion
@@ -119,7 +100,6 @@ namespace TheForgiveness.Controllers
                 return RedirectToAction("Index", "DashBoard");
             return View(dpm);
         }
-
         #endregion
     }
 }

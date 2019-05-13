@@ -15,65 +15,40 @@ namespace TheForgiveness.Controllers
         public ActionResult CreateStudent()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
         public ActionResult UpdateStudent()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
         public ActionResult GetStudent()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
         public ActionResult DeleteStudent()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
         public ActionResult SpecifyStudent()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Error404", "Shared");
-            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         #endregion

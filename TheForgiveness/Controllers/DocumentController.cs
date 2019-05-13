@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace TheForgiveness.Controllers
 {
-    public class SubjectController : Controller
+    public class DocumentController : Controller
     {
         private Util.Util util = new Util.Util();
-        private Services.asignaturaService asigs = new Services.asignaturaService();
+        private Services.tipoDocumentoService dps = new Services.tipoDocumentoService();
 
-        // GET: Subject
-        #region HTTPMETHOD GET
+        #region HTTPMethod Get
+        // GET: document
         [HttpGet]
-        public ActionResult CreateSubject()
+        public ActionResult CreateDocument()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
                 return View();
@@ -23,67 +23,75 @@ namespace TheForgiveness.Controllers
 
 
         [HttpGet]
-        public ActionResult UpdateSubject(int id)
-        {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
-                var res = asigs.Subject(id);
-                return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
-            }
-            return RedirectToAction("Error404", "Shared");
-        }
-
-        [HttpGet]
-        public ActionResult GetSubjects()
-        {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View(asigs.listSubject());
-            return RedirectToAction("Error404", "Shared");
-        }
-
-        [HttpGet]
-        public ActionResult DeleteSubject()
-        {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
-        }
-
-        [HttpGet]
-        public ActionResult SpecifySubject(int? id)
+        public ActionResult UpdateDocument(int? id)
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))
             {
                 if (id != null)
                 {
-                    var res = asigs.Subject(id);
-                    return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
+                    var res = dps.Documents(id);
+                    Models.tipodocumentoModel dpm = new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString());
+                    return View(dpm);
                 }
-                return RedirectToAction("GetSubjects");
+                return RedirectToAction("GetDocuments");
             }
             return RedirectToAction("Error404", "Shared");
         }
+
+        [HttpGet]
+        public ActionResult GetDocuments()
+        {
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+                return View(dps.listDocument());
+            return RedirectToAction("Error404", "Shared");
+        }
+
+        [HttpGet]
+        public ActionResult DeleteDocument()
+        {
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+                return View();
+            return RedirectToAction("Error404", "Shared");
+        }
+
+        [HttpGet]
+        public ActionResult SpecifyDocument(int? id)
+        {
+            if (util.testcontrol(Convert.ToString(Session["control"])))
+            {
+                if (id != null)
+                {
+                    var res = dps.Documents(id);
+                    return View(new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
+                }
+                return RedirectToAction("GetDocuments");
+            }
+            return RedirectToAction("Error404", "Shared");
+        }
+
         #endregion
 
-        #region HTTPMETHOD POST
+
+        #region HTTP METHOD POST 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateSubject(Models.asignaturaModel asig)
+        public ActionResult CreateDocument(Models.tipodocumentoModel dpm)
         {
             if (ModelState.IsValid)
-                if (asigs.CreateSubject(asig))
+            {
+                if (dps.CreateDocument(dpm))
                     return RedirectToAction("Index", "DashBoard");
-            return View(asig);
+            }
+            return View(dpm);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateSubject(Models.asignaturaModel asign)
+        public ActionResult UpdateDocument(Models.tipodocumentoModel dpm, int id)
         {
-            if (ModelState.IsValid)
-                if (asigs.UpdateSubject(asign))
-                    return RedirectToAction("Index", "DashBoard");
-            return View(asign);
+            if (dps.UpdateDepartment(dpm))
+                return RedirectToAction("Index", "DashBoard");
+            return View(dpm);
         }
         #endregion
     }

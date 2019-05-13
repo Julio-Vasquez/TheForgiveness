@@ -1,0 +1,27 @@
+﻿@model TheForgiveness.Models.tipodocumentoModel
+
+@{
+    ViewBag.Title = "SpecifyDocument";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>SpecifyDocument</h2>
+
+<div>
+    <h4>tipodocumentoModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDocumento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDocumento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "UpdateDocument", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "GetDocuments")
+</p>
