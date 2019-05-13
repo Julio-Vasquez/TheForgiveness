@@ -20,7 +20,10 @@ namespace TheForgiveness.Controllers
             ViewBag.municipio = ms.queryMunicipio();
             return View();
         }
-
+        public ActionResult Getschools()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult CreateSchools(Models.colegioModel school) {
