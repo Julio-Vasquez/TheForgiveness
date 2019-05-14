@@ -11,7 +11,7 @@ namespace TheForgiveness.Services
 
         public bool createAuthores(Models.autoresModel Authors)
         {
-            return MySQL.Operations("CALL Insert_Colegio('" + Authors.PriNombre + "'," + Authors.SegNombre + ")");
+            return MySQL.Operations("CALL Insert_Autores('" + Authors.PriNombre + "','" + Authors.SegNombre + "','" + Authors.PriApellido + "','" + Authors.SegApellido + "')");
         }
         public IEnumerable<Models.autoresModel> listAuthors()
         {

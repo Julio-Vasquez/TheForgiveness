@@ -24,9 +24,16 @@ namespace TheForgiveness.Controllers
             }
         }
 
-        public ActionResult UpdateAuthors()
+        public ActionResult UpdateAuthors(int? id)
         {
-            return View();
+            //if (util.testcontrol(Convert.ToString(Session["control"]))) {
+            //    if (id != null) {
+            //        var res = Authoressrv.where()
+            //        return View(new Models.autoresModel(datos));
+            //    }
+            //    return RedirectToAction("GetAuthor");
+            //}
+           return RedirectToAction("Error404", "Shared");
         }
 
         public ActionResult DeleteAuthors()
@@ -38,6 +45,22 @@ namespace TheForgiveness.Controllers
             if (util.testcontrol(Convert.ToString(Session["control"])))
                 return View(Authoressrv.listAuthors());
             return RedirectToAction("Error404", "Shared");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateAuthors(Models.autoresModel am)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Authoressrv.createAuthores(am))
+                    return RedirectToAction("getAuthor");
+                else
+                    return View(am);
+            }
+            return View();
+                
+
         }
     }
 }

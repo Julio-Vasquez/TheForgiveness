@@ -13,25 +13,25 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Primier Nombre:")]
-        [MinLength(10, ErrorMessage = "Minimo")]
+        [MinLength(3, ErrorMessage = "Minimo")]
         [DataType(DataType.Text)]
         public string PriNombre { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Segundo Nombre:")]
-        [MinLength(10, ErrorMessage = "Minimo {1}")]
+        [MinLength(3, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string SegNombre { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Primer Apellido:")]
-        [MinLength(10, ErrorMessage = "Minimo {1}")]
+        [MinLength(3, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string PriApellido { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Segundo Apellido:")]
-        [MinLength(10, ErrorMessage = "Minimo {1}")]
+        [MinLength(3, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string SegApellido { get; set; }
 

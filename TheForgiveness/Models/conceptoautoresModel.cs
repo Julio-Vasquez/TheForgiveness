@@ -27,7 +27,7 @@ namespace TheForgiveness.Models
         [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string Descripcion { get; set; }
-        public int Autor { get; set; }
+         public int Autor { get; set; }
 
         public conceptoautoresModel()
         {
