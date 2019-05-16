@@ -3,70 +3,70 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
     public class SubjectController : Controller
     {
-        private Util.Util util = new Util.Util();
         private Services.asignaturaService asigs = new Services.asignaturaService();
 
         // GET: Subject
         #region HTTPMETHOD GET
+
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateSubject")]
         public ActionResult CreateSubject()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
-
         [HttpGet]
-        public ActionResult UpdateSubject(int id)
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateSubject")]
+        public ActionResult UpdateSubject(int? id)
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            if (id != null)
             {
                 var res = asigs.Subject(id);
                 return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
             }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetSubjects");
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "GetSubjects")]
         public ActionResult GetSubjects()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View(asigs.listSubject());
-            return RedirectToAction("Error404", "Shared");
+            return View(asigs.listSubject());
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteSubject")]
         public ActionResult DeleteSubject()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
         public ActionResult SpecifySubject(int? id)
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            if (id != null)
             {
-                if (id != null)
-                {
-                    var res = asigs.Subject(id);
-                    return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
-                }
-                return RedirectToAction("GetSubjects");
+                var res = asigs.Subject(id);
+                return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
             }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetSubjects");
         }
         #endregion
 
         #region HTTPMETHOD POST
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateSubject")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateSubject(Models.asignaturaModel asig)
         {
@@ -77,6 +77,8 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateSubject")]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateSubject(Models.asignaturaModel asign)
         {

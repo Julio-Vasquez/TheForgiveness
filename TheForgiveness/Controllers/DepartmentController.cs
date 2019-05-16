@@ -3,76 +3,70 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
     public class DepartmentController : Controller
     {
-        private Util.Util util = new Util.Util();
         private Services.departamentoService dps = new Services.departamentoService();
 
         #region HTTPMethod Get
         // GET: Department
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateDepartment")]
         public ActionResult CreateDepartment()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            Models.departamentoModel dpm = new Models.departamentoModel();
+            dpm.Pais = dps.Paises();
+            return View(dpm);
+        }
+
+
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateDepartment")]
+        public ActionResult UpdateDepartment(int? id)
+        {
+            if (id != null)
             {
-                Models.departamentoModel dpm = new Models.departamentoModel();
+                var res = dps.Department(id);
+                Models.departamentoModel dpm = new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString()));
                 dpm.Pais = dps.Paises();
                 return View(dpm);
             }
-            return RedirectToAction("Error404", "Shared");
-        }
-
-
-        [HttpGet]
-        public ActionResult UpdateDepartment(int? id)
-        {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
-                if (id != null)
-                {
-                    var res = dps.Department(id);
-                    Models.departamentoModel dpm = new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString()));
-                    dpm.Pais = dps.Paises();
-                    return View(dpm);
-                }
-                return RedirectToAction("GetDeparments");
-            }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetDeparments");
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "GetDepartments")]
         public ActionResult GetDepartments()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View(dps.listDepartment());
-            return RedirectToAction("Error404", "Shared");
+            return View(dps.listDepartment());
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteDepartment")]
         public ActionResult DeleteDepartment()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
+        [StatesLogging]
         public ActionResult SpecifyDepartment(int? id)
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+
+            if (id != null)
             {
-                if (id != null)
-                {
-                    var res = dps.Department(id);
-                    ViewBag.Pais = dps.Pais(int.Parse(res["Pais"].ToString()));
-                    return View(new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString())));
-                }
-                return RedirectToAction("GetDepartments");
+                var res = dps.Department(id);
+                ViewBag.Pais = dps.Pais(int.Parse(res["Pais"].ToString()));
+                return View(new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString())));
             }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetDepartments");
         }
 
         #endregion
@@ -80,6 +74,8 @@ namespace TheForgiveness.Controllers
 
         #region HTTP METHOD POST 
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateDepartment")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateDepartment(Models.departamentoModel dpm)
         {
@@ -92,6 +88,8 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateDepartment")]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateDepartment(Models.departamentoModel dpm, int id)
         {

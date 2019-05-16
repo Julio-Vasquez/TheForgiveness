@@ -204,20 +204,26 @@
     <Compile Include="Models\vistaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\asignaturaService.cs" />
+    <Compile Include="Services\autoresService.cs" />
     <Compile Include="Services\colegioService.cs" />
+    <Compile Include="Services\ConceptoAutosServicios.cs" />
     <Compile Include="Services\departamentoService.cs" />
     <Compile Include="Services\generoService.cs" />
     <Compile Include="Services\menuService.cs" />
     <Compile Include="Services\municipioService.cs" />
     <Compile Include="Services\perfilServices.cs" />
+    <Compile Include="Services\PermissionAttributesService.cs" />
     <Compile Include="Services\rolService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />
     <Compile Include="Util\Email.cs" />
+    <Compile Include="Util\PermissionAttributes.cs" />
+    <Compile Include="Util\StatesLogging.cs" />
     <Compile Include="Util\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Css\404\Style.css" />
+    <Content Include="Assets\Css\BadRequest\style.css" />
     <Content Include="Assets\Css\DashBoard\Icons.css" />
     <Content Include="Assets\Css\DashBoard\jquery.steps.min.css" />
     <Content Include="Assets\Css\DashBoard\steps.min.css" />
@@ -231,6 +237,7 @@
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
+    <Content Include="Assets\Img\BadRequest\bg.jpg" />
     <Content Include="Assets\Img\DashBoard\d3.jpg" />
     <Content Include="Assets\Img\DashBoard\favicon.png" />
     <Content Include="Assets\Img\DashBoard\logo.PNG" />
@@ -468,10 +475,10 @@
     <Content Include="Assets\Icon\UpdateAuthor.svg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Authors\CreateAuthors.cshtml" />
-    <Content Include="Views\Authors\DeleteAuthors.cshtml" />
+    <Content Include="Views\Authors\CreateAuthor.cshtml" />
+    <Content Include="Views\Authors\DeleteAuthor.cshtml" />
     <Content Include="Views\Authors\GetAuthors.cshtml" />
-    <Content Include="Views\Authors\UpdateAuthors.cshtml" />
+    <Content Include="Views\Authors\UpdateAuthor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connected Services\Application Insights\ConnectedService.json" />
@@ -489,7 +496,7 @@
     <Content Include="Views\Student\SpecifyStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Student\GetStudent.cshtml" />
+    <Content Include="Views\Student\GetStudents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Department\UpdateDepartment.cshtml" />
@@ -550,6 +557,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Municipality\UpdateMunicipality.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConceptForgiveness\CreateConcept.cshtml" />
+    <Content Include="Views\ConceptForgiveness\GetConcepts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\BadRequest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConceptForgiveness\UpdateConcept.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConceptForgiveness\DeleteConcept.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConceptForgiveness\SpecifyConcept.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

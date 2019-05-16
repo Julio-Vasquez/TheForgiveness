@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
@@ -12,43 +13,42 @@ namespace TheForgiveness.Controllers
         #region HTTPMethod Get
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateStudent")]
         public ActionResult CreateStudent()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateStudent")]
         public ActionResult UpdateStudent()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
-        public ActionResult GetStudent()
+        [StatesLogging]
+        [PermissionAttributes(File = "GetStudents")]
+        public ActionResult GetStudents()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteStudent")]
         public ActionResult DeleteStudent()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
+        [StatesLogging]
         public ActionResult SpecifyStudent()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         #endregion

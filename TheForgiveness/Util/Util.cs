@@ -12,7 +12,7 @@ namespace TheForgiveness.Util
         public Util()
         {
         }
-        
+
         public bool testcontrol(string session)
         {
             return (session == "Login");

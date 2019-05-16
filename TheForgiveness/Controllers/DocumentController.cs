@@ -3,70 +3,65 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
     public class DocumentController : Controller
     {
-        private Util.Util util = new Util.Util();
         private Services.tipoDocumentoService dps = new Services.tipoDocumentoService();
 
         #region HTTPMethod Get
         // GET: document
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateDocument")]
         public ActionResult CreateDocument()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateDocument")]
         public ActionResult UpdateDocument(int? id)
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            if (id != null)
             {
-                if (id != null)
-                {
-                    var res = dps.Documents(id);
-                    Models.tipodocumentoModel dpm = new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString());
-                    return View(dpm);
-                }
-                return RedirectToAction("GetDocuments");
+                var res = dps.Documents(id);
+                Models.tipodocumentoModel dpm = new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString());
+                return View(dpm);
             }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetDocuments");
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateDocument")]
         public ActionResult GetDocuments()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View(dps.listDocument());
-            return RedirectToAction("Error404", "Shared");
+            return View(dps.listDocument());
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateDocument")]
         public ActionResult DeleteDocument()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
+        [StatesLogging]
         public ActionResult SpecifyDocument(int? id)
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            if (id != null)
             {
-                if (id != null)
-                {
-                    var res = dps.Documents(id);
-                    return View(new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
-                }
-                return RedirectToAction("GetDocuments");
+                var res = dps.Documents(id);
+                return View(new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
             }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetDocuments");
         }
 
         #endregion
@@ -74,6 +69,8 @@ namespace TheForgiveness.Controllers
 
         #region HTTP METHOD POST 
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateDocument")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateDocument(Models.tipodocumentoModel dpm)
         {
@@ -86,6 +83,8 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateDocument")]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateDocument(Models.tipodocumentoModel dpm, int id)
         {
@@ -94,5 +93,6 @@ namespace TheForgiveness.Controllers
             return View(dpm);
         }
         #endregion
+
     }
 }

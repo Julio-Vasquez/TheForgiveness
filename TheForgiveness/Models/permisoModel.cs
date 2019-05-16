@@ -13,19 +13,29 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage ="{0} Requerido")]
         [DisplayName("Titulo De La Pagina")]
-        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9\s]+$/",ErrorMessage ="Solo se aceptan NUmeros y letras")]
         [StringLength(40, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2}. y Maximo de {1}", MinimumLength = 4)]
         [DataType(DataType.Text)]
         public string Titulo { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Icono de la vista")]
+        [StringLength(120, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2}. y Maximo de {1}", MinimumLength = 4)]
+        [DataType(DataType.Text)]
+        public string Icon { get; set; }
+
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Url De La Pagina")]
-        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9]+$/",ErrorMessage ="No se Admiten Espacios")]
         [MinLength(4,ErrorMessage ="Minimo {2} Caracteres")]
         [DataType(DataType.Text)]
         public string Url { get; set; }
 
-	    public int Vista { get; set; }
+        [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Archivo")]
+        [MinLength(3, ErrorMessage = "Minimo {2} Caracteres")]
+        [DataType(DataType.Text)]
+        public string Archivo { get; set; }
+
+        public int Vista { get; set; }
 
         public permisoModel()
         {

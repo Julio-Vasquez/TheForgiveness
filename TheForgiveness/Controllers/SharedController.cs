@@ -19,6 +19,13 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        public ActionResult BadRequest()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult NoFound()
         {
             if (util.testcontrol(Convert.ToString(Session["control"])))

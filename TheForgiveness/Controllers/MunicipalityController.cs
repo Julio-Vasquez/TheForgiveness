@@ -3,80 +3,71 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
     public class MunicipalityController : Controller
     {
-        private Util.Util util = new Util.Util();
         private Services.municipioService dps = new Services.municipioService();
 
         #region HTTPMethod Get
         // GET: Municipality
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateMunicipality")]
         public ActionResult CreateMunicipality()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            Models.municipioModel dpm = new Models.municipioModel();
+            dpm.Departamento = dps.Deparmentos();
+            return View(dpm);
+        }
+
+
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateMunicipality")]
+        public ActionResult UpdateMunicipality(int? id)
+        {
+            if (id != null)
             {
-                Models.municipioModel dpm = new Models.municipioModel();
+                var res = dps.Municipality(id);
+                Models.municipioModel dpm = new Models.municipioModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString()));
                 dpm.Departamento = dps.Deparmentos();
                 return View(dpm);
             }
-            return RedirectToAction("Error404", "Shared");
-        }
-
-
-        [HttpGet]
-        public ActionResult UpdateMunicipality(int? id)
-        {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
-                if (id != null)
-                {
-                    var res = dps.Municipality(id);
-                    Models.municipioModel dpm = new Models.municipioModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString()));
-                    dpm.Departamento = dps.Deparmentos();
-                    return View(dpm);
-                }
-                return RedirectToAction("GetMunicipalities");
-            }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetMunicipalities");
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "GetMunicipalities")]
         public ActionResult GetMunicipalities()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-            {
-                Services.departamentoService ss = new Services.departamentoService();
-                ViewBag.Departamentos = ss.queryDepartamento();
-                return View(dps.listMunicipality());
-            }
-            return RedirectToAction("Error404", "Shared");
+            Services.departamentoService ss = new Services.departamentoService();
+            ViewBag.Departamentos = ss.queryDepartamento();
+            return View(dps.listMunicipality());
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteMunicipality")]
         public ActionResult DeleteMunicipality()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
-                return View();
-            return RedirectToAction("Error404", "Shared");
+            return View();
         }
 
         [HttpGet]
+        [StatesLogging]
         public ActionResult SpecifyMunicipality(int? id)
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            if (id != null)
             {
-                if (id != null)
-                {
-                    var res = dps.Municipality(id);
-                    ViewBag.Departamento = dps.Departamento(int.Parse(res["Departamento"].ToString()));
-                    return View(new Models.municipioModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString())));
-                }
-                return RedirectToAction("GetMunicipalities");
+                var res = dps.Municipality(id);
+                ViewBag.Departamento = dps.Departamento(int.Parse(res["Departamento"].ToString()));
+                return View(new Models.municipioModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString())));
             }
-            return RedirectToAction("Error404", "Shared");
+            return Redirect("GetMunicipalities");
         }
 
         #endregion
@@ -84,6 +75,8 @@ namespace TheForgiveness.Controllers
 
         #region HTTP METHOD POST 
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateMunicipality")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateMunicipality(Models.municipioModel dpm)
         {
@@ -96,6 +89,8 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateMunicipality")]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateMunicipality(Models.municipioModel dpm, int id)
         {
