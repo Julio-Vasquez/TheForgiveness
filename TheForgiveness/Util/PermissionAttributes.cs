@@ -11,17 +11,14 @@ namespace TheForgiveness.Util
 {
     public class PermissionAttributes : ActionFilterAttribute
     {
-
         public string File { get; set; }
-        private string Role { get; set; }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             PermissionAttributesService pas = new PermissionAttributesService();
-
             base.OnActionExecuting(filterContext);
-            Role = Convert.ToString(filterContext.HttpContext.Session["Role"]);
-            if (!pas.Valid_Permission(this.Role, this.File))
+            string Role = Convert.ToString(filterContext.HttpContext.Session["Role"]);
+            if (!pas.Valid_Permission(Role, this.File))
             {
                 filterContext.Result = new RedirectToRouteResult(
                     new RouteValueDictionary(

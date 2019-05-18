@@ -16,11 +16,11 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateMunicipality")]
-        public ActionResult CreateMunicipality()
+        public PartialViewResult CreateMunicipality()
         {
             Models.municipioModel dpm = new Models.municipioModel();
             dpm.Departamento = dps.Deparmentos();
-            return View(dpm);
+            return PartialView(dpm);
         }
 
 
@@ -42,11 +42,11 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetMunicipalities")]
-        public ActionResult GetMunicipalities()
+        public PartialViewResult GetMunicipalities()
         {
             Services.departamentoService ss = new Services.departamentoService();
             ViewBag.Departamentos = ss.queryDepartamento();
-            return View(dps.listMunicipality());
+            return PartialView(dps.listMunicipality());
         }
 
         [HttpGet]
@@ -59,6 +59,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "GetMunicipalities")]
         public ActionResult SpecifyMunicipality(int? id)
         {
             if (id != null)

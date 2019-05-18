@@ -15,20 +15,20 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "ChangePassword")]
-        public ActionResult ChangePassword()
+        public PartialViewResult ChangePassword()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "Profile")]
-        public ActionResult Profile()
+        public PartialViewResult Profile()
         {
 
             Services.perfilServices ps = new Services.perfilServices();
             var res = ps.myData(Convert.ToString(Session["username"]));
-            return View(
+            return PartialView(
                     new Models.PerfilModel(
                             long.Parse(res["Identificación"].ToString()),
                             res["Primer_Nombre"].ToString(),
@@ -47,6 +47,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "UpdateUser")]
         public ActionResult UpdateUser()
         {
             return View();
@@ -54,6 +55,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "UpdatePerfil")]
         public ActionResult UpdatePerfil()
         {
             return View();
@@ -61,9 +63,10 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        public ActionResult User()
+        [PermissionAttributes(File = "User")]
+        public PartialViewResult User()
         {
-            return View();
+            return PartialView();
         }
 
         #region POSTMethod

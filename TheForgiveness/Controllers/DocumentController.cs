@@ -16,9 +16,9 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateDocument")]
-        public ActionResult CreateDocument()
+        public PartialViewResult CreateDocument()
         {
-            return View();
+            return PartialView();
         }
 
 
@@ -38,15 +38,15 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateDocument")]
+        [PermissionAttributes(File = "GetDocuments")]
         public ActionResult GetDocuments()
         {
-            return View(dps.listDocument());
+            return PartialView(dps.listDocument());
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateDocument")]
+        [PermissionAttributes(File = "DeleteDocument")]
         public ActionResult DeleteDocument()
         {
             return View();
@@ -54,6 +54,8 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        /*SI puede entrar al ver, teoricamente puede ver detalladamente*/
+        [PermissionAttributes(File = "GetDocuments")]
         public ActionResult SpecifyDocument(int? id)
         {
             if (id != null)

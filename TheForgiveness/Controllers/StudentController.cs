@@ -15,9 +15,9 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateStudent")]
-        public ActionResult CreateStudent()
+        public PartialViewResult CreateStudent()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
@@ -31,9 +31,9 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetStudents")]
-        public ActionResult GetStudents()
+        public PartialViewResult GetStudents()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
@@ -46,6 +46,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "GetStudents")]
         public ActionResult SpecifyStudent()
         {
             return View();

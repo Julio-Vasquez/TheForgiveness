@@ -13,15 +13,15 @@ namespace TheForgiveness.Controllers
         // GET: Profile
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateAuthors")]
-        public ActionResult CreateAuthor()
+        [PermissionAttributes(File = "CreateAuthor")]
+        public PartialViewResult CreateAuthor()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateAuthors")]
+        [PermissionAttributes(File = "UpdateAuthor")]
         public ActionResult UpdateAuthor(int? id)
         {
             if (id == null)
@@ -33,7 +33,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "DeleteAuthors")]
+        [PermissionAttributes(File = "DeleteAuthor")]
         public ActionResult DeleteAuthor()
         {
             return View();
@@ -41,13 +41,15 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        public ActionResult GetAuthors()
+        [PermissionAttributes(File = "GetAuthors")]
+        public PartialViewResult GetAuthors()
         {
-            return View(Authoressrv.listAuthors());
+            return PartialView(Authoressrv.listAuthors());
         }
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "GetAuthors")]
         public ActionResult SpecifyAuthors()
         {
             return View();

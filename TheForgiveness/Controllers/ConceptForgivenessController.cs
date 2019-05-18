@@ -15,17 +15,17 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateConcept")]
-        public ActionResult CreateConcept()
+        public PartialViewResult CreateConcept()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetConcepts")]
-        public ActionResult GetConcepts()
+        public PartialViewResult GetConcepts()
         {
-            return View(Authoressrv.listConceptAut());
+            return PartialView(Authoressrv.listConceptAut());
 
         }
 
@@ -47,6 +47,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "GetConcepts")]
         public ActionResult SpecifyConcept()
         {
             return View();

@@ -228,6 +228,7 @@
     <Content Include="Assets\Css\DashBoard\jquery.steps.min.css" />
     <Content Include="Assets\Css\DashBoard\steps.min.css" />
     <Content Include="Assets\Css\DashBoard\bootstrap.min.css" />
+    <Content Include="Assets\Css\DataTable\jquery.dataTables.min.css" />
     <Content Include="Assets\Css\Login\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
     <Content Include="Assets\Css\Login\validation.css" />
@@ -241,6 +242,11 @@
     <Content Include="Assets\Img\DashBoard\d3.jpg" />
     <Content Include="Assets\Img\DashBoard\favicon.png" />
     <Content Include="Assets\Img\DashBoard\logo.PNG" />
+    <Content Include="Assets\Img\DataTable\sort_asc.png" />
+    <Content Include="Assets\Img\DataTable\sort_asc_disabled.png" />
+    <Content Include="Assets\Img\DataTable\sort_both.png" />
+    <Content Include="Assets\Img\DataTable\sort_desc.png" />
+    <Content Include="Assets\Img\DataTable\sort_desc_disabled.png" />
     <Content Include="Assets\Img\Login\Login.png" />
     <Content Include="Assets\Img\SignUp\basica.gif" />
     <Content Include="Assets\Img\SignUp\bg.jpeg" />
@@ -256,6 +262,7 @@
     <Content Include="Assets\Js\DashBoardP\sparkline.min.js" />
     <Content Include="Assets\Js\DashBoardP\waves.min.js" />
     <Content Include="Assets\Js\DashBoard\wizard.js" />
+    <Content Include="Assets\Js\DataTable\jquery.dataTables.min.js" />
     <Content Include="Assets\Js\Login\validation.js" />
     <Content Include="Assets\Js\Login\validationFunctions.js" />
     <Content Include="Assets\Js\Menu\menuOcult.js" />

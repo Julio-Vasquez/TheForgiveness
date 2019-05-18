@@ -4,38 +4,47 @@
     ViewBag.Title = "GetDepartment";
     Layout = "~/Views/Shared/DashBoard.cshtml";
 }
-
+<script>
+    $(document).ready(function () {
+        $('#GetDepartments').DataTable();
+    });
+</script>
 <h2>GetDepartment</h2>
 
 <p>
     @Html.ActionLink("Create New", "CreateDepartment")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            Indice
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departamento)
-        </th>
-        <th></th>
-    </tr>
+<table class="table display" style="width:100%" id="GetDepartments">
+    <thead>
+        <tr>
+            <th>
+                Indice
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento)
+                </td>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.ID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Departamento)
-    </td>
-
-    <td>
-        @Html.ActionLink("Update", "UpdateDepartment", new { id = item.ID }) |
-        @Html.ActionLink("Details", "SpecifyDepartment", new { id = item.ID }) |
-        @Html.ActionLink("Delete", "DeleteDepartment", new { id = item.ID })
-    </td>
-</tr>
-}
-
+                <td>
+                    @Html.ActionLink("Update", "UpdateDepartment", new { id = item.ID }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Details", "SpecifyDepartment", new { id = item.ID }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Delete", "DeleteDepartment", new { id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+

@@ -17,9 +17,9 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateSubject")]
-        public ActionResult CreateSubject()
+        public PartialViewResult CreateSubject()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
@@ -38,9 +38,9 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetSubjects")]
-        public ActionResult GetSubjects()
+        public PartialViewResult GetSubjects()
         {
-            return View(asigs.listSubject());
+            return PartialView(asigs.listSubject());
         }
 
         [HttpGet]
@@ -52,6 +52,8 @@ namespace TheForgiveness.Controllers
         }
 
         [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "GetSubjects")]
         public ActionResult SpecifySubject(int? id)
         {
             if (id != null)

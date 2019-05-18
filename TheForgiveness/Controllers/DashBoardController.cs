@@ -14,7 +14,6 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         public ActionResult Index()
         {
-
             Services.menuService menu = new Services.menuService();
             Services.rolService rol = new Services.rolService();
             Session["Role"] = rol.getRole(Session["username"].ToString());

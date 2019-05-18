@@ -5,13 +5,14 @@ namespace TheForgiveness
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
+       
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/DashBoardCSS").Include(
                 "~/Assets/Css/DashBoard/jquery.steps.min.css",
                 "~/Assets/Css/DashBoard/steps.min.css",
-                "~/Assets/Css/DashBoard/bootstrap.min.css"
+                "~/Assets/Css/DashBoard/bootstrap.min.css",
+                "~/Assets/Css/DataTable/jquery.dataTables.min.css"
                 ));
 
             bundles.Add(new ScriptBundle("~/DashBoardJS").Include(
@@ -30,8 +31,11 @@ namespace TheForgiveness
                 "~/Assets/Js/Validation/respond.min.js",
                 "~/Assets/Js/Validation/jquery.validate.min.js",
                 "~/Assets/Js/Validation/jquery.unobtrusive-ajax.min.js",
-                "~/Assets/Js/Validation/jquery.validate.unobtrusive.min.js"
+                "~/Assets/Js/Validation/jquery.validate.unobtrusive.min.js",
+                "~/Assets/Js/DataTable/jquery.dataTables.min.js"
                 ));
+
+
 
             BundleTable.EnableOptimizations = true;
         }

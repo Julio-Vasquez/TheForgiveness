@@ -12,13 +12,15 @@ namespace TheForgiveness.Controllers
         // GET: Contact
         [HttpGet]
         [StatesLogging]
-        public ActionResult MyContact()
+        [PermissionAttributes(File = "MyContact")]
+        public PartialViewResult MyContact()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "UpdateContact")]
         public ActionResult UpdateContact()
         {
             return View();
@@ -26,6 +28,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "DeleteContact")]
         public ActionResult DeleteContact()
         {
             return View();
@@ -33,8 +36,9 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        public ActionResult RegisterContact() {
-            return View();
+        [PermissionAttributes(File = "RegisterContact")]
+        public PartialViewResult RegisterContact() {
+            return PartialView();
         }
 
         // POST: Contact

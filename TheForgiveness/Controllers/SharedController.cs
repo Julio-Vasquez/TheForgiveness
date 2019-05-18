@@ -12,14 +12,14 @@ namespace TheForgiveness.Controllers
         // GET: Shared
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Error404()
+        public ViewResult Error404()
         {
             return View();
         }
 
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult BadRequest()
+        public ViewResult BadRequest()
         {
             return View();
         }
@@ -34,6 +34,7 @@ namespace TheForgiveness.Controllers
             }
             return RedirectToAction("Error404", "Shared");
         }
+
         [HttpGet]
         public ActionResult DashBoard()
         {

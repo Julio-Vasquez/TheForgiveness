@@ -16,13 +16,12 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateDepartment")]
-        public ActionResult CreateDepartment()
+        public PartialViewResult CreateDepartment()
         {
             Models.departamentoModel dpm = new Models.departamentoModel();
             dpm.Pais = dps.Paises();
-            return View(dpm);
+            return PartialView(dpm);
         }
-
 
         [HttpGet]
         [StatesLogging]
@@ -42,9 +41,9 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetDepartments")]
-        public ActionResult GetDepartments()
+        public PartialViewResult GetDepartments()
         {
-            return View(dps.listDepartment());
+            return PartialView(dps.listDepartment());
         }
 
         [HttpGet]
@@ -57,6 +56,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "GetDepartments")]
         public ActionResult SpecifyDepartment(int? id)
         {
 

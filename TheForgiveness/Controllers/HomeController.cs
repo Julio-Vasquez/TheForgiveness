@@ -16,7 +16,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult Login()
+        public ViewResult Login()
         {
             Session["username"] = "";
             Session["control"] = "Logout";
@@ -42,7 +42,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult SignUp()
+        public ViewResult SignUp()
         {
             ViewBag.genero = gs.queryGenero();
             ViewBag.documento = tds.queryTipoDocumento();
@@ -71,20 +71,17 @@ namespace TheForgiveness.Controllers
             {
                 return RedirectToAction("Login");
             }
-            else
-            {
                 ViewBag.genero = gs.queryGenero();
                 ViewBag.documento = tds.queryTipoDocumento();
                 ViewBag.departamento = ds.queryDepartamento();
                 ViewBag.municipio = ms.queryMunicipio();
                 return View();
-            }
-
         }
+
         [HttpGet]
-        public ActionResult ResetPassword()
+        public PartialViewResult ResetPassword()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpPost]

@@ -16,19 +16,27 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateSchools")]
-        public ActionResult CreateSchools()
+        public PartialViewResult CreateSchools()
         {
             ViewBag.departamento = ds.queryDepartamento();
             ViewBag.municipio = ms.queryMunicipio();
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "Getschools")]
-        public ActionResult Getschools()
+        public PartialViewResult Getschools()
         {
-            return View(schoolsrv.listSchools());
+            return PartialView(schoolsrv.listSchools());
+        }
+
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "Getschools")]
+        public ActionResult SpecifySchool()
+        {
+            return View();
         }
 
         [HttpPost]
