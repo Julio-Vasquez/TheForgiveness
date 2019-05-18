@@ -14,8 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/jpg" href="~/favicon.jpg">
-    <link rel="stylesheet" href="~/Assets/Css/SignUp/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Assets/Css/SignUp/wizard.min.css" />
+    @Styles.Render("~/SingUpCss")
 </head>
 
 <body>
@@ -248,12 +247,6 @@
             }
         }
     </script>
-    <script src="~/Assets/Js/SignUp/jquery-2.2.4.min.js"></script>
-    <script src="~/Assets/Js/SignUp/bootstrap.min.js"></script>
-    <script src="~/Assets/Js/SignUp/jquery.bootstrap.wizard.min.js"></script>
-    <script src="~/Assets/Js/SignUp/wizard.js"></script>
-    <script src="~/Assets/Js/SignUp/jquery.validate.min.js"></script>
+    @Scripts.Render("~/SingUpJs")
 </body>
-
-
 </html>

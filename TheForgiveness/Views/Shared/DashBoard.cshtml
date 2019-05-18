@@ -12,8 +12,7 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/DashBoardCSS")
     <link href="@ViewBag.Style" rel="stylesheet" />
-    <link href="~/Assets/Css/DashBoard/Icons.css" rel="stylesheet" />
-    <script src="~/Assets/Js/Validation/jquery-3.3.1.min.js"></script>
+    @Scripts.Render("~/JQRequired")
 </head>
 <body>
     <div class="preloader">
@@ -27,7 +26,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"><img src="~/Assets/Icon/menu.svg" alt="Alternate Text" /></i></a>
-                    <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="@Url.Action("Index","DashBoard")" style="background:#66ba2c">
                         <b class="logo-icon p-l-10">
                             <i class="mdi"><img src="~/Assets/Icon/LogoIcon.svg" alt="homepage" class="light-logo" onclick=""/></i>
                         </b>
@@ -48,7 +47,7 @@
                     <ul class="navbar-nav float-right">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="~/Assets/Img/DashBoard/d3.jpg" alt="user" class="rounded-circle" width="31">
+                                <img src="~/Assets/Img/DashBoard/d3.jpg" alt="user" class="rounded-circle" width="31" >
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="javascript:void(0)">
@@ -76,7 +75,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-0">
                         <li class="sidebar-item sbitem">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "DashBoard")" aria-expanded="false">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="@Url.Action("Index", "DashBoard")" aria-expanded="false" >
                                 <i class="mdi"> <img src="~/Assets/Icon/DASHBOARD.svg" alt="Inicio" /></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>

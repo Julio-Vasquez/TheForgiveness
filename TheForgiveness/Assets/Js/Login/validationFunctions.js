@@ -21,7 +21,7 @@ window.onload = () => {
             hideClass(dad);
         });
     }
-}
+};
 
 function showClass(dad) {
     dad.parentNode.lastElementChild.classList.add('alert-validate');

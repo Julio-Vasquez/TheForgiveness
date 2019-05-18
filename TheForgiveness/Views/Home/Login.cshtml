@@ -17,9 +17,7 @@
     <meta name="author" content="">
     <title>Login</title>
     <link rel="icon" type="image/jpg" href="~/favicon.jpg" />
-    <link rel="stylesheet" type="text/css" href="~/Assets/Css/Login/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Assets/Css/Login/Style.css">
-    <link rel="stylesheet" type="text/css" href="~/Assets/Css/Login/validation.css">
+    @Styles.Render("~/LoginCss")
 </head>
 <body>
     <div class="container-fluid">
@@ -78,7 +76,6 @@
             </div>
         </div>
     </div>
-    <script src="~/Assets/Js/Login/validationFunctions.js"></script>
-    <script src="~/Assets/Js/Login/validation.js"></script>
+    @Scripts.Render("~/LoginJs")
 </body>
 </html>
