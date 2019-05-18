@@ -23,7 +23,7 @@ namespace TheForgiveness
                 "~/Assets/Css/Login/validation.css"
                 ));
 
-            bundles.Add(new StyleBundle("~/SingUpCss").Include(
+            bundles.Add(new StyleBundle("~/SignUpCss").Include(
                 "~/Assets/Css/SignUp/bootstrap.min.css",
                 "~/Assets/Css/SignUp/wizard.min.css"
                 ));
@@ -35,7 +35,7 @@ namespace TheForgiveness
                 "~/Assets/Js/Login/validation.js"
                 ));
 
-            bundles.Add(new ScriptBundle("~/SingUpJs").Include(
+            bundles.Add(new ScriptBundle("~/SignUpJs").Include(
                 "~/Assets/Js/SignUp/jquery-2.2.4.min.js",
                 "~/Assets/Js/SignUp/bootstrap.min.js",
                 "~/Assets/Js/SignUp/jquery.bootstrap.wizard.min.js",
