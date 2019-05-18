@@ -18,7 +18,6 @@ namespace TheForgiveness
                 ));
 
             bundles.Add(new StyleBundle("~/LoginCss").Include(
-                "~/Assets/Css/Login/font-awesome.min.css",
                 "~/Assets/Css/Login/Style.css",
                 "~/Assets/Css/Login/validation.css"
                 ));
