@@ -26,4 +26,4 @@ The Forgiveness, option grade.
 
 ## License
 
-*	This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+*	This project is licensed under the Proprietary License - see the [LICENSE](LICENSE.md) file for details.
