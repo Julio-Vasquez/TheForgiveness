@@ -48,13 +48,23 @@ namespace TheForgiveness.Services
 
         }
 
-        public bool ResetPassword(string un) {
+        public bool ExistUser(string un) {
             return MySQL.Querys("select ID from usuario where UserName = '" + un + "'").Rows.Count > 0;
         }
 
-        public bool ResetPassWordUser(Models.PasswordModel pm, string un)
+        public bool ChangePassword(Models.PasswordModel pm, string un)
         {
             return MySQL.Operations("CALL `CambiarContraseña`('"+pm.RepeatPassWord+"','"+un+"')");
+        }
+
+        public System.Data.DataRow InfoEMailUser(string un)
+        {
+            return MySQL.Querys("SELECT Email  FROM Email  WHERE Persona = (Select Persona From Usuario WHERE UserName = '" + un + "' AND State='Activo') AND State='Activo' LIMIT 1").Rows[0];
+        }
+
+        public bool ValidUser(string id, string un)
+        {
+            return MySQL.Querys("SELECT ID FROM Persona WHERE NumIdentificacion = '" + id + "' AND ID =(SELECT Persona FROM Usuario WHERE UserName = '" + un + "' AND State='Activo' ) AND State='Activo';").Rows.Count > 0;
         }
 
     }

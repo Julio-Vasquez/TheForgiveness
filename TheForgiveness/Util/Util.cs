@@ -13,11 +13,6 @@ namespace TheForgiveness.Util
         {
         }
 
-        public bool testcontrol(string session)
-        {
-            return (session == "Login");
-        }
-
         public System.Data.DataRow repoPassword(string usuario)
         {
            System.Data.DataRow dr = MySQL.Querys("call Recuperar_Contraseña_Usuario('"+usuario+"')").Rows[0];

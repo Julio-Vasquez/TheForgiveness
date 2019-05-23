@@ -9,15 +9,16 @@ namespace TheForgiveness.Util
 {
     public class Email
     {
-        private static ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
+       
         public bool SendMail(string un, string id)
         {
-            if (ValidUser(id, un))
+            Services.usuarioService services = new Services.usuarioService();
+            if (services.ValidUser(id, un))
             {
                 try
                 {
                     MailMessage mail = new MailMessage();
-                    System.Data.DataRow email = MySQL.Querys("SELECT Email  FROM Email  WHERE Persona = (Select Persona From Usuario WHERE UserName = '" + un + "' AND State='Activo') AND State='Activo' LIMIT 1").Rows[0];
+                    System.Data.DataRow email = services.InfoEMailUser(un);
                     mail.To.Add(email["Email"].ToString());
                     mail.From = new MailAddress("TheForgiveness@TheForgiveness.co");
                     mail.Subject = "Reset Password";
@@ -115,11 +116,5 @@ namespace TheForgiveness.Util
                     "</body>" +
                 "</html>";
         }
-
-        public bool ValidUser(string id, string un)
-        {
-            return MySQL.Querys("SELECT ID FROM Persona WHERE NumIdentificacion = '" + id + "' AND ID =(SELECT Persona FROM Usuario WHERE UserName = '" + un + "' AND State='Activo' ) AND State='Activo';").Rows.Count > 0;
-        }
-
     }
 }

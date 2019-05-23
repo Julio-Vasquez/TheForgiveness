@@ -76,7 +76,7 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePassword(Models.PasswordModel pm)
         {
-            if (ModelState.IsValid && us.ResetPassWordUser(pm, Session["username"].ToString()))
+            if (ModelState.IsValid && us.ChangePassword(pm, Session["username"].ToString()))
                 return RedirectToAction("Profile");
             return View();
         }

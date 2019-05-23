@@ -28,7 +28,7 @@ namespace TheForgiveness.Controllers
         [AllowAnonymous]
         public ActionResult NoFound()
         {
-            if (util.testcontrol(Convert.ToString(Session["control"])))
+            if (Convert.ToString(Session["control"]) == "Login")
             {
                 return View();
             }

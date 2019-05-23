@@ -212,7 +212,6 @@
     <Compile Include="Services\menuService.cs" />
     <Compile Include="Services\municipioService.cs" />
     <Compile Include="Services\perfilServices.cs" />
-    <Compile Include="Services\PermissionAttributesService.cs" />
     <Compile Include="Services\rolService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />

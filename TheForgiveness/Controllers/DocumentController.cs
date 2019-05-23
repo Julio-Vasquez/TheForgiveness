@@ -10,7 +10,6 @@ namespace TheForgiveness.Controllers
     public class DocumentController : Controller
     {
         private Services.tipoDocumentoService dps = new Services.tipoDocumentoService();
-
         #region HTTPMethod Get
         // GET: document
         [HttpGet]
