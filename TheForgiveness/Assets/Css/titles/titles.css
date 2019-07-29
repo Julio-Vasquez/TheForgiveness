@@ -1,0 +1,32 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+
+    h1::after,
+    h1::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 35.2px;
+        top: 0.6em;
+        transform: scale(0);
+        transition: all 0.2s ease-in;
+    }
+
+    h1::after {
+        background-color: #bc40df;
+        right: -50px;
+    }
+
+    h1::before {
+        background-color: currentColor;
+        left: -50px;
+    }
+
+    h1:hover::before,
+    h1:hover::after {
+        transform: scale(1);
+    }

@@ -223,7 +223,7 @@
   <ItemGroup>
     <Content Include="Assets\Css\404\Style.css" />
     <Content Include="Assets\Css\BadRequest\style.css" />
-    <Content Include="Assets\Css\DashBoard\Icons.css" />
+    <Content Include="Assets\Css\DashBoard\Icons.min.css" />
     <Content Include="Assets\Css\DashBoard\jquery.steps.min.css" />
     <Content Include="Assets\Css\DashBoard\steps.min.css" />
     <Content Include="Assets\Css\DashBoard\bootstrap.min.css" />
@@ -235,6 +235,8 @@
     <Content Include="Assets\Css\Profile\profile.css" />
     <Content Include="Assets\Css\SignUp\bootstrap.min.css" />
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
+    <Content Include="Assets\Css\Subject\create.min.css" />
+    <Content Include="Assets\Css\titles\titles.css" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
     <Content Include="Assets\Img\BadRequest\bg.jpg" />
@@ -579,6 +581,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icon\menu.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Icon\icoApp.svg" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
