@@ -160,7 +160,7 @@
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\MunicipalityController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Controllers\SchoolsController.cs" />
+    <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
@@ -215,6 +215,7 @@
     <Compile Include="Services\rolService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />
+    <Compile Include="Util\Api.cs" />
     <Compile Include="Util\Email.cs" />
     <Compile Include="Util\PermissionAttributes.cs" />
     <Compile Include="Util\StatesLogging.cs" />
@@ -359,7 +360,7 @@
     <Content Include="Views\Contact\RegisterContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Schools\CreateSchools.cshtml" />
+    <Content Include="Views\School\CreateSchools.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icon\Activities.svg" />
@@ -584,6 +585,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icon\icoApp.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\School\GetSchools.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
