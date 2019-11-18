@@ -153,6 +153,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Controllers\CalificationController.cs" />
     <Compile Include="Controllers\ConceptController.cs" />
     <Compile Include="Controllers\ConceptForgivenessController.cs" />
     <Compile Include="Controllers\ConceptiVictimController.cs" />
@@ -160,14 +161,21 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\EvaluationController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
+    <Compile Include="Controllers\GoalsController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\GroupPersonsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\MunicipalityController.cs" />
+    <Compile Include="Controllers\PhoneController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
+    <Compile Include="Controllers\VictimiologyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,12 +228,19 @@
     <Compile Include="Services\evaluacionService.cs" />
     <Compile Include="Services\experienciaService.cs" />
     <Compile Include="Services\generoService.cs" />
+    <Compile Include="Services\grupopersonaService.cs" />
+    <Compile Include="Services\grupoService.cs" />
     <Compile Include="Services\menuService.cs" />
+    <Compile Include="Services\metasService.cs" />
     <Compile Include="Services\municipioService.cs" />
+    <Compile Include="Services\notasService.cs" />
     <Compile Include="Services\perfilServices.cs" />
     <Compile Include="Services\rolService.cs" />
+    <Compile Include="Services\subcategoriaService.cs" />
+    <Compile Include="Services\telefonoService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />
+    <Compile Include="Services\victimiologiaSevice.cs" />
     <Compile Include="Util\Api.cs" />
     <Compile Include="Util\Email.cs" />
     <Compile Include="Util\PermissionAttributes.cs" />
