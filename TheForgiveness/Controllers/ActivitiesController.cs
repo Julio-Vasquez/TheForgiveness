@@ -14,16 +14,16 @@ namespace TheForgiveness.Controllers
         // GET: Activities
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateAtivity")]
-        public PartialViewResult CreateAtivity()
+        [PermissionAttributes(File = "CreateActivity")]
+        public PartialViewResult CreateActivity()
         {
             return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateAtivity")]
-        public ActionResult UpdateAtivity(int? id)
+        [PermissionAttributes(File = "UpdateActivity")]
+        public ActionResult UpdateActivity(int? id)
         {
             if (id == null)
             {
@@ -34,8 +34,8 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "DeleteAtivity")]
-        public ActionResult DeleteAtivity()
+        [PermissionAttributes(File = "DeleteActivity")]
+        public ActionResult DeleteActivity()
         {
             return View();
         }
@@ -43,7 +43,7 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetActivities")]
-        public PartialViewResult GetAtivity()
+        public PartialViewResult GetActivities()
         {
             return PartialView(Activisrv.listActivities());
         }
@@ -51,7 +51,7 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetActivities")]
-        public ActionResult SpecifyGetAtivities ()
+        public ActionResult SpecifyAtivities ()
         {
             return View();
         }

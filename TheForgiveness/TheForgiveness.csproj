@@ -153,6 +153,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Controllers\CalificationController.cs" />
     <Compile Include="Controllers\ConceptController.cs" />
     <Compile Include="Controllers\ConceptForgivenessController.cs" />
     <Compile Include="Controllers\ConceptiVictimController.cs" />
@@ -160,14 +161,21 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\EvaluationController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
+    <Compile Include="Controllers\GoalsController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\GroupPersonsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\MunicipalityController.cs" />
+    <Compile Include="Controllers\PhoneController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
+    <Compile Include="Controllers\VictimiologyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,12 +228,19 @@
     <Compile Include="Services\evaluacionService.cs" />
     <Compile Include="Services\experienciaService.cs" />
     <Compile Include="Services\generoService.cs" />
+    <Compile Include="Services\grupopersonaService.cs" />
+    <Compile Include="Services\grupoService.cs" />
     <Compile Include="Services\menuService.cs" />
+    <Compile Include="Services\metasService.cs" />
     <Compile Include="Services\municipioService.cs" />
+    <Compile Include="Services\notasService.cs" />
     <Compile Include="Services\perfilServices.cs" />
     <Compile Include="Services\rolService.cs" />
+    <Compile Include="Services\subcategoriaService.cs" />
+    <Compile Include="Services\telefonoService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />
+    <Compile Include="Services\victimiologiaSevice.cs" />
     <Compile Include="Util\Api.cs" />
     <Compile Include="Util\Email.cs" />
     <Compile Include="Util\PermissionAttributes.cs" />
@@ -311,15 +326,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Activities\" />
+    <Folder Include="bin\" />
+    <Folder Include="obj\Debug\" />
     <Folder Include="Views\Diplomas\" />
-    <Folder Include="Views\Experience\" />
-    <Folder Include="Views\Forgiveness\" />
-    <Folder Include="Views\Group\" />
-    <Folder Include="Views\Perception\" />
     <Folder Include="Views\Stage\" />
-    <Folder Include="Views\SubCategory\" />
-    <Folder Include="Views\Victimology\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -634,6 +644,111 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Evaluation\SpecifyEvaluation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\CreateActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\UpdateActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\GetActivities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\SpecifyAtivities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\DeleteActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Authors\SpecifyAuthor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\CreateVictimology.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\UpdateVictimology.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\DeleteVictimology.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\GetVictimologys.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\SpecifyVictimologys.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\CreateSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\UpdateSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\DeleteSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\GetSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\SpecifySubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\CreatePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\UpdatePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\DeletePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\GetPerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\SpecifyPerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\CreateGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\UpdateGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\DeleteGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\GetGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\SpecifyGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\CreateForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\UpdateForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\DeleteForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\GetForgivenees.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\SpecifyForgivenees.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\CreateExperience.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\UpdateExperience.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\GetExperiences.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\SpecifyExperiences.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

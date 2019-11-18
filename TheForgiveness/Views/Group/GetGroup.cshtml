@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TheForgiveness.Models.grupoModel>
+
+@{
+    ViewBag.Title = "GetGroup";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>GetGroup</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AñoEscolar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Docente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asignatura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Colegio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AñoEscolar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Docente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asignatura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Colegio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

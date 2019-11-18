@@ -13,16 +13,16 @@ namespace TheForgiveness.Controllers
         // GET: Concept
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateConcept")]
-        public PartialViewResult CreateConcept()
+        [PermissionAttributes(File = "CreateForgiveness")]
+        public PartialViewResult CreateForgiveness()
         {
             return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateConcept")]
-        public ActionResult UpdateConcept(int? id)
+        [PermissionAttributes(File = "UpdateForgiveness")]
+        public ActionResult UpdateForgiveness(int? id)
         {
             if (id == null)
             {
@@ -33,16 +33,16 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "DeleteConcept")]
-        public ActionResult DeleteConcept()
+        [PermissionAttributes(File = "DeleteForgiveness")]
+        public ActionResult DeleteForgiveness()
         {
             return View();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetConcepts")]
-        public ActionResult GetConcepts()
+        [PermissionAttributes(File = "GetForgivenees")]
+        public ActionResult GetForgivenees()
         {
             
            
@@ -51,22 +51,22 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetConcepts")]
-        public ActionResult SpecifyConcepts()
+        [PermissionAttributes(File = "GetForgivenees")]
+        public ActionResult SpecifyForgivenees()
         {
             return View();
         }
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateConcepts")]
+        [PermissionAttributes(File = "CreateForgiveness")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateAuthors(Models.conceptoModel cm)
+        public ActionResult CreateForgiveness(Models.conceptoModel cm)
         {
             if (ModelState.IsValid)
             {
                 if (Conceptsrv.CreateConcept(cm))
-                    return RedirectToAction("getConcept");
+                    return RedirectToAction("GetForgivenees");
                 else
                     return View(cm);
             }

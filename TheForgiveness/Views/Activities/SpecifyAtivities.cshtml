@@ -1,0 +1,27 @@
+﻿@model TheForgiveness.Models.actividadesModel
+
+@{
+    ViewBag.Title = "SpecifyAtivities";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>SpecifyAtivities</h2>
+
+<div>
+    <h4>actividadesModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actividad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

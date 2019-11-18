@@ -1,0 +1,67 @@
+﻿@model TheForgiveness.Models.grupoModel
+
+@{
+    ViewBag.Title = "SpecifyGroup";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>SpecifyGroup</h2>
+
+<div>
+    <h4>grupoModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AñoEscolar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AñoEscolar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Docente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Docente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asignatura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asignatura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colegio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colegio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,51 @@
+﻿@model TheForgiveness.Models.autoresModel
+
+@{
+    ViewBag.Title = "SpecifyAuthor";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+}
+
+<h2>SpecifyAuthor</h2>
+
+<div>
+    <h4>autoresModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PriNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SegNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SegNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriApellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SegApellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SegApellido)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -14,16 +14,16 @@ namespace TheForgiveness.Controllers
         // GET: ConceptiVictim
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateConceptVictim")]
-        public PartialViewResult CreateConceptVictim()
+        [PermissionAttributes(File = "CreatePerception")]
+        public PartialViewResult CreatePerception()
         {
             return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateConceptVictim")]
-        public ActionResult UpdateConceptVictim(int? victimiologia, int? persona)
+        [PermissionAttributes(File = "UpdatePerception")]
+        public ActionResult UpdatePerception(int? victimiologia, int? persona)
         {
             if (victimiologia == null)
             {
@@ -34,38 +34,38 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "DeleteConceptVictim")]
-        public ActionResult DeleteConceptVictim()
+        [PermissionAttributes(File = "DeletePerception")]
+        public ActionResult DeletePerception()
         {
             return View();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetConceptVictims")]
-        public PartialViewResult GetConceptVictims()
+        [PermissionAttributes(File = "GetPerception")]
+        public PartialViewResult GetPerception()
         {
             return PartialView(ConceptVictimsrv.listConcVic());
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetConceptVictims")]
-        public ActionResult SpecifyConceptVictims()
+        [PermissionAttributes(File = "GetPerception")]
+        public ActionResult SpecifyPerception()
         {
             return View();
         }
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateConceptVictims")]
+        [PermissionAttributes(File = "CreatePerception")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateAuthors(Models.conceptoVictimaModel cvm)
         {
             if (ModelState.IsValid)
             {
                 if (ConceptVictimsrv.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString())))
-                    return RedirectToAction("getConceptVictim");
+                    return RedirectToAction("GetPerception");
                 else
                     return View(cvm);
             }

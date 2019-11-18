@@ -13,16 +13,16 @@ namespace TheForgiveness.Controllers
         // GET: Activities
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateVictimiology")]
-        public PartialViewResult CreateVictimiology()
+        [PermissionAttributes(File = "CreateVictimology")]
+        public PartialViewResult CreateVictimology()
         {
             return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateVictimiology")]
-        public ActionResult UpdateVictimiology(int? id)
+        [PermissionAttributes(File = "UpdateVictimology")]
+        public ActionResult UpdateVictimology(int? id)
         {
             if (id == null)
             {
@@ -33,38 +33,38 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "DeleteVictimiology")]
-        public ActionResult DeleteVictimiology()
+        [PermissionAttributes(File = "DeleteVictimology")]
+        public ActionResult DeleteVictimology()
         {
             return View();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetVictimiologies")]
-        public PartialViewResult GetVictimiology()
+        [PermissionAttributes(File = "GetVictimologys")]
+        public PartialViewResult GetVictimologys()
         {
             return PartialView(Victimiologysrv.listVictimiologies());
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetVictimiology")]
-        public ActionResult SpecifyGetVictimiologies()
+        [PermissionAttributes(File = "GetVictimologys")]
+        public ActionResult SpecifyVictimologys()
         {
             return View();
         }
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateVictimiologies")]
+        [PermissionAttributes(File = "CreateVictimology")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateActivities(Models.victimiologiaModel vm)
         {
             if (ModelState.IsValid)
             {
                 if (Victimiologysrv.CreateVictimiologies(vm))
-                    return RedirectToAction("getVictimiology");
+                    return RedirectToAction("GetVictimologys");
                 else
                     return View(vm);
             }
