@@ -11,7 +11,7 @@ namespace TheForgiveness.Services
 
         public bool CreateSubject(Models.asignaturaModel asig)
         {
-            return MySQL.Operations("CALL Insert_Asignatura('"+asig.Nombre+"')");
+            return MySQL.Operations("CALL Insert_Asignatura('" + asig.Nombre + "')");
         }
 
         public IEnumerable<Models.asignaturaModel> listSubject()
@@ -33,7 +33,7 @@ namespace TheForgiveness.Services
 
         public bool UpdateSubject(Models.asignaturaModel dpm)
         {
-            return MySQL.Operations("UPDATE Asignatura SET Nombre ='" + dpm.Nombre +"' WHERE ID = " + dpm.ID);
+            return MySQL.Operations("UPDATE Asignatura SET Nombre ='" + dpm.Nombre + "' WHERE ID = " + dpm.ID);
         }
     }
 }

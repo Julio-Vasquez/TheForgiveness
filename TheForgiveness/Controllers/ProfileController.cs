@@ -25,12 +25,11 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "Profile")]
         public PartialViewResult Profile()
         {
-
             Services.perfilServices ps = new Services.perfilServices();
             var res = ps.myData(Convert.ToString(Session["username"]));
             return PartialView(
                     new Models.PerfilModel(
-                            long.Parse(res["Identificación"].ToString()),
+                            long.Parse(res["Identificacion"].ToString()),
                             res["Primer_Nombre"].ToString(),
                             res["Segundo_Nombre"].ToString(),
                             res["Primer_Apellido"].ToString(),
@@ -58,7 +57,21 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdatePerfil")]
         public ActionResult UpdatePerfil()
         {
-            return View();
+            Services.perfilServices ps = new Services.perfilServices();
+            var res = ps.myData(Convert.ToString(Session["username"]));
+            var viewRes = new Models.PerfilModel(
+                            long.Parse(res["Identificacion"].ToString()),
+                            res["Primer_Nombre"].ToString(),
+                            res["Segundo_Nombre"].ToString(),
+                            res["Primer_Apellido"].ToString(),
+                            res["Segundo_Apellido"].ToString(),
+                            res["FechaDeNacimeinto"].ToString(),
+                            int.Parse(res["Edad"].ToString()),
+                            res["Genero"].ToString(),
+                            res["Tipo_Documento"].ToString(),
+                            res["Municipio"].ToString()
+                        );
+            return View(viewRes);
         }
 
         [HttpGet]

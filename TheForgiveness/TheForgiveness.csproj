@@ -151,8 +151,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Controllers\ConceptController.cs" />
     <Compile Include="Controllers\ConceptForgivenessController.cs" />
+    <Compile Include="Controllers\ConceptiVictimController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
@@ -203,11 +206,15 @@
     <Compile Include="Models\victimiologiaModel.cs" />
     <Compile Include="Models\vistaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\actividadesService.cs" />
     <Compile Include="Services\asignaturaService.cs" />
     <Compile Include="Services\autoresService.cs" />
     <Compile Include="Services\colegioService.cs" />
     <Compile Include="Services\ConceptoAutosServicios.cs" />
+    <Compile Include="Services\conceptoServicios.cs" />
+    <Compile Include="Services\conceptoVictimaService.cs" />
     <Compile Include="Services\departamentoService.cs" />
+    <Compile Include="Services\emailService.cs" />
     <Compile Include="Services\generoService.cs" />
     <Compile Include="Services\menuService.cs" />
     <Compile Include="Services\municipioService.cs" />
@@ -298,6 +305,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Activities\" />
+    <Folder Include="Views\ConceptiVictim\" />
+    <Folder Include="Views\Concept\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

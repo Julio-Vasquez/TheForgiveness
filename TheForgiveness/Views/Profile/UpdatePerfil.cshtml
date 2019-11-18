@@ -1,29 +1,29 @@
-﻿@model TheForgiveness.Models.personaModel
+﻿@model TheForgiveness.Models.PerfilModel
 
 @{
     ViewBag.Title = "UpdatePerfil";
     Layout = "~/Views/Shared/DashBoard.cshtml";
 }
 
-<h2>UpdatePerfil</h2>
+<h2>Modificar Perfil (Datos Personales)</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>personaModel</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.NumIdentificacion, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NumIdentificacion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NumIdentificacion, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.NumIdentificacion, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NumIdentificacion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NumIdentificacion, "", new { @class = "text-danger" })
         </div>
+    </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.PriNombre, htmlAttributes: new { @class = "control-label col-md-2" })

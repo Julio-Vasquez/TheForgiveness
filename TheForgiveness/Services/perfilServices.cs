@@ -13,7 +13,7 @@ namespace TheForgiveness.Services
         public System.Data.DataRow myData(string un)
         {
             long id = myIDentification(un);
-            return MySQL.Querys("SELECT * FROM DatosPersonales WHERE Identificación ="+id).Rows[0];
+            return MySQL.Querys("SELECT * FROM DatosPersonales WHERE Identificacion ="+id).Rows[0];
         }
 
         private long myIDentification(string un)
