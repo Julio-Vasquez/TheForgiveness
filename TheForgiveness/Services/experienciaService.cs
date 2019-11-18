@@ -10,31 +10,26 @@ namespace TheForgiveness.Services
 
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public bool CreateActivities(Models.actividadesModel activi)
+        public bool CreateExperiences(Models.experienciaModel experien)
         {
-            return MySQL.Operations("CALL Insert_Experiencia('" + activi.Actividad + "')");
+            return MySQL.Operations("CALL Insert_Experiencia('" + experien.FechaExperiencia + "','" + experien.Experiencia + "'," + experien.Persona + "," + experien.Municipio + ")");
         }
 
-        public IEnumerable<Models.actividadesModel> listActivities()
+        public IEnumerable<Models.experienciaModel> listExperiencess()
         {
-            System.Data.DataTable listacti = MySQL.Querys("SELECT ID,Actividad FROM actividades");
-            List<Models.actividadesModel> activ = new List<Models.actividadesModel>();
-            foreach (System.Data.DataRow item in listacti.Rows)
+            System.Data.DataTable listexp = MySQL.Querys("SELECT ID,FechaExperiencia,Experiencia,Persona,Municipio FROM Experiencia");
+            List<Models.experienciaModel> exp = new List<Models.experienciaModel>();
+            foreach (System.Data.DataRow item in listexp.Rows)
             {
-                activ.Add(new Models.actividadesModel(int.Parse(item["ID"].ToString()), item["Actividad"].ToString()));
+                exp.Add(new Models.experienciaModel(int.Parse(item["ID"].ToString()),DateTime.Parse(item["FechaExperiencia"].ToString()), item["Experiencia"].ToString(), int.Parse(item["Persona"].ToString()), int.Parse(item["Municipio"].ToString())));
             }
-            IEnumerable<Models.actividadesModel> result = activ;
+            IEnumerable<Models.experienciaModel> result = exp;
             return result;
         }
 
-        public System.Data.DataRow Activi(int? id)
+        public System.Data.DataRow Exper(int? id)
         {
-            return MySQL.Querys("SELECT * FROM actividades WHERE ID = " + id).Rows[0];
-        }
-
-        public bool UpdateActivi(Models.actividadesModel dpm)
-        {
-            return MySQL.Operations("UPDATE actividades SET Actividad ='" + dpm.Actividad + "' WHERE ID = " + dpm.ID);
+            return MySQL.Querys("SELECT * FROM Experiencia WHERE ID = " + id).Rows[0];
         }
     }
 }
