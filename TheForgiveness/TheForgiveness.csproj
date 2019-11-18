@@ -312,8 +312,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Activities\" />
-    <Folder Include="Views\ConceptiVictim\" />
-    <Folder Include="Views\Concept\" />
+    <Folder Include="Views\Diplomas\" />
+    <Folder Include="Views\Experience\" />
+    <Folder Include="Views\Forgiveness\" />
+    <Folder Include="Views\Group\" />
+    <Folder Include="Views\Perception\" />
+    <Folder Include="Views\Stage\" />
+    <Folder Include="Views\SubCategory\" />
+    <Folder Include="Views\Victimology\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
