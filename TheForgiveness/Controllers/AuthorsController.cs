@@ -21,14 +21,21 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateAuthor")]
-        public ActionResult UpdateAuthor(int? id)
+        public ActionResult DetailAutor(int? id)
         {
             if (id == null)
             {
 
             }
             return RedirectToAction("Error404", "Shared");
+        }
+
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateAuthor")]
+        public ActionResult UpdateAuthor(int? id)
+        {
+            return View();
         }
 
         [HttpGet]

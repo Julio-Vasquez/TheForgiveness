@@ -1,24 +1,31 @@
-﻿@model TheForgiveness.Models.tipodocumentoModel
+﻿@model TheForgiveness.Models.colegioModel
 
 @{
-    ViewBag.Title = "DeleteDocument";
+    ViewBag.Title = "DeleteSchool";
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h1>Eliminar tipo de documento de identidad</h1>
+<h1>Eliminar Colegio</h1>
 
 <h3 class="text-center">Are you sure you want to delete this?</h3>
 <hr />
 <div>
-
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TipoDocumento)
+            @Html.DisplayNameFor(model => model.Nombre)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TipoDocumento)
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
         </dd>
 
     </dl>
@@ -28,8 +35,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-danger" /> |
-
-            @Html.ActionLink("Back to List", "GetDocuments")
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

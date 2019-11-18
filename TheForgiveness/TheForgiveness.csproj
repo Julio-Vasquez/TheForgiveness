@@ -159,6 +159,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\MunicipalityController.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="Models\diplomaModel.cs" />
     <Compile Include="Models\emailModel.cs" />
     <Compile Include="Models\escenariosModel.cs" />
+    <Compile Include="Models\evaluacionModel.cs" />
     <Compile Include="Models\experienciaModel.cs" />
     <Compile Include="Models\generoModel.cs" />
     <Compile Include="Models\grupoModel.cs" />
@@ -215,6 +217,8 @@
     <Compile Include="Services\conceptoVictimaService.cs" />
     <Compile Include="Services\departamentoService.cs" />
     <Compile Include="Services\emailService.cs" />
+    <Compile Include="Services\evaluacionService.cs" />
+    <Compile Include="Services\experienciaService.cs" />
     <Compile Include="Services\generoService.cs" />
     <Compile Include="Services\menuService.cs" />
     <Compile Include="Services\municipioService.cs" />
@@ -245,6 +249,8 @@
     <Content Include="Assets\Css\SignUp\wizard.min.css" />
     <Content Include="Assets\Css\Subject\create.min.css" />
     <Content Include="Assets\Css\titles\titles.css" />
+    <Content Include="Assets\Icon\configSS.svg" />
+    <Content Include="Assets\Icon\UpdateSchool.svg" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
     <Content Include="Assets\Img\BadRequest\bg.jpg" />
@@ -367,7 +373,7 @@
     <Content Include="Views\Contact\RegisterContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\School\CreateSchools.cshtml" />
+    <Content Include="Views\School\CreateSchool.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Icon\Activities.svg" />
@@ -598,6 +604,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Profile\User.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\School\UpdateSchool.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\School\DeleteSchool.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\School\SpecifySchool.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Evaluation\GetEvaluations.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Evaluation\CreateEvaluation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Evaluation\DeleteEvaluation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Evaluation\UpdateEvaluation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Evaluation\SpecifyEvaluation.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

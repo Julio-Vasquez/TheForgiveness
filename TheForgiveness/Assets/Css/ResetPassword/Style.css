@@ -1,4 +1,10 @@
 ﻿h4 {
     padding-top:10px;
     text-align: center;
+
+}
+
+#userName,
+numIdentificacion {
+    width: 27vw;
 }

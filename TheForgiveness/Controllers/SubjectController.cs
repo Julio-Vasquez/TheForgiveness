@@ -40,6 +40,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetSubjects")]
         public PartialViewResult GetSubjects()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(asigs.listSubject());
         }
 

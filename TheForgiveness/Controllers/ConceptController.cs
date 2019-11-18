@@ -42,9 +42,11 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetConcepts")]
-        public PartialViewResult GetConcepts()
+        public ActionResult GetConcepts()
         {
-            return PartialView(Conceptsrv.listConc());
+            
+           
+            return View(Conceptsrv.listConc());
         }
 
         [HttpGet]

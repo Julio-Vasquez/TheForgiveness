@@ -3,13 +3,14 @@
 @{
     ViewBag.Title = "GetDepartment";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 <script>
     $(document).ready(function () {
         $('#GetDepartments').DataTable();
     });
 </script>
-<h2>GetDepartment</h2>
+<h1>Listado de Departamentos</h1>
 
 <p>
     @Html.ActionLink("Create New", "CreateDepartment")

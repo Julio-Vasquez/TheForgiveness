@@ -50,7 +50,14 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateUser")]
         public ActionResult UpdateUser()
         {
-            return View();
+            var res = us.MyUser(Convert.ToString(Session["username"]));
+            return View(
+                    new Models.UsuarioModel(
+                        int.Parse(res["ID"].ToString()),
+                        res["UserName"].ToString(),
+                        res["PassWord"].ToString()
+                   )
+                );
         }
 
         [HttpGet]

@@ -3,12 +3,13 @@
 @{
     ViewBag.Title = "SpecifyMunicipality";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
 }
 
-<h2>SpecifyMunicipality</h2>
+<h1>Detalle del municipio</h1>
 
 <div>
-    <h4>municipioModel</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -31,7 +32,8 @@
         </dd>
     </dl>
 </div>
+<hr />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning"}) |
     @Html.ActionLink("Back to List", "Index")
 </p>

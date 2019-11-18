@@ -3,50 +3,62 @@
 @{
     ViewBag.Title = "GetAuthors";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>GetAuthors</h2>
+    <script>
+    $(document).ready(function () {
+        $('#autors').DataTable();
+    });
+    </script>
+<h1>Listado de Autores</h1>
+
+
+<table class="table display" style="width:100%" id="autors">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PriNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SegNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SegApellido)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SegNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriApellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SegApellido)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PriNombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SegNombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PriApellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SegApellido)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PriNombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SegNombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PriApellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SegApellido)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-
-</table>

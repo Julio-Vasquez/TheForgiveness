@@ -3,50 +3,94 @@
 @{
     ViewBag.Title = "GetConcepts";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>GetConcept</h2>
-
+<h1>Listado de Conceptos</h1>
+<hr />
+<script>
+    $(document).ready(function () {
+        $('#con').DataTable();
+    });
+</script>
 <p>
     @Html.ActionLink("Create New", "CreateConcept")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AñoPublicacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Autor)
-        </th>
-        <th></th>
-    </tr>
+<table class="table" id="con">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AñoPublicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>Accion</th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AñoPublicacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Titulo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Autor)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "UpdateConcept", new { id=item.ID }) |
-            @Html.ActionLink("Details", "SpecifyConcept", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "DeleteConcept", new { id=item.ID })
-        </td>
-    </tr>
-}
+    <tbody>
+
+        @{
+            if (ViewBag.rol == "Estudiante")
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.AñoPublicacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Autor)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-warning" })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AñoPublicacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Autor)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+
+                        </td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+
 
 </table>
+

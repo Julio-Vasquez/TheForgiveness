@@ -24,11 +24,12 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateEvaluation")]
         public ActionResult UpdateEvaluation(int? id)
         {
-            if (id == null)
+            /*if (id == null)
             {
 
             }
-            return RedirectToAction("Error404", "Shared");
+            return RedirectToAction("Error404", "Shared");*/
+            return View();
         }
 
         [HttpGet]
@@ -42,8 +43,9 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetEvaluations")]
-        public PartialViewResult GetEvaluation()
+        public PartialViewResult GetEvaluations()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(Evaluacionsrv.listEvaluacion());
         }
 

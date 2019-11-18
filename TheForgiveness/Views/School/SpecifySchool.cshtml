@@ -1,0 +1,35 @@
+﻿@model TheForgiveness.Models.colegioModel
+
+@{
+    ViewBag.Title = "SpecifySchool";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+}
+
+<h1>Detalle del colegio</h1>
+<hr />
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning"}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

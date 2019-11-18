@@ -3,34 +3,44 @@
 @{
     ViewBag.Title = "GetDocuments";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
-
-<h2>GetDocuments</h2>
+    <script>
+    $(document).ready(function () {
+        $('#docs').DataTable();
+    });
+    </script>
+<h1>Listado de tipos de documentos de identidad</h1>
 
 <p>
     @Html.ActionLink("Create New", "CreateDocument")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoDocumento)
-        </th>
-        <th>
-            Action
-        </th>
-    </tr>
+<table class="table display" id="docs">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoDocumento)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoDocumento)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "UpdateDocument", new { id=item.ID }) |
-            @Html.ActionLink("Details", "SpecifyDocument", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "DeleteDocument", new { id=item.ID })
-        </td>
-    </tr>
-}
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoDocumento)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdateDocument", new { id = item.ID }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Details", "SpecifyDocument", new { id = item.ID }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Delete", "DeleteDocument", new { id = item.ID }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>

@@ -25,6 +25,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetConcepts")]
         public PartialViewResult GetConcepts()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(Authoressrv.listConceptAut());
 
         }

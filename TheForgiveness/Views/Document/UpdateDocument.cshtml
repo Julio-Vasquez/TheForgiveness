@@ -3,17 +3,17 @@
 @{
     ViewBag.Title = "UpdateDocument";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
 }
 
-<h2>UpdateDocument</h2>
-
+<h1>Modificar Tipo de documento de identidad</h1>
+<hr />
 @using (Html.BeginForm("UpdateDocument","Document",FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>tipodocumentoModel</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
@@ -24,7 +24,7 @@
                 @Html.ValidationMessageFor(model => model.TipoDocumento, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

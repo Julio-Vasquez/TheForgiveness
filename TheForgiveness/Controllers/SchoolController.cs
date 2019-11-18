@@ -16,8 +16,8 @@ namespace TheForgiveness.Controllers
         // GET: Schools
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateSchools")]
-        public PartialViewResult CreateSchools()
+        [PermissionAttributes(File = "CreateSchool")]
+        public PartialViewResult CreateSchool()
         {
             ViewBag.departamento = ds.queryDepartamento();
             ViewBag.municipio = ms.queryMunicipio();
@@ -35,6 +35,25 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        [PermissionAttributes(File = "DeleteSchool")]
+        public PartialViewResult DeleteSchool()
+        {
+            
+            return PartialView();
+        }
+
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateSchool")]
+        public PartialViewResult UpdateSchool()
+        {
+            return PartialView();
+        }
+
+     
+
+        [HttpGet]
+        [StatesLogging]
         [PermissionAttributes(File = "GetSchools")]
         public ActionResult SpecifySchool()
         {
@@ -43,7 +62,7 @@ namespace TheForgiveness.Controllers
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateSchools")]
+        [PermissionAttributes(File = "CreateSchool")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateSchools(Models.colegioModel school)
         {

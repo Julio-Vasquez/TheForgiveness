@@ -17,7 +17,7 @@ namespace TheForgiveness.Services
 
         public IEnumerable<Models.evaluacionModel> listEvaluacion()
         {
-            System.Data.DataTable listeval = MySQL.Querys("SELECT ID,Actividad,Calificacion,FechaEvaluacion,Grupo,Estudiante FROM actividades");
+            System.Data.DataTable listeval = MySQL.Querys("SELECT ID,Actividad,Calificacion,FechaEvaluacion,Grupo,Estudiante FROM Evaluacion");
             List<Models.evaluacionModel> eval = new List<Models.evaluacionModel>();
             foreach (System.Data.DataRow item in listeval.Rows)
             {

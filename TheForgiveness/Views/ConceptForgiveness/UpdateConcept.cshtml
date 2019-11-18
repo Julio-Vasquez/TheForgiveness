@@ -3,17 +3,17 @@
 @{
     ViewBag.Title = "UpdateConcept";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>UpdateConcept</h2>
-
+<h1>Actualizar Concepto</h1>
+<hr />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>conceptoautoresModel</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
@@ -48,10 +48,10 @@
                 @Html.ValidationMessageFor(model => model.Autor, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Actualizar Concepto" class="btn btn-outline-warning" />
             </div>
         </div>
     </div>

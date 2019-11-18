@@ -3,17 +3,16 @@
 @{
     ViewBag.Title = "CreateDocument";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>CreateDocument</h2>
-
+<h1>Crear nuevo tipo de documento de identidad</h1>
+<hr />
 @using (Html.BeginForm("CreateDocument","Document",FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>tipodocumentoModel</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.TipoDocumento, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,5 +31,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "GetDoucments")
+    @Html.ActionLink("Back to List", "GetDocuments")
 </div>

@@ -35,7 +35,7 @@ namespace TheForgiveness.Controllers
                 dpm.Pais = dps.Paises();
                 return View(dpm);
             }
-            return Redirect("GetDeparments");
+            return Redirect("GetDepartments");
         }
 
         [HttpGet]

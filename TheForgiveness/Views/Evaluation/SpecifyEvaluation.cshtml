@@ -1,0 +1,59 @@
+﻿@model TheForgiveness.Models.evaluacionModel
+
+@{
+    ViewBag.Title = "SpecifyEvaluation";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+}
+
+<h2>Detalle de la evaluacion</h2>
+<hr />
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEvaluacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaEvaluacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grupo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grupo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estudiante)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning"})
+    @Html.ActionLink("Back to List", "Index")
+</p>

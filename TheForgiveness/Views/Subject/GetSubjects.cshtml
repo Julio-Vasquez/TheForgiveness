@@ -3,32 +3,65 @@
 @{
     ViewBag.Title = "GetSubjects";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>GetSubjects</h2>
+<script>
+    $(document).ready(function () {
+        $('#asig').DataTable();
+    });
+</script>
+<h1>Listado de Asignaturas</h1>
 
 <p>
     @Html.ActionLink("Create New", "CreateSubject")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th></th>
-    </tr>
+<table class="table" id="asig">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                Accion
+            </th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "UpdateSubject", new { id=item.ID }) |
-            @Html.ActionLink("Details", "SpecifySubject", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "DeleteSubject", new { id=item.ID })
-        </td>
-    </tr>
-}
+    <tbody>
+        @{
+            if (ViewBag.rol == "Administrador")
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-warning" })
+                        </td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
 
 </table>
