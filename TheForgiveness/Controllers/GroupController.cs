@@ -42,30 +42,30 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetGroups")]
-        public PartialViewResult GetGroups()
+        [PermissionAttributes(File = "GetGroup")]
+        public PartialViewResult GetGroup()
         {
             return PartialView(Groupssrv.listGrups());
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetGroups")]
-        public ActionResult SpecifyGroups()
+        [PermissionAttributes(File = "GetGroup")]
+        public ActionResult SpecifyGroup()
         {
             return View();
         }
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateGroups")]
+        [PermissionAttributes(File = "CreateGroup")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateGroups(Models.grupoModel gm)
+        public ActionResult CreateGroup(Models.grupoModel gm)
         {
             if (ModelState.IsValid)
             {
                 if (Groupssrv.CreateGrups(gm))
-                    return RedirectToAction("getGroup");
+                    return RedirectToAction("GetGroup");
                 else
                     return View(gm);
             }

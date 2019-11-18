@@ -13,16 +13,16 @@ namespace TheForgiveness.Controllers
         // GET: Activities
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateSubCategory")]
-        public PartialViewResult CreateSubCategory()
+        [PermissionAttributes(File = "CreateSubcategory")]
+        public PartialViewResult CreateSubcategory()
         {
             return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateSubCategory")]
-        public ActionResult UpdateSubCategory(int? id)
+        [PermissionAttributes(File = "UpdateSubcategory")]
+        public ActionResult UpdateSubcategory(int? id)
         {
             if (id == null)
             {
@@ -33,38 +33,38 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "DeleteSubCategory")]
-        public ActionResult DeleteSubCategory()
+        [PermissionAttributes(File = "DeleteSubcategory")]
+        public ActionResult DeleteSubcategory()
         {
             return View();
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetSubCategories")]
-        public PartialViewResult GetSubCategory()
+        [PermissionAttributes(File = "GetSubcategory")]
+        public PartialViewResult GetSubcategory()
         {
             return PartialView(SubCategorysrv.listSubCategories());
         }
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetSubCategories")]
-        public ActionResult SpecifySubCategories()
+        [PermissionAttributes(File = "GetSubcategory")]
+        public ActionResult SpecifySubcategory()
         {
             return View();
         }
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateSubCategories")]
+        [PermissionAttributes(File = "CreateSubcategory")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateActivities(Models.subcategoiaModel am)
         {
             if (ModelState.IsValid)
             {
                 if (SubCategorysrv.CreateSubCategories(am))
-                    return RedirectToAction("getSubCategory");
+                    return RedirectToAction("GetSubcategory");
                 else
                     return View(am);
             }

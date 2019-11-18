@@ -326,15 +326,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Activities\" />
+    <Folder Include="bin\" />
+    <Folder Include="obj\Debug\" />
     <Folder Include="Views\Diplomas\" />
-    <Folder Include="Views\Experience\" />
-    <Folder Include="Views\Forgiveness\" />
-    <Folder Include="Views\Group\" />
-    <Folder Include="Views\Perception\" />
     <Folder Include="Views\Stage\" />
-    <Folder Include="Views\SubCategory\" />
-    <Folder Include="Views\Victimology\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -649,6 +644,111 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Evaluation\SpecifyEvaluation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\CreateActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\UpdateActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\GetActivities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\SpecifyAtivities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Activities\DeleteActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Authors\SpecifyAuthor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\CreateVictimology.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\UpdateVictimology.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\DeleteVictimology.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\GetVictimologys.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Victimology\SpecifyVictimologys.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\CreateSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\UpdateSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\DeleteSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\GetSubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\SubCategory\SpecifySubcategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\CreatePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\UpdatePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\DeletePerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\GetPerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Perception\SpecifyPerception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\CreateGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\UpdateGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\DeleteGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\GetGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Group\SpecifyGroup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\CreateForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\UpdateForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\DeleteForgiveness.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\GetForgivenees.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Forgiveness\SpecifyForgivenees.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\CreateExperience.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\UpdateExperience.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\GetExperiences.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\SpecifyExperiences.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -31,13 +31,13 @@ namespace TheForgiveness.Controllers
             return RedirectToAction("Error404", "Shared");
         }
 
-        [HttpGet]
-        [StatesLogging]
-        [PermissionAttributes(File = "DeleteExperience")]
-        public ActionResult DeleteExperience()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //[StatesLogging]
+        //[PermissionAttributes(File = "DeleteExperience")]
+        //public ActionResult DeleteExperience()
+        //{
+        //    return View();
+        //}
 
         [HttpGet]
         [StatesLogging]
@@ -57,9 +57,9 @@ namespace TheForgiveness.Controllers
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateExperiences")]
+        [PermissionAttributes(File = "CreateExperience")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateExperiences(Models.experienciaModel em)
+        public ActionResult CreateExperience(Models.experienciaModel em)
         {
             if (ModelState.IsValid)
             {
