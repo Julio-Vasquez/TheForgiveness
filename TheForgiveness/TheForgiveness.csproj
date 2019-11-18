@@ -202,7 +202,7 @@
     <Compile Include="Models\subcategoiaModel.cs" />
     <Compile Include="Models\telefonoModel.cs" />
     <Compile Include="Models\tipoDocumentoModel.cs" />
-    <Compile Include="Models\usuarioModel.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Models\victimiologiaModel.cs" />
     <Compile Include="Models\vistaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -341,9 +341,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Profile\UpdatePerfil.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Profile\User.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Profile\ChangePassword.cshtml" />
@@ -598,6 +595,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\School\GetSchools.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\User.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

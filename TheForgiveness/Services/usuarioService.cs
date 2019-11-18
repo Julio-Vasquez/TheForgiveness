@@ -16,12 +16,12 @@ namespace TheForgiveness.Services
             return int.Parse(dr["ID"].ToString());
         }
 
-        public bool login(Models.usuarioModel um)
+        public bool login(Models.UsuarioModel um)
         {
-            return MySQL.Querys("CALL Login('" + um.UserName + "','" + um.PassWord + "')").Rows.Count > 0;
+            return MySQL.Querys("CALL Login('" + um.Username + "','" + um.PassWord + "')").Rows.Count > 0;
         }
 
-        public bool signup(Models.usuarioModel um, Models.personaModel pm, long tel, string email)
+        public bool signup(Models.UsuarioModel um, Models.personaModel pm, long tel, string email)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace TheForgiveness.Services
                     + "'," + pm.Genero
                     + "," + pm.TipoDocumento
                     + "," + pm.Municipio
-                    + ",'" + um.UserName 
+                    + ",'" + um.Username 
                     + "','" + um.PassWord 
                     + "'," + tel + ",'" 
                     + email + "',3);");
@@ -60,6 +60,12 @@ namespace TheForgiveness.Services
         public System.Data.DataRow InfoEMailUser(string un)
         {
             return MySQL.Querys("SELECT Email  FROM Email  WHERE Persona = (Select Persona From Usuario WHERE UserName = '" + un + "' AND State='Activo') AND State='Activo' LIMIT 1").Rows[0];
+        }
+
+        public System.Data.DataRow MyUser(string un)
+        {
+            Console.WriteLine(un);
+            return MySQL.Querys("SELECT ID, UserName, PassWord FROM Usuario WHERE UserName ='"+un+"'").Rows[0];
         }
 
         public bool ValidUser(string id, string un)

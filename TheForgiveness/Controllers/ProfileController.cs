@@ -9,8 +9,9 @@ namespace TheForgiveness.Controllers
 {
     public class ProfileController : Controller
     {
-        private Util.Util util = new Util.Util();
+        
         private Services.usuarioService us = new Services.usuarioService();
+        private Services.perfilServices ps = new Services.perfilServices();
         // GET: Profile
         [HttpGet]
         [StatesLogging]
@@ -25,7 +26,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "Profile")]
         public PartialViewResult Profile()
         {
-            Services.perfilServices ps = new Services.perfilServices();
+            
             var res = ps.myData(Convert.ToString(Session["username"]));
             return PartialView(
                     new Models.PerfilModel(
@@ -57,9 +58,8 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdatePerfil")]
         public ActionResult UpdatePerfil()
         {
-            Services.perfilServices ps = new Services.perfilServices();
             var res = ps.myData(Convert.ToString(Session["username"]));
-            var viewRes = new Models.PerfilModel(
+            return View(new Models.PerfilModel(
                             long.Parse(res["Identificacion"].ToString()),
                             res["Primer_Nombre"].ToString(),
                             res["Segundo_Nombre"].ToString(),
@@ -70,16 +70,22 @@ namespace TheForgiveness.Controllers
                             res["Genero"].ToString(),
                             res["Tipo_Documento"].ToString(),
                             res["Municipio"].ToString()
-                        );
-            return View(viewRes);
+                        ));
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "User")]
-        public PartialViewResult User()
-        {
-            return PartialView();
+        public ActionResult User()
+        { 
+            var res = us.MyUser(Convert.ToString(Session["username"]));
+            return View(
+                    new Models.UsuarioModel(
+                        int.Parse(res["ID"].ToString()),
+                        res["UserName"].ToString(),
+                        res["PassWord"].ToString()
+                   )
+                );
         }
 
         #region POSTMethod
