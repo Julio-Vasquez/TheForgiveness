@@ -7,16 +7,15 @@ using System.Web;
 
 namespace TheForgiveness.Models
 {
-    public class usuarioModel
+    public class UsuarioModel
     {
-        public  int ID { get; set; }
+        public int ID { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Su Usuario:")]
-        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ0-9]*$/", ErrorMessage = "No se Admiten Espacios")]
         [MinLength(4, ErrorMessage = "Minimo {2}")]
         [DataType(DataType.Text)]
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Su contraseña:")]
@@ -24,21 +23,23 @@ namespace TheForgiveness.Models
         [DataType(DataType.Password)]
         public string PassWord { get; set; }
 
-        public usuarioModel()
-        {
-        }
+        
 
-        public usuarioModel(string UserName, string PassWord)
+        public UsuarioModel(string UserName, string PassWord)
         {
-            this.UserName = UserName;
+            this.Username = UserName;
             this.PassWord = PassWord;
         }
 
-        public usuarioModel(int ID, string UserName, string PassWord)
+        public UsuarioModel(int ID, string UserName, string PassWord)
         {
             this.ID = ID;
-            this.UserName = UserName;
+            this.Username = UserName;
             this.PassWord = PassWord;
+        }
+
+        public UsuarioModel()
+        {
         }
     }
 }

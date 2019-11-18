@@ -28,13 +28,13 @@ namespace TheForgiveness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(Models.usuarioModel um)
+        public ActionResult Login(Models.UsuarioModel um)
         {
             if (us.login(um))
             {
-                Session["username"] = um.UserName;
+                Session["username"] = um.Username;
                 Session["control"] = "Login";
-                Session["idAccount"] = us.idcuenta(um.UserName);
+                Session["idAccount"] = us.idcuenta(um.Username);
                 return RedirectToAction("Index", "DashBoard");
             }
                 return View();
@@ -53,7 +53,7 @@ namespace TheForgiveness.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SignUp(Models.usuarioModel ums)
+        public ActionResult SignUp(Models.UsuarioModel ums)
         {
             Models.personaModel pm = new Models.personaModel
                 (
