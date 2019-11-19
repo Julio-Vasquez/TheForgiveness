@@ -3,9 +3,10 @@
 @{
     ViewBag.Title = "UpdateActivity";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>UpdateActivity</h2>
+<h1>Actualizar Actividad</h1>
 
 @using (Html.BeginForm())
 {
@@ -24,7 +25,7 @@
                 @Html.ValidationMessageFor(model => model.Actividad, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

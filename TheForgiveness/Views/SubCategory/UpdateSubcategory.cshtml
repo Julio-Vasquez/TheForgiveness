@@ -3,10 +3,11 @@
 @{
     ViewBag.Title = "UpdateSubcategory";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>UpdateSubcategory</h2>
-
+<h1>Actualizar SubCategoria</h1>
+<hr />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -40,7 +41,7 @@
                 @Html.ValidationMessageFor(model => model.Victimologia, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

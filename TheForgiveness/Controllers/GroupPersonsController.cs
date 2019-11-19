@@ -25,6 +25,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateGroupPerson")]
         public ActionResult UpdateGroupPerson(int? group, int? student)
         {
+            return View();
             if (group == null && student == null)
             {
 

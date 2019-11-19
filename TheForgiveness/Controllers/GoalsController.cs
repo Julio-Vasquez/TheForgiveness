@@ -24,6 +24,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateGoal")]
         public ActionResult UpdateGoal(int? id)
         {
+            return View();
             if (id == null)
             {
 

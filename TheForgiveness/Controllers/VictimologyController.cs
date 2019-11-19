@@ -7,7 +7,7 @@ using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
-    public class VictimiologyController : Controller
+    public class VictimologyController : Controller
     {
         private Services.victimiologiaSevice Victimiologysrv = new Services.victimiologiaSevice();
         // GET: Activities
@@ -24,11 +24,13 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateVictimology")]
         public ActionResult UpdateVictimology(int? id)
         {
+            return View();
+            /*
             if (id == null)
             {
 
             }
-            return RedirectToAction("Error404", "Shared");
+            return RedirectToAction("Error404", "Shared");*/
         }
 
         [HttpGet]

@@ -25,6 +25,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateGroup")]
         public ActionResult UpdateGroup(int? id)
         {
+            return View();
             if (id == null)
             {
 
@@ -45,6 +46,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetGroup")]
         public PartialViewResult GetGroup()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(Groupssrv.listGrups());
         }
 

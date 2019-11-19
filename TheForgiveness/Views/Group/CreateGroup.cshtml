@@ -3,17 +3,17 @@
 @{
     ViewBag.Title = "CreateGroup";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>CreateGroup</h2>
-
+<h1>Crear nuevo Grupo</h1>
+<hr />
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>grupoModel</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Codigo, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -62,7 +62,7 @@
                 @Html.ValidationMessageFor(model => model.Colegio, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

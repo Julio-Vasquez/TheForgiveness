@@ -24,6 +24,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateExperience")]
         public ActionResult UpdateExperience(int? id)
         {
+            return View();
             if (id == null)
             {
 
@@ -44,6 +45,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetExperiences")]
         public PartialViewResult GetExperiences()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(Experiencesrv.listExperiencess());
         }
 

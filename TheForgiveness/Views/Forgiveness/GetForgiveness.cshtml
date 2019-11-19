@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TheForgiveness.Models.conceptoModel>
+
+@{
+    ViewBag.Title = "GetForgivenees";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+}
+
+
+<script>
+    $(document).ready(function () {
+        $('#for').DataTable();
+    });
+</script>
+
+
+<h1>Listado de Conceptos Perdon</h1>
+<hr />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="for">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            if (ViewBag.rol == "Estudiante")
+            {
+                foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                if (ViewBag.rol == "Docente")
+                {
+                    foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        }
+    </tbody>
+
+</table>

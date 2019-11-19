@@ -3,17 +3,17 @@
 @{
     ViewBag.Title = "UpdateGroup";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h2>UpdateGroup</h2>
-
+<h1>Actualizar Grupo</h1>
+<hr />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>grupoModel</h4>
-        <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
 
@@ -64,7 +64,7 @@
                 @Html.ValidationMessageFor(model => model.Colegio, "", new { @class = "text-danger" })
             </div>
         </div>
-
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />

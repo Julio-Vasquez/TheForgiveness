@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TheForgiveness.Services
 {
-    public class conceptoServicios
+    public class forgivenessServicios
     {
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 

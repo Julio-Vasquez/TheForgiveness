@@ -154,9 +154,9 @@
     <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\CalificationController.cs" />
-    <Compile Include="Controllers\ConceptController.cs" />
+    <Compile Include="Controllers\ForgivenessController.cs" />
     <Compile Include="Controllers\ConceptForgivenessController.cs" />
-    <Compile Include="Controllers\ConceptiVictimController.cs" />
+    <Compile Include="Controllers\PerceptionController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
@@ -175,7 +175,7 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
-    <Compile Include="Controllers\VictimiologyController.cs" />
+    <Compile Include="Controllers\VictimologyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,8 +221,8 @@
     <Compile Include="Services\autoresService.cs" />
     <Compile Include="Services\colegioService.cs" />
     <Compile Include="Services\ConceptoAutosServicios.cs" />
-    <Compile Include="Services\conceptoServicios.cs" />
-    <Compile Include="Services\conceptoVictimaService.cs" />
+    <Compile Include="Services\forgivenessServicios.cs" />
+    <Compile Include="Services\percepcionService.cs" />
     <Compile Include="Services\departamentoService.cs" />
     <Compile Include="Services\emailService.cs" />
     <Compile Include="Services\evaluacionService.cs" />
@@ -733,7 +733,7 @@
     <Content Include="Views\Forgiveness\DeleteForgiveness.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Forgiveness\GetForgivenees.cshtml" />
+    <Content Include="Views\Forgiveness\GetForgiveness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Forgiveness\SpecifyForgivenees.cshtml" />

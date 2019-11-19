@@ -23,6 +23,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         public ActionResult DetailAutor(int? id)
         {
+            return View();
             if (id == null)
             {
 
@@ -51,6 +52,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetAuthors")]
         public PartialViewResult GetAuthors()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(Authoressrv.listAuthors());
         }
 

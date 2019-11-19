@@ -33,6 +33,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetStudents")]
         public PartialViewResult GetStudents()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView();
         }
 

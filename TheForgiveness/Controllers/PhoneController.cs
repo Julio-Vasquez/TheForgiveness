@@ -24,6 +24,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdatePhone")]
         public ActionResult UpdatePhone(int? id)
         {
+            return View();
             if (id == null)
             {
 

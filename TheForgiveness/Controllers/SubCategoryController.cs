@@ -24,6 +24,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateSubcategory")]
         public ActionResult UpdateSubcategory(int? id)
         {
+            return View();
             if (id == null)
             {
 
@@ -44,6 +45,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetSubcategory")]
         public PartialViewResult GetSubcategory()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(SubCategorysrv.listSubCategories());
         }
 

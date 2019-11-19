@@ -18,8 +18,7 @@ namespace TheForgiveness.Models
         public DateTime FechaExperiencia { get; set; }
 
         [DisplayName("Expeiencia Ocurrida:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 10)]
         [DataType(DataType.Text)]
         public string Experiencia { get; set; }
 	    public int Persona { get; set; }

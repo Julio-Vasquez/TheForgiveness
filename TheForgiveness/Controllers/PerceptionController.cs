@@ -8,9 +8,9 @@ using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
-    public class ConceptiVictimController : Controller
+    public class PerceptionController : Controller
     {
-        private Services.conceptoVictimaService ConceptVictimsrv = new Services.conceptoVictimaService();
+        private Services.percepcionService ConceptVictimsrv = new Services.percepcionService();
         // GET: ConceptiVictim
         [HttpGet]
         [StatesLogging]
@@ -25,6 +25,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdatePerception")]
         public ActionResult UpdatePerception(int? victimiologia, int? persona)
         {
+            return View();
             if (victimiologia == null)
             {
 
@@ -45,6 +46,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetPerception")]
         public PartialViewResult GetPerception()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(ConceptVictimsrv.listConcVic());
         }
 

@@ -7,9 +7,9 @@ using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
 {
-    public class ConceptController : Controller
+    public class ForgivenessController : Controller
     {
-        private Services.conceptoServicios Conceptsrv = new Services.conceptoServicios();
+        private Services.forgivenessServicios Conceptsrv = new Services.forgivenessServicios();
         // GET: Concept
         [HttpGet]
         [StatesLogging]
@@ -24,6 +24,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateForgiveness")]
         public ActionResult UpdateForgiveness(int? id)
         {
+            return View();
             if (id == null)
             {
 
@@ -41,8 +42,8 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetForgivenees")]
-        public ActionResult GetForgivenees()
+        [PermissionAttributes(File = "GetForgiveness")]
+        public ActionResult GetForgiveness()
         {
             
            
@@ -51,7 +52,7 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        [PermissionAttributes(File = "GetForgivenees")]
+        [PermissionAttributes(File = "GetForgiveness")]
         public ActionResult SpecifyForgivenees()
         {
             return View();

@@ -12,14 +12,12 @@ namespace TheForgiveness.Models
         public int ID { get; set; }
 
         [DisplayName("Nombre del la Sub Categoria:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [StringLength(100, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 10)]
         [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
         [DisplayName("Definicion:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
+        [StringLength(22000, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 4)]
         [DataType(DataType.Text)]
         public string Explicacion { get; set; }
         public int Victimologia { get; set; }

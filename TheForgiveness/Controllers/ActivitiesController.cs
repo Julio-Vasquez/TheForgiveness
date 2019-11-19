@@ -25,6 +25,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateActivity")]
         public ActionResult UpdateActivity(int? id)
         {
+            return View();
             if (id == null)
             {
 
@@ -45,6 +46,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetActivities")]
         public PartialViewResult GetActivities()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(Activisrv.listActivities());
         }
 

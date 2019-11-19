@@ -3,50 +3,119 @@
 @{
     ViewBag.Title = "GetExperiences";
     Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
-
-<h2>GetExperiences</h2>
-
+<script>
+    $(document).ready(function () {
+        $('#exp').DataTable();
+    });
+</script>
+<h1>Listado de experiencias</h1>
+<hr />
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaExperiencia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Experiencia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Municipio)
-        </th>
-        <th></th>
-    </tr>
+<table class="table" id="exp">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaExperiencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Experiencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Persona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Municipio)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaExperiencia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Experiencia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Municipio)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaExperiencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Experiencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Persona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipio)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+
+    <tbody>
+        @{
+            if (ViewBag.rol == "Estudiante")
+            {
+                foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaExperiencia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Experiencia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Persona)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Municipio)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                if (ViewBag.rol == "Administrador")
+                {
+                    foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaExperiencia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Experiencia)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Persona)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Municipio)
+                            </td>
+                            <td>
+
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        }
+    </tbody>
 
 </table>
