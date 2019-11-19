@@ -28,7 +28,7 @@ namespace TheForgiveness.Util
             }
             catch (Exception ex)
             {
-                return "{'query':null, 'err':'" + ex + "'}";
+                return "{'query':null, 'intents': [], 'entities' : [], 'err':'" + ex + "'}";
             }
         }
     }
