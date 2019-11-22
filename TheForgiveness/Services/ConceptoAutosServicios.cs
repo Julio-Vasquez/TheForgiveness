@@ -24,5 +24,12 @@ namespace TheForgiveness.Services
             IEnumerable<Models.conceptoautoresModel> result = asign;
             return result;
         }
+
+        public System.Data.DataRow SpecifyData(int? id)
+        {
+            if (id != null)
+                return MySQL.Querys("SELECT c.Titulo as Titulo, c.Descripcion AS Descripcion, ca.`AñoPublicacion` AS Publicacion, CONCAT(a.PriNombre, ' ', a.PriApellido) AS Autor FROM Concepto as c INNER JOIN ConceptoAutores as ca ON ca.concepto = c.ID INNER JOIN Autores as a ON ca.Autor = a.ID WHERE c.State = 'Activo'; ").Rows[0];
+            return new System.Data.DataTable().Rows[0];
+        }
     }
 }

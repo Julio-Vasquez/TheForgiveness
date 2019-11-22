@@ -49,9 +49,20 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetConcepts")]
-        public ActionResult SpecifyConcept()
+        public ActionResult SpecifyConcept(int? id)
         {
-            return View();
+            //especifico este es el controller
+            if (id != null) {
+                var dr = Authoressrv.SpecifyData(id);
+                var model = new Models.conceptoautoresModel(
+                    dr["Publicacion"].ToString(),
+                    dr["Titulo"].ToString(),
+                    dr["Descripcion"].ToString()
+                    );
+                ViewBag.autor = dr["Autor"].ToString();
+                return View(model);
+            }
+            return RedirectToAction("Error404", "Shared");
         }
     }
 }
