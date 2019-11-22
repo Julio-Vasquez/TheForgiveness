@@ -49,5 +49,12 @@ namespace TheForgiveness.Models
             this.Descripcion = Descripcion;
             this.Autor = Autor;
         }
+
+        public conceptoautoresModel(string AñoPublicacion, string Titulo, string Descripcion)
+        {
+            this.AñoPublicacion = AñoPublicacion;
+            this.Titulo = Titulo;
+            this.Descripcion = Descripcion;
+        }
     }
 }
