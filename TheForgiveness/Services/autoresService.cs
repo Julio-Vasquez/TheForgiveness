@@ -27,7 +27,9 @@ namespace TheForgiveness.Services
 
         public System.Data.DataRow Auth(int? id)
         {
-            return MySQL.Querys("SELECT * FROM autores WHERE ID = " + id).Rows[0];
+            if (id != null)
+                return MySQL.Querys("SELECT * FROM autores WHERE ID = " + id).Rows[0];
+            return new System.Data.DataTable().Rows[0];
         }
 
         public bool UpdateAuth(Models.autoresModel dpm)

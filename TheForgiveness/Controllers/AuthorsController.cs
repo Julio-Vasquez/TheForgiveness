@@ -59,9 +59,20 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetAuthors")]
-        public ActionResult SpecifyAuthors()
+        public ActionResult SpecifyAuthors(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                var dr = Authoressrv.Auth(id);
+                var model = new Models.autoresModel(
+                    dr["PriNombre"].ToString(),
+                    dr["SegNombre"].ToString(),
+                    dr["PriApellido"].ToString(),
+                    dr["SegApellido"].ToString()
+                    );
+                return View(model);
+            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpPost]

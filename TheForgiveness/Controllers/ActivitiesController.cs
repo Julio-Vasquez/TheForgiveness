@@ -53,9 +53,15 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetActivities")]
-        public ActionResult SpecifyAtivities ()
+        public ActionResult SpecifyAtivities(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                var dr = Activisrv.Activi(id);
+                var model = new Models.actividadesModel(dr["Actividad"].ToString());
+                return View(model);
+            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpPost]
