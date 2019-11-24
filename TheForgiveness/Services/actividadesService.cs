@@ -28,7 +28,9 @@ namespace TheForgiveness.Services
 
         public System.Data.DataRow Activi(int? id)
         {
-            return MySQL.Querys("SELECT * FROM actividades WHERE ID = " + id).Rows[0];
+            if (id!= null)
+                return MySQL.Querys("SELECT * FROM actividades WHERE ID = " + id).Rows[0];
+            return new System.Data.DataTable().Rows[0];
         }
 
         public bool UpdateActivi(Models.actividadesModel dpm)
