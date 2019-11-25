@@ -31,6 +31,13 @@ namespace TheForgiveness.Services
             return MySQL.Querys("SELECT * FROM Grupo WHERE ID = " + id).Rows[0];
         }
 
+        public System.Data.DataRow specifygrups(int? id)
+        {
+            if (id != null)
+                return MySQL.Querys("SELECT * FROM theforgiveness.grupo inner join theforgiveness.asignatura on grupo.Asignatura = asignatura.ID inner join theforgiveness.persona on grupo.Docente = persona.ID inner join theforgiveness.colegio on grupo.Colegio = colegio.ID WHERE grupo.ID = " + id).Rows[0];
+            return new System.Data.DataTable().Rows[0];
+        }
+
         public bool UpdateGroup(Models.grupoModel dpm)
         {
             return MySQL.Operations("UPDATE Grupo SET Codigo=" + dpm.Codigo + ",Nombre='" + dpm.Nombre + "',AñoEscolar=" + dpm.AñoEscolar + ",Docente=" + dpm.Docente + ",Asignatura=" + dpm.Asignatura + ",Colegio =" + dpm.Colegio + " WHERE ID = " + dpm.ID);

@@ -53,9 +53,18 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetForgiveness")]
-        public ActionResult SpecifyForgivenees()
+        public ActionResult SpecifyForgivenees(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                var dr = Conceptsrv.Concept(id);
+                var model = new Models.conceptoModel(
+                    dr["Titulo"].ToString(),
+                    dr["Descripcion"].ToString()
+                    );
+                return View(model);
+            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpPost]

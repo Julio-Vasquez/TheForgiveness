@@ -55,6 +55,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetGroup")]
         public ActionResult SpecifyGroup()
         {
+
             return View();
         }
 
