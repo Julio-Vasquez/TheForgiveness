@@ -13,13 +13,12 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Fecha del Suceso")]
-        [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
         [DataType(DataType.Date)]
         public DateTime FechaExperiencia { get; set; }
 
         [DisplayName("Expeiencia Ocurrida:")]
         [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 10)]
-        [DataType(DataType.Text)]
+        [DataType(DataType.MultilineText)]
         public string Experiencia { get; set; }
 	    public int Persona { get; set; }
         public int Municipio { get; set; }
