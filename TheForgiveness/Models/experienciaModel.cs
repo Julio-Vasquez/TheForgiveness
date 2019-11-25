@@ -14,7 +14,7 @@ namespace TheForgiveness.Models
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Fecha del Suceso")]
         [DataType(DataType.Date)]
-        public DateTime FechaExperiencia { get; set; }
+        public string FechaExperiencia { get; set; }
 
         [DisplayName("Expeiencia Ocurrida:")]
         [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 10)]
@@ -27,7 +27,7 @@ namespace TheForgiveness.Models
         {
         }
 
-        public experienciaModel(DateTime FechaExperiencia, string Experiencia, int Persona, int Municipio)
+        public experienciaModel(string FechaExperiencia, string Experiencia, int Persona, int Municipio)
         {
             this.FechaExperiencia = FechaExperiencia;
             this.Experiencia = Experiencia;
@@ -35,7 +35,7 @@ namespace TheForgiveness.Models
             this.Municipio = Municipio;
         }
 
-        public experienciaModel(int ID,DateTime FechaExperiencia,string Experiencia,int Persona,int Municipio)
+        public experienciaModel(int ID, string FechaExperiencia,string Experiencia,int Persona,int Municipio)
         {
             this.ID = ID;
             this.FechaExperiencia = FechaExperiencia;

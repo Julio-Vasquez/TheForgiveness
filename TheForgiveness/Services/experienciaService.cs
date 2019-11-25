@@ -12,22 +12,21 @@ namespace TheForgiveness.Services
         private Api api = new Api();
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public bool CreateExperiences(Models.experienciaModel experien)
+        public LUISIntent[] CreateExperiences(Models.experienciaModel experien)
         {
             List<LUISIntent> listint = new List<LUISIntent>();
             LUISIntent desp = new LUISIntent();
             desp.Intent = "DESPLAZAMIENTO";
             LUISIntent exto = new LUISIntent();
-            desp.Intent = "EXTORCION";
+            exto.Intent = "EXTORCION";
             LUISIntent homi = new LUISIntent();
-            desp.Intent = "HOMICIDIO";
+            homi.Intent = "HOMICIDIO";
             LUISIntent secu = new LUISIntent();
-            desp.Intent = "SECUNDARIA";
+            secu.Intent = "SECUESTRO";
             LUISIntent none = new LUISIntent();
             desp.Intent = "NINGUNA";
             foreach (var cadenas in experien.Experiencia.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList())
             {
-
                 LUISOutput luisData = JsonConvert.DeserializeObject<LUISOutput>(api.sendGetRequest(cadenas));
 
                 LUISIntent[] intin = luisData.intents;
@@ -53,7 +52,6 @@ namespace TheForgiveness.Services
                         default:
                             break;
                     }
-
                 }
             }
 
@@ -63,9 +61,17 @@ namespace TheForgiveness.Services
             listint.Add(homi);
             listint.Add(desp);
 
-            List<LUISIntent> SortedList = listint.OrderBy(o => o.Score).ToList();
+            List<LUISIntent> SortedList = listint.OrderByDescending(o => o.Score).ToList();
 
-            return MySQL.Operations("CALL Insert_Experiencia('" + experien.FechaExperiencia + "','" + experien.Experiencia + "'," + experien.Persona + "," + experien.Municipio + ")");
+            try
+            {
+                MySQL.Operations("CALL Insert_Experiencia('" + experien.FechaExperiencia + "','" + experien.Experiencia + "'," + experien.Persona + "," + experien.Municipio + ")");
+                return SortedList.ToArray();
+            }
+            catch (Exception e) {
+                LUISIntent[] arr = new LUISIntent[1];
+                return arr;
+            }
         }
 
         public IEnumerable<Models.experienciaModel> listExperiencess()
@@ -74,7 +80,7 @@ namespace TheForgiveness.Services
             List<Models.experienciaModel> exp = new List<Models.experienciaModel>();
             foreach (System.Data.DataRow item in listexp.Rows)
             {
-                exp.Add(new Models.experienciaModel(int.Parse(item["ID"].ToString()), DateTime.Parse(item["FechaExperiencia"].ToString()), item["Experiencia"].ToString(), int.Parse(item["Persona"].ToString()), int.Parse(item["Municipio"].ToString())));
+                exp.Add(new Models.experienciaModel(int.Parse(item["ID"].ToString()), item["FechaExperiencia"].ToString(), item["Experiencia"].ToString(), int.Parse(item["Persona"].ToString()), int.Parse(item["Municipio"].ToString())));
             }
             IEnumerable<Models.experienciaModel> result = exp;
             return result;
@@ -94,6 +100,7 @@ public class LUISOutput
     public LUISIntent[] intents { get; set; }
     public LUISEntity[] entities { get; set; }
 }
+
 public class LUISEntity
 {
     public string Entity { get; set; }
@@ -102,6 +109,7 @@ public class LUISEntity
     public string EndIndex { get; set; }
     public float Score { get; set; }
 }
+
 public class LUISIntent
 {
     public string Intent { get; set; }
