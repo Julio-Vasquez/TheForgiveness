@@ -14,11 +14,17 @@ namespace TheForgiveness.Services
 
         public bool CreateExperiences(Models.experienciaModel experien)
         {
-            float desp = 0;
-            float exto = 0;
-            float homi = 0;
-            float secu = 0;
-            float none = 0;
+            List<LUISIntent> listint = new List<LUISIntent>();
+            LUISIntent desp = new LUISIntent();
+            desp.Intent = "DESPLAZAMIENTO";
+            LUISIntent exto = new LUISIntent();
+            desp.Intent = "EXTORCION";
+            LUISIntent homi = new LUISIntent();
+            desp.Intent = "HOMICIDIO";
+            LUISIntent secu = new LUISIntent();
+            desp.Intent = "SECUNDARIA";
+            LUISIntent none = new LUISIntent();
+            desp.Intent = "NINGUNA";
             foreach (var cadenas in experien.Experiencia.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList())
             {
 
@@ -30,19 +36,19 @@ namespace TheForgiveness.Services
                     switch (intin[i].Intent)
                     {
                         case "None":
-                            none += intin[i].Score;
+                            none.Score += intin[i].Score;
                             break;
                         case "Desplazar":
-                            desp += intin[i].Score;
+                            desp.Score += intin[i].Score;
                             break;
                         case "Extorsionar":
-                            exto += intin[i].Score;
+                            exto.Score += intin[i].Score;
                             break;
                         case "homicidios":
-                            homi += intin[i].Score;
+                            homi.Score += intin[i].Score;
                             break;
                         case "Secuestrar":
-                            secu += intin[i].Score;
+                            secu.Score += intin[i].Score;
                             break;
                         default:
                             break;
@@ -51,6 +57,13 @@ namespace TheForgiveness.Services
                 }
             }
 
+            listint.Add(none);
+            listint.Add(secu);
+            listint.Add(exto);
+            listint.Add(homi);
+            listint.Add(desp);
+
+            List<LUISIntent> SortedList = listint.OrderBy(o => o.Score).ToList();
 
             return MySQL.Operations("CALL Insert_Experiencia('" + experien.FechaExperiencia + "','" + experien.Experiencia + "'," + experien.Persona + "," + experien.Municipio + ")");
         }
@@ -73,7 +86,6 @@ namespace TheForgiveness.Services
         }
     }
 }
-
 
 
 public class LUISOutput
