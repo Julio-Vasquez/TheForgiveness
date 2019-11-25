@@ -51,6 +51,12 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
+        public PartialViewResult ModalExperience() {
+            return PartialView();
+        }
+
+        [HttpGet]
+        [StatesLogging]
         [PermissionAttributes(File = "GetExperiences")]
         public ActionResult SpecifyExperiences()
         {
@@ -65,14 +71,23 @@ namespace TheForgiveness.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Experiencesrv.CreateExperiences(em))
-                    return RedirectToAction("getExperience");
+                var res = Experiencesrv.CreateExperiences(em);
+                if (res.Length > 0)
+                {
+                    ViewBag.victimologia = res[0].Intent;
+                    ViewBag.sugerencia = res[1].Intent;
+                    return View("ModalExperience");
+                }
                 else
+                {
                     return View(em);
+                }
             }
             return View();
 
 
         }
+
+        
     }
 }
