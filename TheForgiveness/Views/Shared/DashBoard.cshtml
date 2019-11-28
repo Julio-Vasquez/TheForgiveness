@@ -89,7 +89,7 @@
                             {
                                 foreach (System.Data.DataRow item in menu.Rows)
                                 {
-                                    if (Convert.ToString(item["State"]) == "Activo")
+                                    if (Convert.ToString(item["State"]) == "Activo" && Session["Role"].ToString() == "Estudiante")
                                     {
 
                                         if (name != Convert.ToString(item["Titulo_Vista"]))
@@ -130,7 +130,53 @@
                                                 i++;
                                             }
                                         }
+                                        else
+                                        {
+                                            if (Session["Role"].ToString() == "Administrador" || Session["Role"].ToString() == "Docente")
+                                            {
+
+                                                if (name != Convert.ToString(item["Titulo_Vista"]))
+                                                {
+                                                    name = Convert.ToString(item["Titulo_Vista"]);
+                                                    i = 0;
+                                                    if (i == 0 && firts != true)
+                                                    {
+                                                    @:</ul>
+                                                @:</li>
+                                            }
+                                            else
+                                            {
+                                                firts = false;
+                                            }
+                                            @:<li class="sidebar-item sbitem">
+                                                <a href="#" class="sidebar-link has-arrow waves-effect waves-dark">
+                                                    <i class="mdi"> <img src="@item["Icono_Vista"]" alt="" /></i>
+                                                    <span class="hide-menu">@item["Titulo_Vista"]</span>
+                                                </a>
+                                                @:<ul aria-expanded="false" class="collapse  first-level">
+                                                    <li class="sidebar-item sbitem2">
+                                                        <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
+                                                            <i class="mdi"><img src="@item["Icono_SubVista"]" alt="" /></i>
+                                                            <span class="hide-menu">@item["Titulo_SubVista"]</span>
+                                                        </a>
+                                                    </li>
+                                                    i++;
+                                                }
+                                                else
+                                                {
+                                                    <li class="sidebar-item sbitem2">
+                                                        <a href="@Url.Action("" + item["Url_Vista"], "" + item["Url_Carpeta"])" class="sidebar-link">
+                                                            <i class="mdi"><img src="@item["Icono_SubVista"]" alt="" /></i>
+                                                            <span class="hide-menu">@item["Titulo_SubVista"]</span>
+                                                        </a>
+                                                    </li>
+                                                    i++;
+                                                }
+                                            }
+                                        }
                                     }
+
+
                                 }
                                 else
                                 {
