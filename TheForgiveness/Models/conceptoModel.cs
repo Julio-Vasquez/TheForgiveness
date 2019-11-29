@@ -13,13 +13,11 @@ namespace TheForgiveness.Models
 
         [DisplayName("Nombre del Concepto:")]
         [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
         [DataType(DataType.Text)]
         public string Titulo { get; set; }
 
         [DisplayName("Descripcion del Concepto:")]
         [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {2}")]
         [DataType(DataType.Text)]
         public string Descripcion { get; set; }
 

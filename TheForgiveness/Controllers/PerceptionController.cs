@@ -10,7 +10,7 @@ namespace TheForgiveness.Controllers
 {
     public class PerceptionController : Controller
     {
-        private Services.percepcionService ConceptVictimsrv = new Services.percepcionService();
+        private Services.percepcionService percepservice = new Services.percepcionService();
         // GET: ConceptiVictim
         [HttpGet]
         [StatesLogging]
@@ -47,7 +47,7 @@ namespace TheForgiveness.Controllers
         public PartialViewResult GetPerception()
         {
             ViewBag.rol = Session["Role"].ToString();
-            return PartialView(ConceptVictimsrv.listConcVic());
+            return PartialView(percepservice.listConcVic());
         }
 
         [HttpGet]
@@ -62,12 +62,12 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreatePerception")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateAuthors(Models.conceptoVictimaModel cvm)
+        public ActionResult CreateAuthors(Models.percepcionPostconfictoModel cvm)
         {
             if (ModelState.IsValid)
             {
-                if (ConceptVictimsrv.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString())))
-                    return RedirectToAction("GetPerception");
+                if (percepservice.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString())))
+                    return RedirectToAction("CreateForgiveness", "Forgiveness");
                 else
                     return View(cvm);
             }

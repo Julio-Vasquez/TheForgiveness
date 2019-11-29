@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TheForgiveness.Models.conceptoVictimaModel>
+﻿@model IEnumerable<TheForgiveness.Models.percepcionPostconfictoModel>
 
 @{
     ViewBag.Title = "GetPerception";
@@ -6,31 +6,31 @@
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-<h1>Listado de Percepciones</h1>
 <script>
     $(document).ready(function () {
-        $('#per').DataTable();
+        $('#for').DataTable();
     });
 </script>
+
+<h1>Listado de Percepcion</h1>
+<hr />
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" id="per">
+<table class="table" id="for">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Victimologia)
+                @Html.DisplayNameFor(model => model.Descripcion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Persona)
+                @Html.DisplayNameFor(model => model.Fecha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ConceptoInicial)
+                @Html.DisplayNameFor(model => model.Usuario)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ConceptoFinal)
-            </th>
-            <th>Acciones</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -39,50 +39,23 @@
             {
                 foreach (var item in Model)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Victimologia)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Persona)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ConceptoInicial)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ConceptoFinal)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })
-                    </td>
-                </tr>}
-            }
-            else
-            {
-                foreach (var item in Model)
-                {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Victimologia)
+                            @Html.DisplayFor(modelItem => item.Descripcion)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Persona)
+                            @Html.DisplayFor(modelItem => item.Fecha)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ConceptoInicial)
+                            @Html.DisplayFor(modelItem => item.Usuario)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ConceptoFinal)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) |
+                            @Html.ActionLink("Details", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
             }
-        }
-    </tbody>
-
+        </tbody>
 </table>

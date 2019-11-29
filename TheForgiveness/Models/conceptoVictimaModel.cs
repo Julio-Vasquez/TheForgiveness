@@ -9,7 +9,7 @@ namespace TheForgiveness.Models
 {
     public class conceptoVictimaModel
     {
-        public int Victimologia { get; set; }
+        public int ID { get; set; }
         public int Persona { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
@@ -30,18 +30,25 @@ namespace TheForgiveness.Models
         {
         }
 
-        public conceptoVictimaModel(int Victimologia,int Persona, string ConceptoInicial)
+        public conceptoVictimaModel(int ID, string ConceptoInicial)
         {
-            this.Persona = Persona;
-            this.Victimologia = Victimologia;
+            this.ID = ID;
             this.ConceptoInicial = ConceptoInicial;
             this.ConceptoFinal = "";
         }
 
-        public conceptoVictimaModel(int Victimologia, int Persona, string ConceptoInicial, string ConceptoFinal)
+        public conceptoVictimaModel(int ID,int Persona, string ConceptoInicial)
         {
             this.Persona = Persona;
-            this.Victimologia = Victimologia;
+            this.ID = ID;
+            this.ConceptoInicial = ConceptoInicial;
+            this.ConceptoFinal = "";
+        }
+
+        public conceptoVictimaModel(int ID, int Persona, string ConceptoInicial, string ConceptoFinal)
+        {
+            this.Persona = Persona;
+            this.ID = ID;
             this.ConceptoInicial = ConceptoInicial;
             this.ConceptoFinal = ConceptoFinal;
         }

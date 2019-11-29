@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class ForgivenessController : Controller
     {
-        private Services.forgivenessServicios Conceptsrv = new Services.forgivenessServicios();
+        private Services.forgivenessServicios ConceptVictimsrv = new Services.forgivenessServicios();
         // GET: Concept
         [HttpGet]
         [StatesLogging]
@@ -45,9 +45,9 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetForgiveness")]
         public ActionResult GetForgiveness()
         {
-            
-           
-            return View(Conceptsrv.listConc());
+
+            ViewBag.rol = Session["Role"].ToString();
+            return PartialView(ConceptVictimsrv.listConcVic());
         }
 
         [HttpGet]
@@ -57,10 +57,11 @@ namespace TheForgiveness.Controllers
         {
             if (id != null)
             {
-                var dr = Conceptsrv.Concept(id);
-                var model = new Models.conceptoModel(
-                    dr["Titulo"].ToString(),
+                var dr = ConceptVictimsrv.ConVict(id);
+                var model = new Models.conceptoVictimaModel(
+                    int.Parse(dr["ID"].ToString()),                   
                     dr["Descripcion"].ToString()
+
                     );
                 return View(model);
             }
@@ -71,14 +72,14 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateForgiveness")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateForgiveness(Models.conceptoModel cm)
+        public ActionResult CreateForgiveness(Models.conceptoVictimaModel cvm)
         {
             if (ModelState.IsValid)
             {
-                if (Conceptsrv.CreateConcept(cm))
-                    return RedirectToAction("GetForgivenees");
+                if (ConceptVictimsrv.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString())))
+                    return RedirectToAction("CreateExperience", "Experience");
                 else
-                    return View(cm);
+                    return View(cvm);
             }
             return View();
 
