@@ -35,5 +35,11 @@ namespace TheForgiveness.Services
         {
             return MySQL.Operations("UPDATE Victimologia SET Nombre ='" + dpm.Nombre + "',Descripcion ='" + dpm.Descripcion + "' WHERE ID = " + dpm.ID);
         }
+
+        public Models.victimiologiaModel specify(int? id)
+        {
+            System.Data.DataRow dr = MySQL.Querys("SELECT * FROM Victimologia WHERE ID = "+id).Rows[0];
+            return dr.ItemArray.Length > 0 ? new Models.victimiologiaModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), dr["Descripcion"].ToString()) : new Models.victimiologiaModel();
+        }
     }
 }

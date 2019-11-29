@@ -52,9 +52,14 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetVictimologys")]
-        public ActionResult SpecifyVictimologys()
+        public ActionResult SpecifyVictimologys(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                
+                return View(Victimiologysrv.specify(id));
+            }
+            return Redirect("GetVictimologys");
         }
 
         [HttpPost]
