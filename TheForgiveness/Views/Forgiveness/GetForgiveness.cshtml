@@ -1,79 +1,86 @@
-﻿@model IEnumerable<TheForgiveness.Models.conceptoModel>
+﻿@model IEnumerable<TheForgiveness.Models.conceptoVictimaModel>
 
 @{
-    ViewBag.Title = "GetForgivenees";
+    ViewBag.Title = "GetPerception";
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-
+<h1>Listado de Percepciones</h1>
 <script>
     $(document).ready(function () {
-        $('#for').DataTable();
+        $('#per').DataTable();
     });
 </script>
-
-
-<h1>Listado de Conceptos Perdon</h1>
-<hr />
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table" id="for">
+<table class="table" id="per">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Titulo)
+                @Html.DisplayNameFor(model => model.Victimologia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                @Html.DisplayNameFor(model => model.Persona)
             </th>
-            <th>Accion</th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConceptoInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConceptoFinal)
+            </th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
         @{
-            if (ViewBag.rol == "Estudiante")
+            if (ViewBag.rol == "Docente")
             {
                 foreach (var item in Model)
                 {
-
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Titulo)
+                            @Html.DisplayFor(modelItem => item.Victimologia)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Descripcion)
+                            @Html.DisplayFor(modelItem => item.Persona)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.DisplayFor(modelItem => item.ConceptoInicial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ConceptoFinal)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })
                         </td>
                     </tr>
-                }
+}
             }
             else
             {
-                if (ViewBag.rol == "Docente")
+                foreach (var item in Model)
                 {
-                    foreach (var item in Model)
-                    {
-
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Titulo)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Descripcion)
-                            </td>
-                            <td>
-
-                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-
-                            </td>
-                        </tr>
-                    }
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Victimologia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Persona)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ConceptoInicial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ConceptoFinal)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-danger" })
+                        </td>
+                    </tr>
                 }
             }
         }
