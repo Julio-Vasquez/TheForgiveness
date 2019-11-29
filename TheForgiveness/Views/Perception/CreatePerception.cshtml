@@ -8,7 +8,7 @@
 
 <h1>Registrar Percepcion del PosConflicto</h1>
 <hr />
-@using (Html.BeginForm())
+@using (Html.BeginForm("CreatePerception","Perception", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -39,5 +39,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "DashBoard")
 </div>

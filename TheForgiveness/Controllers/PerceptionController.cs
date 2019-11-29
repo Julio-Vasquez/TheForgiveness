@@ -62,7 +62,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreatePerception")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateAuthors(Models.percepcionPostconfictoModel cvm)
+        public ActionResult CreatePerception(Models.percepcionPostconfictoModel cvm)
         {
             if (ModelState.IsValid)
             {
