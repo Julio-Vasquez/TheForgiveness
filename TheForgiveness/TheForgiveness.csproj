@@ -329,6 +329,7 @@
     <Folder Include="bin\" />
     <Folder Include="obj\Debug\" />
     <Folder Include="Views\Diplomas\" />
+    <Folder Include="Views\Perception\" />
     <Folder Include="Views\Stage\" />
   </ItemGroup>
   <ItemGroup>
@@ -692,21 +693,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\SubCategory\SpecifySubcategory.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\CreatePerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\UpdatePerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\DeletePerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\GetPerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Perception\SpecifyPerception.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Group\CreateGroup.cshtml" />

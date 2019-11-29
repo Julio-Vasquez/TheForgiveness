@@ -24,13 +24,13 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateVictimology")]
         public ActionResult UpdateVictimology(int? id)
         {
-            return View();
-            /*
-            if (id == null)
-            {
 
+            if (id != null)
+            {
+                ViewBag.rol = Session["Role"].ToString();
+                return View(Victimiologysrv.specify(id));
             }
-            return RedirectToAction("Error404", "Shared");*/
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpGet]
@@ -56,7 +56,6 @@ namespace TheForgiveness.Controllers
         {
             if (id != null)
             {
-                
                 return View(Victimiologysrv.specify(id));
             }
             return Redirect("GetVictimologys");

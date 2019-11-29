@@ -38,7 +38,7 @@ namespace TheForgiveness.Services
 
         public Models.victimiologiaModel specify(int? id)
         {
-            System.Data.DataRow dr = MySQL.Querys("SELECT * FROM Victimologia WHERE ID = "+id).Rows[0];
+            System.Data.DataRow dr = MySQL.Querys("SELECT * FROM Victimologia WHERE ID = " + id).Rows[0];
             return dr.ItemArray.Length > 0 ? new Models.victimiologiaModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), dr["Descripcion"].ToString()) : new Models.victimiologiaModel();
         }
     }
