@@ -12,7 +12,7 @@ namespace TheForgiveness.Services
         private Api api = new Api();
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public LUISIntent[] CreateExperiences(Models.experienciaModel experien)
+        public LUISIntent[] CreateExperiences(Models.experienciaModel experien,int idusuario)
         {
             List<LUISIntent> listint = new List<LUISIntent>();
             LUISIntent desp = new LUISIntent();
@@ -24,7 +24,7 @@ namespace TheForgiveness.Services
             LUISIntent secu = new LUISIntent();
             secu.Intent = "SECUESTRO";
             LUISIntent none = new LUISIntent();
-            desp.Intent = "NINGUNA";
+            none.Intent = "NINGUNA";
             foreach (var cadenas in experien.Experiencia.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList())
             {
                 LUISOutput luisData = JsonConvert.DeserializeObject<LUISOutput>(api.sendGetRequest(cadenas));
@@ -65,7 +65,7 @@ namespace TheForgiveness.Services
 
             try
             {
-                MySQL.Operations("CALL Insert_Experiencia('" + experien.FechaExperiencia + "','" + experien.Experiencia + "'," + experien.Persona + "," + experien.Municipio + ")");
+                MySQL.Operations("CALL Insert_Experiencia('" + experien.FechaExperiencia + "','" + experien.Experiencia + "',(SELECT persona FROM usuario WHERE ID= " + idusuario + ")," + experien.Municipio + ")");
                 return SortedList.ToArray();
             }
             catch (Exception e) {

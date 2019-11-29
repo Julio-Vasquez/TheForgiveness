@@ -10,12 +10,16 @@ namespace TheForgiveness.Controllers
     public class ExperienceController : Controller
     {
         private Services.experienciaService Experiencesrv = new Services.experienciaService();
+        private Services.departamentoService ds = new Services.departamentoService();
+        private Services.municipioService ms = new Services.municipioService();
         // GET: Concept
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
         public PartialViewResult CreateExperience()
         {
+            ViewBag.departamento = ds.queryDepartamento();
+            ViewBag.municipio = ms.queryMunicipio();
             return PartialView();
         }
 
@@ -70,8 +74,8 @@ namespace TheForgiveness.Controllers
         public ActionResult CreateExperience(Models.experienciaModel em)
         {
             if (ModelState.IsValid)
-            {
-                var res = Experiencesrv.CreateExperiences(em);
+            { 
+                var res = Experiencesrv.CreateExperiences(em,int.Parse(Session["idAccount"].ToString()));
                 if (res.Length > 0)
                 {
                     ViewBag.victimologia = res[0].Intent;
@@ -80,6 +84,8 @@ namespace TheForgiveness.Controllers
                 }
                 else
                 {
+                    ViewBag.departamento = ds.queryDepartamento();
+                    ViewBag.municipio = ms.queryMunicipio();
                     return View(em);
                 }
             }

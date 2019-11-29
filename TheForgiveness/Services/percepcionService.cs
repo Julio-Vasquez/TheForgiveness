@@ -9,45 +9,37 @@ namespace TheForgiveness.Services
     {
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public bool CreateSubject(Models.conceptoVictimaModel convicmo, int persona)
+        public bool CreateSubject(Models.percepcionPostconfictoModel convicmo, int persona)
         {
-            return MySQL.Operations("CALL Insert_ConceptoVictima(" + convicmo.Victimologia + ",(SELECT Persona FROM usuario WHERE ID = " + persona + "),'" + convicmo.ConceptoInicial + "','" + convicmo.ConceptoFinal + "')");
+            return MySQL.Operations("CALL PercepcionPosconflicto('" + convicmo.Descripcion+"','"+convicmo.Fecha+"',(SELECT Persona FROM usuario WHERE ID = " + persona + "))");
         }
 
-        public IEnumerable<Models.conceptoVictimaModel> listConcVic()
+        public IEnumerable<Models.percepcionPostconfictoModel> listConcVic()
         {
-            System.Data.DataTable listconcepvict = MySQL.Querys("SELECT Victimologia,Persona,ConceptoInicial,ConceptoFinal FROM conceptovictima");
-            List<Models.conceptoVictimaModel> concepvict = new List<Models.conceptoVictimaModel>();
+            System.Data.DataTable listconcepvict = MySQL.Querys("SELECT ID,Descripcion,Fecha,Usuario FROM PercepcionPosconflicto");
+            List<Models.percepcionPostconfictoModel> concepvict = new List<Models.percepcionPostconfictoModel>();
             foreach (System.Data.DataRow item in listconcepvict.Rows)
             {
-                concepvict.Add(new Models.conceptoVictimaModel(int.Parse(item["Victimologia"].ToString()), int.Parse(item["Persona"].ToString()), item["ConceptoInicial"].ToString(), item["ConceptoFinal"].ToString()));
+                concepvict.Add(new Models.percepcionPostconfictoModel(int.Parse(item["ID"].ToString()), item["Fecha"].ToString(), item["Descripcion"].ToString(), int.Parse(item["Usuario"].ToString())));
             }
-            IEnumerable<Models.conceptoVictimaModel> result = concepvict;
+            IEnumerable<Models.percepcionPostconfictoModel> result = concepvict;
             return result;
         }
 
-        public System.Data.DataRow ConVict(int? victimiologia, int? persona)
+        public System.Data.DataRow ConVict(int? persona)
         {
-            if (victimiologia == null)
+            if (persona != null)
             {
-                return MySQL.Querys("SELECT * FROM conceptovictima WHERE Persona = " + persona).Rows[0];
+                return MySQL.Querys("SELECT * FROM PercepcionPosconflicto WHERE Usuario = " + persona).Rows[0];
             }
-            else
-            {
-                if (persona == null)
-                {
-                    return MySQL.Querys("SELECT * FROM conceptovictima WHERE Victimologia = " + victimiologia).Rows[0];
-                }
-                else
-                {
-                    return MySQL.Querys("SELECT * FROM conceptovictima WHERE Victimologia = " + victimiologia + " AND Persona =" + persona).Rows[0];
-                }
+            else {
+                return MySQL.Querys("SELECT NO DATA").Rows[0];
             }
         }
 
-        public bool UpdateConVict(Models.conceptoVictimaModel dpm)
+        public bool UpdateConVict(Models.percepcionPostconfictoModel dpm)
         {
-            return MySQL.Operations("UPDATE conceptovictima SET ConceptoInicial ='" + dpm.ConceptoInicial + "',ConceptoFinal ='" + dpm.ConceptoFinal + "'  WHERE Victimologia = " + dpm.Victimologia+ "AND  Persona="+dpm.Persona);
+            return MySQL.Operations("UPDATE PercepcionPosconflicto SET Descripcion ='" + dpm.Descripcion + "',Fecha ='" + dpm.Fecha + "'  WHERE ID = " + dpm.ID);
         }
     }
 }

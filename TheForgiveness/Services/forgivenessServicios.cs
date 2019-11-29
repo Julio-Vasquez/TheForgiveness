@@ -9,31 +9,38 @@ namespace TheForgiveness.Services
     {
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public bool CreateConcept(Models.conceptoModel conmo)
+        public bool CreateSubject(Models.conceptoVictimaModel convicmo, int persona)
         {
-            return MySQL.Operations("CALL Insert_Concepto(" + conmo.Titulo + ",'" + conmo.Descripcion + "')");
+            return MySQL.Operations("CALL Insert_ConceptoVictima(" + convicmo.ID + ",(SELECT Persona FROM usuario WHERE ID = " + persona + "),'" + convicmo.ConceptoInicial + "','" + convicmo.ConceptoFinal + "')");
         }
 
-        public IEnumerable<Models.conceptoModel> listConc()
+        public IEnumerable<Models.conceptoVictimaModel> listConcVic()
         {
-            System.Data.DataTable listconcept = MySQL.Querys("SELECT Titulo,Descripcion FROM Concepto");
-            List<Models.conceptoModel> concep = new List<Models.conceptoModel>();
-            foreach (System.Data.DataRow item in listconcept.Rows)
+            System.Data.DataTable listconcepvict = MySQL.Querys("SELECT ID,Persona,ConceptoInicial,ConceptoFinal FROM conceptovictima");
+            List<Models.conceptoVictimaModel> concepvict = new List<Models.conceptoVictimaModel>();
+            foreach (System.Data.DataRow item in listconcepvict.Rows)
             {
-                concep.Add(new Models.conceptoModel(item["Titulo"].ToString(), item["Descripcion"].ToString()));
+                concepvict.Add(new Models.conceptoVictimaModel(int.Parse(item["ID"].ToString()), int.Parse(item["Persona"].ToString()), item["ConceptoInicial"].ToString(), item["ConceptoFinal"].ToString()));
             }
-            IEnumerable<Models.conceptoModel> result = concep;
+            IEnumerable<Models.conceptoVictimaModel> result = concepvict;
             return result;
         }
 
-        public System.Data.DataRow Concept(int? ID)
+        public System.Data.DataRow ConVict(int? persona)
         {
-            return MySQL.Querys("SELECT * FROM Concepto WHERE ID = " + ID).Rows[0];
+            if (persona != null)
+            {
+                return MySQL.Querys("SELECT * FROM conceptovictima WHERE Persona = " + persona).Rows[0];
+            }
+            else
+            {
+                return MySQL.Querys("SELECT NO DATA").Rows[0];
+            }
         }
 
-        public bool UpdateConcept(Models.conceptoModel dpm)
+        public bool UpdateConVict(Models.conceptoVictimaModel dpm)
         {
-            return MySQL.Operations("UPDATE Concepto SET Titulo ='" + dpm.Titulo + "',Descripcion ='" + dpm.Descripcion + "'  WHERE ID = " + dpm.ID);
+            return MySQL.Operations("UPDATE conceptovictima SET ConceptoInicial ='" + dpm.ConceptoInicial + "',ConceptoFinal ='" + dpm.ConceptoFinal + "'  WHERE ID = " + dpm.ID + ");
         }
     }
 }
