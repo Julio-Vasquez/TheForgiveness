@@ -201,31 +201,10 @@
         </div>
     </div>
     <script>
-        var municipio = [
-        @{
-            int j = 0;
-            foreach (System.Data.DataRow row in ViewBag.municipio.Rows)
-            {
-                if (j != 0)
-                {
-                    @:, {
-                         @:id: @row["ID"],
-                         @:Municipio: '@row["Municipio"]',
-                         @:Departamento: @row["Departamento"]
-                        @:}
-                }
-                else
-                {
-                    @:{
-                         @:id: @row["ID"],
-                         @:Municipio: '@row["Municipio"]',
-                         @:Departamento: @row["Departamento"]
-                    @:}
-                }
-                j++;
-            }
+         @{
+    @:var municipio = @Html.Raw(ViewData["municipio"].ToString()); ;
+
          }
-    ];
 
         function cargar(id) {
             let ele = document.getElementById('Municipio');

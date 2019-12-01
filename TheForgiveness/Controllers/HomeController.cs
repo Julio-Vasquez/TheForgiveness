@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -47,7 +48,7 @@ namespace TheForgiveness.Controllers
             ViewBag.genero = gs.queryGenero();
             ViewBag.documento = tds.queryTipoDocumento();
             ViewBag.departamento = ds.queryDepartamento();
-            ViewBag.Municipio= ms.queryMunicipio();
+            ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
             return View();
         }
 
