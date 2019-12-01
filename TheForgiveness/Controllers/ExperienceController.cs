@@ -86,7 +86,7 @@ namespace TheForgiveness.Controllers
                 else
                 {
                     ViewBag.departamento = ds.queryDepartamento();
-                    ViewBag.municipio = ms.queryMunicipio();
+                    ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
                     return View(em);
                 }
             }
