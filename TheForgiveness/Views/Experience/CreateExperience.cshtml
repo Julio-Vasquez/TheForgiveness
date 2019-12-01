@@ -6,32 +6,10 @@
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 <script>
-    var municipio = [
-        @{
-            int j = 0;
-            foreach (System.Data.DataRow row in ViewBag.municipio.Rows)
-            {
-                if (j != 0)
-                {
-                    @:, {
+    @{
+    @:var municipio = @Html.Raw(ViewData["municipio"].ToString()); ;
 
-                         @:id: @row["ID"],
-                         @:Municipio: unescape("@row["Municipio"]"),
-                         @:Departamento: @row["Departamento"]
-                        @:}
-                }
-                else
-                {
-                    @:{
-                         @:id: @row["ID"],
-                         @:Municipio: unescape("@row["Municipio"]"),
-                         @:Departamento: @row["Departamento"]
-                        @:}
-                }
-                j++;
-            }
          }
-    ];
 </script>
 <h1>Registrar una Experiencia</h1>
 <hr />
@@ -81,7 +59,7 @@
         <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />  
             </div>
         </div>
     </div>

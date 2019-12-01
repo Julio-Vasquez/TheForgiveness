@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using TheForgiveness.Util;
 
 namespace TheForgiveness.Controllers
@@ -12,14 +13,14 @@ namespace TheForgiveness.Controllers
         private Services.experienciaService Experiencesrv = new Services.experienciaService();
         private Services.departamentoService ds = new Services.departamentoService();
         private Services.municipioService ms = new Services.municipioService();
-        // GET: Concept
-        [HttpGet]
+       // GET: Concept
+       [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
         public PartialViewResult CreateExperience()
         {
             ViewBag.departamento = ds.queryDepartamento();
-            ViewBag.municipio = ms.queryMunicipio();
+            ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
             return PartialView();
         }
 
