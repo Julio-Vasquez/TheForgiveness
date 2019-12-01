@@ -13,16 +13,14 @@ namespace TheForgiveness.Models
         public int Persona { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Su concepto:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 10)]
+        [DisplayName("Su concepto el perdon!:")]
+        [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 20)]
         [DataType(DataType.Text)]
         public string ConceptoInicial { get; set; }
 
-        [Required(ErrorMessage = "{0} Requerido")]
+        
         [DisplayName("Su concepto:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 10)]
+        [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 20)]
         [DataType(DataType.Text)]
         public string ConceptoFinal { get; set; }
 

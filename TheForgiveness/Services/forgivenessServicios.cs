@@ -11,7 +11,7 @@ namespace TheForgiveness.Services
 
         public bool CreateSubject(Models.conceptoVictimaModel convicmo, int persona)
         {
-            return MySQL.Operations("CALL Insert_ConceptoVictima(" + convicmo.ID + ",(SELECT Persona FROM usuario WHERE ID = " + persona + "),'" + convicmo.ConceptoInicial + "','" + convicmo.ConceptoFinal + "')");
+            return MySQL.Operations("CALL Insert_ConceptoVictima((SELECT Persona FROM Usuario WHERE ID = " + persona + "),'" + convicmo.ConceptoInicial + "','" + convicmo.ConceptoFinal + "')");
         }
 
         public IEnumerable<Models.conceptoVictimaModel> listConcVic()
@@ -40,7 +40,7 @@ namespace TheForgiveness.Services
 
         public bool UpdateConVict(Models.conceptoVictimaModel dpm)
         {
-            return MySQL.Operations("UPDATE conceptovictima SET ConceptoInicial ='" + dpm.ConceptoInicial + "',ConceptoFinal ='" + dpm.ConceptoFinal + "'  WHERE ID = " + dpm.ID + ");
+            return MySQL.Operations("UPDATE conceptovictima SET ConceptoInicial ='" + dpm.ConceptoInicial + "',ConceptoFinal ='" + dpm.ConceptoFinal + "'  WHERE ID = " + dpm.ID );
         }
     }
 }

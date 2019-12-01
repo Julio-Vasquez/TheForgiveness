@@ -330,6 +330,7 @@
     <Folder Include="bin\" />
     <Folder Include="obj\Debug\" />
     <Folder Include="Views\Diplomas\" />
+    <Folder Include="Views\Perception\" />
     <Folder Include="Views\Stage\" />
   </ItemGroup>
   <ItemGroup>

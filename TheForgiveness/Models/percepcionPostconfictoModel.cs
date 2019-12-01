@@ -11,15 +11,15 @@ namespace TheForgiveness.Models
     {
         public int ID { get; set; }        
 
-        [DisplayName("Descripcion del Concepto:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
+        [DisplayName("Breve Descripción:")]
+        [StringLength(2500, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
         [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Fecha")]
-        [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
+        [DisplayName("Fecha del suceso:")]
+        
         [DataType(DataType.Date)]
         public string Fecha { get; set; }
         public int Usuario { get; set; }

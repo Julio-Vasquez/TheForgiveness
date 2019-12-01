@@ -9,9 +9,9 @@ namespace TheForgiveness.Services
     {
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public bool CreateSubject(Models.percepcionPostconfictoModel convicmo, int persona)
+        public bool CreateSubject(Models.percepcionPostconfictoModel convicmo, int usuario)
         {
-            return MySQL.Operations("CALL PercepcionPosconflicto('" + convicmo.Descripcion+"','"+convicmo.Fecha+"',(SELECT Persona FROM usuario WHERE ID = " + persona + "))");
+            return MySQL.Operations("CALL Insert_PercepcionPosconflicto('" + convicmo.Descripcion+"','"+convicmo.Fecha+"',"+ usuario+")");
         }
 
         public IEnumerable<Models.percepcionPostconfictoModel> listConcVic()
