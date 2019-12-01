@@ -38,7 +38,7 @@ namespace TheForgiveness.Controllers
                 Session["idAccount"] = us.idcuenta(um.Username);
                 return RedirectToAction("Index", "DashBoard");
             }
-                return View();
+            return View();
         }
 
         [HttpGet]
@@ -72,11 +72,11 @@ namespace TheForgiveness.Controllers
             {
                 return RedirectToAction("Login");
             }
-                ViewBag.genero = gs.queryGenero();
-                ViewBag.documento = tds.queryTipoDocumento();
-                ViewBag.departamento = ds.queryDepartamento();
-                ViewBag.municipio = ms.queryMunicipio();
-                return View();
+            ViewBag.genero = gs.queryGenero();
+            ViewBag.documento = tds.queryTipoDocumento();
+            ViewBag.departamento = ds.queryDepartamento();
+            ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            return View();
         }
 
         [HttpGet]
@@ -97,7 +97,8 @@ namespace TheForgiveness.Controllers
                 ViewBag.Class = "text-success";
                 ViewBag.Records = "Name : " + Request.Form["userName"].ToString() + " Usuario Existente!!!!";
             }
-            else {
+            else
+            {
                 ViewBag.Class = "text-danger";
                 ViewBag.Records = "Name : " + Request.Form["userName"].ToString() + "SubNormal de mierda, no existe eso!!!!!!";
             }

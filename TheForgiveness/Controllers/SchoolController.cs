@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +21,7 @@ namespace TheForgiveness.Controllers
         public PartialViewResult CreateSchool()
         {
             ViewBag.departamento = ds.queryDepartamento();
-            ViewBag.municipio = ms.queryMunicipio();
+            ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
             return PartialView();
         }
 
@@ -73,7 +74,7 @@ namespace TheForgiveness.Controllers
                     return RedirectToAction("Index", "DashBoard");
                 }
                 ViewBag.departamento = ds.queryDepartamento();
-                ViewBag.municipio = ms.queryMunicipio();
+                ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
                 return View(school);
             }
             return View(school);
