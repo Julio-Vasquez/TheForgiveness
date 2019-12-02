@@ -60,20 +60,20 @@
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b>@Html.DisplayNameFor(model => model.Genero)</b></li>
-                        <li>@Html.DisplayFor(model => model.Genero)</li>
+                        <li><b>Genero</b></li>
+                        <li>@Html.Raw(ViewData["genero"])</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b>@Html.DisplayNameFor(model => model.TipoDocumento)</b></li>
-                        <li>@Html.DisplayFor(model => model.TipoDocumento)</li>
+                        <li><b>TipoDocumento</b></li>
+                        <li>@Html.Raw(ViewData["documento"])</li>
                     </ul>
                 </li>
                 <li>
                     <ul class="address-text">
-                        <li><b> @Html.DisplayNameFor(model => model.Municipio)</b></li>
-                        <li>@Html.DisplayFor(model => model.Municipio)</li>
+                        <li><b>Municipio</b></li>
+                        <li>@Html.Raw(ViewData["municipio"])</li>
                     </ul>
                 </li>
             </ul>

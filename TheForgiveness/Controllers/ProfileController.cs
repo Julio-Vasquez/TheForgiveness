@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TheForgiveness.Util;
+using Newtonsoft.Json;
 
 namespace TheForgiveness.Controllers
 {
@@ -12,6 +13,8 @@ namespace TheForgiveness.Controllers
         
         private Services.usuarioService us = new Services.usuarioService();
         private Services.perfilServices ps = new Services.perfilServices();
+        private Services.departamentoService ds = new Services.departamentoService();
+        private Services.municipioService ms = new Services.municipioService();
         // GET: Profile
         [HttpGet]
         [StatesLogging]
@@ -28,18 +31,19 @@ namespace TheForgiveness.Controllers
         {
             
             var res = ps.myData(Convert.ToString(Session["username"]));
+            ViewData["municipio"] = res["mun"].ToString();
+            ViewData["documento"] = res["tipdoc"].ToString();
+            ViewData["genero"] = res["gen"].ToString();
             return PartialView(
                     new Models.PerfilModel(
+                            int.Parse(res["Edad"].ToString()),
                             long.Parse(res["Identificacion"].ToString()),
                             res["Primer_Nombre"].ToString(),
                             res["Segundo_Nombre"].ToString(),
                             res["Primer_Apellido"].ToString(),
                             res["Segundo_Apellido"].ToString(),
                             res["FechaDeNacimeinto"].ToString(),
-                            int.Parse(res["Edad"].ToString()),
-                            res["Genero"].ToString(),
-                            res["Tipo_Documento"].ToString(),
-                            res["Municipio"].ToString()
+                            int.Parse(res["Edad"].ToString())
                         )
                 );
 
@@ -66,18 +70,27 @@ namespace TheForgiveness.Controllers
         public ActionResult UpdatePerfil()
         {
             var res = ps.myData(Convert.ToString(Session["username"]));
+            ViewData["municipio"] = res["mun"].ToString();
+            ViewData["documento"] = res["tipdoc"].ToString();
+            ViewData["genero"] = res["gen"].ToString();
+            ViewData["departamento"] = res["Departamento"].ToString();
+            ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
+            ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+
+
             return View(new Models.PerfilModel(
                             long.Parse(res["Identificacion"].ToString()),
                             res["Primer_Nombre"].ToString(),
                             res["Segundo_Nombre"].ToString(),
                             res["Primer_Apellido"].ToString(),
                             res["Segundo_Apellido"].ToString(),
-                            res["FechaDeNacimeinto"].ToString(),
+                            DateTime.Parse(res["FechaDeNacimeinto"].ToString()).ToString("yyyy-MM-dd"),
                             int.Parse(res["Edad"].ToString()),
-                            res["Genero"].ToString(),
-                            res["Tipo_Documento"].ToString(),
-                            res["Municipio"].ToString()
-                        ));
+                            int.Parse(res["gen"].ToString()),
+                            int.Parse(res["tipdoc"].ToString()),
+                            int.Parse(res["mun"].ToString())
+
+                        ));           
         }
 
         [HttpGet]
@@ -103,6 +116,17 @@ namespace TheForgiveness.Controllers
         public ActionResult ChangePassword(Models.PasswordModel pm)
         {
             if (ModelState.IsValid && us.ChangePassword(pm, Session["username"].ToString()))
+                return RedirectToAction("Profile");
+            return View();
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdatePerfil")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdatePerfil(Models.PerfilModel pm)
+        {
+            if (ModelState.IsValid && ps.updateprofile(pm))
                 return RedirectToAction("Profile");
             return View();
         }
