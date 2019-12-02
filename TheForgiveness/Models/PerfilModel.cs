@@ -50,25 +50,13 @@ namespace TheForgiveness.Models
         [Range(10, 125, ErrorMessage = "Edad no valido")]
         public int Edad { get; set; }
 
-        [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Genero")]
-        [StringLength(55, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 3)]
-        [DataType(DataType.Text)]
-        public string Genero { get; set; }
+        public int Genero { get; set; }
 
-        [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Tipo Documento")]
-        [StringLength(55, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 3)]
-        [DataType(DataType.Text)]
-        public string TipoDocumento { get; set; }
+        public int TipoDocumento { get; set; }
 
-        [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Municipio")]
-        [StringLength(55, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 3)]
-        [DataType(DataType.Text)]
-        public string Municipio { get; set; }
+        public int Municipio { get; set; }
 
-        public PerfilModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, int edad, string genero, string tipoDocumento, string municipio)
+        public PerfilModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, int edad, int genero, int tipoDocumento, int municipio)
         {
             NumIdentificacion = numIdentificacion;
             PriNombre = priNombre;
@@ -82,7 +70,7 @@ namespace TheForgiveness.Models
             Municipio = municipio;
         }
 
-        public PerfilModel(int iD, long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, int edad, string genero, string tipoDocumento, string municipio)
+        public PerfilModel(int iD, long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, int edad, int genero, int tipoDocumento, int municipio)
         {
             ID = iD;
             NumIdentificacion = numIdentificacion;
@@ -95,6 +83,18 @@ namespace TheForgiveness.Models
             Genero = genero;
             TipoDocumento = tipoDocumento;
             Municipio = municipio;
+        }
+
+        public PerfilModel(int iD, long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, int edad)
+        {
+            ID = iD;
+            NumIdentificacion = numIdentificacion;
+            PriNombre = priNombre;
+            SegNombre = segNombre;
+            PriApellido = priApellido;
+            SegApellido = segApellido;
+            FechaNacimiento = fechaNacimiento;
+            Edad = edad;
         }
 
         public PerfilModel()

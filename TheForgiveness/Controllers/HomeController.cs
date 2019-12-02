@@ -56,6 +56,9 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SignUp(Models.UsuarioModel ums)
         {
+
+            string res = Request.Form.ToString();
+            Console.WriteLine(res);
             Models.personaModel pm = new Models.personaModel
                 (
                     long.Parse(Request.Form["NumIdentificacion"]),
@@ -68,7 +71,9 @@ namespace TheForgiveness.Controllers
                     int.Parse(Request.Form["Identificacion"]),
                     int.Parse(Request.Form["Municipio"])
                 );
-            if (us.signup(ums, pm, long.Parse(Request.Form["Telefono"]), Request.Form["email"]))
+
+            bool test = us.signup(ums, pm, long.Parse(Request.Form["Telefono"]), Request.Form["email"]);
+            if (test) 
             {
                 return RedirectToAction("Login");
             }
