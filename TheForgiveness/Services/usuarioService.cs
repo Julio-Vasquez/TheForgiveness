@@ -39,7 +39,7 @@ namespace TheForgiveness.Services
                     + ",'" + um.Username 
                     + "','" + um.PassWord 
                     + "'," + tel + ",'" 
-                    + email + "',3);");
+                    + email + "',2);");
             }
             catch (Exception)
             {
