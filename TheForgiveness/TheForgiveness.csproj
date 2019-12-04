@@ -173,7 +173,6 @@
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
-    <Compile Include="Controllers\SubCategoryController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\VictimologyController.cs" />
     <Compile Include="Global.asax.cs">
@@ -210,7 +209,6 @@
     <Compile Include="Models\rolModel.cs" />
     <Compile Include="Models\rolpermisoModel.cs" />
     <Compile Include="Models\studentModel.cs" />
-    <Compile Include="Models\subcategoiaModel.cs" />
     <Compile Include="Models\telefonoModel.cs" />
     <Compile Include="Models\tipoDocumentoModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
@@ -237,7 +235,6 @@
     <Compile Include="Services\notasService.cs" />
     <Compile Include="Services\perfilServices.cs" />
     <Compile Include="Services\rolService.cs" />
-    <Compile Include="Services\subcategoriaService.cs" />
     <Compile Include="Services\telefonoService.cs" />
     <Compile Include="Services\tipoDocumentoService.cs" />
     <Compile Include="Services\usuarioService.cs" />
@@ -330,7 +327,6 @@
     <Folder Include="bin\" />
     <Folder Include="obj\Debug\" />
     <Folder Include="Views\Diplomas\" />
-    <Folder Include="Views\Perception\" />
     <Folder Include="Views\Stage\" />
   </ItemGroup>
   <ItemGroup>
@@ -400,7 +396,6 @@
     <Content Include="Assets\Icon\CreateActivities.svg" />
     <Content Include="Assets\Icon\CreateContact.svg" />
     <Content Include="Assets\Icon\CreateDepartment.svg" />
-    <Content Include="Assets\Icon\CreateDiploma.svg" />
     <Content Include="Assets\Icon\CreateEvaluation.svg" />
     <Content Include="Assets\Icon\CreateExperience.svg" />
     <Content Include="Assets\Icon\CreateForgivenessAuthor.svg" />
@@ -411,24 +406,19 @@
     <Content Include="Assets\Icon\CreateSchool.svg" />
     <Content Include="Assets\Icon\CreateStage.svg" />
     <Content Include="Assets\Icon\CreateStudent.svg" />
-    <Content Include="Assets\Icon\CreateSubcategory.svg" />
     <Content Include="Assets\Icon\CreateSubject.svg" />
     <Content Include="Assets\Icon\CreateVictimology.svg" />
     <Content Include="Assets\Icon\DASHBOARD.svg" />
     <Content Include="Assets\Icon\DeleteActivities.svg" />
     <Content Include="Assets\Icon\DeleteContact.svg" />
     <Content Include="Assets\Icon\DeleteDepartment.svg" />
-    <Content Include="Assets\Icon\DeleteDiploma.svg" />
     <Content Include="Assets\Icon\DeleteEvaluation.svg" />
     <Content Include="Assets\Icon\DeleteForgivenessAuthor.svg" />
-    <Content Include="Assets\Icon\DeleteForgivenessStudent.svg" />
     <Content Include="Assets\Icon\DeleteIDocument.svg" />
     <Content Include="Assets\Icon\DeleteMunicipality.svg" />
-    <Content Include="Assets\Icon\DeletePerception.svg" />
     <Content Include="Assets\Icon\DeleteSchool.svg" />
     <Content Include="Assets\Icon\DeleteStage.svg" />
     <Content Include="Assets\Icon\DeleteStudent.svg" />
-    <Content Include="Assets\Icon\DeleteSubcategory.svg" />
     <Content Include="Assets\Icon\DeleteSubject.svg" />
     <Content Include="Assets\Icon\DeleteVictimology.svg" />
     <Content Include="Assets\Icon\Department.svg" />
@@ -456,7 +446,6 @@
     <Content Include="Assets\Icon\SeeSchool.svg" />
     <Content Include="Assets\Icon\SeeStage.svg" />
     <Content Include="Assets\Icon\SeeStudent.svg" />
-    <Content Include="Assets\Icon\SeeSubcategory.svg" />
     <Content Include="Assets\Icon\SeeSubject.svg" />
     <Content Include="Assets\Icon\SeeUser.svg" />
     <Content Include="Assets\Icon\SeeVictimology.svg" />
@@ -468,7 +457,6 @@
     <Content Include="Assets\Icon\UpdateActivities.svg" />
     <Content Include="Assets\Icon\UpdateContact.svg" />
     <Content Include="Assets\Icon\UpdateDepartment.svg" />
-    <Content Include="Assets\Icon\UpdateDiploma.svg" />
     <Content Include="Assets\Icon\UpdateEvaluation.svg" />
     <Content Include="Assets\Icon\UpdateExperience.svg" />
     <Content Include="Assets\Icon\UpdateForgivenessAuthor.svg" />
@@ -479,7 +467,6 @@
     <Content Include="Assets\Icon\UpdateProfile.svg" />
     <Content Include="Assets\Icon\UpdateStage.svg" />
     <Content Include="Assets\Icon\UpdateStudent.svg" />
-    <Content Include="Assets\Icon\UpdateSubcategory.svg" />
     <Content Include="Assets\Icon\UpdateSubject.svg" />
     <Content Include="Assets\Icon\UpdateUser.svg" />
     <Content Include="Assets\Icon\UpdateVictimology.svg" />
@@ -679,21 +666,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Victimology\SpecifyVictimologys.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\SubCategory\CreateSubcategory.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\SubCategory\UpdateSubcategory.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\SubCategory\DeleteSubcategory.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\SubCategory\GetSubcategory.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\SubCategory\SpecifySubcategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Perception\CreatePerception.cshtml" />
