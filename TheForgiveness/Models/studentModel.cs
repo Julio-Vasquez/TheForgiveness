@@ -82,5 +82,16 @@ namespace TheForgiveness.Models
             Genero = genero;
             Municipio = municipio;
         }
+        public studentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email, int genero)
+        {
+            NumIdentificacion = numIdentificacion;
+            PriNombre = priNombre;
+            SegNombre = segNombre;
+            PriApellido = priApellido;
+            SegApellido = segApellido;
+            FechaNacimiento = fechaNacimiento;
+            Email = email;
+            Genero = genero;
+        }
     }
 }

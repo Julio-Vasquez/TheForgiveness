@@ -14,6 +14,11 @@ namespace TheForgiveness.Services
             return MySQL.Operations("CALL Insert_Colegio('" + school.Nombre + "'," + school.Municipio + ")");
         }
 
+        public System.Data.DataRow queryshools(int school)
+        {
+            return MySQL.Querys("SELECT * FROM theforgiveness.colegio where colegio.ID="+school).Rows[0];
+        }
+
         public IEnumerable<Models.colegioModel> listSchools()
         { 
             System.Data.DataTable listasig = MySQL.Querys("select ID,Nombre,Municipio from colegio");

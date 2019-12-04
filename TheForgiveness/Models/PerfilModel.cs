@@ -41,7 +41,6 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Fecha De Nacimiento")]
-        [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
         [DataType(DataType.Date)]
         public string FechaNacimiento { get; set; }
 

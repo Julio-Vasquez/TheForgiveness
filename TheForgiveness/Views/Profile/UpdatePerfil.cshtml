@@ -54,7 +54,7 @@
 
         </div>
 
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-4 offset-md-1">
             <label class="control-label">Genero</label>
             <select id="Genero" name="Genero" class="form-control">
                 <option value="default"></option>
@@ -95,13 +95,19 @@
     @{
     @:var municipio = @Html.Raw(ViewData["municipios"].ToString()); ;
     @:var departamento = @Html.Raw(ViewData["departamentos"].ToString()); ;
+    @:var genero = @Html.Raw(ViewData["generos"].ToString()); ;
+    @:var tipodocumento = @Html.Raw(ViewData["tipodocumentos"].ToString()); ;
     }
     $(document).ready(function () {
         llenardep();
         llenarmun();
+        llenargen();
+        llenardoc();
         @{
         @:document.getElementById("Departamento").value = '@ViewData["departamento"]';
         @:document.getElementById("Municipio").value = '@ViewData["municipio"]';
+        @:document.getElementById("Genero").value = '@ViewData["genero"]';
+        @:document.getElementById("TipoDocumento").value = '@ViewData["documento"]';
     }}
         );
     function cargar(id) {
@@ -139,6 +145,26 @@
             let option = document.createElement("option");
             option.text = municipio[i].Municipio;
             option.value = municipio[i].ID;
+            ele.add(option);
+        }
+    }
+
+    function llenargen() {
+        let ele = document.getElementById('Genero');
+        for (let i = 0; i < genero.length; i++) {
+            let option = document.createElement("option");
+            option.text = genero[i].Genero;
+            option.value = genero[i].ID;
+            ele.add(option);
+        }
+    }
+
+    function llenardoc() {
+        let ele = document.getElementById('TipoDocumento');
+        for (let i = 0; i < tipodocumento.length; i++) {
+            let option = document.createElement("option");
+            option.text = tipodocumento[i].TipoDocumento;
+            option.value = tipodocumento[i].ID;
             ele.add(option);
         }
     }
