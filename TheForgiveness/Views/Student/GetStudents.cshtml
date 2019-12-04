@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TheForgiveness.Models.studentModel>
+﻿@model  TheForgiveness.Models.studentModel
 
 @{
     ViewBag.Title = "GetStudent";
@@ -14,7 +14,7 @@
 <h1>Listado de Estudiantes</h1>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Estudiante", "CreateStudent")
 </p>
 <table class="table" id="stud">
     <thead>
@@ -38,9 +38,6 @@
                 @Html.DisplayNameFor(model => model.FechaNacimiento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Genero)
             </th>
             <th>
@@ -53,73 +50,66 @@
         @{
             if (ViewBag.rol == "Docente")
             {
-                foreach (var item in Model)
-                {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.NumIdentificacion)
+                            @Html.DisplayFor(modelItem => Model.NumIdentificacion)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.PriNombre)
+                            @Html.DisplayFor(modelItem => Model.PriNombre)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.SegNombre)
+                            @Html.DisplayFor(modelItem => Model.SegNombre)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.PriApellido)
+                            @Html.DisplayFor(modelItem => Model.PriApellido)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.SegApellido)
+                            @Html.DisplayFor(modelItem => Model.SegApellido)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                            @Html.DisplayFor(modelItem => Model.FechaNacimiento)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Email)
+                            @Html.Raw(ViewData["genero"])
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Genero)
+                            @Html.Raw(ViewData["municipio"])
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Municipio)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })
+                            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })*@
                         </td>
                     </tr>
-                }
+                
             }
             else
             {
-                foreach (var item in Model)
-                {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.NumIdentificacion)
+                            @Html.DisplayFor(modelItem => Model.NumIdentificacion)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.PriNombre)
+                            @Html.DisplayFor(modelItem => Model.PriNombre)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.SegNombre)
+                            @Html.DisplayFor(modelItem => Model.SegNombre)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.PriApellido)
+                            @Html.DisplayFor(modelItem => Model.PriApellido)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.SegApellido)
+                            @Html.DisplayFor(modelItem => Model.SegApellido)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                            @Html.DisplayFor(modelItem => Model.FechaNacimiento)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Email)
+                            @Html.DisplayFor(modelItem => Model.Email)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Genero)
+                            @Html.Raw(ViewData["genero"])
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Municipio)
+                            @Html.Raw(ViewData["municipio"])
                         </td>
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-warning" })

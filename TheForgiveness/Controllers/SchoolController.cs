@@ -56,9 +56,13 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetSchools")]
-        public ActionResult SpecifySchool()
+        public ActionResult SpecifySchool(int id)
         {
-            return View();
+
+            ViewBag.rol = Session["Role"].ToString();
+            System.Data.DataRow dr= schoolsrv.queryshools(id);
+            Models.colegioModel shoolmodel = new Models.colegioModel(id, dr["Nombre"].ToString(), int.Parse(dr["Municipio"].ToString()));
+            return PartialView(shoolmodel);
         }
 
         [HttpPost]

@@ -15,6 +15,8 @@ namespace TheForgiveness.Controllers
         private Services.perfilServices ps = new Services.perfilServices();
         private Services.departamentoService ds = new Services.departamentoService();
         private Services.municipioService ms = new Services.municipioService();
+        private Services.generoService gene = new Services.generoService();
+        private Services.tipoDocumentoService tido = new Services.tipoDocumentoService();
         // GET: Profile
         [HttpGet]
         [StatesLogging]
@@ -31,9 +33,9 @@ namespace TheForgiveness.Controllers
         {
             
             var res = ps.myData(Convert.ToString(Session["username"]));
-            ViewData["municipio"] = res["mun"].ToString();
-            ViewData["documento"] = res["tipdoc"].ToString();
-            ViewData["genero"] = res["gen"].ToString();
+            ViewData["municipio"] = res["Municipio"].ToString();
+            ViewData["documento"] = res["Tipo_Documento"].ToString();
+            ViewData["genero"] = res["Genero"].ToString();
             return PartialView(
                     new Models.PerfilModel(
                             int.Parse(res["Edad"].ToString()),
@@ -76,6 +78,8 @@ namespace TheForgiveness.Controllers
             ViewData["departamento"] = res["Departamento"].ToString();
             ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
             ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
+            ViewData["tipodocumentos"] = JsonConvert.SerializeObject(tido.queryTipoDocumento());
 
 
             return View(new Models.PerfilModel(
@@ -126,9 +130,33 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UpdatePerfil(Models.PerfilModel pm)
         {
-            if (ModelState.IsValid && ps.updateprofile(pm))
+            if (ps.updateprofile(pm, Convert.ToString(Session["username"])))
                 return RedirectToAction("Profile");
-            return View();
+
+            var res = ps.myData(Convert.ToString(Session["username"]));
+            ViewData["municipio"] = res["mun"].ToString();
+            ViewData["documento"] = res["tipdoc"].ToString();
+            ViewData["genero"] = res["gen"].ToString();
+            ViewData["departamento"] = res["Departamento"].ToString();
+            ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
+            ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
+            ViewData["tipodocumentos"] = JsonConvert.SerializeObject(tido.queryTipoDocumento());
+
+
+            return View(new Models.PerfilModel(
+                            long.Parse(res["Identificacion"].ToString()),
+                            res["Primer_Nombre"].ToString(),
+                            res["Segundo_Nombre"].ToString(),
+                            res["Primer_Apellido"].ToString(),
+                            res["Segundo_Apellido"].ToString(),
+                            DateTime.Parse(res["FechaDeNacimeinto"].ToString()).ToString("yyyy-MM-dd"),
+                            int.Parse(res["Edad"].ToString()),
+                            int.Parse(res["gen"].ToString()),
+                            int.Parse(res["tipdoc"].ToString()),
+                            int.Parse(res["mun"].ToString())
+
+                        ));
         }
 
         #endregion POSTMethod

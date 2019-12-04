@@ -9,6 +9,13 @@ namespace TheForgiveness.Controllers
 {
     public class StudentController : Controller
     {
+        private Services.usuarioService us = new Services.usuarioService();
+        private Services.perfilServices ps = new Services.perfilServices();
+        private Services.departamentoService ds = new Services.departamentoService();
+        private Services.municipioService ms = new Services.municipioService();
+        private Services.generoService gene = new Services.generoService();
+        private Services.tipoDocumentoService tido = new Services.tipoDocumentoService();
+
         private Util.Util util = new Util.Util();
         #region HTTPMethod Get
 
@@ -33,8 +40,24 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetStudents")]
         public PartialViewResult GetStudents()
         {
+
             ViewBag.rol = Session["Role"].ToString();
-            return PartialView();
+            var res = ps.studendata(Convert.ToString(Session["username"]));
+            ViewData["municipio"] = res["Municipio"].ToString();
+            ViewData["documento"] = res["Tipo_Documento"].ToString();
+            ViewData["genero"] = res["Genero"].ToString();
+            return PartialView(
+                    new Models.studentModel(
+                            int.Parse(res["Edad"].ToString()),
+                            res["Identificacion"].ToString(),
+                            res["Primer_Nombre"].ToString(),
+                            res["Segundo_Nombre"].ToString(),
+                            res["Primer_Apellido"].ToString(),
+                            res["Segundo_Apellido"].ToString(),
+                            res["FechaDeNacimeinto"].ToString(),
+                            int.Parse(res["Edad"].ToString())
+                        )
+                );
         }
 
         [HttpGet]
