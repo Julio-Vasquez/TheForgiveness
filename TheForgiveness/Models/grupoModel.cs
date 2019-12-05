@@ -17,7 +17,6 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Nombre del Grupo")]
-        [RegularExpression(@"/[^a-zA-ZáéíóúAÉÍÓÚÑñ]+$/", ErrorMessage = "NO se admiten espacios ni numeros")]
         [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 3)]
         public string Nombre { get; set; }
 
