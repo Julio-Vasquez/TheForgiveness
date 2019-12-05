@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TheForgiveness.Util;
+using Newtonsoft.Json;
 
 namespace TheForgiveness.Controllers
 {
@@ -11,12 +12,19 @@ namespace TheForgiveness.Controllers
     {
 
         private Services.grupoService Groupssrv = new Services.grupoService();
+        private Services.asignaturaService signaturessrv = new Services.asignaturaService();
+        private Services.perfilServices docentsrv = new Services.perfilServices();
+        private Services.colegioService colsrv = new Services.colegioService();
+
         // GET: Profile
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateGroup")]
         public PartialViewResult CreateGroup()
         {
+            ViewData["docentes"] = JsonConvert.SerializeObject(docentsrv.queryDocentes());
+            ViewData["asignaturas"] = JsonConvert.SerializeObject(signaturessrv.listSubject());
+            ViewData["colegios"] = JsonConvert.SerializeObject(colsrv.listSchools());
             return PartialView();
         }
 
