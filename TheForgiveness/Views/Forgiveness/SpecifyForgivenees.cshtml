@@ -12,14 +12,6 @@
 
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Victimologia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Victimologia)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Persona)
         </dt>
 
@@ -46,6 +38,11 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }, new { @class = "btn btn-outline-warning" }) |
-    @Html.ActionLink("Back to List", "Index")
+    @{
+        if (ViewBag.rol == "Estudiante")
+        {
+            @Html.ActionLink("Edit", "UpdateForgivenees", new { id = Model.ID }, new { @class = "btn btn-outline-success" })
+        }
+    }
+    @Html.ActionLink("Back to List", "GetForgiveness")
 </p>

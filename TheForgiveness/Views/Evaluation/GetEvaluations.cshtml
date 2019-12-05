@@ -63,40 +63,13 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Estudiante)
                         </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                        <td> 
+                            @Html.ActionLink("Details", "GetEvaluations", new { id = item.ID }, new { @class = "btn btn-outline-success" })
                         </td>
                     </tr>
                 }
             }
-            else
-            {
-                foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Calificacion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FechaEvaluacion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Actividad)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Grupo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Estudiante)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                        </td>
-                    </tr>
-                }
-            }
+            
         }
     </tbody>
 

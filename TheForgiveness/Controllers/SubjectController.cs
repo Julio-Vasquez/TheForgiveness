@@ -59,6 +59,7 @@ namespace TheForgiveness.Controllers
         {
             if (id != null)
             {
+                ViewBag.rol = Session["Role"].ToString();
                 var res = asigs.Subject(id);
                 return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
             }

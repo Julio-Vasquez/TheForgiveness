@@ -55,6 +55,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetPerception")]
         public ActionResult SpecifyPerception()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return View();
         }
 
