@@ -65,6 +65,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetExperiences")]
         public ActionResult SpecifyExperiences()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return View();
         }
 

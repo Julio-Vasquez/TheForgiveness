@@ -38,27 +38,31 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Nombre)
                         </td>
-                        
+
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Edit", "UpdateSubject", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "SpecifySubject", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "DeleteSubject", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
             }
             else
             {
-                foreach (var item in Model)
+                if (ViewBag.rol == "Docente")
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nombre)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                        </td>
-                    </tr>
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "UpdateSubject", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                                @Html.ActionLink("Details", "SpecifySubject", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            </td>
+                        </tr>
+                    }
                 }
             }
         }

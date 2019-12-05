@@ -48,7 +48,7 @@
     </thead>
     <tbody>
         @{
-            if (ViewBag.rol == "Docente")
+            if (ViewBag.rol == "Docente" || ViewBag.rol == "Administrador")
             {
                     <tr>
                         <td>
@@ -68,42 +68,6 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => Model.FechaNacimiento)
-                        </td>
-                        <td>
-                            @Html.Raw(ViewData["genero"])
-                        </td>
-                        <td>
-                            @Html.Raw(ViewData["municipio"])
-                        </td>
-                        <td>
-                            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })*@
-                        </td>
-                    </tr>
-                
-            }
-            else
-            {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.NumIdentificacion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.PriNombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.SegNombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.PriApellido)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.SegApellido)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.FechaNacimiento)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.Email)
                         </td>
                         <td>
                             @Html.Raw(ViewData["genero"])
@@ -117,9 +81,10 @@
                             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
-                }
+                
             }
-        }
+            
+            }
     </tbody>
 
 

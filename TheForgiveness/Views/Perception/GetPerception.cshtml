@@ -35,6 +35,31 @@
     </thead>
     <tbody>
         @if (ViewBag.rol == "Estudiante")
+{
+    foreach (var item in Model)
+    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usuario)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "UpdatePerception", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) |
+                        @Html.ActionLink("Details", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" }) |
+                        @Html.ActionLink("Delete", "DeletePerception", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                    </td>
+                </tr>
+    }
+}
+
+
+
+        @if (ViewBag.rol == "Docente" || ViewBag.rol == "Administrador")
         {
             foreach (var item in Model)
             {
@@ -49,38 +74,10 @@
                         @Html.DisplayFor(modelItem => item.Usuario)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) |
-                        @Html.ActionLink("Details", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                        @Html.ActionLink("Details", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" })
                     </td>
                 </tr>
             }
         }
-
-
-
-        @if (ViewBag.rol == "Docente")
-        {
-            foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Descripcion)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Fecha)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Usuario)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) |
-                        @Html.ActionLink("Details", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
-                    </td>
-                </tr>
-            }
-        }
-
     </tbody>
 </table>

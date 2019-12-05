@@ -623,15 +623,6 @@
     <Content Include="Views\Evaluation\GetEvaluations.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Evaluation\CreateEvaluation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Evaluation\DeleteEvaluation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Evaluation\UpdateEvaluation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Evaluation\SpecifyEvaluation.cshtml" />
   </ItemGroup>
   <ItemGroup>

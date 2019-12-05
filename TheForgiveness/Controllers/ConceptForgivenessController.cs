@@ -53,6 +53,7 @@ namespace TheForgiveness.Controllers
         {
             //especifico este es el controller
             if (id != null) {
+                ViewBag.rol = Session["Role"].ToString();
                 var dr = Authoressrv.SpecifyData(id);
                 var model = new Models.conceptoautoresModel(
                     dr["Publicacion"].ToString(),

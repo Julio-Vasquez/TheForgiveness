@@ -38,36 +38,13 @@
     <tbody>
 
         @{
-            if (ViewBag.rol == "Estudiante")
+            if (ViewBag.rol == "Administrador")
             {
                 foreach (var item in Model)
                 {
                     <tr>
                         <td>
 
-                            @Html.DisplayFor(modelItem => item.AñoPublicacion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Titulo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Descripcion)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Autor)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                        </td>
-                    </tr>
-                }
-            }
-            else
-            {
-                foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
                             @Html.DisplayFor(modelItem => item.AñoPublicacion)
                         </td>
                         <td>
@@ -83,10 +60,34 @@
                             @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
                             @Html.ActionLink("Details", "SpecifyConcept", new { id = item.ID }, new { @class = "btn btn-outline-success" })
                             @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
-
                         </td>
                     </tr>
                 }
+            }
+            else
+            {
+
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AñoPublicacion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Titulo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Autor)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "SpecifyConcept", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+
+                            </td>
+                        </tr>
+                    }
             }
         }
     </tbody>

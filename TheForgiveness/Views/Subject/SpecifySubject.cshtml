@@ -9,7 +9,7 @@
 <h2>Detalles de la asignatura</h2>
 
 <div>
- 
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -22,6 +22,13 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "UpdateSubject", new { id = Model.ID }, new { @class = "btn btn-outline-warning"}) 
+    @{
+        if (ViewBag.rol == "Administrador" || ViewBag.rol == "Docente")
+        {
+            @Html.ActionLink("Edit", "UpdateSubject", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
+        }
+    }
+
+
     @Html.ActionLink("Back to List", "GetSubjects")
 </p>

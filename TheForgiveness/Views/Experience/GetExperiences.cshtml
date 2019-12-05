@@ -33,31 +33,6 @@
             <th>Acciones</th>
         </tr>
     </thead>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaExperiencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Experiencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Persona)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Municipio)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-    }
-
-
     <tbody>
         @{
             if (ViewBag.rol == "Estudiante")
@@ -79,9 +54,9 @@
                             @Html.DisplayFor(modelItem => item.Municipio)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Edit", "UpdateExperience", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "SpecifyExperiences", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "DeleteExperience", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
@@ -108,7 +83,7 @@
                             </td>
                             <td>
 
-                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                                @Html.ActionLink("Details", "SpecifyExperiences", new { id = item.ID }, new { @class = "btn btn-outline-success" })
 
                             </td>
                         </tr>

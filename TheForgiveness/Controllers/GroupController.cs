@@ -63,7 +63,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetGroup")]
         public ActionResult SpecifyGroup()
         {
-
+            ViewBag.rol = Session["Role"].ToString();
             return View();
         }
 
