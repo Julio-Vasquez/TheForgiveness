@@ -11,7 +11,7 @@ namespace TheForgiveness.Services
 
         public bool CreateGrups(Models.grupoModel grups)
         {
-            return MySQL.Operations("CALL Insert_Grupos(" + grups.Codigo + ",'" + grups.Nombre + "'," + grups.AñoEscolar + "," + grups.Docente + "," + grups.Asignatura + "," + grups.Colegio + ")");
+            return MySQL.Operations("CALL Insert_Grupo(" + grups.Codigo + ",'" + grups.Nombre + "'," + grups.AñoEscolar + "," + grups.Docente + "," + grups.Asignatura + "," + grups.Colegio + ")");
         }
 
         public IEnumerable<Models.grupoModel> listGrups()
