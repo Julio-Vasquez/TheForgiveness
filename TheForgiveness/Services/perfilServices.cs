@@ -10,6 +10,10 @@ namespace TheForgiveness.Services
 
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
+        public System.Data.DataTable queryDocentes() {
+            return MySQL.Querys("SELECT p.ID AS id,concat(PriNombre,' ',SegNombre,' ',PriApellido,' ',SegApellido) as Docente FROM persona AS p INNER JOIN usuario AS u on u.Persona = p.ID where u.Rol = 2");
+        }
+
         public System.Data.DataRow myData(string un)
         {
             long id = myIDentification(un);
