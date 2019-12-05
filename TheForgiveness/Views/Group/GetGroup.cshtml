@@ -14,7 +14,7 @@
 <h1>Listado de Grupo</h1>
 <hr />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateGroup")
 </p>
 <table class="table" id="gp">
     <thead>
@@ -67,7 +67,7 @@
                     <td>
                         @Html.ActionLink("Edit", "UpdateGroup", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
                         @Html.ActionLink("Details", "SpecifyGroup", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                        @Html.ActionLink("Delete", "DeleteGroup", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                     </td>
                 </tr>
             }
@@ -93,7 +93,7 @@
                         @Html.DisplayFor(modelItem => item.Colegio)
                     </td>
                     <td>
-                        @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                        @Html.ActionLink("Details", "SpecifyGroup", new { id = item.ID }, new { @class = "btn btn-outline-success" })
                     </td>
                 </tr>
             }

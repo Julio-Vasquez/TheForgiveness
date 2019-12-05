@@ -59,7 +59,7 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetAuthors")]
-        public ActionResult SpecifyAuthors(int? id)
+        public ActionResult SpecifyAuthor(int? id)
         {
             if (id != null)
             {
@@ -77,14 +77,14 @@ namespace TheForgiveness.Controllers
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateAuthors")]
+        [PermissionAttributes(File = "CreateAuthor")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateAuthors(Models.autoresModel am)
+        public ActionResult CreateAuthor(Models.autoresModel am)
         {
             if (ModelState.IsValid)
             {
                 if (Authoressrv.createAuthores(am))
-                    return RedirectToAction("getAuthor");
+                    return RedirectToAction("GetAuthors");
                 else
                     return View(am);
             }
