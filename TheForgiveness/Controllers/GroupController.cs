@@ -73,13 +73,15 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateGroup(Models.grupoModel gm)
         {
-            if (ModelState.IsValid)
-            {
+            ViewData["docentes"] = JsonConvert.SerializeObject(docentsrv.queryDocentes());
+            ViewData["asignaturas"] = JsonConvert.SerializeObject(signaturessrv.listSubject());
+            ViewData["colegios"] = JsonConvert.SerializeObject(colsrv.listSchools());
+            
                 if (Groupssrv.CreateGrups(gm))
                     return RedirectToAction("GetGroup");
                 else
                     return View(gm);
-            }
+            
             return View();
 
 
