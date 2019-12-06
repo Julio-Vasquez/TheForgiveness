@@ -3,7 +3,8 @@
 @{
     ViewBag.Title = "DeleteMunicipality";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>DeleteMunicipality</h1>
@@ -26,16 +27,16 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DepartamentoFK)
+            @ViewBag.Departamentos["Departamento"]
         </dd>
 
     </dl>
     <hr />
-    @using (Html.BeginForm("DeleteMunicipality", "Municipality", FormMethod.Post)) {
+    @using (Html.BeginForm("DeleteMunicipality", "Municipality", FormMethod.Post, new { @id = "delete"})) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+            <input type="submit" value="Delete" class="btn btn-outline-danger" onclick="return del(event, 'Municipio')"/> |
             @Html.ActionLink("Back to List", "GetMunicipalities")
         </div>
     }
