@@ -5,7 +5,7 @@
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-@using (Html.BeginForm("UpdateAuthor", "Author", FormMethod.Post))
+@using (Html.BeginForm("UpdateAuthor", "Authors", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <h1>Listado de autores a modificar</h1>
@@ -49,13 +49,14 @@
 
 
     </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Actualizar" class="btn btn-outline-success" />
+        </div>
+    </div>
 }
 <hr />
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Actualizar" class="btn btn-outline-success" />
-    </div>
-</div>
+
 <div>
     @Html.ActionLink("Back to List", "GetAuthors")
 </div>

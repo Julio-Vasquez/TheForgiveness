@@ -21,30 +21,40 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        public ActionResult DetailAutor(int? id)
-        {
-            return View();
-            if (id == null)
-            {
-
-            }
-            return RedirectToAction("Error404", "Shared");
-        }
-
-        [HttpGet]
-        [StatesLogging]
         [PermissionAttributes(File = "UpdateAuthor")]
         public ActionResult UpdateAuthor(int? id)
         {
+            if (id != null)
+            {
+                var res = Authoressrv.Auth(id);
+                return View(new Models.autoresModel(
+                    int.Parse(res["ID"].ToString()),
+                    res["PriNombre"].ToString(),
+                    res["SegNombre"].ToString(),
+                    res["PriApellido"].ToString(),
+                    res["SegApellido"].ToString()
+               ));
+            }
             return View();
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteAuthor")]
-        public ActionResult DeleteAuthor()
+        public ActionResult DeleteAuthor(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                var dr = Authoressrv.Auth(id);
+                var model = new Models.autoresModel(
+                    dr["PriNombre"].ToString(),
+                    dr["SegNombre"].ToString(),
+                    dr["PriApellido"].ToString(),
+                    dr["SegApellido"].ToString()
+                    );
+                return View(model);
+            }
+            return RedirectToAction("GetAuthors");
         }
 
         [HttpGet]
@@ -65,6 +75,7 @@ namespace TheForgiveness.Controllers
             {
                 var dr = Authoressrv.Auth(id);
                 var model = new Models.autoresModel(
+                    int.Parse(dr["ID"].ToString()),
                     dr["PriNombre"].ToString(),
                     dr["SegNombre"].ToString(),
                     dr["PriApellido"].ToString(),
@@ -89,8 +100,49 @@ namespace TheForgiveness.Controllers
                     return View(am);
             }
             return View();
+        }
 
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateAuthor")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateAuthor(Models.autoresModel am)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Authoressrv.UpdateAuth(am))
+                    return RedirectToAction("GetAuthors");
+                else
+                    return View(am);
+            }
+            return View();
+        }
 
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteAuthor")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteAuthor(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Authoressrv.DeleteAuthor(id))
+                {
+                    return RedirectToAction("GetAuthors");
+                }
+                else
+                {
+                    var dr = Authoressrv.Auth(id);
+                    var model = new Models.autoresModel(
+                    dr["PriNombre"].ToString(),
+                    dr["SegNombre"].ToString(),
+                    dr["PriApellido"].ToString(),
+                    dr["SegApellido"].ToString()
+                    );
+                    return View(model);
+                }
+            }
+            return View();
         }
     }
 }
