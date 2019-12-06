@@ -113,7 +113,7 @@ namespace TheForgiveness.Controllers
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "UpdateMunicipality")]
+        [PermissionAttributes(File = "DeleteMunicipality")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteMunicipality(int id)
         {

@@ -115,7 +115,7 @@ namespace TheForgiveness.Controllers
                 else
                     return View(am);
             }
-            return View();
+            return View(am);
         }
 
         [HttpPost]

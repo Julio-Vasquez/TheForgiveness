@@ -23,22 +23,18 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "UpdatePerception")]
-        public ActionResult UpdatePerception(int? victimiologia, int? persona)
+        public ActionResult UpdatePerception(int? id)
         {
-            return View();
-            if (victimiologia == null)
+            if (id != null) 
             {
-
+                var res = percepservice.ConVict(id);
+                return View(new Models.percepcionPostconfictoModel(
+                    int.Parse(res["ID"].ToString()),
+                    res["Descripcion"].ToString(),
+                    int.Parse(res["Usuario"].ToString())
+                    ));;
             }
-            return RedirectToAction("Error404", "Shared");
-        }
-
-        [HttpGet]
-        [StatesLogging]
-        [PermissionAttributes(File = "DeletePerception")]
-        public ActionResult DeletePerception()
-        {
-            return View();
+            return RedirectToAction("GetPerception");
         }
 
         [HttpGet]
@@ -47,16 +43,25 @@ namespace TheForgiveness.Controllers
         public PartialViewResult GetPerception()
         {
             ViewBag.rol = Session["Role"].ToString();
-            return PartialView(percepservice.listConcVic());
+            return PartialView(percepservice.listConcVic(Session["Role"].ToString(),int.Parse(Session["idAccount"].ToString())));
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetPerception")]
-        public ActionResult SpecifyPerception()
+        public ActionResult SpecifyPerception(int? id)
         {
-            ViewBag.rol = Session["Role"].ToString();
-            return View();
+            if (id != null) 
+            {
+                ViewBag.rol = Session["Role"].ToString();
+                var res = percepservice.ConVict(id);
+                return View(new Models.percepcionPostconfictoModel(
+                    int.Parse(res["ID"].ToString()),
+                    res["Descripcion"].ToString(),
+                    int.Parse(res["Usuario"].ToString())
+                    )); ;
+            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpPost]
@@ -73,9 +78,26 @@ namespace TheForgiveness.Controllers
                     return View(cvm);
             }
             return View();
-
-
         }
 
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdatePerception")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdatePerception(Models.percepcionPostconfictoModel cvm) 
+        {
+            if (ModelState.IsValid) 
+            {
+                if (percepservice.UpdateConVict(cvm))
+                {
+                    return RedirectToAction("GetPerception");
+                }
+                else
+                {
+                    return View(cvm);
+                }
+            }
+            return View(cvm);
+        }
     }
 }
