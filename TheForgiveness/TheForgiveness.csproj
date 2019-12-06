@@ -291,6 +291,7 @@
     <Content Include="Assets\Js\DashBoardP\waves.min.js" />
     <Content Include="Assets\Js\DashBoard\wizard.js" />
     <Content Include="Assets\Js\DataTable\jquery.dataTables.min.js" />
+    <Content Include="Assets\Js\Delete\sweet.js" />
     <Content Include="Assets\Js\Login\validation.js" />
     <Content Include="Assets\Js\Login\validationFunctions.js" />
     <Content Include="Assets\Js\Menu\menuOcult.js" />

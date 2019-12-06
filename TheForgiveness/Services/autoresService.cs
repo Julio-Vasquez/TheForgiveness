@@ -28,7 +28,7 @@ namespace TheForgiveness.Services
         public System.Data.DataRow Auth(int? id)
         {
             if (id != null)
-                return MySQL.Querys("SELECT * FROM autores WHERE ID = " + id).Rows[0];
+                return MySQL.Querys("SELECT * FROM autores WHERE ID = " + id + " AND  State = 'Activo'").Rows[0];
             return new System.Data.DataTable().Rows[0];
         }
 

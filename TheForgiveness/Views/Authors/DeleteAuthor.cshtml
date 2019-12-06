@@ -3,7 +3,8 @@
 @{
     ViewBag.Title = "DeleteAuthors";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+     ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>Eliminar Autores</h1>
@@ -51,36 +52,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit"  value="Delete" class="btn btn-danger" onclick="return del(event)" /> |
+            <input type="submit"  value="Delete" class="btn btn-danger" onclick="return del(event, 'Autor')" /> |
             @Html.ActionLink("Back to List", "GetAuthors")
         </div>
     }
 </div>
 
 
-<script>
-    function del(e)
-    {
-        e.preventDefault();
-        Swal.fire({
-            title: 'Estas seguro?',
-            text: "¡No podrás revertir esto!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Si, Eliminar.'
-        }).then((result) => {
-            if (result.value) {
-                Swal.fire(
-                    'Eliminado!',
-                    'El autor fue eliminado',
-                    'success'
-                ).then(res => {
-                    document.getElementById('delete').submit();
-                }) 
-                
-            }
-        });
-    }
-</script>

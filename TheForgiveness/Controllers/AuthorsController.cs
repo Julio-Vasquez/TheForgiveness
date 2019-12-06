@@ -124,25 +124,23 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteAuthor(int id)
         {
-            if (ModelState.IsValid)
+
+            if (Authoressrv.DeleteAuthor(id))
             {
-                if (Authoressrv.DeleteAuthor(id))
-                {
-                    return RedirectToAction("GetAuthors");
-                }
-                else
-                {
-                    var dr = Authoressrv.Auth(id);
-                    var model = new Models.autoresModel(
-                    dr["PriNombre"].ToString(),
-                    dr["SegNombre"].ToString(),
-                    dr["PriApellido"].ToString(),
-                    dr["SegApellido"].ToString()
-                    );
-                    return View(model);
-                }
+                return RedirectToAction("GetAuthors");
             }
-            return View();
+            else
+            {
+                var dr = Authoressrv.Auth(id);
+                var model = new Models.autoresModel(
+                dr["PriNombre"].ToString(),
+                dr["SegNombre"].ToString(),
+                dr["PriApellido"].ToString(),
+                dr["SegApellido"].ToString()
+                );
+                return View(model);
+            }
+            
         }
     }
 }
