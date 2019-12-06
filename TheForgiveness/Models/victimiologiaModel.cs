@@ -16,8 +16,8 @@ namespace TheForgiveness.Models
         [DataType(DataType.Text)]
         public string Nombre { get; set; }
 
-        [DisplayName("DEscripcion de la Victimiologia:")]
-        [StringLength(45, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 10)]
+        [DisplayName("Descripcion de la Victimiologia:")]
+        [StringLength(2250, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}", MinimumLength = 10)]
         [DataType(DataType.Text)]
         public string Descripcion { get; set; }
 

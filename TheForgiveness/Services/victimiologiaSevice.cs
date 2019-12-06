@@ -41,5 +41,10 @@ namespace TheForgiveness.Services
             System.Data.DataRow dr = MySQL.Querys("SELECT * FROM Victimologia WHERE State = 'Activo' AND  ID = " + id).Rows[0];
             return dr.ItemArray.Length > 0 ? new Models.victimiologiaModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), dr["Descripcion"].ToString()) : new Models.victimiologiaModel();
         }
+
+        public bool DeleteVictimology(int id)
+        {
+            return MySQL.Operations("UPDATE Victimologia SET State = 'Inactivo' WHERE ID = "+id);
+        }
     }
 }

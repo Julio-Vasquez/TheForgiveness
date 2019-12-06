@@ -718,9 +718,6 @@
     <Content Include="Views\Perception\CreatePerception.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Perception\DeletePerception.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Perception\GetPerception.cshtml" />
   </ItemGroup>
   <ItemGroup>
