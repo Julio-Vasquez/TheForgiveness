@@ -15,7 +15,7 @@ namespace TheForgiveness.Services
         }
         public IEnumerable<Models.autoresModel> listAuthors()
         {
-            System.Data.DataTable listasig = MySQL.Querys("SELECT ID,PriNombre,SegNombre,PriApellido,SegApellido FROM autores");
+            System.Data.DataTable listasig = MySQL.Querys("SELECT ID, PriNombre, SegNombre, PriApellido, SegApellido FROM autores Where State = 'Activo'");
             List<Models.autoresModel> asign = new List<Models.autoresModel>();
             foreach (System.Data.DataRow item in listasig.Rows)
             {
@@ -28,13 +28,18 @@ namespace TheForgiveness.Services
         public System.Data.DataRow Auth(int? id)
         {
             if (id != null)
-                return MySQL.Querys("SELECT * FROM autores WHERE ID = " + id).Rows[0];
+                return MySQL.Querys("SELECT * FROM autores WHERE ID = " + id + " AND  State = 'Activo'").Rows[0];
             return new System.Data.DataTable().Rows[0];
         }
 
         public bool UpdateAuth(Models.autoresModel dpm)
         {
             return MySQL.Operations("UPDATE autores SET PriNombre ='" + dpm.PriNombre + "',SegNombre ='" + dpm.SegNombre + "',PriApellido ='" + dpm.PriApellido + "',SegApellido ='" + dpm.SegApellido + "' WHERE ID = " + dpm.ID);
+        }
+
+        public bool DeleteAuthor(int? id) 
+        {
+            return MySQL.Operations("UPDATE autores SET State = 'Inactivo' WHERE ID = "+ id);
         }
     }
 }

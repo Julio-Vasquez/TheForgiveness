@@ -35,7 +35,7 @@ namespace TheForgiveness.Controllers
                 dpm.Pais = dps.Paises();
                 return View(dpm);
             }
-            return Redirect("GetDepartments");
+            return RedirectToAction("GetDepartments");
         }
 
         [HttpGet]
@@ -49,9 +49,20 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteDepartment")]
-        public ActionResult DeleteDepartment()
+        public ActionResult DeleteDepartment(int? id)
         {
-            return View();
+            if (id != null) 
+            {
+                var res = dps.Department(id);
+                return View(
+                    new Models.departamentoModel(
+                        int.Parse(res["ID"].ToString()),
+                        res["Departamento"].ToString(),
+                        int.Parse(res["Pais"].ToString())
+                        )
+                    );
+            }
+            return RedirectToAction("GetDepartments");
         }
 
         [HttpGet]
@@ -66,7 +77,7 @@ namespace TheForgiveness.Controllers
                 ViewBag.Pais = dps.Pais(int.Parse(res["Pais"].ToString()));
                 return View(new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString())));
             }
-            return Redirect("GetDepartments");
+            return RedirectToAction("GetDepartments");
         }
 
         #endregion
@@ -82,7 +93,7 @@ namespace TheForgiveness.Controllers
             if (ModelState.IsValid)
             {
                 if (dps.CreateDepartment(new Models.departamentoModel(dpm.Departamento, int.Parse(Request.Form["Pais"]))))
-                    return RedirectToAction("Index", "DashBoard");
+                    return RedirectToAction("GetDeparments", "Department");
             }
             return View(dpm);
         }
@@ -95,8 +106,31 @@ namespace TheForgiveness.Controllers
         {
             dpm.PaisFK = int.Parse(Request.Form["Pais"].ToString());
             if (dps.UpdateDepartment(dpm))
-                return RedirectToAction("Index", "DashBoard");
+                return Redirect("GetDepartments");
             return View(dpm);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteDepartment")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteDepartment(int id)
+        {
+            if (dps.DeleteDepartment(id))
+            {
+                return Redirect("GetDepartments");
+            }
+            else 
+            {
+                var res = dps.Department(id);
+                return View(
+                    new Models.departamentoModel(
+                        int.Parse(res["ID"].ToString()),
+                        res["Departamento"].ToString(),
+                        int.Parse(res["Pais"].ToString())
+                        )
+                    );
+            }
         }
         #endregion
     }

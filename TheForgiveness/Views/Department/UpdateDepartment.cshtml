@@ -1,7 +1,7 @@
 ﻿@model TheForgiveness.Models.departamentoModel
 
 @{
-    ViewBag.Title = "UpdateDepartment";
+    ViewBag.Title = "Actualizar Departamento";
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
 }
@@ -35,14 +35,15 @@
 
 
     </div>
+    <hr />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-outline-success" />
+        </div>
+    </div>
 
 }
-<hr />
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Save" class="btn btn-outline-success" />
-    </div>
-</div>
+
 <div>
     @Html.ActionLink("Back to List", "GetDepartments")
 </div>

@@ -13,7 +13,7 @@
 </script>
 <h1>Registrar una Experiencia</h1>
 <hr />
-@using (Html.BeginForm())
+@using (Html.BeginForm("CreateExperience", "Experience", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

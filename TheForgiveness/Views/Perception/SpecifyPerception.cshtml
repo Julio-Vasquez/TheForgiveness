@@ -1,7 +1,7 @@
 ﻿@model TheForgiveness.Models.percepcionPostconfictoModel
 
 @{
-    ViewBag.Title = "SpecifyForgivenees";
+    ViewBag.Title = "Detalle Percepcion";
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
@@ -18,14 +18,7 @@
             @Html.DisplayFor(model => model.Descripcion)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fecha)
-        </dd>
-
+       
         <dt>
             @Html.DisplayNameFor(model => model.Usuario)
         </dt>

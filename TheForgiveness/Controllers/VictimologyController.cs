@@ -24,21 +24,25 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateVictimology")]
         public ActionResult UpdateVictimology(int? id)
         {
-
             if (id != null)
             {
                 ViewBag.rol = Session["Role"].ToString();
                 return View(Victimiologysrv.specify(id));
             }
-            return RedirectToAction("Error404", "Shared");
+            return RedirectToAction("GetVictimologys");
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteVictimology")]
-        public ActionResult DeleteVictimology()
+        public ActionResult DeleteVictimology(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                var res = Victimiologysrv.specify(id);
+                return View(res);
+            }
+            return RedirectToAction("GetVictimologys");
         }
 
         [HttpGet]
@@ -46,6 +50,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetVictimologys")]
         public PartialViewResult GetVictimologys()
         {
+            ViewBag.rol = Session["Role"].ToString();
             return PartialView(Victimiologysrv.listVictimiologies());
         }
 
@@ -56,6 +61,7 @@ namespace TheForgiveness.Controllers
         {
             if (id != null)
             {
+                ViewBag.rol = Session["Role"].ToString();
                 return View(Victimiologysrv.specify(id));
             }
             return Redirect("GetVictimologys");
@@ -65,7 +71,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateVictimology")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateActivities(Models.victimiologiaModel vm)
+        public ActionResult CreateVictimology(Models.victimiologiaModel vm)
         {
             if (ModelState.IsValid)
             {
@@ -74,8 +80,41 @@ namespace TheForgiveness.Controllers
                 else
                     return View(vm);
             }
-            return View();
+            return View(vm);
+        }
 
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateVictimology")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateVictimology(Models.victimiologiaModel vm)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Victimiologysrv.UpdateVictimiology(vm))
+                    return RedirectToAction("GetVictimologys");
+                else
+                    return View(vm);
+            }
+            return View(vm);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteVictimology")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteVictimology(int id)
+        {
+
+            if (Victimiologysrv.DeleteVictimology(id))
+            {
+                return RedirectToAction("GetVictimologys");
+            }
+            else
+            {
+                ViewBag.rol = Session["Role"].ToString();
+                return View(Victimiologysrv.specify(id));
+            }
 
         }
     }

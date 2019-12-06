@@ -8,7 +8,7 @@
 
 <h1>Actualizar Experiencia</h1>
 <hr />
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateExperience", "Experience", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     

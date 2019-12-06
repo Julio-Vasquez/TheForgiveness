@@ -8,7 +8,7 @@
 
 <h1>Actualizar Concepto</h1>
 <hr />
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateConcept", "ConceptForgiveness", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     

@@ -16,7 +16,7 @@ namespace TheForgiveness.Services
 
         public IEnumerable<Models.victimiologiaModel> listVictimiologies()
         {
-            System.Data.DataTable listacti = MySQL.Querys("SELECT ID,Nombre,Descripcion FROM Victimologia");
+            System.Data.DataTable listacti = MySQL.Querys("SELECT ID,Nombre,Descripcion FROM Victimologia WHERE State = 'Activo'");
             List<Models.victimiologiaModel> activ = new List<Models.victimiologiaModel>();
             foreach (System.Data.DataRow item in listacti.Rows)
             {
@@ -28,7 +28,7 @@ namespace TheForgiveness.Services
 
         public System.Data.DataRow Victimiology(int? id)
         {
-            return MySQL.Querys("SELECT * FROM Victimologia WHERE ID = " + id).Rows[0];
+            return MySQL.Querys("SELECT * FROM Victimologia WHERE State = 'Activo' AND ID = " + id).Rows[0];
         }
 
         public bool UpdateVictimiology(Models.victimiologiaModel dpm)
@@ -38,8 +38,13 @@ namespace TheForgiveness.Services
 
         public Models.victimiologiaModel specify(int? id)
         {
-            System.Data.DataRow dr = MySQL.Querys("SELECT * FROM Victimologia WHERE ID = " + id).Rows[0];
+            System.Data.DataRow dr = MySQL.Querys("SELECT * FROM Victimologia WHERE State = 'Activo' AND  ID = " + id).Rows[0];
             return dr.ItemArray.Length > 0 ? new Models.victimiologiaModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), dr["Descripcion"].ToString()) : new Models.victimiologiaModel();
+        }
+
+        public bool DeleteVictimology(int id)
+        {
+            return MySQL.Operations("UPDATE Victimologia SET State = 'Inactivo' WHERE ID = "+id);
         }
     }
 }

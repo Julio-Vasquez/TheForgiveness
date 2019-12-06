@@ -17,28 +17,22 @@ namespace TheForgiveness.Models
         [DataType(DataType.Text)]
         public string Descripcion { get; set; }
 
-        [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Fecha del suceso:")]
-        
-        [DataType(DataType.Date)]
-        public string Fecha { get; set; }
+
         public int Usuario { get; set; }
 
         public percepcionPostconfictoModel()
         {
         }
 
-        public percepcionPostconfictoModel(string Fecha, string Descripcion, int Usuario)
+        public percepcionPostconfictoModel( string Descripcion, int Usuario)
         {
-            this.Fecha = Fecha;
             this.Descripcion = Descripcion;
             this.Usuario = Usuario;
         }
 
-        public percepcionPostconfictoModel(int ID, string Fecha, string Descripcion, int Usuario)
+        public percepcionPostconfictoModel(int ID, string Descripcion, int Usuario)
         {
             this.ID = ID;
-            this.Fecha = Fecha;
             this.Descripcion = Descripcion;
             this.Usuario = Usuario;
         }

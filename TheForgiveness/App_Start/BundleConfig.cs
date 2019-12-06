@@ -50,7 +50,8 @@ namespace TheForgiveness
                 "~/Assets/Js/DashBoardP/waves.min.js",
                 "~/Assets/Js/DashBoardP/sidebarmenu.min.js",
                 "~/Assets/Js/DashBoardP/custom.min.js",
-                "~/Assets/Js/DashBoardP/jquery.steps.min.js"
+                "~/Assets/Js/DashBoardP/jquery.steps.min.js",
+                "~/Assets/Js/sweetalert2.min.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/Validation").Include(

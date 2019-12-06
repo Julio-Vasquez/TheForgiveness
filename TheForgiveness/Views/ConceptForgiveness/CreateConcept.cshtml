@@ -8,7 +8,7 @@
 
 <h1>Registrar Concepto de Perdon</h1>
 <hr />
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("CreateConcept", "ConceptForgiveness", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     

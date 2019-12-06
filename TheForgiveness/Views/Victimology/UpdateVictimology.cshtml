@@ -1,14 +1,15 @@
 ﻿@model TheForgiveness.Models.victimiologiaModel
 
 @{
-    ViewBag.Title = "UpdateVictimology";
+    ViewBag.Title = "Actualizar Victimologia";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>Actualizar Victimologia</h1>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateVictimology", "Victimology", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     

@@ -1,9 +1,10 @@
 ﻿@model TheForgiveness.Models.autoresModel
 
 @{
-    ViewBag.Title = "DeleteAuthors";
+    ViewBag.Title = "Eliminar Autor";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+     ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>Eliminar Autores</h1>
@@ -47,12 +48,14 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("DeleteAuthor","Authors", FormMethod.Post, new { @id = "delete" })) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit"  value="Delete" class="btn btn-danger" onclick="return del(event, 'Autor')" /> |
+            @Html.ActionLink("Back to List", "GetAuthors")
         </div>
     }
 </div>
+
+

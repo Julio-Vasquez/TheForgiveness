@@ -10,6 +10,7 @@ namespace TheForgiveness.Controllers
     public class MunicipalityController : Controller
     {
         private Services.municipioService dps = new Services.municipioService();
+        private Services.departamentoService ss = new Services.departamentoService();
 
         #region HTTPMethod Get
         // GET: Municipality
@@ -44,7 +45,6 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetMunicipalities")]
         public PartialViewResult GetMunicipalities()
         {
-            Services.departamentoService ss = new Services.departamentoService();
             ViewBag.Departamentos = ss.queryDepartamento();
             return PartialView(dps.listMunicipality());
         }
@@ -52,9 +52,19 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteMunicipality")]
-        public ActionResult DeleteMunicipality()
+        public ActionResult DeleteMunicipality(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                var res = dps.Municipality(id);
+                ViewBag.Departamentos = ss.Department(int.Parse(res["Departamento"].ToString()));
+                return View(new Models.municipioModel(
+                        int.Parse(res["ID"].ToString()),
+                        res["Municipio"].ToString(),
+                        int.Parse(res["Departamento"].ToString())
+                    ));
+            }
+            return RedirectToAction("GetMunicipalities");
         }
 
         [HttpGet]
@@ -68,7 +78,7 @@ namespace TheForgiveness.Controllers
                 ViewBag.Departamento = dps.Departamento(int.Parse(res["Departamento"].ToString()));
                 return View(new Models.municipioModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString())));
             }
-            return Redirect("GetMunicipalities");
+            return RedirectToAction("GetMunicipalities");
         }
 
         #endregion
@@ -84,7 +94,7 @@ namespace TheForgiveness.Controllers
             if (ModelState.IsValid)
             {
                 if (dps.CreateMunicipality(new Models.municipioModel(dpm.Municipio, int.Parse(Request.Form["Departamento"]))))
-                    return RedirectToAction("Index", "DashBoard");
+                    return RedirectToAction("GetMunicipalities");
             }
             return View(dpm);
         }
@@ -97,8 +107,30 @@ namespace TheForgiveness.Controllers
         {
             dpm.DepartamentoFK = int.Parse(Request.Form["Departamento"].ToString());
             if (dps.UpdateDepartment(dpm))
-                return RedirectToAction("Index", "DashBoard");
+                return RedirectToAction("GetMunicipalities");
             return View(dpm);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteMunicipality")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteMunicipality(int id)
+        {
+            if (dps.DeleteMunucipality(id))
+            {
+                return RedirectToAction("GetMunicipalities");
+            }
+            else
+            {
+                var res = dps.Municipality(id);
+                ViewBag.Departamentos = ss.Department(int.Parse(res["Departamento"].ToString()));
+                return View(new Models.municipioModel(
+                        int.Parse(res["ID"].ToString()),
+                        res["Municipio"].ToString(),
+                        int.Parse(res["Departamento"].ToString())
+                    ));
+            }
         }
         #endregion
     }

@@ -8,7 +8,7 @@
 
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("RegisterContact", "Contact", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <h1>Registrar Datos de contacto</h1>

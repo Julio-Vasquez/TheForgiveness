@@ -1,9 +1,10 @@
 ﻿@model TheForgiveness.Models.victimiologiaModel
 
 @{
-    ViewBag.Title = "DeleteVictimology";
+    ViewBag.Title = "Eliminar Victimologia";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>Eliminar Victimologia</h1>
@@ -31,11 +32,11 @@
 
     </dl>
     <hr />
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("DeleteVictimology", "Victimology", FormMethod.Post, new { @id = "delete"})) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-outline-danger" onclick="return del(event, 'Victimologia');"/> |
             @Html.ActionLink("Back to List", "GetVictimologys")
         </div>
     }
