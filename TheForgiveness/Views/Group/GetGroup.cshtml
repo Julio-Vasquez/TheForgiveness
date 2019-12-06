@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TheForgiveness.Models.grupoModel>
+﻿@model IEnumerable<gupoextendido>
 
 @{
     ViewBag.Title = "GetGroup";
@@ -41,63 +41,68 @@
         </tr>
     </thead>
     <tbody>
-    </tbody>
-    @{
-        if (ViewBag.rol == "Docente"){
-            foreach (var item in Model){
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Codigo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AñoEscolar)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Docente)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Asignatura)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Colegio)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "UpdateGroup", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                        @Html.ActionLink("Details", "SpecifyGroup", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                        @Html.ActionLink("Delete", "DeleteGroup", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
-                    </td>
-                </tr>
+
+        @{
+            if (ViewBag.rol == "Docente")
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AñoEscolar)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Docente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Asignatura)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Colegio)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "UpdateGroup", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "SpecifyGroup", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "DeleteGroup", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                        </td>
+                    </tr>
+                }
             }
-        }else{
-            foreach (var item in Model){
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Codigo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AñoEscolar)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Docente)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Asignatura)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Colegio)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Details", "SpecifyGroup", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                    </td>
-                </tr>
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AñoEscolar)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Docente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Asignatura)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Colegio)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "SpecifyGroup", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                        </td>
+                    </tr>
+                }
             }
         }
-    }
-
+    </tbody>
 </table>

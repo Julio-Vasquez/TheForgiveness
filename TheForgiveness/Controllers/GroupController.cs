@@ -15,6 +15,7 @@ namespace TheForgiveness.Controllers
         private Services.asignaturaService signaturessrv = new Services.asignaturaService();
         private Services.perfilServices docentsrv = new Services.perfilServices();
         private Services.colegioService colsrv = new Services.colegioService();
+        private Services.grupopersonaService gruoppersrv = new Services.grupopersonaService();
 
         // GET: Profile
         [HttpGet]
@@ -33,12 +34,24 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "UpdateGroup")]
         public ActionResult UpdateGroup(int? id)
         {
-            return View();
-            if (id == null)
-            {
 
+            if (id != null)
+            {
+                System.Data.DataRow dr = Groupssrv.Groups(id);
+                ViewData["iddocentes"] = dr["Docente"].ToString();
+                ViewData["idasignaturas"] = dr["Asignatura"].ToString();
+                ViewData["idcolegios"] = dr["Colegio"].ToString();
+                ViewData["docentes"] = JsonConvert.SerializeObject(docentsrv.queryDocentes());
+                ViewData["asignaturas"] = JsonConvert.SerializeObject(signaturessrv.listSubject());
+                ViewData["colegios"] = JsonConvert.SerializeObject(colsrv.listSchools());
+                Models.grupoModel gr = new Models.grupoModel(int.Parse(dr["ID"].ToString()), int.Parse(dr["Codigo"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["AñoEscolar"].ToString()), int.Parse(dr["Docente"].ToString()), int.Parse(dr["Asignatura"].ToString()), int.Parse(dr["Colegio"].ToString()));
+                return View(gr);
             }
-            return RedirectToAction("Error404", "Shared");
+            else
+            {
+                return RedirectToAction("Error404", "Shared");
+            }
+            
         }
 
         [HttpGet]
@@ -55,16 +68,19 @@ namespace TheForgiveness.Controllers
         public PartialViewResult GetGroup()
         {
             ViewBag.rol = Session["Role"].ToString();
-            return PartialView(Groupssrv.listGrups());
+            return PartialView(Groupssrv.listGrups(int.Parse(Session["idAccount"].ToString())));
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetGroup")]
-        public ActionResult SpecifyGroup()
+        public ActionResult SpecifyGroup(int id)
         {
             ViewBag.rol = Session["Role"].ToString();
-            return View();
+            ViewBag.personas= gruoppersrv.querygrupopersona(id);
+            System.Data.DataRow dr = Groupssrv.specifygrups(id);
+            gupoextendido gr = new gupoextendido(int.Parse(dr["ID"].ToString()), int.Parse(dr["Codigo"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["AñoEscolar"].ToString()), dr["Docente"].ToString(), dr["Asignatura"].ToString(),dr["Colegio"].ToString());
+            return View(gr);
         }
 
         [HttpPost]
@@ -76,12 +92,12 @@ namespace TheForgiveness.Controllers
             ViewData["docentes"] = JsonConvert.SerializeObject(docentsrv.queryDocentes());
             ViewData["asignaturas"] = JsonConvert.SerializeObject(signaturessrv.listSubject());
             ViewData["colegios"] = JsonConvert.SerializeObject(colsrv.listSchools());
-            
-                if (Groupssrv.CreateGrups(gm))
-                    return RedirectToAction("GetGroup");
-                else
-                    return View(gm);
-            
+
+            if (Groupssrv.CreateGrups(gm))
+                return RedirectToAction("GetGroup");
+            else
+                return View(gm);
+
             return View();
 
 

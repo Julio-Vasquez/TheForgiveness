@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -44,24 +44,27 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Docente, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Docente, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Docente, "", new { @class = "text-danger" })
+                <select name="Docente" class="form-control " id="Docente">
+                    <option value="default"></option>
+                </select>
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Asignatura, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Asignatura, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Asignatura, "", new { @class = "text-danger" })
+                <select name="Asignatura" class="form-control " id="Asignatura">
+                    <option value="default"></option>
+                </select>
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Colegio, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Colegio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Colegio, "", new { @class = "text-danger" })
+                <select name="Colegio" class="form-control " id="Colegio">
+                    <option value="default"></option>
+                </select>
             </div>
         </div>
         <hr />
@@ -73,6 +76,53 @@
     </div>
 }
 
+<script>
+    @{
+    @:var docentes = @Html.Raw(ViewData["docentes"].ToString()); ;
+    @:var asignaturas = @Html.Raw(ViewData["asignaturas"].ToString()); ;
+    @:var colegios = @Html.Raw(ViewData["colegios"].ToString()); ;
+    }
+    $(document).ready(function () {
+        llenardoc();
+        llenarcol();
+        llenarasig();
+        @{
+        @:document.getElementById("Colegio").value = '@ViewData["iddocentes"]';
+        @:document.getElementById("Asignatura").value = '@ViewData["idasignaturas"]';
+        @:document.getElementById("Docente").value = '@ViewData["idcolegios"]';
+    }}
+        );
+
+
+    function llenarcol(){
+        let ele = document.getElementById('Colegio');
+        for (let i = 0; i < colegios.length; i++) {
+            let option = document.createElement("option");
+            option.text = colegios[i].Nombre;
+            option.value = colegios[i].ID;
+            ele.add(option);
+        }
+    }
+    function llenarasig(){
+        let ele = document.getElementById('Asignatura');
+        for (let i = 0; i < asignaturas.length; i++) {
+            let option = document.createElement("option");
+            option.text = asignaturas[i].Nombre;
+            option.value = asignaturas[i].ID;
+            ele.add(option);
+        }
+    }
+
+    function llenardoc() {
+        let ele = document.getElementById('Docente');
+        for (let i = 0; i < docentes.length; i++) {
+            let option = document.createElement("option");
+            option.text = docentes[i].Docente;
+            option.value = docentes[i].ID;
+            ele.add(option);
+        }
+    }
+</script>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
