@@ -9,7 +9,7 @@
 <h1>Modificar Colegio</h1>
 <hr />
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateSchool", "School", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     

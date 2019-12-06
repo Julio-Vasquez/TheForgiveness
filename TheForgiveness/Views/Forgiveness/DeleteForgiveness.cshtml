@@ -39,7 +39,7 @@
 
     </dl>
     <hr />
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("DeleteForgiveness", "Forgiveness", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 

@@ -299,6 +299,7 @@
     <Content Include="Assets\Js\SignUp\jquery.bootstrap.wizard.min.js" />
     <Content Include="Assets\Js\SignUp\jquery.validate.min.js" />
     <Content Include="Assets\Js\SignUp\wizard.js" />
+    <Content Include="Assets\Js\sweetalert2.min.js" />
     <Content Include="Assets\Js\Validation\jquery-3.3.1.min.js" />
     <Content Include="favicon.jpg" />
     <Content Include="Global.asax" />

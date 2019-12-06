@@ -8,7 +8,7 @@
 
 <h1>Actualizar Percepcion</h1>
 <hr />
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdatePerception", "Perception", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -50,5 +50,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "GetPerception")
 </div>

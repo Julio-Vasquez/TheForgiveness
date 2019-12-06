@@ -8,7 +8,7 @@
 
 <h1>Registrar Victimologia</h1>
 <hr />
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("CreateVictimology", "Victimology", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     

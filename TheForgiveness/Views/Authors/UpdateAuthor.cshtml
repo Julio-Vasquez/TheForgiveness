@@ -5,7 +5,7 @@
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateAuthor", "Author", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <h1>Listado de autores a modificar</h1>

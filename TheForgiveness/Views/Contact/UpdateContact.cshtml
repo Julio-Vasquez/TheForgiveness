@@ -6,7 +6,7 @@
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateContact", "Contact", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

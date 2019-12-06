@@ -87,7 +87,7 @@
 
     </dl>
     <hr />
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("DeleteStudent", "Student", FormMethod.Post)) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

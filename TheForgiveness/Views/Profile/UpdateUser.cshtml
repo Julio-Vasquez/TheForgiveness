@@ -7,7 +7,7 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("UpdateUser", "Profile", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     
@@ -41,6 +41,3 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

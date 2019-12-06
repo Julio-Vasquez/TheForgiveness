@@ -31,7 +31,7 @@
 
     </dl>
     <hr />
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("DeleteDepartment", "Department", FormMethod.Post)) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
