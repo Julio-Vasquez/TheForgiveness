@@ -220,6 +220,7 @@
     <Compile Include="Services\autoresService.cs" />
     <Compile Include="Services\colegioService.cs" />
     <Compile Include="Services\ConceptoAutosServicios.cs" />
+    <Compile Include="Services\estudianteService.cs" />
     <Compile Include="Services\forgivenessServicios.cs" />
     <Compile Include="Services\percepcionService.cs" />
     <Compile Include="Services\departamentoService.cs" />
