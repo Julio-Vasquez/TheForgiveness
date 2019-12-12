@@ -9,14 +9,8 @@ namespace TheForgiveness.Controllers
 {
     public class StudentController : Controller
     {
-        private Services.usuarioService us = new Services.usuarioService();
-        private Services.perfilServices ps = new Services.perfilServices();
-        private Services.departamentoService ds = new Services.departamentoService();
-        private Services.municipioService ms = new Services.municipioService();
-        private Services.generoService gene = new Services.generoService();
-        private Services.tipoDocumentoService tido = new Services.tipoDocumentoService();
-
-        private Util.Util util = new Util.Util();
+        private Services.estudianteService es = new Services.estudianteService();
+     
         #region HTTPMethod Get
 
         [HttpGet]
@@ -30,9 +24,13 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "UpdateStudent")]
-        public ActionResult UpdateStudent()
+        public ActionResult UpdateStudent(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                return View(es.SpecifyStudent(id));
+            }
+            return RedirectToAction("GetStudents");
         }
 
         [HttpGet]
@@ -40,7 +38,9 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetStudents")]
         public PartialViewResult GetStudents()
         {
-
+            
+            
+            /*
             ViewBag.rol = Session["Role"].ToString();
             var res = ps.studendata(Convert.ToString(Session["username"]));
             ViewData["municipio"] = res["Municipio"].ToString();
@@ -57,25 +57,84 @@ namespace TheForgiveness.Controllers
                             res["FechaDeNacimeinto"].ToString(),
                             int.Parse(res["Edad"].ToString())
                         )
-                );
+                );*/
+            return PartialView();
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteStudent")]
-        public ActionResult DeleteStudent()
+        public ActionResult DeleteStudent(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                return View(es.SpecifyStudent(id));
+            }
+            return RedirectToAction("GetStudents");
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetStudents")]
-        public ActionResult SpecifyStudent()
+        public ActionResult SpecifyStudent(int? id)
         {
-            return View();
+            if (id != null)
+            { 
+                return View(es.SpecifyStudent(id));
+            }
+            return Redirect("GetStudents");
         }
 
         #endregion
+
+        #region httpPOst
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateStudent")]
+        public ActionResult CreateStudent(Models.studentModel sm) 
+        {
+            if (ModelState.IsValid)
+            {
+                if(es.CreateStudent(sm))
+                    RedirectToAction("GetStudents");
+                else
+                    return View(sm);
+            }
+            return View(sm);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateStudent")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateVictimology(Models.studentModel sm)
+        {
+            if (ModelState.IsValid)
+            {
+                if (es.UpdateStudent(sm))
+                    return RedirectToAction("GetStudents");
+                else
+                    return View(sm);
+            }
+            return View(sm);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteStudent")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteVictimology(int id)
+        {
+            if (es.DeleteStudent(id))
+            {
+                return RedirectToAction("GetStudents");
+            }
+            else
+            {
+                return View(es.SpecifyStudent(id));
+            }
+
+        }
+        #endregion 
     }
 }
