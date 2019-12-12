@@ -47,9 +47,20 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteSubject")]
-        public ActionResult DeleteSubject()
+        public ActionResult DeleteSubject(int? id)
         {
-            return View();
+            if (id != null) 
+            {
+                ViewBag.rol = Session["Role"].ToString();
+                var res = asigs.Subject(id);
+                return View(
+                        new Models.asignaturaModel(
+                            int.Parse(res["ID"].ToString()),
+                            res["Nombre"].ToString()
+                            )
+                    );
+            }
+            return RedirectToAction("DeleteSubject");
         }
 
         [HttpGet]
@@ -63,7 +74,7 @@ namespace TheForgiveness.Controllers
                 var res = asigs.Subject(id);
                 return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
             }
-            return Redirect("GetSubjects");
+            return RedirectToAction("GetSubjects");
         }
         #endregion
 
@@ -75,8 +86,12 @@ namespace TheForgiveness.Controllers
         public ActionResult CreateSubject(Models.asignaturaModel asig)
         {
             if (ModelState.IsValid)
+            {
                 if (asigs.CreateSubject(asig))
-                    return RedirectToAction("Index", "DashBoard");
+                    return RedirectToAction("GetSubjects");
+                else
+                    return View(asig);
+            }
             return View(asig);
         }
 
@@ -88,8 +103,32 @@ namespace TheForgiveness.Controllers
         {
             if (ModelState.IsValid)
                 if (asigs.UpdateSubject(asign))
-                    return RedirectToAction("Index", "DashBoard");
+                    return RedirectToAction("GetSubjects");
             return View(asign);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteSubject")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteSubject(int id)
+        {
+
+            if (asigs.DeleteSubject(id))
+            {
+                return RedirectToAction("GetSubjects");
+            }
+            else 
+            {
+                var res = asigs.Subject(id);
+                return View(
+                        new Models.asignaturaModel(
+                            int.Parse(res["ID"].ToString()),
+                            res["Nombre"].ToString()
+                            )
+                    );
+            }
+    
         }
         #endregion
     }

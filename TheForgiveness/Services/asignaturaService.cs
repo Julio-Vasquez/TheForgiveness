@@ -16,7 +16,7 @@ namespace TheForgiveness.Services
 
         public IEnumerable<Models.asignaturaModel> listSubject()
         {
-            System.Data.DataTable listasig = MySQL.Querys("SELECT ID, Nombre FROM Asignatura");
+            System.Data.DataTable listasig = MySQL.Querys("SELECT ID, Nombre FROM Asignatura WHERE State = 'Activo'");
             List<Models.asignaturaModel> asign = new List<Models.asignaturaModel>();
             foreach (System.Data.DataRow item in listasig.Rows)
             {
@@ -28,12 +28,17 @@ namespace TheForgiveness.Services
 
         public System.Data.DataRow Subject(int? id)
         {
-            return MySQL.Querys("SELECT * FROM Asignatura WHERE ID = " + id).Rows[0];
+            return MySQL.Querys("SELECT * FROM Asignatura WHERE State = 'Activo' AND ID = " + id).Rows[0];
         }
 
         public bool UpdateSubject(Models.asignaturaModel dpm)
         {
             return MySQL.Operations("UPDATE Asignatura SET Nombre ='" + dpm.Nombre + "' WHERE ID = " + dpm.ID);
+        }
+
+        public bool DeleteSubject(int id) 
+        {
+            return MySQL.Operations("UPDATE Asignatura SET State = 'Inactivo' WHERE ID = "+id);
         }
     }
 }
