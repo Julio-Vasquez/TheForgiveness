@@ -1,16 +1,13 @@
 ﻿@model TheForgiveness.Models.studentModel
-
 @{
     ViewBag.Title = "Registrar Estudiante";
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
-
 <h1>Registrar Nuevo Estudiante</h1>
 <hr />
 <div class="card-body wizard-content">
-
-    @using (Html.BeginForm("CreateStudent", "DashBoard", FormMethod.Post, new { @class = "m-t-40", @id = "example-form" }))
+    @using (Html.BeginForm("CreateStudent", "Student", FormMethod.Post, new { @class = "m-t-40", @id = "example-form" }))
     {
         @Html.AntiForgeryToken()
         <div>
@@ -22,31 +19,26 @@
                         @Html.EditorFor(model => model.NumIdentificacion, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.NumIdentificacion, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="form-group col-4">
                         @Html.LabelFor(model => model.PriNombre, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.PriNombre, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.PriNombre, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="form-group col-4">
                         @Html.LabelFor(model => model.SegNombre, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.SegNombre, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.SegNombre, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="form-group col-4">
                         @Html.LabelFor(model => model.PriApellido, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.PriApellido, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.PriApellido, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="form-group col-4">
                         @Html.LabelFor(model => model.SegApellido, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.SegApellido, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.SegApellido, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="form-group col-4">
                         @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
@@ -54,55 +46,117 @@
                     </div>
                 </div>
             </section>
-
             <section>
                 <div class="form-row">
-
                     <div class="form-group col-4">
-                        @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "control-label" })
-                        @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "text-danger" })
+                        <label class="control-label">Genero</label>
+                        <select id="Genero" name="Genero" class="form-control">
+                            <option value="default"></option>
+                        </select>
                     </div>
-
-                    <div class="form-group col-8">
+                    <div class="form-group col-4">
                         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "email form-control" } })
                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                     </div>
- 
+                    <div class="form-group col-4">
+                        @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-                
-            </section>
 
+            </section>
             <section>
                 <div class="form-row">
-                    <div class="form-group col-5 offset-1">
-                        @Html.LabelFor(model => model.Municipio, htmlAttributes: new { @class = "control-label" })
-                        @Html.EditorFor(model => model.Municipio, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Municipio, "", new { @class = "text-danger" })
+                    <div class="form-group col-4">
+                        <label class="control-label">Grupo</label>
+                        <select id="Grupo" name="Grupo" class="form-control">
+                            <option value="default"></option>
+                        </select>
                     </div>
-
-                    <div class="form-group col-5">
-                        @Html.LabelFor(model => model.Municipio, htmlAttributes: new { @class = "control-label" })
-                        @Html.EditorFor(model => model.Municipio, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Municipio, "", new { @class = "text-danger" })
+                    <div class="form-group col-4">
+                        <label class="control-label">Departamento</label>
+                        <select id="Departamento" name="Departamento" class="form-control" onchange="cargar(this.value)">
+                            <option value="default"></option>
+                        </select>
                     </div>
-
+                    <div class="form-group col-4">
+                        <label class="control-label">Municipio</label>
+                        <select name="Municipio" class="form-control " id="Municipio">
+                            <option value="default"></option>
+                        </select>
+                    </div>
                     <div class="form-group col-2 offset-5">
                         <div class="col-12">
                             <input type="submit" value="Registrar Nuevo Estudiante" class="btn btn-outline-success" />
                         </div>
-
                     </div>
                 </div>
             </section>
-
         </div>
     }
-
 </div>
+<script>
+    @{
+     @:var municipio = @Html.Raw(ViewData["municipios"].ToString()); ;
+    @:var departamento = @Html.Raw(ViewData["departamentos"].ToString());;
+    @:var genero = @Html.Raw(ViewData["generos"].ToString());;
+    @:var grupo = @Html.Raw(ViewData["grupos"].ToString());;
+    }
+    $(document).ready(function () {
+        llenardep();
+        llenargen();
+        llenargrup();
+    });
+    function llenardep() {
+        let ele = document.getElementById('Departamento');
+        for (let i = 0; i < departamento.length; i++) {
+            let option = document.createElement("option");
+            option.text = departamento[i].Departamento;
+            option.value = departamento[i].ID;
+            ele.add(option);
+        }
+    }
+        function cargar(id) {
+        let ele = document.getElementById('Municipio');
+        if (ele.length > 1) {
+            let limite = ele.length;//defino variable, sino el length se refresca
+            for (let i = 0; i < limite; i++) {
+                ele.remove(ele.children[i]);
+            }
+            let option = document.createElement("option");
+            ele.add(option);
+        }
+        for (let i = 0; i < municipio.length; i++) {
+            if (municipio[i].Departamento === parseInt(id)) {
+                let option = document.createElement("option");
+                option.text = municipio[i].Municipio;
+                option.value = municipio[i].ID;
+                ele.add(option);
+            }
+        }
+    }
+    function llenargen() {
+        let ele = document.getElementById('Genero');
+        for (let i = 0; i < genero.length; i++) {
+            let option = document.createElement("option");
+            option.text = genero[i].Genero;
+            option.value = genero[i].ID;
+            ele.add(option);
+        }
+    }
 
-
+    function llenargrup() {
+        let ele = document.getElementById('Grupo');
+        for (let i = 0; i < grupo.length; i++) {
+            let option = document.createElement("option");
+            option.text = grupo[i].Nombre;
+            option.value = grupo[i].ID;
+            ele.add(option);
+        }
+    }
+</script>
 <div>
     @Html.ActionLink("Back to List", "GetStudents")
 </div>

@@ -30,6 +30,10 @@ namespace TheForgiveness.Services
         {
             return MySQL.Querys("SELECT * FROM Grupo WHERE ID = " + id).Rows[0];
         }
+        public System.Data.DataTable Groupsdt(int? doce)
+        {
+            return MySQL.Querys("SELECT * FROM DatosGrupos where Docente2 = (SELECT usuario.Persona FROM usuario where usuario.ID = " + doce+")");
+        }
 
         public System.Data.DataRow specifygrups(int? id)
         {

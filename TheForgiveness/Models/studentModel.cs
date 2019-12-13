@@ -13,9 +13,14 @@ namespace TheForgiveness.Models
         //password = numIdentificacion
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Num Identificación")]
-        [RegularExpression(@"/^[0-9]+$/", ErrorMessage = "Solo Numeros")]
         [Range(100000, int.MaxValue, ErrorMessage = "Numero no valido")]
         public long NumIdentificacion { get; set; }
+
+
+        [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Num Telefonico")]
+        [Range(100000, int.MaxValue, ErrorMessage = "Numero no valido")]
+        public long Telefono { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Primer Nombre")]
@@ -43,7 +48,6 @@ namespace TheForgiveness.Models
 
         [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Fecha De Nacimiento")]
-        [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
         [DataType(DataType.Date)]
         public string FechaNacimiento { get; set; }
 
@@ -62,6 +66,10 @@ namespace TheForgiveness.Models
         [DisplayName("Seleccione El Municipio")]
         public int Municipio { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
+        [DisplayName("Seleccione El Grupo")]
+        public int Grupo { get; set; }
+
         public studentModel()
         {
         }
@@ -77,6 +85,16 @@ namespace TheForgiveness.Models
             Email = email;
             Genero = genero;
             Municipio = municipio;
+        }
+        public studentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email)
+        {
+            NumIdentificacion = numIdentificacion;
+            PriNombre = priNombre;
+            SegNombre = segNombre;
+            PriApellido = priApellido;
+            SegApellido = segApellido;
+            FechaNacimiento = fechaNacimiento;
+            Email = email;
         }
         public studentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email, int genero)
         {
