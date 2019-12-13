@@ -16,7 +16,7 @@ namespace TheForgiveness.Services
 
         public System.Data.DataTable querygrupopersona(int grupo)
         {
-            return MySQL.Querys("SELECT grupopersona.Grupo,grupopersona.Estudiante,concat(PriNombre,' ',SegNombre,' ',PriApellido,' ',SegApellido) as Nombre FROM grupopersona inner join persona on persona.ID = grupopersona.Estudiante where grupopersona.Grupo = "+ grupo + "; ");
+            return MySQL.Querys("SELECT grupopersona.Grupo,grupopersona.Estudiante,concat(PriNombre,' ',SegNombre,' ',PriApellido,' ',SegApellido) as Nombre,NumIdentificacion FROM grupopersona inner join persona on persona.ID = grupopersona.Estudiante where grupopersona.Grupo = " + grupo + "; ");
         }
 
         public IEnumerable<Models.grupopersonaModel> listGrupPersons(int group)

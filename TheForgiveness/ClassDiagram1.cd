@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TheForgiveness.BundleConfig" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.RouteConfig" Collapsed="true">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.MvcApplication" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.ActivitiesController" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAABAAAEAAAAAAAAAAAAAAAAAAAAQAYAAACA=</HashCode>
+      <FileName>Controllers\ActivitiesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.AuthorsController" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAACAAAAAAAAIAABAAAgAAAAIAAAAEAA=</HashCode>
+      <FileName>Controllers\AuthorsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.CalificationController" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAIAgAgAAAAAAAwAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Controllers\CalificationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.ConceptForgivenessController" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAIAAAEAAAAAAAgAAAAAAAAEQAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ConceptForgivenessController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.ContactController" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAAAAAAAAAAAAAAAAAAAAIAAACAAAAAAA=</HashCode>
+      <FileName>Controllers\ContactController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.DashBoardController" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\DashBoardController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.DepartmentController" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAQAAAAAAAAAAAAAAAABAAAAAABQAIAAAAAA=</HashCode>
+      <FileName>Controllers\DepartmentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.DocumentController" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAgwAAAAAAAA=</HashCode>
+      <FileName>Controllers\DocumentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.EvaluationController" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\EvaluationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.ExperienceController" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAIAAAAAAAAAABAgARCAAAIAAA=</HashCode>
+      <FileName>Controllers\ExperienceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.ForgivenessController" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAEAAAQAAAAAAAAABAJA=</HashCode>
+      <FileName>Controllers\ForgivenessController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.GoalsController" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAQIQAAABAAAAAAAAAAAAAAACACA=</HashCode>
+      <FileName>Controllers\GoalsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.GroupController" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAgAowEAAAAAAAAABQ=</HashCode>
+      <FileName>Controllers\GroupController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.GroupPersonsController" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAAABAAAAQAAABAAAAAQAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Controllers\GroupPersonsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.HomeController" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAABAUTAAAAQAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.MunicipalityController" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQACAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Controllers\MunicipalityController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.PerceptionController" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAABBAAABAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PerceptionController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.PhoneController" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAIIAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAIA=</HashCode>
+      <FileName>Controllers\PhoneController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.ProfileController" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBAAAAAAAgAABAAAAAAAAAQAAAAAgBBQCAgAAAAA=</HashCode>
+      <FileName>Controllers\ProfileController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.SchoolController" Collapsed="true">
+    <Position X="16.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAACIAAAAAAABAAAEAAEQCAAAAAgA=</HashCode>
+      <FileName>Controllers\SchoolController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.SharedController" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAAIAACAAQAAA=</HashCode>
+      <FileName>Controllers\SharedController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.StudentController" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAABAAAAAAEACAAAAAAAAAAAAAAAABgBYQCAgAAAAA=</HashCode>
+      <FileName>Controllers\StudentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.SubjectController" Collapsed="true">
+    <Position X="7.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAABAAAYBAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Controllers\SubjectController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Controllers.VictimologyController" Collapsed="true">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAACoAgAAAAAAAAAAAAECA=</HashCode>
+      <FileName>Controllers\VictimologyController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.actividadesModel" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\actividadesModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.asignaturaModel" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\asignaturaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.autoresModel" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAgAAAAAIEAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Models\autoresModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.colegioModel" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\colegioModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.conceptoautoresModel" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Models\conceptoautoresModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.conceptoModel" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Models\conceptoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.conceptoVictimaModel" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAAEAAAAAAQ=</HashCode>
+      <FileName>Models\conceptoVictimaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.departamentoModel" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAQAgAAEAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\departamentoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.diplomaModel" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAgAIAAABAAABAAAAAAAAAAAAAEAAAACA=</HashCode>
+      <FileName>Models\diplomaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.emailModel" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\emailModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.escenariosModel" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIgAAAAAAAgAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Models\escenariosModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.evaluacionModel" Collapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAgAAAAABAAIAAAAAAAAAAAAAAAAAAAGA=</HashCode>
+      <FileName>Models\evaluacionModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.experienciaModel" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAkAAACAAA=</HashCode>
+      <FileName>Models\experienciaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.generoModel" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\generoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.grupoModel" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgQAAgAAAAAAAgAAAAAAAIAgAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\grupoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.grupopersonaModel" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Models\grupopersonaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.metasModel" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAQAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\metasModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.municipioModel" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Models\municipioModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.notasModel" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAoAAAAABAAAAAAAAAAAAAAAAAEAAAACA=</HashCode>
+      <FileName>Models\notasModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.paisModel" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\paisModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.palabraclaveModel" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\palabraclaveModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.PasswordModel" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PasswordModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.percepcionPostconfictoModel" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAEAAAAAAAABAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Models\percepcionPostconfictoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.PerfilModel" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAAAAAAAAAgAAAAAgAAAIAIEAABgAAAAEBAAAAAAA=</HashCode>
+      <FileName>Models\PerfilModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.permisoModel" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAACAAAAAEBABA=</HashCode>
+      <FileName>Models\permisoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.personaModel" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAAAAAAAAAgAAAAAgAAAIAIEAABAAAAAEBAAAAAAA=</HashCode>
+      <FileName>Models\personaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.plantillaModel" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\plantillaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.progresoModel" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAACAEAAAAAAA=</HashCode>
+      <FileName>Models\progresoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.rolModel" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\rolModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.rolpermisoModel" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAQAAAAAAAAAAA=</HashCode>
+      <FileName>Models\rolpermisoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.studentModel" Collapsed="true">
+    <Position X="5.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAAAAAAACAAAAAAAAgAAAIAIEAAAAAAAAEBAAAAAAA=</HashCode>
+      <FileName>Models\studentModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.telefonoModel" Collapsed="true">
+    <Position X="9.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAEAgAAAAA=</HashCode>
+      <FileName>Models\telefonoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.tipodocumentoModel" Collapsed="true">
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\tipoDocumentoModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.UsuarioModel" Collapsed="true">
+    <Position X="16.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UsuarioModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.victimiologiaModel" Collapsed="true">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAgAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\victimiologiaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Models.vistaModel" Collapsed="true">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAEAABA=</HashCode>
+      <FileName>Models\vistaModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.actividadesService" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAgQAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACA=</HashCode>
+      <FileName>Services\actividadesService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.asignaturaService" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAgIA=</HashCode>
+      <FileName>Services\asignaturaService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.autoresService" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAAIAABAAAAA=</HashCode>
+      <FileName>Services\autoresService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.colegioService" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAABAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\colegioService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.ConceptoAutosServicios" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Services\ConceptoAutosServicios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.departamentoService" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAIAIAQQAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Services\departamentoService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.emailService" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Services\emailService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.evaluacionService" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAAgAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACA=</HashCode>
+      <FileName>Services\evaluacionService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.experienciaService" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAAAAAAAAAAAAABAAAAAAAAAAAAACgAAAAAAAA=</HashCode>
+      <FileName>Services\experienciaService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.forgivenessServicios" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAACAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Services\forgivenessServicios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.generoService" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Services\generoService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.grupopersonaService" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAYAAAAAAAAAAAAIAIAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Services\grupopersonaService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.grupoService" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAEAAAAAAAAAAAAAAQAAAAAAACAAQA=</HashCode>
+      <FileName>Services\grupoService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.menuService" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\menuService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.metasService" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAAgAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\metasService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.municipioService" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAQBAAEAAAAAAAAIAAQAAAAABAAAAQAAAA=</HashCode>
+      <FileName>Services\municipioService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.notasService" Collapsed="true">
+    <Position X="16.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAAAAAAAAAAAACAAAEAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\notasService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.percepcionService" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAACAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Services\percepcionService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.perfilServices" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAEAAAAAAAAAQACAAAgAAAAAQAAAAAAABAAAAA=</HashCode>
+      <FileName>Services\perfilServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.rolService" Collapsed="true">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\rolService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.telefonoService" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAgAAAAgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAIA=</HashCode>
+      <FileName>Services\telefonoService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.tipoDocumentoService" Collapsed="true">
+    <Position X="14.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAAAgAAAAAAAAAAAAAAAAAAACABAABAAAAAA=</HashCode>
+      <FileName>Services\tipoDocumentoService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.usuarioService" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAQAAAAAEgAAAAAAAEAAIAAAAAgAAAAAAAAAAEAA=</HashCode>
+      <FileName>Services\usuarioService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Services.victimiologiaSevice" Collapsed="true">
+    <Position X="5.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAE=</HashCode>
+      <FileName>Services\victimiologiaSevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LUISOutput" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAAIAAAAAAA=</HashCode>
+      <FileName>Services\experienciaService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LUISEntity" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAgAAAAAAAAAACAAAIAAAQAAAAAAAAA=</HashCode>
+      <FileName>Services\experienciaService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LUISIntent" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\experienciaService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gupoextendido" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgQAAgAAAAAAAgAAAAAAAIAgAAAAAAAAAIAA=</HashCode>
+      <FileName>Services\grupoService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Util.Api" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Util\Api.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Util.Email" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Util\Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Util.PermissionAttributes" Collapsed="true">
+    <Position X="16.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Util\PermissionAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Util.StatesLogging" Collapsed="true">
+    <Position X="2.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Util\StatesLogging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TheForgiveness.Util.Util" Collapsed="true">
+    <Position X="2.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Util\Util.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

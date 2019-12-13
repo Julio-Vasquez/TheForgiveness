@@ -27,12 +27,12 @@ namespace TheForgiveness.Services
             return result;
         }
 
-        public System.Data.DataRow Activi(int? id)
+        public System.Data.DataRow Evaluacion(int? id)
         {
             return MySQL.Querys("SELECT * FROM Evaluacion WHERE ID = " + id).Rows[0];
         }
 
-        public bool UpdateActivi(Models.evaluacionModel dpm)
+        public bool UpdateEvaluacion(Models.evaluacionModel dpm)
         {
             return MySQL.Operations("UPDATE Evaluacion SET Calificacion ='" + dpm.Calificacion + "',FechaEvaluacion ='" + dpm.FechaEvaluacion + "' WHERE ID = " + dpm.ID);
         }

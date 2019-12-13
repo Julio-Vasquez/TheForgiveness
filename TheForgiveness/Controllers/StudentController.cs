@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,10 @@ namespace TheForgiveness.Controllers
     public class StudentController : Controller
     {
         private Services.estudianteService es = new Services.estudianteService();
-     
+        private Services.departamentoService ds = new Services.departamentoService();
+        private Services.municipioService ms = new Services.municipioService();
+        private Services.generoService gene = new Services.generoService();
+        private Services.grupoService grup = new Services.grupoService();
         #region HTTPMethod Get
 
         [HttpGet]
@@ -18,6 +22,10 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "CreateStudent")]
         public PartialViewResult CreateStudent()
         {
+            ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
+            ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
+            ViewData["grupos"] = JsonConvert.SerializeObject(grup.Groupsdt(int.Parse(Session["idAccount"].ToString())));
             return PartialView();
         }
 
@@ -38,26 +46,9 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "GetStudents")]
         public PartialViewResult GetStudents()
         {
-            
-            
-            /*
             ViewBag.rol = Session["Role"].ToString();
-            var res = ps.studendata(Convert.ToString(Session["username"]));
-            ViewData["municipio"] = res["Municipio"].ToString();
-            ViewData["documento"] = res["Tipo_Documento"].ToString();
-            ViewData["genero"] = res["Genero"].ToString();
-            return PartialView(
-                    new Models.studentModel(
-                            int.Parse(res["Edad"].ToString()),
-                            res["Identificacion"].ToString(),
-                            res["Primer_Nombre"].ToString(),
-                            res["Segundo_Nombre"].ToString(),
-                            res["Primer_Apellido"].ToString(),
-                            res["Segundo_Apellido"].ToString(),
-                            res["FechaDeNacimeinto"].ToString(),
-                            int.Parse(res["Edad"].ToString())
-                        )
-                );*/
+            var res = es.listStudent(Session["Role"].ToString(),int.Parse(Session["idAccount"].ToString()));
+            return PartialView(res);
             return PartialView();
         }
 
@@ -93,6 +84,10 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "CreateStudent")]
         public ActionResult CreateStudent(Models.studentModel sm) 
         {
+            ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
+            ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
+            ViewData["grupos"] = JsonConvert.SerializeObject(grup.Groupsdt(int.Parse(Session["idAccount"].ToString())));
             if (ModelState.IsValid)
             {
                 if(es.CreateStudent(sm))

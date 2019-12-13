@@ -1,4 +1,4 @@
-﻿@model  TheForgiveness.Models.studentModel
+﻿@model  IEnumerable<TheForgiveness.Models.studentModel>
 
 @{
     ViewBag.Title = "GetStudent";
@@ -37,12 +37,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.FechaNacimiento)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Municipio)
-            </th>
             <th>Accion</th>
         </tr>
     </thead>
@@ -50,24 +44,26 @@
         @{
             if (ViewBag.rol == "Docente" || ViewBag.rol == "Administrador")
             {
+                foreach (var item in Model)
+                {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => Model.NumIdentificacion)
+                            @Html.DisplayFor(modelItem => item.NumIdentificacion)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => Model.PriNombre)
+                            @Html.DisplayFor(modelItem => item.PriNombre)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => Model.SegNombre)
+                            @Html.DisplayFor(modelItem => item.SegNombre)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => Model.PriApellido)
+                            @Html.DisplayFor(modelItem => item.PriApellido)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => Model.SegApellido)
+                            @Html.DisplayFor(modelItem => item.SegApellido)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => Model.FechaNacimiento)
+                            @Html.DisplayFor(modelItem => item.FechaNacimiento)
                         </td>
                         <td>
                             @Html.Raw(ViewData["genero"])
@@ -76,14 +72,15 @@
                             @Html.Raw(ViewData["municipio"])
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Edit", "Edit", new {  id=item.NumIdentificacion }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "SpecifyStudent", new {  id=item.NumIdentificacion }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "Delete", new {  id=item.NumIdentificacion }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
-                
-            }
-            
+
+                    }
+
+                }
             }
     </tbody>
 
