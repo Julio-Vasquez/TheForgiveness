@@ -33,9 +33,12 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateStudent")]
         public ActionResult UpdateStudent(int? id)
-        {
+        {          
             if (id != null)
             {
+                ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
+                ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+                ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
                 return View(es.SpecifyStudent(id));
             }
             return RedirectToAction("GetStudents");
@@ -104,6 +107,9 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UpdateVictimology(Models.studentModel sm)
         {
+            ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
+            ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
             if (ModelState.IsValid)
             {
                 if (es.UpdateStudent(sm))
