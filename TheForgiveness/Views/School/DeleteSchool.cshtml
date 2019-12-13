@@ -1,9 +1,10 @@
-﻿@model TheForgiveness.Models.colegioModel
+﻿@model TheForgiveness.Models.colegioViewModel
 
 @{
     ViewBag.Title = "DeleteSchool";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>Eliminar Colegio</h1>
@@ -30,11 +31,11 @@
 
     </dl>
     <hr />
-    @using (Html.BeginForm("DeleteSchool", "School", FormMethod.Post)) {
+    @using (Html.BeginForm("DeleteSchool", "School", FormMethod.Post, new { @id = "delete" })) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+            <input type="submit" value="Delete" class="btn btn-outline-danger" onclick="return del(event, 'Colegio')" /> |
             @Html.ActionLink("Back to List", "GetSchools")
         </div>
     }

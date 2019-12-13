@@ -37,39 +37,53 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteSchool")]
-        public PartialViewResult DeleteSchool()
+        public ActionResult DeleteSchool(int? id)
         {
-            
-            return PartialView();
+            if (id != null)
+            {
+                System.Data.DataRow dr = schoolsrv.queryshoolsView(id);
+                Models.colegioViewModel shoolmodel = new Models.colegioViewModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), dr["Municipio"].ToString());
+                return PartialView(shoolmodel);
+            }
+            return RedirectToAction("GetSchools");
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "UpdateSchool")]
-        public PartialViewResult UpdateSchool()
+        public ActionResult UpdateSchool(int? id)
         {
-            return PartialView();
+            if (id != null)
+            {
+                ViewBag.departamento = ds.queryDepartamento();
+                ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+                System.Data.DataRow dr = schoolsrv.queryshools(id);
+                Models.colegioModel shoolmodel = new Models.colegioModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["Municipio"].ToString()));
+                return View(shoolmodel);
+            }
+            return RedirectToAction("GetSchools");
         }
-
-     
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetSchools")]
-        public ActionResult SpecifySchool(int id)
+        public ActionResult SpecifySchool(int? id)
         {
-
-            ViewBag.rol = Session["Role"].ToString();
-            System.Data.DataRow dr= schoolsrv.queryshools(id);
-            Models.colegioModel shoolmodel = new Models.colegioModel(id, dr["Nombre"].ToString(), int.Parse(dr["Municipio"].ToString()));
-            return PartialView(shoolmodel);
+            if (id != null)
+            {
+                ViewBag.rol = Session["Role"].ToString();
+                System.Data.DataRow dr = schoolsrv.queryshoolsView(id);
+                Models.colegioViewModel shoolmodel = new Models.colegioViewModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(),dr["Municipio"].ToString());
+                return View(shoolmodel);
+            }
+            return RedirectToAction("Error404", "Shared");
         }
 
         [HttpPost]
         [StatesLogging]
         [PermissionAttributes(File = "CreateSchool")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateSchools(Models.colegioModel school)
+        public ActionResult CreateSchool(Models.colegioModel school)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +95,44 @@ namespace TheForgiveness.Controllers
                 ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
                 return View(school);
             }
+            ViewBag.departamento = ds.queryDepartamento();
+            ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
             return View(school);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateSchool")]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateSchool(Models.colegioModel cm)
+        {
+            if (ModelState.IsValid)
+            {
+                if (schoolsrv.UpdateSchool(cm)) 
+                {
+                    return RedirectToAction("GetSchools");
+                }
+            }
+            ViewBag.departamento = ds.queryDepartamento();
+            ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            System.Data.DataRow dr = schoolsrv.queryshools(cm.ID);
+            Models.colegioModel shoolmodel = new Models.colegioModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["Municipio"].ToString()));
+            return View(shoolmodel);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteSchool")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteSchool(int id)
+        {
+            if (schoolsrv.DeleteSchool(id)) 
+            {
+                return RedirectToAction("GetSchools");
+            }
+            System.Data.DataRow dr = schoolsrv.queryshoolsView(id);
+            Models.colegioViewModel shoolmodel = new Models.colegioViewModel(int.Parse(dr["ID"].ToString()), dr["Nombre"].ToString(), dr["Municipio"].ToString());
+            return View(shoolmodel);
         }
     }
 }
