@@ -1,25 +1,20 @@
 ﻿@model TheForgiveness.Models.studentModel
-
 @{
     ViewBag.Title = "UpdateStudent";
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
-
 <h1>Modificar Estudiante</h1>
 <hr />
-
 
 @using (Html.BeginForm("UpdateStudent", "Student", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-row">
-
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group col-md-4 offset-1">
             @Html.LabelFor(model => model.NumIdentificacion, htmlAttributes: new { @class = "" })
-
             @Html.EditorFor(model => model.NumIdentificacion, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.NumIdentificacion, "", new { @class = "text-danger" })
         </div>
@@ -54,14 +49,22 @@
             @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         </div>
         <div class="form-group col-md-3">
-            @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "text-danger" })
+            <label class="control-label">Genero</label>
+            <select id="Genero" name="Genero" class="form-control">
+                <option value="default"></option>
+            </select>
         </div>
         <div class="form-group col-md-3">
-            @Html.LabelFor(model => model.Municipio, htmlAttributes: new { @class = "control-label" })
-            @Html.EditorFor(model => model.Municipio, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Municipio, "", new { @class = "text-danger" })
+            <label class="control-label">Departamento</label>
+            <select id="Departamento" name="Departamento" class="form-control" onchange="cargar(this.value)">
+                <option value="default"></option>
+            </select>
+        </div>
+        <div class="form-group col-md-4 offset-md-1">
+            <label class="control-label">Municipio</label>
+            <select name="Municipio" class="form-control " id="Municipio">
+                <option value="default"></option>
+            </select>
         </div>
     </div>
 }
@@ -72,6 +75,70 @@
     </div>
 </div>
 
+<script>
+    @{
+    @:var municipio = @Html.Raw(ViewData["municipios"].ToString()); ;
+    @:var departamento = @Html.Raw(ViewData["departamentos"].ToString()); ;
+    @:var genero = @Html.Raw(ViewData["generos"].ToString()); ;
+    }
+    $(document).ready(function () {
+        llenardep();
+        llenarmun();
+        llenargen();
+        @{
+        @:document.getElementById("Municipio").value = '@Model.Municipio';
+        @:document.getElementById("Genero").value = '@Model.Genero';
+    }}
+        );
+    function cargar(id) {
+        let ele = document.getElementById('Municipio');
+        if (ele.length > 1) {
+            let limite = ele.length;//defino variable, sino el length se refresca
+            for (let i = 0; i < limite; i++) {
+                ele.remove(ele.children[i]);
+            }
+            let option = document.createElement("option");
+            ele.add(option);
+        }
+        for (let i = 0; i < municipio.length; i++) {
+            if (municipio[i].Departamento === parseInt(id)) {
+                let option = document.createElement("option");
+                option.text = municipio[i].Municipio;
+                option.value = municipio[i].id;
+                ele.add(option);
+            }
+        }
+    }
+
+    function llenardep(){
+        let ele = document.getElementById('Departamento');
+        for (let i = 0; i < departamento.length; i++) {
+            let option = document.createElement("option");
+            option.text = departamento[i].Departamento;
+            option.value = departamento[i].ID;
+            ele.add(option);
+        }
+    }
+    function llenarmun(){
+        let ele = document.getElementById('Municipio');
+        for (let i = 0; i < municipio.length; i++) {
+            let option = document.createElement("option");
+            option.text = municipio[i].Municipio;
+            option.value = municipio[i].ID;
+            ele.add(option);
+        }
+    }
+
+    function llenargen() {
+        let ele = document.getElementById('Genero');
+        for (let i = 0; i < genero.length; i++) {
+            let option = document.createElement("option");
+            option.text = genero[i].Genero;
+            option.value = genero[i].ID;
+            ele.add(option);
+        }
+    }
+</script>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
