@@ -6,7 +6,7 @@
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
 
-@using (Html.BeginForm("CreateSchools","Schools",FormMethod.Post, new { @accept_charset = "utf-8" }))
+@using (Html.BeginForm("CreateSchool","School",FormMethod.Post, new { @accept_charset = "utf-8" }))
 {
     @Html.AntiForgeryToken()
 
@@ -26,7 +26,7 @@
             <div class="col-sm-5 col-sm-offset-1">
                 <div class="form-group">
                     <label class="control-label">Departamento</label>
-                    <select name="Departamento" class="form-control" onchange="cargar(this.value)">
+                    <select name="Departamento" class="form-control" onchange="cargar(this.value)" required>
                         <option value="default"></option>
                         @foreach (System.Data.DataRow row in ViewBag.departamento.Rows)
                         {
@@ -38,10 +38,9 @@
 
             <div class="col-sm-5">
                 <div class="form-group">
-                    <label class="control-label">Municipio</label>
-                    <select name="Municipio" class="form-control " id="Municipio">
+                    <label class="control-label" for="Municipio">Municipio</label>
+                    <select name="Municipio" class="form-control " id="Municipio" required>
                         <option value="default"></option>
-
                     </select>
                 </div>
             </div>
@@ -55,39 +54,15 @@
     </div>
 }
 <script>
-        var municipio = [
-        @{
-            int j = 0;
-            foreach (System.Data.DataRow row in ViewBag.municipio.Rows)
-            {
-                if (j != 0)
-                {
-                    @:, {
-                         @:id: @row["ID"],
-                         @:Municipio: "@row["Municipio"]",
-                         @:Departamento: @row["Departamento"]
-                        @:}
-                }
-                else
-                {
-                    @:{
-                         @:id: @row["ID"],
-                         @:Municipio: "@row["Municipio"]",
-                         @:Departamento: @row["Departamento"]
-                    @:}
-                }
-                j++;
-            }
-         }
-    ];
-
+    @{ 
+       @:var municipio = @Html.Raw(ViewData["municipio"].ToString());
+    }
         function cargar(id) {
             let ele = document.getElementById('Municipio');
             if (ele.length > 1) {
                 let limite = ele.length;//defino variable, sino el length se refresca
-                for (let i = 0; i < limite; i++) {
+                for (let i = 0; i < limite; i++)
                     ele.remove(ele.children[i]);
-                }
                 let option = document.createElement("option");
                 ele.add(option);
             }
@@ -95,12 +70,12 @@
                 if (municipio[i].Departamento === parseInt(id)) {
                     let option = document.createElement("option");
                     option.text = municipio[i].Municipio;
-                    option.value = municipio[i].id;
+                    option.value = municipio[i].ID;
                     ele.add(option);
                 }
             }
         }
 </script>
 <div>
-    @Html.ActionLink("Back to List", "Index","DashBoard")
+    @Html.ActionLink("Back to List", "GetSchools","School")
 </div>

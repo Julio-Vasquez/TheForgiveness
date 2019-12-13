@@ -1,9 +1,9 @@
-﻿@model TheForgiveness.Models.colegioModel
+﻿@model TheForgiveness.Models.colegioViewModel
 
 @{
     ViewBag.Title = "SpecifySchool";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
 }
 
 <h1>Detalle del colegio</h1>
@@ -26,10 +26,10 @@
         <dd>
             @Html.DisplayFor(model => model.Municipio)
         </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-outline-warning"}) 
+    @Html.ActionLink("Edit", "UpdateSchool", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
     @Html.ActionLink("Back to List", "GetSchools")
 </p>
+

@@ -8,7 +8,7 @@ function del(e, typeText)
         text: "¡No podrás revertir esto!",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, Eliminar!',
+        confirmButtonText: 'Si, Eliminar!',
         cancelButtonText: 'No, Cancelar!',
         confirmButtonColor: "#d33",
         cancelButtonColor: "#3085d6",

@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\StageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\VictimologyController.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Services\autoresService.cs" />
     <Compile Include="Services\colegioService.cs" />
     <Compile Include="Services\ConceptoAutosServicios.cs" />
+    <Compile Include="Services\DashBoardService.cs" />
     <Compile Include="Services\estudianteService.cs" />
     <Compile Include="Services\forgivenessServicios.cs" />
     <Compile Include="Services\percepcionService.cs" />
@@ -264,6 +266,9 @@
     <Content Include="Assets\Css\Subject\create.min.css" />
     <Content Include="Assets\Css\titles\titles.css" />
     <Content Include="Assets\Icon\configSS.svg" />
+    <Content Include="Assets\Icon\Dashboard\docente.svg" />
+    <Content Include="Assets\Icon\Dashboard\n1.svg" />
+    <Content Include="Assets\Icon\Dashboard\n2.svg" />
     <Content Include="Assets\Icon\UpdateSchool.svg" />
     <Content Include="Assets\Img\404\404.png" />
     <Content Include="Assets\Img\404\favicon.png" />
@@ -384,7 +389,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\" />
     <Folder Include="Views\Diplomas\" />
-    <Folder Include="Views\Stage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -777,6 +781,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\TheForgiveness.dll.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Stage\GetStages.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

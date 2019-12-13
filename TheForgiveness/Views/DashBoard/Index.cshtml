@@ -90,14 +90,79 @@
             </div>
         </div>
     </div>
-    <!-- Column -->
-    <div class="col-md-6 col-lg-2 col-xlg-3">
-        <div class="card card-hover">
-            <div class="box bg-warning text-center">
-                <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                <h6 class="text-white">Errors</h6>
+
+
+    @{
+
+        if (Session["Role"].ToString() == "Administrador")
+        {
+            <div class="col-3">
+                <div class="card card-hover">
+                    <div class="box bg-success text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi">
+                                <img src="~/Assets/Icon/Dashboard/docente.svg" class="size" alt="Alternate Text" />
+                            </i>
+                        </h1>
+                        <h6 class="text-white">Total de Docentes</h6>
+                        <h4 class="text-white font-weight-bold">@ViewBag.cantidaddocentes</h4>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <!-- Column -->
+
+            <div class="col-3">
+                <div class="card card-hover">
+                    <div class="box bg-info text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi">
+                                <img src="~/Assets/Icon/Dashboard/n1.svg" class="size" alt="Alternate Text" />
+                                <img src="~/Assets/Icon/Dashboard/n2.svg" class="size" alt="Alternate Text" />
+                            </i>
+                        </h1>
+                        <h6 class="text-white">Total de Estudiantes</h6>
+                        <h4 class="text-white font-weight-bold">@ViewBag.cantidadestudiantes</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card card-hover">
+                    <div class="box bg-cyan text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi">
+                                <img src="~/Assets/Icon/Victimology.svg" class="size" alt="Alternate Text" />
+                            </i>
+                        </h1>
+                        <h6 class="text-white">Cantidad Victimologias</h6>
+                        <h4 class="text-white font-weight-bold">@ViewBag.victimologias</h4>
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+        else if (Session["Role"].ToString() == "Docente")
+        {
+            <div class="col-4">
+                <div class="card card-hover">
+                    <div class="box bg-info text-center">
+                        <h1 class="font-light text-white">
+                            <i class="mdi">
+                                <img src="~/Assets/Icon/Dashboard/n1.svg" class="size" alt="Alternate Text" />
+                                <img src="~/Assets/Icon/Dashboard/n2.svg" class="size" alt="Alternate Text" />
+                            </i>
+                        </h1>
+                        <h6 class="text-white">Total de Estudiantes</h6>
+                        <h4 class="text-white font-weight-bold">@ViewBag.cantidadestudiantes</h4>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            //solo estrudiante
+        }
+    }
 </div>
+
