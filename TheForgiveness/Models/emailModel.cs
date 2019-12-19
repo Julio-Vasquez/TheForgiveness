@@ -7,7 +7,7 @@ using System.Web;
 
 namespace TheForgiveness.Models
 {
-    public class emailModel
+    public class EmailModel
     {
         public int ID { get; set; }
 
@@ -18,17 +18,17 @@ namespace TheForgiveness.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        public emailModel()
+        public EmailModel()
         {
         }
 
-        public emailModel(string Email)
+        public EmailModel(string Email)
         {
             ID = 0;
             this.Email = Email;
         }
 
-        public emailModel(int ID, string Email)
+        public EmailModel(int ID, string Email)
         {
             this.ID = ID;
             this.Email = Email;

@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class ConceptForgivenessController : Controller
     {
-        private Services.ConceptoAutosServicios Authoressrv = new Services.ConceptoAutosServicios();
+        private Services.ConceptForgivenessService Authoressrv = new Services.ConceptForgivenessService();
         // GET: ConceptForgiveness
 
         [HttpGet]
@@ -55,7 +55,7 @@ namespace TheForgiveness.Controllers
             if (id != null) {
                 ViewBag.rol = Session["Role"].ToString();
                 var dr = Authoressrv.SpecifyData(id);
-                var model = new Models.conceptoautoresModel(
+                var model = new Models.ConceptForgivenessModel(
                     dr["Publicacion"].ToString(),
                     dr["Titulo"].ToString(),
                     dr["Descripcion"].ToString()

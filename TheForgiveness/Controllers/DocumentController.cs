@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class DocumentController : Controller
     {
-        private Services.tipoDocumentoService dps = new Services.tipoDocumentoService();
+        private Services.TypeDocService dps = new Services.TypeDocService();
         #region HTTPMethod Get
         // GET: document
         [HttpGet]
@@ -29,8 +29,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var res = dps.Documents(id);
-                Models.tipodocumentoModel dpm = new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString());
-                return View(dpm);
+                return View(new Models.TypeDocModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
             }
             return Redirect("GetDocuments");
         }
@@ -46,9 +45,14 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteDocument")]
-        public ActionResult DeleteDocument()
+        public ActionResult DeleteDocument(int? id)
         {
-            return View();
+            if (id != null) 
+            {
+                var res = dps.Documents(id);
+                return View(new Models.TypeDocModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
+            }
+            return RedirectToAction("GetDocuments");
         }
 
         [HttpGet]
@@ -60,9 +64,9 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var res = dps.Documents(id);
-                return View(new Models.tipodocumentoModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
+                return View(new Models.TypeDocModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
             }
-            return Redirect("GetDocuments");
+            return RedirectToAction("GetDocuments");
         }
 
         #endregion
@@ -73,12 +77,12 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateDocument")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateDocument(Models.tipodocumentoModel dpm)
+        public ActionResult CreateDocument(Models.TypeDocModel dpm)
         {
             if (ModelState.IsValid)
             {
                 if (dps.CreateDocument(dpm))
-                    return RedirectToAction("Index", "DashBoard");
+                    return RedirectToAction("GetDocuments");
             }
             return View(dpm);
         }
@@ -87,11 +91,30 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateDocument")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateDocument(Models.tipodocumentoModel dpm, int id)
+        public ActionResult UpdateDocument(Models.TypeDocModel dpm, int id)
         {
-            if (dps.UpdateDepartment(dpm))
-                return RedirectToAction("Index", "DashBoard");
+            if (ModelState.IsValid) 
+            {
+                if (dps.UpdateDocument(dpm))
+                    return RedirectToAction("GetDocuments");
+            }
+            
             return View(dpm);
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateDocument")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteDocument(int id)
+        {
+            if (dps.DeleteDocument(id)) 
+            {
+                return RedirectToAction("GetDocuments");
+            }
+            var res = dps.Documents(id);
+            return View(new Models.TypeDocModel(int.Parse(res["ID"].ToString()), res["TipoDocumento"].ToString()));
+
         }
         #endregion
 

@@ -9,8 +9,8 @@ namespace TheForgiveness.Controllers
 {
     public class MunicipalityController : Controller
     {
-        private Services.municipioService dps = new Services.municipioService();
-        private Services.departamentoService ss = new Services.departamentoService();
+        private Services.MunicipalityService dps = new Services.MunicipalityService();
+        private Services.DepartmentService ss = new Services.DepartmentService();
 
         #region HTTPMethod Get
         // GET: Municipality
@@ -19,7 +19,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "CreateMunicipality")]
         public PartialViewResult CreateMunicipality()
         {
-            Models.municipioModel dpm = new Models.municipioModel();
+            Models.MunicipalityModel dpm = new Models.MunicipalityModel();
             dpm.Departamento = dps.Deparmentos();
             return PartialView(dpm);
         }
@@ -33,7 +33,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var res = dps.Municipality(id);
-                Models.municipioModel dpm = new Models.municipioModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString()));
+                Models.MunicipalityModel dpm = new Models.MunicipalityModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString()));
                 dpm.Departamento = dps.Deparmentos();
                 return View(dpm);
             }
@@ -58,7 +58,7 @@ namespace TheForgiveness.Controllers
             {
                 var res = dps.Municipality(id);
                 ViewBag.Departamentos = ss.Department(int.Parse(res["Departamento"].ToString()));
-                return View(new Models.municipioModel(
+                return View(new Models.MunicipalityModel(
                         int.Parse(res["ID"].ToString()),
                         res["Municipio"].ToString(),
                         int.Parse(res["Departamento"].ToString())
@@ -76,7 +76,7 @@ namespace TheForgiveness.Controllers
             {
                 var res = dps.Municipality(id);
                 ViewBag.Departamento = dps.Departamento(int.Parse(res["Departamento"].ToString()));
-                return View(new Models.municipioModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString())));
+                return View(new Models.MunicipalityModel(int.Parse(res["ID"].ToString()), res["Municipio"].ToString(), int.Parse(res["Departamento"].ToString())));
             }
             return RedirectToAction("GetMunicipalities");
         }
@@ -89,11 +89,11 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateMunicipality")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateMunicipality(Models.municipioModel dpm)
+        public ActionResult CreateMunicipality(Models.MunicipalityModel dpm)
         {
             if (ModelState.IsValid)
             {
-                if (dps.CreateMunicipality(new Models.municipioModel(dpm.Municipio, int.Parse(Request.Form["Departamento"]))))
+                if (dps.CreateMunicipality(new Models.MunicipalityModel(dpm.Municipio, int.Parse(Request.Form["Departamento"]))))
                     return RedirectToAction("GetMunicipalities");
             }
             return View(dpm);
@@ -103,7 +103,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateMunicipality")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateMunicipality(Models.municipioModel dpm, int id)
+        public ActionResult UpdateMunicipality(Models.MunicipalityModel dpm, int id)
         {
             dpm.DepartamentoFK = int.Parse(Request.Form["Departamento"].ToString());
             if (dps.UpdateDepartment(dpm))
@@ -125,7 +125,7 @@ namespace TheForgiveness.Controllers
             {
                 var res = dps.Municipality(id);
                 ViewBag.Departamentos = ss.Department(int.Parse(res["Departamento"].ToString()));
-                return View(new Models.municipioModel(
+                return View(new Models.MunicipalityModel(
                         int.Parse(res["ID"].ToString()),
                         res["Municipio"].ToString(),
                         int.Parse(res["Departamento"].ToString())

@@ -4,15 +4,14 @@ namespace TheForgiveness.Util
 {
     public class Api
     {
-        private string url = "";
+        private string url = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/0a86d67e-ef81-4cd4-8a8d-f4018ca008d4?staging=true&";
 
-        public string sendGetRequest(string q)
+        public string sendGetRequest(string query)
         {
             try
             {
-                string url = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/0a86d67e-ef81-4cd4-8a8d-f4018ca008d4?staging=true&";
                 string postData = "verbose=true&timezoneOffset=-360&subscription-key=fa9ee5040fc94e2aae85c89599d3128e&q=";
-                System.Net.WebRequest wr = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url + postData+q);
+                System.Net.WebRequest wr = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(this.url + postData + query);
                 wr.Method = "GET";
                 wr.ContentType = "application/x-www-form-urlencoded";
                 System.Net.WebResponse response = wr.GetResponse(); // Obtiene la respuesta

@@ -11,12 +11,12 @@ namespace TheForgiveness.Controllers
     public class ProfileController : Controller
     {
         
-        private Services.usuarioService us = new Services.usuarioService();
-        private Services.perfilServices ps = new Services.perfilServices();
-        private Services.departamentoService ds = new Services.departamentoService();
-        private Services.municipioService ms = new Services.municipioService();
-        private Services.generoService gene = new Services.generoService();
-        private Services.tipoDocumentoService tido = new Services.tipoDocumentoService();
+        private Services.UserService us = new Services.UserService();
+        private Services.ProfileServices ps = new Services.ProfileServices();
+        private Services.DepartmentService ds = new Services.DepartmentService();
+        private Services.MunicipalityService ms = new Services.MunicipalityService();
+        private Services.GenderService gene = new Services.GenderService();
+        private Services.TypeDocService tido = new Services.TypeDocService();
         // GET: Profile
         [HttpGet]
         [StatesLogging]

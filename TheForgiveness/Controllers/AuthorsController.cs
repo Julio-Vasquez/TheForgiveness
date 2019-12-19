@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class AuthorsController : Controller
     {
-        private Services.autoresService Authoressrv = new Services.autoresService();
+        private Services.AuthorService Authoressrv = new Services.AuthorService();
         // GET: Profile
         [HttpGet]
         [StatesLogging]
@@ -27,7 +27,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var res = Authoressrv.Auth(id);
-                return View(new Models.autoresModel(
+                return View(new Models.AuthorModel(
                     int.Parse(res["ID"].ToString()),
                     res["PriNombre"].ToString(),
                     res["SegNombre"].ToString(),
@@ -46,7 +46,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var dr = Authoressrv.Auth(id);
-                var model = new Models.autoresModel(
+                var model = new Models.AuthorModel(
                     dr["PriNombre"].ToString(),
                     dr["SegNombre"].ToString(),
                     dr["PriApellido"].ToString(),
@@ -74,7 +74,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var dr = Authoressrv.Auth(id);
-                var model = new Models.autoresModel(
+                var model = new Models.AuthorModel(
                     int.Parse(dr["ID"].ToString()),
                     dr["PriNombre"].ToString(),
                     dr["SegNombre"].ToString(),
@@ -90,7 +90,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateAuthor")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateAuthor(Models.autoresModel am)
+        public ActionResult CreateAuthor(Models.AuthorModel am)
         {
             if (ModelState.IsValid)
             {
@@ -106,7 +106,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateAuthor")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateAuthor(Models.autoresModel am)
+        public ActionResult UpdateAuthor(Models.AuthorModel am)
         {
             if (ModelState.IsValid)
             {
@@ -132,7 +132,7 @@ namespace TheForgiveness.Controllers
             else
             {
                 var dr = Authoressrv.Auth(id);
-                var model = new Models.autoresModel(
+                var model = new Models.AuthorModel(
                 dr["PriNombre"].ToString(),
                 dr["SegNombre"].ToString(),
                 dr["PriApellido"].ToString(),

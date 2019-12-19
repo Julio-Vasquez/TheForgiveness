@@ -10,11 +10,11 @@ namespace TheForgiveness.Controllers
 {
     public class StudentController : Controller
     {
-        private Services.estudianteService es = new Services.estudianteService();
-        private Services.departamentoService ds = new Services.departamentoService();
-        private Services.municipioService ms = new Services.municipioService();
-        private Services.generoService gene = new Services.generoService();
-        private Services.grupoService grup = new Services.grupoService();
+        private Services.StudentService es = new Services.StudentService();
+        private Services.DepartmentService ds = new Services.DepartmentService();
+        private Services.MunicipalityService ms = new Services.MunicipalityService();
+        private Services.GenderService gene = new Services.GenderService();
+        private Services.GroupService grup = new Services.GroupService();
         #region HTTPMethod Get
 
         [HttpGet]
@@ -85,7 +85,7 @@ namespace TheForgiveness.Controllers
         [HttpPost]
         [StatesLogging]
         [PermissionAttributes(File = "CreateStudent")]
-        public ActionResult CreateStudent(Models.studentModel sm) 
+        public ActionResult CreateStudent(Models.StudentModel sm) 
         {
             ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
             ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
@@ -105,7 +105,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateStudent")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateVictimology(Models.studentModel sm)
+        public ActionResult UpdateVictimology(Models.StudentModel sm)
         {
             ViewData["departamentos"] = JsonConvert.SerializeObject(ds.queryDepartamento());
             ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());

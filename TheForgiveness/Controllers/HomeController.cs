@@ -9,11 +9,11 @@ namespace TheForgiveness.Controllers
 {
     public class HomeController : Controller
     {
-        private Services.usuarioService us = new Services.usuarioService();
-        private Services.generoService gs = new Services.generoService();
-        private Services.tipoDocumentoService tds = new Services.tipoDocumentoService();
-        private Services.departamentoService ds = new Services.departamentoService();
-        private Services.municipioService ms = new Services.municipioService();
+        private Services.UserService us = new Services.UserService();
+        private Services.GenderService gs = new Services.GenderService();
+        private Services.TypeDocService tds = new Services.TypeDocService();
+        private Services.DepartmentService ds = new Services.DepartmentService();
+        private Services.MunicipalityService ms = new Services.MunicipalityService();
 
         [HttpGet]
         [AllowAnonymous]
@@ -59,7 +59,7 @@ namespace TheForgiveness.Controllers
 
             string res = Request.Form.ToString();
             Console.WriteLine(res);
-            Models.personaModel pm = new Models.personaModel
+            Models.PeopleModel pm = new Models.PeopleModel
                 (
                     long.Parse(Request.Form["NumIdentificacion"]),
                     Request.Form["PriNombre"],

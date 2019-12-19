@@ -9,10 +9,9 @@ namespace TheForgiveness.Util
 {
     public class Email
     {
-       
         public bool SendMail(string un, string id)
         {
-            Services.usuarioService services = new Services.usuarioService();
+            Services.UserService services = new Services.UserService();
             if (services.ValidUser(id, un))
             {
                 try

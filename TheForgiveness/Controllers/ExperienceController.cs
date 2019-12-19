@@ -10,9 +10,9 @@ namespace TheForgiveness.Controllers
 {
     public class ExperienceController : Controller
     {
-        private Services.experienciaService Experiencesrv = new Services.experienciaService();
-        private Services.departamentoService ds = new Services.departamentoService();
-        private Services.municipioService ms = new Services.municipioService();
+        private Services.ExperienceService Experiencesrv = new Services.ExperienceService();
+        private Services.DepartmentService ds = new Services.DepartmentService();
+        private Services.MunicipalityService ms = new Services.MunicipalityService();
        // GET: Concept
        [HttpGet]
         [StatesLogging]
@@ -73,7 +73,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateExperience(Models.experienciaModel em)
+        public ActionResult CreateExperience(Models.ExperienceModel em)
         {
             if (ModelState.IsValid)
             { 

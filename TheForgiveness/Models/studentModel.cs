@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TheForgiveness.Models
 {
-    public class studentModel
+    public class StudentModel
     {
         //username = email
         //password = numIdentificacion
@@ -70,11 +70,11 @@ namespace TheForgiveness.Models
         [DisplayName("Seleccione El Grupo")]
         public int Grupo { get; set; }
 
-        public studentModel()
+        public StudentModel()
         {
         }
 
-        public studentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email, int genero, int municipio)
+        public StudentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email, int genero, int municipio)
         {
             NumIdentificacion = numIdentificacion;
             PriNombre = priNombre;
@@ -86,7 +86,7 @@ namespace TheForgiveness.Models
             Genero = genero;
             Municipio = municipio;
         }
-        public studentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email)
+        public StudentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email)
         {
             NumIdentificacion = numIdentificacion;
             PriNombre = priNombre;
@@ -96,7 +96,7 @@ namespace TheForgiveness.Models
             FechaNacimiento = fechaNacimiento;
             Email = email;
         }
-        public studentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email, int genero)
+        public StudentModel(long numIdentificacion, string priNombre, string segNombre, string priApellido, string segApellido, string fechaNacimiento, string email, int genero)
         {
             NumIdentificacion = numIdentificacion;
             PriNombre = priNombre;

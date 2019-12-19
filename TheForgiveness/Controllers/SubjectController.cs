@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class SubjectController : Controller
     {
-        private Services.asignaturaService asigs = new Services.asignaturaService();
+        private Services.SubjectService asigs = new Services.SubjectService();
 
         // GET: Subject
         #region HTTPMETHOD GET
@@ -30,7 +30,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var res = asigs.Subject(id);
-                return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
+                return View(new Models.SubjectModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
             }
             return Redirect("GetSubjects");
         }
@@ -54,7 +54,7 @@ namespace TheForgiveness.Controllers
                 ViewBag.rol = Session["Role"].ToString();
                 var res = asigs.Subject(id);
                 return View(
-                        new Models.asignaturaModel(
+                        new Models.SubjectModel(
                             int.Parse(res["ID"].ToString()),
                             res["Nombre"].ToString()
                             )
@@ -72,7 +72,7 @@ namespace TheForgiveness.Controllers
             {
                 ViewBag.rol = Session["Role"].ToString();
                 var res = asigs.Subject(id);
-                return View(new Models.asignaturaModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
+                return View(new Models.SubjectModel(int.Parse(res["ID"].ToString()), res["Nombre"].ToString()));
             }
             return RedirectToAction("GetSubjects");
         }
@@ -83,7 +83,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateSubject")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateSubject(Models.asignaturaModel asig)
+        public ActionResult CreateSubject(Models.SubjectModel asig)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateSubject")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateSubject(Models.asignaturaModel asign)
+        public ActionResult UpdateSubject(Models.SubjectModel asign)
         {
             if (ModelState.IsValid)
                 if (asigs.UpdateSubject(asign))
@@ -122,7 +122,7 @@ namespace TheForgiveness.Controllers
             {
                 var res = asigs.Subject(id);
                 return View(
-                        new Models.asignaturaModel(
+                        new Models.SubjectModel(
                             int.Parse(res["ID"].ToString()),
                             res["Nombre"].ToString()
                             )
