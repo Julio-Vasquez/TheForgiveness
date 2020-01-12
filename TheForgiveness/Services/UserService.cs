@@ -10,7 +10,7 @@ namespace TheForgiveness.Services
 
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public int idcuenta(string un)
+        public int idAccount(string un)
         {
             System.Data.DataRow dr = MySQL.Querys("SELECT ID FROM Usuario WHERE UserName = '" + un + "'").Rows[0];
             return int.Parse(dr["ID"].ToString());

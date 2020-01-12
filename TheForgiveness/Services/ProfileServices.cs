@@ -20,7 +20,7 @@ namespace TheForgiveness.Services
             return MySQL.Querys("SELECT * FROM DatosPersonales WHERE Identificacion ="+id).Rows[0];
         }
 
-        public System.Data.DataRow studendata(string un)
+        public System.Data.DataRow studenData(string un)
         {
             long id = myID(un);
             try
@@ -34,7 +34,7 @@ namespace TheForgiveness.Services
            
         }
 
-        public bool updateprofile(Models.PerfilModel modelps, string un)
+        public bool updateProfile(Models.PerfilModel modelps, string un)
         {
             int idper = myID(un);
             return MySQL.Operations("UPDATE persona SET NumIdentificacion='"+ modelps.NumIdentificacion+"',PriNombre='"+ modelps.PriNombre+ "',SegNombre='"+ modelps.SegNombre+ "',PriApellido='"+ modelps.PriApellido+ "',SegApellido='"+ modelps.SegApellido+ "',FechaNacimiento='"+ modelps.FechaNacimiento+ "',Genero="+ modelps.Genero+ ",TipoDocumento="+ modelps.TipoDocumento+ ",Municipio="+ modelps.Municipio+ " WHERE ID=" + idper + ";");

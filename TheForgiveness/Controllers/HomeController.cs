@@ -35,7 +35,7 @@ namespace TheForgiveness.Controllers
             {
                 Session["username"] = um.Username;
                 Session["control"] = "Login";
-                Session["idAccount"] = us.idcuenta(um.Username);
+                Session["idAccount"] = us.idAccount(um.Username);
                 return RedirectToAction("Index", "DashBoard");
             }
             return View();

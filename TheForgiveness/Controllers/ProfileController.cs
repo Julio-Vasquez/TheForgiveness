@@ -93,7 +93,6 @@ namespace TheForgiveness.Controllers
                             int.Parse(res["gen"].ToString()),
                             int.Parse(res["tipdoc"].ToString()),
                             int.Parse(res["mun"].ToString())
-
                         ));           
         }
 
@@ -130,7 +129,7 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UpdatePerfil(Models.PerfilModel pm)
         {
-            if (ps.updateprofile(pm, Convert.ToString(Session["username"])))
+            if (ps.updateProfile(pm, Convert.ToString(Session["username"])))
                 return RedirectToAction("Profile");
 
             var res = ps.myData(Convert.ToString(Session["username"]));
@@ -142,7 +141,6 @@ namespace TheForgiveness.Controllers
             ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
             ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
             ViewData["tipodocumentos"] = JsonConvert.SerializeObject(tido.queryTipoDocumento());
-
 
             return View(new Models.PerfilModel(
                             long.Parse(res["Identificacion"].ToString()),

@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Listado Conceptos";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
 }
 
 <h1>Listado de Conceptos</h1>
@@ -57,9 +57,9 @@
                             @Html.DisplayFor(modelItem => item.Autor)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Edit", "UpdateConcept", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
                             @Html.ActionLink("Details", "SpecifyConcept", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Delete", "DeleteConcept", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }

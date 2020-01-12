@@ -13,7 +13,6 @@ namespace TheForgiveness.Services
         {
         }
 
-
         public System.Data.DataTable getMenu(string un)
         {
             RoleService rol = new RoleService();

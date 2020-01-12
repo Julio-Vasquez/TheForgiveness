@@ -12,23 +12,23 @@ namespace TheForgiveness.Models
         public int ID { get; set; }
 
         [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Fecha De Publicacion")]
-        [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
-        [DataType(DataType.Date)]
+        [DisplayName("Año De Publicacion")]
+        [StringLength(11, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 4)]
+        [DataType(DataType.Text)]
         public string AñoPublicacion { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Titulo del Concepto:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
-        [MinLength(10, ErrorMessage = "Minimo {1}")]
+        [MinLength(7, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string Titulo { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Descripcion del Concepto:")]
-        [RegularExpression(@"/^[a-zA-ZáéíóúAÉÍÓÚÑñ\s]*$/", ErrorMessage = "No se Admiten numeros")]
         [MinLength(10, ErrorMessage = "Minimo {1}")]
         [DataType(DataType.Text)]
         public string Descripcion { get; set; }
-         public int Autor { get; set; }
+        public int Autor { get; set; }
 
         public ConceptForgivenessModel()
         {
