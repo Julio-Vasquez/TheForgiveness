@@ -15,7 +15,7 @@ The Forgiveness, option grade.
 
 ## Contributing
 
-*	Please read [CONTRIBUTING](https://github.com/DarKPhuRioN/Open-support-classroom/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+*	Please read [CONTRIBUTING](https://github.com/DarKPhuRioN/TheForgiveness/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
