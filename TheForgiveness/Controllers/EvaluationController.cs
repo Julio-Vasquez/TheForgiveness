@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class EvaluationController : Controller
     {
-        private Services.evaluacionService Evaluacionsrv = new Services.evaluacionService();
+        private Services.EvaluationService Evaluacionsrv = new Services.EvaluationService();
         // GET: Activities
        
 

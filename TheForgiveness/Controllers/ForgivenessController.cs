@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class ForgivenessController : Controller
     {
-        private Services.forgivenessServicios ConceptVictimsrv = new Services.forgivenessServicios();
+        private Services.ForgivenessService ConceptVictimsrv = new Services.ForgivenessService();
         // GET: Concept
         [HttpGet]
         [StatesLogging]
@@ -58,7 +58,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var dr = ConceptVictimsrv.ConVict(id);
-                var model = new Models.conceptoVictimaModel(
+                var model = new Models.ForgivenessModel(
                     int.Parse(dr["ID"].ToString()),                   
                     dr["Descripcion"].ToString()
 
@@ -72,7 +72,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateForgiveness")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateForgiveness(Models.conceptoVictimaModel cvm)
+        public ActionResult CreateForgiveness(Models.ForgivenessModel cvm)
         {
             if (ModelState.IsValid)
             {

@@ -10,7 +10,7 @@ namespace TheForgiveness.Controllers
     public class GroupPersonsController : Controller
     {
 
-        private Services.grupopersonaService GroupPersonsrv = new Services.grupopersonaService();
+        private Services.GroupPersonsService GroupPersonsrv = new Services.GroupPersonsService();
         // GET: Profile
         [HttpGet]
         [StatesLogging]
@@ -62,7 +62,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateGroupPersons")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateAuthors(Models.grupopersonaModel gpm)
+        public ActionResult CreateAuthors(Models.GroupPersonsModel gpm)
         {
             if (ModelState.IsValid)
             {

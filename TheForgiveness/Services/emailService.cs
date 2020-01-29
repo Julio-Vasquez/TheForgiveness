@@ -5,24 +5,24 @@ using System.Web;
 
 namespace TheForgiveness.Services
 {
-    public class emailService
+    public class EmailService
     {
         private ConnectionDB.ConnectionMySQL MySQL = new ConnectionDB.ConnectionMySQL();
 
-        public bool CreateSubject(Models.emailModel emailmo,int persona)
+        public bool CreateSubject(Models.EmailModel emailmo,int persona)
         {
             return MySQL.Operations("CALL Insert_Email(" + emailmo.Email + ",'" + persona + "')");
         }
 
-        public IEnumerable<Models.emailModel> listemails(int persona)
+        public IEnumerable<Models.EmailModel> listemails(int persona)
         {
             System.Data.DataTable listemail = MySQL.Querys("SELECT ID,Email FROM email WHERE Persona ="+persona);
-            List<Models.emailModel > email = new List<Models.emailModel>();
+            List<Models.EmailModel > email = new List<Models.EmailModel>();
             foreach (System.Data.DataRow item in listemail.Rows)
             {
-                email.Add(new Models.emailModel(int.Parse(item["ID"].ToString()), item["Email"].ToString()));
+                email.Add(new Models.EmailModel(int.Parse(item["ID"].ToString()), item["Email"].ToString()));
             }
-            IEnumerable<Models.emailModel> result = email;
+            IEnumerable<Models.EmailModel> result = email;
             return result;
         }
 
@@ -31,7 +31,7 @@ namespace TheForgiveness.Services
             return MySQL.Querys("SELECT * FROM email WHERE ID = " + id).Rows[0];
         }
 
-        public bool UpdateEmail(Models.emailModel dpm)
+        public bool UpdateEmail(Models.EmailModel dpm)
         {
             return MySQL.Operations("UPDATE email SET email ='" + dpm.Email + "' WHERE ID = " + dpm.ID);
         }

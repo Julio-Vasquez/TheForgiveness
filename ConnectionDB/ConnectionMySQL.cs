@@ -17,7 +17,7 @@ namespace ConnectionDB
             }
             catch (System.Exception e)
             {
-                throw new System.Exception("No se puedo realizar la conexion con la Bases de Datos : " + e.Message);
+                throw new System.Exception("No se puedo realizar la conexión con la Bases de Datos : " + e.Message);
             }
             return conexion;
         }
@@ -26,6 +26,7 @@ namespace ConnectionDB
         {
             conexion.Close();
         }
+
         private bool conectar()
         {
             try
@@ -35,7 +36,6 @@ namespace ConnectionDB
             }
             catch (System.Exception)
             {
-
                 return false;
             }
         }
@@ -75,7 +75,7 @@ namespace ConnectionDB
             catch
             {
                 desconectar();
-                throw new System.Exception("Sentencia SQL de consulta invalida.");
+                throw new System.Exception("Sentencia SQL de consulta Incorrecta.");
             }
         }
 
@@ -109,12 +109,12 @@ namespace ConnectionDB
                     Transa.Rollback();
                     conexion.Close();
                     conexion.Dispose();
+                    Transa.Dispose();
                     desconectar();
                     state = false;
                 }
                 finally
                 {
-                    // Recolectamos objetos para liberar su memoria.
                     if (cmd != null)
                     {
                         cmd.Dispose();

@@ -1,9 +1,9 @@
-﻿@model TheForgiveness.Models.conceptoautoresModel
+﻿@model TheForgiveness.Models.ConceptForgivenessModel
 
 @{
-    ViewBag.Title = "UpdateConcept";
+    ViewBag.Title = "Actualizar Concepto";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
 }
 
 <h1>Actualizar Concepto</h1>
@@ -44,8 +44,13 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Autor, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Autor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Autor, "", new { @class = "text-danger" })
+                <select class="form-control form-control-lg" name="Autor">
+                    <option value="default">Seleccione autor</option>
+                    @foreach (var item in ViewBag.autor.Rows)
+                    {
+                        <option value=@item["ID"]> @item["PriNombre"] @item["SegNombre"] @item["PriApellido"] @item["SegApellido"]</option>
+                    }
+                </select>
             </div>
         </div>
         <hr />

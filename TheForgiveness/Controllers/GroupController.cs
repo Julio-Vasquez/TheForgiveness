@@ -11,11 +11,11 @@ namespace TheForgiveness.Controllers
     public class GroupController : Controller
     {
 
-        private Services.grupoService Groupssrv = new Services.grupoService();
-        private Services.asignaturaService signaturessrv = new Services.asignaturaService();
-        private Services.perfilServices docentsrv = new Services.perfilServices();
-        private Services.colegioService colsrv = new Services.colegioService();
-        private Services.grupopersonaService gruoppersrv = new Services.grupopersonaService();
+        private Services.GroupService Groupssrv = new Services.GroupService();
+        private Services.SubjectService signaturessrv = new Services.SubjectService();
+        private Services.ProfileServices docentsrv = new Services.ProfileServices();
+        private Services.SchoolService colsrv = new Services.SchoolService();
+        private Services.GroupPersonsService gruoppersrv = new Services.GroupPersonsService();
 
         // GET: Profile
         [HttpGet]
@@ -44,7 +44,7 @@ namespace TheForgiveness.Controllers
                 ViewData["docentes"] = JsonConvert.SerializeObject(docentsrv.queryDocentes());
                 ViewData["asignaturas"] = JsonConvert.SerializeObject(signaturessrv.listSubject());
                 ViewData["colegios"] = JsonConvert.SerializeObject(colsrv.listSchools());
-                Models.grupoModel gr = new Models.grupoModel(int.Parse(dr["ID"].ToString()), int.Parse(dr["Codigo"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["AñoEscolar"].ToString()), int.Parse(dr["Docente"].ToString()), int.Parse(dr["Asignatura"].ToString()), int.Parse(dr["Colegio"].ToString()));
+                Models.GroupModel gr = new Models.GroupModel(int.Parse(dr["ID"].ToString()), int.Parse(dr["Codigo"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["AñoEscolar"].ToString()), int.Parse(dr["Docente"].ToString()), int.Parse(dr["Asignatura"].ToString()), int.Parse(dr["Colegio"].ToString()));
                 return View(gr);
             }
             else
@@ -79,7 +79,7 @@ namespace TheForgiveness.Controllers
             ViewBag.rol = Session["Role"].ToString();
             ViewBag.personas= gruoppersrv.querygrupopersona(id);
             System.Data.DataRow dr = Groupssrv.specifygrups(id);
-            gupoextendido gr = new gupoextendido(int.Parse(dr["ID"].ToString()), int.Parse(dr["Codigo"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["AñoEscolar"].ToString()), dr["Docente"].ToString(), dr["Asignatura"].ToString(),dr["Colegio"].ToString());
+            Models.GroupExtendModel gr = new Models.GroupExtendModel(int.Parse(dr["ID"].ToString()), int.Parse(dr["Codigo"].ToString()), dr["Nombre"].ToString(), int.Parse(dr["AñoEscolar"].ToString()), dr["Docente"].ToString(), dr["Asignatura"].ToString(),dr["Colegio"].ToString());
             return View(gr);
         }
 
@@ -87,7 +87,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateGroup")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateGroup(Models.grupoModel gm)
+        public ActionResult CreateGroup(Models.GroupModel gm)
         {
             ViewData["docentes"] = JsonConvert.SerializeObject(docentsrv.queryDocentes());
             ViewData["asignaturas"] = JsonConvert.SerializeObject(signaturessrv.listSubject());

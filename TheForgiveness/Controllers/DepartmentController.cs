@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class DepartmentController : Controller
     {
-        private Services.departamentoService dps = new Services.departamentoService();
+        private Services.DepartmentService dps = new Services.DepartmentService();
 
         #region HTTPMethod Get
         // GET: Department
@@ -18,7 +18,7 @@ namespace TheForgiveness.Controllers
         [PermissionAttributes(File = "CreateDepartment")]
         public PartialViewResult CreateDepartment()
         {
-            Models.departamentoModel dpm = new Models.departamentoModel();
+            Models.DepartmentModel dpm = new Models.DepartmentModel();
             dpm.Pais = dps.Paises();
             return PartialView(dpm);
         }
@@ -31,7 +31,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var res = dps.Department(id);
-                Models.departamentoModel dpm = new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString()));
+                Models.DepartmentModel dpm = new Models.DepartmentModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString()));
                 dpm.Pais = dps.Paises();
                 return View(dpm);
             }
@@ -55,7 +55,7 @@ namespace TheForgiveness.Controllers
             {
                 var res = dps.Department(id);
                 return View(
-                    new Models.departamentoModel(
+                    new Models.DepartmentModel(
                         int.Parse(res["ID"].ToString()),
                         res["Departamento"].ToString(),
                         int.Parse(res["Pais"].ToString())
@@ -75,7 +75,7 @@ namespace TheForgiveness.Controllers
             {
                 var res = dps.Department(id);
                 ViewBag.Pais = dps.Pais(int.Parse(res["Pais"].ToString()));
-                return View(new Models.departamentoModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString())));
+                return View(new Models.DepartmentModel(int.Parse(res["ID"].ToString()), res["Departamento"].ToString(), int.Parse(res["Pais"].ToString())));
             }
             return RedirectToAction("GetDepartments");
         }
@@ -88,11 +88,11 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateDepartment")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateDepartment(Models.departamentoModel dpm)
+        public ActionResult CreateDepartment(Models.DepartmentModel dpm)
         {
             if (ModelState.IsValid)
             {
-                if (dps.CreateDepartment(new Models.departamentoModel(dpm.Departamento, int.Parse(Request.Form["Pais"]))))
+                if (dps.CreateDepartment(new Models.DepartmentModel(dpm.Departamento, int.Parse(Request.Form["Pais"]))))
                     return RedirectToAction("GetDeparments", "Department");
             }
             return View(dpm);
@@ -102,7 +102,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateDepartment")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateDepartment(Models.departamentoModel dpm, int id)
+        public ActionResult UpdateDepartment(Models.DepartmentModel dpm, int id)
         {
             dpm.PaisFK = int.Parse(Request.Form["Pais"].ToString());
             if (dps.UpdateDepartment(dpm))
@@ -124,7 +124,7 @@ namespace TheForgiveness.Controllers
             {
                 var res = dps.Department(id);
                 return View(
-                    new Models.departamentoModel(
+                    new Models.DepartmentModel(
                         int.Parse(res["ID"].ToString()),
                         res["Departamento"].ToString(),
                         int.Parse(res["Pais"].ToString())

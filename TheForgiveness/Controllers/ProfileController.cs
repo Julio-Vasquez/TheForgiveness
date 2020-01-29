@@ -11,12 +11,12 @@ namespace TheForgiveness.Controllers
     public class ProfileController : Controller
     {
         
-        private Services.usuarioService us = new Services.usuarioService();
-        private Services.perfilServices ps = new Services.perfilServices();
-        private Services.departamentoService ds = new Services.departamentoService();
-        private Services.municipioService ms = new Services.municipioService();
-        private Services.generoService gene = new Services.generoService();
-        private Services.tipoDocumentoService tido = new Services.tipoDocumentoService();
+        private Services.UserService us = new Services.UserService();
+        private Services.ProfileServices ps = new Services.ProfileServices();
+        private Services.DepartmentService ds = new Services.DepartmentService();
+        private Services.MunicipalityService ms = new Services.MunicipalityService();
+        private Services.GenderService gene = new Services.GenderService();
+        private Services.TypeDocService tido = new Services.TypeDocService();
         // GET: Profile
         [HttpGet]
         [StatesLogging]
@@ -93,7 +93,6 @@ namespace TheForgiveness.Controllers
                             int.Parse(res["gen"].ToString()),
                             int.Parse(res["tipdoc"].ToString()),
                             int.Parse(res["mun"].ToString())
-
                         ));           
         }
 
@@ -130,7 +129,7 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UpdatePerfil(Models.PerfilModel pm)
         {
-            if (ps.updateprofile(pm, Convert.ToString(Session["username"])))
+            if (ps.updateProfile(pm, Convert.ToString(Session["username"])))
                 return RedirectToAction("Profile");
 
             var res = ps.myData(Convert.ToString(Session["username"]));
@@ -142,7 +141,6 @@ namespace TheForgiveness.Controllers
             ViewData["municipios"] = JsonConvert.SerializeObject(ms.queryMunicipio());
             ViewData["generos"] = JsonConvert.SerializeObject(gene.queryGenero());
             ViewData["tipodocumentos"] = JsonConvert.SerializeObject(tido.queryTipoDocumento());
-
 
             return View(new Models.PerfilModel(
                             long.Parse(res["Identificacion"].ToString()),

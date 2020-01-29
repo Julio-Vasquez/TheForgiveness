@@ -7,7 +7,7 @@ using System.Web;
 
 namespace TheForgiveness.Models
 {
-    public class diplomaModel
+    public class DiplomaModel
     {
         public int ID { get; set; }
         [Required(ErrorMessage = "{0} Requerido")]
@@ -31,11 +31,11 @@ namespace TheForgiveness.Models
         public int Estudiante { get; set; }
         public int Grupo { get; set; }
 
-        public diplomaModel()
+        public DiplomaModel()
         {
         }
 
-        public diplomaModel(string TipoDoploma,string Contenido,DateTime FechaExpedicion,int Plantilla,int Estudiante,int Grupo)
+        public DiplomaModel(string TipoDoploma,string Contenido,DateTime FechaExpedicion,int Plantilla,int Estudiante,int Grupo)
         {
             this.TipoDoploma = TipoDoploma;
             this.Contenido = Contenido;
@@ -45,7 +45,7 @@ namespace TheForgiveness.Models
             this.Grupo = Grupo;
         }
 
-        public diplomaModel(int ID, string TipoDoploma, string Contenido, DateTime FechaExpedicion, int Plantilla, int Estudiante, int Grupo)
+        public DiplomaModel(int ID, string TipoDoploma, string Contenido, DateTime FechaExpedicion, int Plantilla, int Estudiante, int Grupo)
         {
             this.ID = ID;
             this.TipoDoploma = TipoDoploma;

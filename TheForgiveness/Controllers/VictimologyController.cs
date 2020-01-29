@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class VictimologyController : Controller
     {
-        private Services.victimiologiaSevice Victimiologysrv = new Services.victimiologiaSevice();
+        private Services.VictimologySevice Victimiologysrv = new Services.VictimologySevice();
         // GET: Activities
         [HttpGet]
         [StatesLogging]
@@ -71,7 +71,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateVictimology")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateVictimology(Models.victimiologiaModel vm)
+        public ActionResult CreateVictimology(Models.VictimologyModel vm)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdateVictimology")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateVictimology(Models.victimiologiaModel vm)
+        public ActionResult UpdateVictimology(Models.VictimologyModel vm)
         {
             if (ModelState.IsValid)
             {

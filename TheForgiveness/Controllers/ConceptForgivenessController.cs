@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class ConceptForgivenessController : Controller
     {
-        private Services.ConceptoAutosServicios Authoressrv = new Services.ConceptoAutosServicios();
+        private Services.ConceptForgivenessService con = new Services.ConceptForgivenessService();
         // GET: ConceptForgiveness
 
         [HttpGet]
@@ -26,24 +26,46 @@ namespace TheForgiveness.Controllers
         public PartialViewResult GetConcepts()
         {
             ViewBag.rol = Session["Role"].ToString();
-            return PartialView(Authoressrv.listConceptAut());
+            return PartialView(con.listConceptAut());
 
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "UpdateConcept")]
-        public ActionResult UpdateConcept()
+        public ActionResult UpdateConcept(int? id)
         {
-            return View();
+            if (id != null) 
+            {
+                var dr = con.SpecifyData(id);
+                var model = new Models.ConceptForgivenessModel(
+                    dr["Publicacion"].ToString(),
+                    dr["Titulo"].ToString(),
+                    dr["Descripcion"].ToString()
+                );
+                ViewBag.autor = con.Authors();
+                return View(model);
+            }
+            return RedirectToAction("GetConcepts");
         }
 
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "DeleteConcept")]
-        public ActionResult DeleteConcept()
+        public ActionResult DeleteConcept(int? id)
         {
-            return View();
+            if (id != null)
+            {
+                var dr = con.SpecifyData(id);
+                var model = new Models.ConceptForgivenessModel(
+                    dr["Publicacion"].ToString(),
+                    dr["Titulo"].ToString(),
+                    dr["Descripcion"].ToString()
+                );
+                ViewBag.autor = dr["Autor"].ToString();
+                return View(model);
+            }
+            return RedirectToAction("GetConcepts");
         }
 
         [HttpGet]
@@ -54,8 +76,8 @@ namespace TheForgiveness.Controllers
             //especifico este es el controller
             if (id != null) {
                 ViewBag.rol = Session["Role"].ToString();
-                var dr = Authoressrv.SpecifyData(id);
-                var model = new Models.conceptoautoresModel(
+                var dr = con.SpecifyData(id);
+                var model = new Models.ConceptForgivenessModel(
                     dr["Publicacion"].ToString(),
                     dr["Titulo"].ToString(),
                     dr["Descripcion"].ToString()
@@ -63,7 +85,41 @@ namespace TheForgiveness.Controllers
                 ViewBag.autor = dr["Autor"].ToString();
                 return View(model);
             }
-            return RedirectToAction("Error404", "Shared");
+            return RedirectToAction("GetConcepts");
+        }
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "DeleteConcept")]
+        public ActionResult DeleteConcept(int id) 
+        {
+            if (con.DeleteConcepto(id)) 
+            {
+                return RedirectToAction("GetConcepts");
+            }
+            var dr = con.SpecifyData(id);
+            var model = new Models.ConceptForgivenessModel(
+                dr["Publicacion"].ToString(),
+                dr["Titulo"].ToString(),
+                dr["Descripcion"].ToString()
+            );
+            ViewBag.autor = dr["Autor"].ToString();
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "UpdateConcept")]
+        public ActionResult UpdateConcept(Models.ConceptForgivenessModel cfm)
+        {
+            if (con.UpdateConcept(cfm)) 
+            {
+                return RedirectToAction("GetConcepts");
+            }
+            ViewBag.autor = con.Authors();
+            return View(cfm);
+            
         }
     }
 }

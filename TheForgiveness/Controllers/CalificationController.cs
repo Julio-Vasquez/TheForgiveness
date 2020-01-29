@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class CalificationController : Controller
     {
-        private Services.notasService Calificationssrv = new Services.notasService();
+        private Services.ScoreService Calificationssrv = new Services.ScoreService();
         // GET: Activities
         [HttpGet]
         [StatesLogging]
@@ -60,7 +60,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateCalifications")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateCalifications(Models.notasModel nm)
+        public ActionResult CreateCalifications(Models.ScoreModel nm)
         {
             if (ModelState.IsValid)
             {
