@@ -25,6 +25,17 @@ namespace TheForgiveness.Services
             IEnumerable<gupoextendido> result = grup;
             return result;
         }
+        public IEnumerable<gupoextendido> listGrups()
+        {
+            System.Data.DataTable listgrup = MySQL.Querys("SELECT * FROM DatosGrupos");
+            List<gupoextendido> grup = new List<gupoextendido>();
+            foreach (System.Data.DataRow item in listgrup.Rows)
+            {
+                grup.Add(new gupoextendido(int.Parse(item["ID"].ToString()), int.Parse(item["Codigo"].ToString()), item["Nombre"].ToString(), int.Parse(item["AñoEscolar"].ToString()), item["Docente"].ToString(), item["Asignatura"].ToString(), item["Colegio"].ToString()));
+            }
+            IEnumerable<gupoextendido> result = grup;
+            return result;
+        }
 
         public System.Data.DataRow Groups(int? id)
         {

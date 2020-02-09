@@ -68,7 +68,15 @@ namespace TheForgiveness.Controllers
         public PartialViewResult GetGroup()
         {
             ViewBag.rol = Session["Role"].ToString();
-            return PartialView(Groupssrv.listGrups(int.Parse(Session["idAccount"].ToString())));
+            if (ViewBag.rol == "Docente")
+            {
+                return PartialView(Groupssrv.listGrups(int.Parse(Session["idAccount"].ToString())));
+            }
+            else
+            {
+                return PartialView(Groupssrv.listGrups());
+            }
+            
         }
 
         [HttpGet]
