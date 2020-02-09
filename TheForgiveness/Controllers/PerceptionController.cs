@@ -10,7 +10,7 @@ namespace TheForgiveness.Controllers
 {
     public class PerceptionController : Controller
     {
-        private Services.percepcionService percepservice = new Services.percepcionService();
+        private Services.PerceptionService percepservice = new Services.PerceptionService();
         // GET: ConceptiVictim
         [HttpGet]
         [StatesLogging]
@@ -28,7 +28,7 @@ namespace TheForgiveness.Controllers
             if (id != null) 
             {
                 var res = percepservice.ConVict(id);
-                return View(new Models.percepcionPostconfictoModel(
+                return View(new Models.PerceptionModel(
                     int.Parse(res["ID"].ToString()),
                     res["Descripcion"].ToString(),
                     int.Parse(res["Usuario"].ToString())
@@ -55,7 +55,7 @@ namespace TheForgiveness.Controllers
             {
                 ViewBag.rol = Session["Role"].ToString();
                 var res = percepservice.ConVict(id);
-                return View(new Models.percepcionPostconfictoModel(
+                return View(new Models.PerceptionModel(
                     int.Parse(res["ID"].ToString()),
                     res["Descripcion"].ToString(),
                     int.Parse(res["Usuario"].ToString())
@@ -68,7 +68,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreatePerception")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePerception(Models.percepcionPostconfictoModel cvm)
+        public ActionResult CreatePerception(Models.PerceptionModel cvm)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "UpdatePerception")]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdatePerception(Models.percepcionPostconfictoModel cvm) 
+        public ActionResult UpdatePerception(Models.PerceptionModel cvm) 
         {
             if (ModelState.IsValid) 
             {

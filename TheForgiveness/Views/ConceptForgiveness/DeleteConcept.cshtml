@@ -1,9 +1,10 @@
-﻿@model TheForgiveness.Models.conceptoautoresModel
+﻿@model TheForgiveness.Models.ConceptForgivenessModel
 
 @{
-    ViewBag.Title = "DeleteConcept";
+    ViewBag.Title = "Eliminar Concepto Perdon";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>Eliminar Concepto</h1>
@@ -42,16 +43,16 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Autor)
+            @ViewBag.autor
         </dd>
 
     </dl>
     <hr />
-    @using (Html.BeginForm("DeleteConcept", "ConceptForgiveness", FormMethod.Post)) {
+    @using (Html.BeginForm("DeleteConcept", "ConceptForgiveness", FormMethod.Post,  new { @id = "delete"})) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+            <input type="submit" value="Delete" class="btn btn-outline-danger" onclick="return del(event, 'Concepto')"/> |
             @Html.ActionLink("Back to List", "GetConcepts")
         </div>
     }

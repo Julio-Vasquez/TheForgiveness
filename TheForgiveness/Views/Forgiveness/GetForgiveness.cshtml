@@ -1,7 +1,7 @@
-﻿@model IEnumerable<TheForgiveness.Models.conceptoVictimaModel>
+﻿@model IEnumerable<TheForgiveness.Models.ForgivenessModel>
 
 @{
-    ViewBag.Title = "GetPerception";
+    ViewBag.Title = "VEr JULIO";
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Style = "../Assets/Css/Subject/create.min.css";
 }
@@ -52,9 +52,9 @@
                         </td>
                         <td>
 
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "SpecifyForgivenees", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Edit", "UpdateForgiveness", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Details", "SpecifyForgiveness", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Delete", "DeleteForgiveness", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
 
                         </td>
                     </tr>

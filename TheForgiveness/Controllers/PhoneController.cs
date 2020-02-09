@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class PhoneController : Controller
     {
-        private Services.telefonoService Phonesrv = new Services.telefonoService();
+        private Services.PhoneService Phonesrv = new Services.PhoneService();
         // GET: Activities
         [HttpGet]
         [StatesLogging]
@@ -60,7 +60,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreatePhones")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreatePhones(Models.telefonoModel tm)
+        public ActionResult CreatePhones(Models.PhoneModel tm)
         {
             if (ModelState.IsValid)
             {

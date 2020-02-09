@@ -1,9 +1,10 @@
-﻿@model TheForgiveness.Models.tipodocumentoModel
+﻿@model TheForgiveness.Models.TypeDocModel
 
 @{
-    ViewBag.Title = "DeleteDocument";
+    ViewBag.Title = "Eliminar Tipo Documento";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../../Assets/Css/Subject/create.min.css";
+    ViewBag.Js = "../../Assets/Js/Delete/sweet.js";
 }
 
 <h1>Eliminar tipo de documento de identidad</h1>
@@ -23,11 +24,11 @@
 
     </dl>
     <hr />
-    @using (Html.BeginForm("DeleteDocument", "Document", FormMethod.Post)) {
+    @using (Html.BeginForm("DeleteDocument", "Document", FormMethod.Post, new { @id = "delete"})) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+            <input type="submit" value="Delete" class="btn btn-outline-danger" onclick="return del(event, 'Tipo Documento');" /> |
 
             @Html.ActionLink("Back to List", "GetDocuments")
         </div>

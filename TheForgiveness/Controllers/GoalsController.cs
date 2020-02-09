@@ -9,7 +9,7 @@ namespace TheForgiveness.Controllers
 {
     public class GoalsController : Controller
     {
-        private Services.metasService Goalssrv = new Services.metasService();
+        private Services.GoalsService Goalssrv = new Services.GoalsService();
         // GET: Activities
         [HttpGet]
         [StatesLogging]
@@ -60,7 +60,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateGoals")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateActivities(Models.metasModel mm)
+        public ActionResult CreateActivities(Models.GoalsModel mm)
         {
             if (ModelState.IsValid)
             {

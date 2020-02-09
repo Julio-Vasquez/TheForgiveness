@@ -10,7 +10,7 @@ namespace TheForgiveness.Controllers
 {
     public class ActivitiesController : Controller
     {
-        private Services.actividadesService Activisrv = new Services.actividadesService();
+        private Services.ActivitiesService Activisrv = new Services.ActivitiesService();
         // GET: Activities
         [HttpGet]
         [StatesLogging]
@@ -58,7 +58,7 @@ namespace TheForgiveness.Controllers
             if (id != null)
             {
                 var dr = Activisrv.Activi(id);
-                var model = new Models.actividadesModel(dr["Actividad"].ToString());
+                var model = new Models.ActivitiesModel(dr["Actividad"].ToString());
                 return View(model);
             }
             return RedirectToAction("Error404", "Shared");
@@ -68,7 +68,7 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateActivities")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateActivities(Models.actividadesModel am)
+        public ActionResult CreateActivities(Models.ActivitiesModel am)
         {
             if (ModelState.IsValid)
             {
