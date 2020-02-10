@@ -180,6 +180,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ActivitiesModel.cs" />
+    <Compile Include="Models\MyHistoryModel.cs" />
     <Compile Include="Models\SubjectModel.cs" />
     <Compile Include="Models\AuthorModel.cs" />
     <Compile Include="Models\GroupExtendModel.cs" />
@@ -257,6 +258,7 @@
     <Content Include="Assets\Css\DashBoard\steps.min.css" />
     <Content Include="Assets\Css\DashBoard\bootstrap.min.css" />
     <Content Include="Assets\Css\DataTable\jquery.dataTables.min.css" />
+    <Content Include="Assets\Css\Experience\create.css" />
     <Content Include="Assets\Css\Login\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
     <Content Include="Assets\Css\Login\validation.css" />
@@ -299,6 +301,7 @@
     <Content Include="Assets\Js\DashBoard\wizard.js" />
     <Content Include="Assets\Js\DataTable\jquery.dataTables.min.js" />
     <Content Include="Assets\Js\Delete\sweet.js" />
+    <Content Include="Assets\Js\Experience\myhistory.js" />
     <Content Include="Assets\Js\Login\validation.js" />
     <Content Include="Assets\Js\Login\validationFunctions.js" />
     <Content Include="Assets\Js\Menu\menuOcult.js" />
@@ -757,9 +760,6 @@
     <Content Include="Views\Forgiveness\SpecifyForgivenees.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Experience\CreateExperience.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Experience\UpdateExperience.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -782,6 +782,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Stage\GetStages.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Experience\CreateExperience.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

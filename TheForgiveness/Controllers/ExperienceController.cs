@@ -14,7 +14,7 @@ namespace TheForgiveness.Controllers
         private Services.DepartmentService ds = new Services.DepartmentService();
         private Services.MunicipalityService ms = new Services.MunicipalityService();
        // GET: Concept
-       [HttpGet]
+        [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
         public PartialViewResult CreateExperience()
@@ -75,6 +75,7 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateExperience(Models.ExperienceModel em)
         {
+            //new logic here!
             if (ModelState.IsValid)
             { 
                 var res = Experiencesrv.CreateExperiences(em,int.Parse(Session["idAccount"].ToString()));
@@ -84,18 +85,11 @@ namespace TheForgiveness.Controllers
                     ViewBag.sugerencia = res[1].Intent;
                     return View("ModalExperience");
                 }
-                else
-                {
                     ViewBag.departamento = ds.queryDepartamento();
                     ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
                     return View(em);
-                }
             }
             return View();
-
-
         }
-
-        
     }
 }

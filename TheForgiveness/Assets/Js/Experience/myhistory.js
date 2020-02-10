@@ -1,0 +1,1 @@
+﻿var inpHidden = document.getElementById('Experiencia');
