@@ -81,6 +81,8 @@ namespace TheForgiveness.Controllers
                 var res = Experiencesrv.CreateExperiences(em,int.Parse(Session["idAccount"].ToString()));
                 if (res.Length > 0)
                 {
+                    ViewBag.departamento = ds.queryDepartamento();
+                    ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
                     ViewBag.victimologia = res[0].Intent;
                     ViewBag.sugerencia = res[1].Intent;
                     return View("ModalExperience");
