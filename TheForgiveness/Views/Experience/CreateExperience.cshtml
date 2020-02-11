@@ -1,72 +1,227 @@
-﻿@model TheForgiveness.Models.ExperienceModel
+﻿@model TheForgiveness.Models.MyHistoryModel
 
 @{
     ViewBag.Title = "Registrar Experiencia";
     Layout = "~/Views/Shared/DashBoard.cshtml";
-    ViewBag.Style = "../Assets/Css/Subject/create.min.css";
+    ViewBag.Style = "../Assets/Css/Experience/create.css";
 }
-<script>
-    @{
-    @:var municipio = @Html.Raw(ViewData["municipio"].ToString()); ;
 
-         }
-</script>
-<h1>Registrar una Experiencia</h1>
+<h1>CreateExperience</h1>
 <hr />
+
 @using (Html.BeginForm("CreateExperience", "Experience", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+<div class="form-row col-11 offset-1">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.FechaExperiencia, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FechaExperiencia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FechaExperiencia, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="form-group col-4">
+        @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label" })
+        <br />
+        @Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control", @rows = "5", cols = "9" })
+        @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Experiencia, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Experiencia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Experiencia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="col-sm-5 col-sm-offset-1">
-            <div class="form-group">
-                <label class="control-label">Departamento</label>
-                <select name="Departamento" class="form-control" onchange="cargar(this.value)">
-                    <option value="default"></option>
-                    @foreach (System.Data.DataRow row in ViewBag.departamento.Rows)
-                    {
-                        <option value=@row["ID"]>@row["Departamento"]</option>
-                    }
-                </select>
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <div class="form-group">
-                <label class="control-label">Municipio</label>
-                <select name="Municipio" class="form-control " id="Municipio">
-                    <option value="default"></option>
-                </select>
-            </div>
-        </div>
-        <hr />
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />  
-            </div>
-        </div>
     </div>
+
+    <div class="form-group col-4">
+        @Html.LabelFor(model => model.ConceptoInicial, htmlAttributes: new { @class = "control-label" })
+        <br />
+        @Html.TextAreaFor(model => model.ConceptoInicial, new { @class = "form-control", @rows = "5", cols = "10" })
+        @Html.ValidationMessageFor(model => model.ConceptoInicial, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group col-3 ulli">
+        <label class="control-label">Donde Ocurrio:</label>
+        <ul>
+            <li>
+                <input type="checkbox" id="cb-finca" />
+                <label for="cb-finca">
+                    <img src="https://i.ytimg.com/vi/_6nx1WJnz3M/maxresdefault.jpg"
+                         alt="En la finca" />
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" name="ciudad" id="cb-ciudad" />
+                <label for="cb-ciudad">
+                    <img src="https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2018/10/01/15383924054445.jpg"
+                         alt="en la ciudad" />
+                </label>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.Hidden("Experiencia")
+    </div>
+
+    <div class="form-group col-3">
+        <label class="control-label">Departamento</label>
+        <select name="Departamento" class="form-control" onchange="cargar(this.value)">
+            <option value="default"></option>
+            @foreach (System.Data.DataRow row in ViewBag.departamento.Rows)
+            {
+                <option value=@row["ID"]>@row["Departamento"]</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group col-3">
+        <label class="control-label">Municipio</label>
+        <select name="Municipio" class="form-control " id="Municipio">
+            <option value="default"></option>
+        </select>
+    </div>
+    <div class="form-group col-2">
+        @Html.LabelFor(model => model.TiempoExperiencia, htmlAttributes: new { @class = "control-label" })
+        @Html.EditorFor(model => model.TiempoExperiencia, new { htmlAttributes = new { @class = "form-control", @placeholder ="Sucedio hace ..." } })
+        @Html.ValidationMessageFor(model => model.TiempoExperiencia, "", new { @class = "text-danger" })
+    </div>
+    <div class="history ulli col-12">
+        <fieldset>
+            <legend>Actor</legend>
+            <ul>
+                <li>
+                    <input type="checkbox" id="cb-el" />
+                    <label for="cb-el">
+                        <img src="https://image.freepik.com/vector-gratis/nino-dibujos-animados-jugando-al-futbol_33070-2264.jpg"
+                             alt="EL" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-ella" />
+                    <label for="cb-ella">
+                        <img src="https://image.freepik.com/vector-gratis/dibujos-animados-cuerpo-nina-linda_18591-41519.jpg"
+                             alt="ELLA" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-senor" />
+                    <label for="cb-senor">
+                        <img src="https://cdn.clipart.email/be3d25848ae6353eeb78af1a3d4431aa_office-man-clipart-png-clipartxtras_456-429.jpeg"
+                             alt="Señor" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-senora" />
+                    <label for="cb-senora">
+                        <img src="https://i.pinimg.com/originals/68/df/50/68df50cc730910d44a236c0d7430686d.png"
+                             alt="Señora" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-abuelo" />
+                    <label for="cb-abuelo">
+                        <img src="https://i.pinimg.com/originals/98/10/4f/98104f5e5c17cbd7a5aa735c2677f99d.png"
+                             alt="Abuelo" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-abuela" />
+                    <label for="cb-abuela">
+                        <img src="https://image.freepik.com/vector-gratis/personaje-dibujos-animados-anciana-nina-edad-abuela-sonriendo-lava-plato_101266-138.jpg"
+                             alt="Abuela" />
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Suceso</legend>
+            <ul class="suceso">
+                <li>
+                    <input type="checkbox" id="cb-asesinato" />
+                    <label for="cb-asesinato">
+                        <img src="https://www.wradio.com.co/images/4002166_n_imgg.jpg"
+                             alt="Asesinato" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-secuestro" />
+                    <label for="cb-secuestro">
+                        <img src="https://www.lineadecontraste.com/wp-content/uploads/2017/03/secuestro.jpg"
+                             alt="Secuestro" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-violacion" />
+                    <label for="cb-violacion">
+                        <img src="https://www.alertanacional.es/wp-content/uploads/2019/06/ca1616edb4444677b5dfdbd1b69e6ea1.jpg"
+                             alt="Violacion" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-desplazamiento" />
+                    <label for="cb-desplazamiento">
+                        <img src="https://conexionmas.com/wp-content/uploads/2019/05/Desplazados-e1481538333709.jpg"
+                             alt="Desplazamiento Forzado" />
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Motivo</legend>
+            <ul>
+                <li>
+                    <input type="checkbox" id="cb-dinero" />
+                    <label for="cb-dinero">
+                        <img src="https://mocionesdevida.com/wp-content/uploads/2019/03/Dinero.jpg"
+                             alt="Por dinero" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-comida" />
+                    <label for="cb-comida">
+                        <img src="https://mayabequeando.files.wordpress.com/2018/02/cultivos-varios.jpg"
+                             alt="Por comida" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-cultivos" />
+                    <label for="cb-cultivos">
+                        <img src="https://www.eluniversal.com.mx/sites/default/files/2019/05/20/la_marihuana_tiene_museo_en_la_cdmx_1.jpg"
+                             alt="Por cultivos ilicitos" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-casa" />
+                    <label for="cb-casa">
+                        <img src="https://image.freepik.com/vector-gratis/casa-dos-pisos_1308-16176.jpg"
+                             alt="Por la casa" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-ver" />
+                    <label for="cb-ver">
+                        <img src="https://www.elheraldo.com.ar/fotos/2018/08/10_vision.jpg"
+                             alt="Por ver lo que no debia" />
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cb-colaboracion" />
+                    <label for="cb-colaboracion">
+                        <img src="https://3.bp.blogspot.com/-qscaTCCDmZ8/V5eSuWjDqzI/AAAAAAAAFwo/wBjLP7lxtNEWdjQJGpugn36PUy559UF2wCLcB/s640/bacrim.jpg"
+                             alt="Por colaborar con otros grupos armados" />
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+
+    <hr />
+    <div class="form-group offset-5 col-2">
+        <input type="submit" value="Crear Historia" class="btn btn-outline-success" />
+    </div>
+</div>
+
+
 }
+
 <script>
-
-
+    @{
+        @:var municipio = @Html.Raw(ViewData["municipio"].ToString()); ;
+    }
     function cargar(id) {
         let ele = document.getElementById('Municipio');
         if (ele.length > 1) {
@@ -88,6 +243,7 @@
     }
 
 </script>
+
 <div>
-    @Html.ActionLink("Back to List", "Index", "DashBoard")
+    @Html.ActionLink("Back to List", "Index")
 </div>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -69,6 +69,15 @@ namespace TheForgiveness.Controllers
             return View();
         }
 
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "GetExperiences")]
+        public ActionResult SpecifyExperiences()
+        {
+            ViewBag.rol = Session["Role"].ToString();
+            return View();
+        }
+
         [HttpPost]
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
@@ -86,12 +95,19 @@ namespace TheForgiveness.Controllers
                     ViewBag.sugerencia = res[1].Intent;
                     return View("ModalExperience");
                 }
-                else
-                {
+
                     ViewBag.departamento = ds.queryDepartamento();
                     ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
                     return View(em);
-                }
+            }
+            return View();
+        }
+    }
+
+                    ViewBag.departamento = ds.queryDepartamento();
+                    ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+                    return View(em);
+               
             }
             return View();
 
@@ -100,4 +116,5 @@ namespace TheForgiveness.Controllers
 
         
     }
+
 }
