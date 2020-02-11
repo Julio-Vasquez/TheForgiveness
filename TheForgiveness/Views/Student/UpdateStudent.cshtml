@@ -67,13 +67,15 @@
             </select>
         </div>
     </div>
-}
-<hr />
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Actualizar Estudiante" class="btn btn-outline-success" />
+    <hr />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Actualizar Estudiante" class="btn btn-outline-success" />
+        </div>
     </div>
-</div>
+}
+
+
 
 <script>
     @{
@@ -104,7 +106,7 @@
             if (municipio[i].Departamento === parseInt(id)) {
                 let option = document.createElement("option");
                 option.text = municipio[i].Municipio;
-                option.value = municipio[i].id;
+                option.value = municipio[i].ID;
                 ele.add(option);
             }
         }

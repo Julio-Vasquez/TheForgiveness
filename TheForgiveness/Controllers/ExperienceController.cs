@@ -13,7 +13,7 @@ namespace TheForgiveness.Controllers
         private Services.ExperienceService Experiencesrv = new Services.ExperienceService();
         private Services.DepartmentService ds = new Services.DepartmentService();
         private Services.MunicipalityService ms = new Services.MunicipalityService();
-       // GET: Concept
+        // GET: Concept
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
@@ -56,17 +56,9 @@ namespace TheForgiveness.Controllers
 
         [HttpGet]
         [StatesLogging]
-        public PartialViewResult ModalExperience() {
-            return PartialView();
-        }
-
-        [HttpGet]
-        [StatesLogging]
-        [PermissionAttributes(File = "GetExperiences")]
-        public ActionResult SpecifyExperiences()
+        public PartialViewResult ModalExperience()
         {
-            ViewBag.rol = Session["Role"].ToString();
-            return View();
+            return PartialView();
         }
 
         [HttpGet]
@@ -85,8 +77,8 @@ namespace TheForgiveness.Controllers
         public ActionResult CreateExperience(Models.ExperienceModel em)
         {
             if (ModelState.IsValid)
-            { 
-                var res = Experiencesrv.CreateExperiences(em,int.Parse(Session["idAccount"].ToString()));
+            {
+                var res = Experiencesrv.CreateExperiences(em, int.Parse(Session["idAccount"].ToString()));
                 if (res.Length > 0)
                 {
                     ViewBag.departamento = ds.queryDepartamento();
@@ -96,25 +88,11 @@ namespace TheForgiveness.Controllers
                     return View("ModalExperience");
                 }
 
-                    ViewBag.departamento = ds.queryDepartamento();
-                    ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
-                    return View(em);
+                ViewBag.departamento = ds.queryDepartamento();
+                ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+                return View(em);
             }
             return View();
         }
     }
-
-                    ViewBag.departamento = ds.queryDepartamento();
-                    ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
-                    return View(em);
-               
-            }
-            return View();
-
-
-        }
-
-        
-    }
-
 }
