@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -69,13 +69,21 @@ namespace TheForgiveness.Controllers
             return View();
         }
 
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "GetExperiences")]
+        public ActionResult SpecifyExperiences()
+        {
+            ViewBag.rol = Session["Role"].ToString();
+            return View();
+        }
+
         [HttpPost]
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateExperience(Models.ExperienceModel em)
         {
-            //new logic here!
             if (ModelState.IsValid)
             { 
                 var res = Experiencesrv.CreateExperiences(em,int.Parse(Session["idAccount"].ToString()));
@@ -87,6 +95,7 @@ namespace TheForgiveness.Controllers
                     ViewBag.sugerencia = res[1].Intent;
                     return View("ModalExperience");
                 }
+
                     ViewBag.departamento = ds.queryDepartamento();
                     ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
                     return View(em);
@@ -94,4 +103,18 @@ namespace TheForgiveness.Controllers
             return View();
         }
     }
+
+                    ViewBag.departamento = ds.queryDepartamento();
+                    ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+                    return View(em);
+               
+            }
+            return View();
+
+
+        }
+
+        
+    }
+
 }
