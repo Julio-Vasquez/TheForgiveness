@@ -1,5 +1,9 @@
 ﻿@import url(../Subject/create.min.css);
 
+.midiv {
+    background-image: url(../../Img/Experience/);
+    background-size: cover;
+}
 
 .ulli ul {
     list-style-type: none;
@@ -14,6 +18,11 @@ input[type="checkbox"][id^="cb-"] {
     display: none;
 }
 
+label, fieldset legend {
+    font-weight: 700;
+    color: black !important;
+}
+
 .ulli label {
     border: 1px solid #fff;
     padding: 5px;
@@ -22,6 +31,7 @@ input[type="checkbox"][id^="cb-"] {
     margin: 5px;
     cursor: pointer;
     user-select: none;
+    
 }
 
     .ulli label::before {
@@ -68,7 +78,7 @@ input[type="checkbox"][id^="cb-"] {
 
 fieldset {
     display: inline-block;
-    width: 30.7%;
+    width: 30.7%; 
 }
 
 .suceso li label > img {

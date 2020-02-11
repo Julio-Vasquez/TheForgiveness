@@ -14,7 +14,7 @@ namespace TheForgiveness.Controllers
         private Services.DepartmentService ds = new Services.DepartmentService();
         private Services.MunicipalityService ms = new Services.MunicipalityService();
         private Services.GenderService gene = new Services.GenderService();
-        private Services.GroupService grup = new Services.GroupService();
+        private Services.grupoService grup = new Services.grupoService();
         #region HTTPMethod Get
 
         [HttpGet]

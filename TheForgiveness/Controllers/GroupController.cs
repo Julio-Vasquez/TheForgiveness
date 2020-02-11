@@ -11,7 +11,7 @@ namespace TheForgiveness.Controllers
     public class GroupController : Controller
     {
 
-        private Services.GroupService Groupssrv = new Services.GroupService();
+        private Services.grupoService Groupssrv = new Services.grupoService();
         private Services.SubjectService signaturessrv = new Services.SubjectService();
         private Services.ProfileServices docentsrv = new Services.ProfileServices();
         private Services.SchoolService colsrv = new Services.SchoolService();
