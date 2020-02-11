@@ -284,6 +284,7 @@
     <Content Include="Assets\Img\DataTable\sort_both.png" />
     <Content Include="Assets\Img\DataTable\sort_desc.png" />
     <Content Include="Assets\Img\DataTable\sort_desc_disabled.png" />
+    <Content Include="Assets\Img\Experience\Experience.jpg" />
     <Content Include="Assets\Img\Login\Login.png" />
     <Content Include="Assets\Img\SignUp\basica.gif" />
     <Content Include="Assets\Img\SignUp\bg.jpeg" />
