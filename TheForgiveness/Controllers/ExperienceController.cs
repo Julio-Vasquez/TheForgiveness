@@ -10,6 +10,8 @@ namespace TheForgiveness.Controllers
 {
     public class ExperienceController : Controller
     {
+        private Services.ForgivenessService ConceptVictimsrv = new Services.ForgivenessService();
+        private Services.PerceptionService percepservice = new Services.PerceptionService();
         private Services.ExperienceService Experiencesrv = new Services.ExperienceService();
         private Services.DepartmentService ds = new Services.DepartmentService();
         private Services.MunicipalityService ms = new Services.MunicipalityService();
@@ -74,10 +76,21 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateExperience(Models.ExperienceModel em)
+        public ActionResult CreateExperience(Models.MyHistoryModel Mh)
         {
             if (ModelState.IsValid)
             {
+                Models.ExperienceModel em = new Models.ExperienceModel();
+                em.FechaExperiencia = Mh.TiempoExperiencia;
+                em.Experiencia = Mh.Experiencia;
+
+                Models.ForgivenessModel fvm = new Models.ForgivenessModel();
+                fvm.ConceptoInicial = Mh.ConceptoInicial;
+                ConceptVictimsrv.CreateSubject(fvm, int.Parse(Session["idAccount"].ToString()));
+
+                Models.PerceptionModel cvm = new Models.PerceptionModel();
+                cvm.Descripcion = Mh.Descripcion;
+                percepservice.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString()));
                 var res = Experiencesrv.CreateExperiences(em, int.Parse(Session["idAccount"].ToString()));
                 if (res.Length > 0)
                 {
@@ -90,7 +103,7 @@ namespace TheForgiveness.Controllers
 
                 ViewBag.departamento = ds.queryDepartamento();
                 ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
-                return View(em);
+                return View(Mh);
             }
             return View();
         }
