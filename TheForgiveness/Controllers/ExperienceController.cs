@@ -10,6 +10,7 @@ namespace TheForgiveness.Controllers
 {
     public class ExperienceController : Controller
     {
+        private Services.PerceptionService percepservice = new Services.PerceptionService();
         private Services.ExperienceService Experiencesrv = new Services.ExperienceService();
         private Services.DepartmentService ds = new Services.DepartmentService();
         private Services.MunicipalityService ms = new Services.MunicipalityService();
@@ -81,6 +82,10 @@ namespace TheForgiveness.Controllers
                 Models.ExperienceModel em = new Models.ExperienceModel();
                 em.FechaExperiencia = Mh.TiempoExperiencia;
                 em.Experiencia = Mh.Experiencia;
+
+                Models.PerceptionModel cvm = new Models.PerceptionModel();
+                cvm.Descripcion = Mh.Descripcion;
+                percepservice.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString()));
                 var res = Experiencesrv.CreateExperiences(em, int.Parse(Session["idAccount"].ToString()));
                 if (res.Length > 0)
                 {
