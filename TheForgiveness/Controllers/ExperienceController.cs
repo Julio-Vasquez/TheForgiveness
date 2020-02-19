@@ -74,10 +74,13 @@ namespace TheForgiveness.Controllers
         [StatesLogging]
         [PermissionAttributes(File = "CreateExperience")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateExperience(Models.ExperienceModel em)
+        public ActionResult CreateExperience(Models.MyHistoryModel Mh)
         {
             if (ModelState.IsValid)
             {
+                Models.ExperienceModel em = new Models.ExperienceModel();
+                em.FechaExperiencia = Mh.TiempoExperiencia;
+                em.Experiencia = Mh.Experiencia;
                 var res = Experiencesrv.CreateExperiences(em, int.Parse(Session["idAccount"].ToString()));
                 if (res.Length > 0)
                 {
@@ -90,7 +93,7 @@ namespace TheForgiveness.Controllers
 
                 ViewBag.departamento = ds.queryDepartamento();
                 ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
-                return View(em);
+                return View(Mh);
             }
             return View();
         }
