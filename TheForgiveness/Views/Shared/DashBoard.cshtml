@@ -13,8 +13,47 @@
     @Styles.Render("~/DashBoardCSS")
     <link href="@ViewBag.Style" rel="stylesheet" />
     @Scripts.Render("~/JQRequired")
+    <style>
+        .comentarios {
+            width: 400px;
+        }
+
+            .comentarios .comentario {
+                width: 50%;
+                margin-bottom: 10px;
+            }
+
+                .comentarios .comentario p {
+                    margin: 0 0 10px 0;
+                }
+
+        .burbuja {
+            position: fixe;
+            display: scroll;
+            background-color: #fff;
+            padding: 5px;
+            color: #222;
+            border-radius: 3px;
+            margin-left: 10px;
+            bottom: 0px;
+            right: 0px;
+        }
+
+            .burbuja:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 15px;
+                margin-left: 220px;
+                width: 0;
+                height: 0;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                border-left: 20px solid #fff;
+            }
+    </style>
 </head>
-<body >
+<body>
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
@@ -189,7 +228,7 @@
                                 }
                         }
                     </ul>
-                </nav>
+            </nav>
         </div>
     </aside>
     <div class="page-wrapper">
@@ -209,5 +248,10 @@
 <script src="~/Assets/Js/Active.js"></script>
 @Scripts.Render("~/Validation", "~/DashBoardJS")
 <script src="@ViewBag.Js"></script>
+<a style="display:scroll;position:fixed;bottom:0px;right:0px;"><img style="float:right;" width="150" height="200" src="~/Assets/Img/Experience/d50e65e83b9a3857503e5d69fb28b949.gif"><div class="comentarios">
+    <div class="comentario burbuja">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+</div></a>
 </body>
 </html>

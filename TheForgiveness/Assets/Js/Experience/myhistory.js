@@ -24,8 +24,7 @@ window.onload = () => {
 };
 
 const saveTextFinal = e => {
-  e.preventDefault();
-  inpHidden.value = textLugar + textActor + textSuceso + textMotivo;
-  //document.getElementById("btnExperience").submit();
-  console.log(inpHidden.value);
-}
+    inpHidden.value = textLugar + textActor + textSuceso + textMotivo;
+    document.getElementById("btnExperience").submit();
+    console.log(inpHidden.value);
+};
