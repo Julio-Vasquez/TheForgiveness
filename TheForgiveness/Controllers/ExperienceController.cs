@@ -83,8 +83,8 @@ namespace TheForgiveness.Controllers
                 Models.ExperienceModel em = new Models.ExperienceModel();
                 em.FechaExperiencia = Mh.TiempoExperiencia;
                 em.Municipio = Mh.Municipio;
-                    em.Persona = int.Parse(Session["idAccount"].ToString());
-                em.Experiencia = "asesinato";
+                em.Persona = int.Parse(Session["idAccount"].ToString());
+                em.Experiencia = Mh.Experiencia;
 
                 Models.ForgivenessModel fvm = new Models.ForgivenessModel();
                 fvm.ConceptoInicial = Mh.ConceptoInicial;
