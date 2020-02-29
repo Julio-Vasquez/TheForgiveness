@@ -44,7 +44,7 @@
                 display: block;
                 position: absolute;
                 top: 15px;
-                margin-left: 220px;
+                margin-right: 220px;
                 width: 0;
                 height: 0;
                 border-top: 8px solid transparent;
@@ -110,6 +110,14 @@
             </nav>
         </header>
         <aside class="left-sidebar" data-sidebarbg="skin5">
+            <a style="display:scroll;position:fixed;bottom:0px;left:0px;">
+                <img style="float:left;" width="150" height="200" src="~/Assets/Img/Experience/d50e65e83b9a3857503e5d69fb28b949.gif">
+                <div class="comentarios">
+                    <div class="comentario burbuja">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </a>
             <div class="scroll-sidebar">
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-0">
@@ -230,7 +238,7 @@
                     </ul>
             </nav>
         </div>
-    </aside>
+        </aside>
     <div class="page-wrapper">
 
         <div class="container-fluid">
@@ -248,10 +256,6 @@
 <script src="~/Assets/Js/Active.js"></script>
 @Scripts.Render("~/Validation", "~/DashBoardJS")
 <script src="@ViewBag.Js"></script>
-<a style="display:scroll;position:fixed;bottom:0px;right:0px;"><img style="float:right;" width="150" height="200" src="~/Assets/Img/Experience/d50e65e83b9a3857503e5d69fb28b949.gif"><div class="comentarios">
-    <div class="comentario burbuja">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </div>
-</div></a>
+
 </body>
 </html>
