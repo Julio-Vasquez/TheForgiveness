@@ -6,6 +6,47 @@
     ViewBag.Js = "";
 }
 
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <!--Referencia al script hub SignalR autogenerado. -->
+    <script src="~/signalr/hubs"></script>
+
+
+    <script>
+        $( ()=> {
+            //Referencia al proxy autogenerado para el hub (concentrador).
+            var notification = $.connection.notificationHub;
+            //-----PARTE 2 (Opcional): JQUERY PARA ALGUNA MAMADA-----/
+            //Crear una función que el hub (concentrador) puede devolver la llamada para mostrar mensajes.
+            notification.client.sendNewNotification = (sms)=> {
+                $("#mostrar").html(sms);
+            }
+            //-----FIN PARTE 2-----/
+            //Crear una función que el hub (concentrador) puede devolver la llamada para mostrar
+            //El mensaje de logeo, dependiendo del tiempo que lleva sin conectarse.
+            notification.client.sendSms = (sms)=> {
+                //Añadir el mensaje de bienvenida a un div.
+                $('#mostrar').append('<li><strong>' + codificarHtml(sms)
+                    + '</strong></li>');
+            };
+            //Iniciar la conexión.
+            $.connection.hub.start().done( ()=> {
+                $('#idreferente').click( ()=> {
+                    //Llamar al metodo Enviar en el hub (concentrador).
+                    // => aqui hacer algo 
+                    //Limpiar la caja de texto y reestablecer el foco para el próximo comentario.
+                    //aqui debvo limpiar el mensaje cuando lo lea o alguna mamada $('#mensaje').val('').focus();
+                });
+            });
+        });
+        //Esta función opcional codifica los mensajes a HTML para mostrarlos en la pagina.
+        function codificarHtml(valor) {
+            var valorCodificado = $('<div />').text(valor).html();
+            return valorCodificado;
+        }
+    </script>
+}
+
 
 <div class="row">
     <!-- Column -->
@@ -91,6 +132,7 @@
         </div>
     </div>
 
+    <div id="mostrar"></div>
 
     @{
 
