@@ -256,6 +256,6 @@
 <script src="~/Assets/Js/Active.js"></script>
 @Scripts.Render("~/Validation", "~/DashBoardJS")
 <script src="@ViewBag.Js"></script>
-
+@RenderSection("scripts", required: false)
 </body>
 </html>
