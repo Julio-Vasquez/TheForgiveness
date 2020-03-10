@@ -86,10 +86,12 @@ namespace TheForgiveness.Services
             return result;
         }
 
-        public System.Data.DataRow Exper(int? id)
+        public Models.ExperienceModel Exper(int? id)
         {
-            return MySQL.Querys("SELECT * FROM Experiencia WHERE ID = " + id).Rows[0];
-        }
+            System.Data.DataRow listexp = MySQL.Querys("SELECT * FROM Experiencia WHERE ID = " + id).Rows[0];
+            Models.ExperienceModel exp = new Models.ExperienceModel();
+            exp=new Models.ExperienceModel(int.Parse(listexp["ID"].ToString()), listexp["FechaExperiencia"].ToString(), listexp["Experiencia"].ToString(), int.Parse(listexp["Persona"].ToString()), int.Parse(listexp["Municipio"].ToString()));
+            return exp;        }
     }
 }
 

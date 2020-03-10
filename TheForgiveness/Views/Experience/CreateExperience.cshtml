@@ -18,22 +18,6 @@
 
         <div class="form-row col-11 offset-1">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-            <div class="form-group col-4">
-                @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label" })
-                <br />
-                @Html.TextAreaFor(model => model.Descripcion, new { @class = "form-control", @rows = "5", cols = "9" })
-                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
-
-            </div>
-
-            <div class="form-group col-4">
-                @Html.LabelFor(model => model.ConceptoInicial, htmlAttributes: new { @class = "control-label" })
-                <br />
-                @Html.TextAreaFor(model => model.ConceptoInicial, new { @class = "form-control", @rows = "5", cols = "10" })
-                @Html.ValidationMessageFor(model => model.ConceptoInicial, "", new { @class = "text-danger" })
-            </div>
-
             <div class="form-group col-3 ulli">
                 <label class="control-label">Donde Ocurrio:</label>
                 <ul>
@@ -89,9 +73,9 @@
                     <legend>Actor</legend>
                     <ul>
                         <li>
-                            <input type="checkbox" id="cb-el" name="group2[]" onclick="return saveTextFinal(event)"/>
+                            <input type="checkbox" id="cb-yo" name="group2[]" onclick="return saveTextFinal(event)"/>
                             YO
-                            <label for="cb-el">
+                            <label for="cb-yo">
                                 <img src="https://image.freepik.com/vector-gratis/nino-dibujos-animados-jugando-al-futbol_33070-2264.jpg" class="actor"
                                      alt="El joven" />
                             </label>

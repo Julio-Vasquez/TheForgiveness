@@ -26,6 +26,18 @@ namespace TheForgiveness.Controllers
             return PartialView();
         }
 
+
+        // GET: Concept
+        [HttpGet]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateConcepts")]
+        public PartialViewResult CreateConcepts()
+        {
+            ViewBag.departamento = ds.queryDepartamento();
+            ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+            return PartialView();
+        }
+
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "UpdateExperience")]
@@ -66,10 +78,12 @@ namespace TheForgiveness.Controllers
         [HttpGet]
         [StatesLogging]
         [PermissionAttributes(File = "GetExperiences")]
-        public ActionResult SpecifyExperiences()
+        public ActionResult SpecifyExperiences(int? id)
         {
             ViewBag.rol = Session["Role"].ToString();
-            return View();
+            
+
+            return View(Experiencesrv.Exper(id));
         }
 
         [HttpPost]
@@ -78,6 +92,10 @@ namespace TheForgiveness.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateExperience(Models.MyHistoryModel Mh)
         {
+            try
+            {
+
+            
             if (ModelState.IsValid)
             {
                 Models.ExperienceModel em = new Models.ExperienceModel();
@@ -85,14 +103,6 @@ namespace TheForgiveness.Controllers
                 em.Municipio = Mh.Municipio;
                 em.Persona = int.Parse(Session["idAccount"].ToString());
                 em.Experiencia = Mh.Experiencia;
-
-                Models.ForgivenessModel fvm = new Models.ForgivenessModel();
-                fvm.ConceptoInicial = Mh.ConceptoInicial;
-                ConceptVictimsrv.CreateSubject(fvm, int.Parse(Session["idAccount"].ToString()));
-
-                Models.PerceptionModel cvm = new Models.PerceptionModel();
-                cvm.Descripcion = Mh.Descripcion;
-                percepservice.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString()));
                 var res = Experiencesrv.CreateExperiences(em, int.Parse(Session["idAccount"].ToString()));
                 if (res.Length > 0)
                 {
@@ -108,6 +118,48 @@ namespace TheForgiveness.Controllers
                 return View(Mh);
             }
             return View();
+            }
+            catch (Exception ex)
+            {
+                return Redirect("~/Views/Shared/BadRequest.cshtml");
+            }
+        }
+        [HttpPost]
+        [StatesLogging]
+        [PermissionAttributes(File = "CreateConcepts")]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateConcepts(Models.PerdonPosCoflicModel Mh)
+        {
+            try
+            {
+
+
+                if (ModelState.IsValid)
+                {
+                    Models.ForgivenessModel fvm = new Models.ForgivenessModel();
+                    fvm.ConceptoInicial = Mh.ConceptoInicial;
+                    ConceptVictimsrv.CreateSubject(fvm, int.Parse(Session["idAccount"].ToString()));
+
+                    Models.PerceptionModel cvm = new Models.PerceptionModel();
+                    cvm.Descripcion = Mh.Descripcion;
+                    var res = percepservice.CreateSubject(cvm, int.Parse(Session["idAccount"].ToString()));
+                    if (res)
+                    {
+                        ViewBag.departamento = ds.queryDepartamento();
+                        ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+                        return View("CreateExperience");
+                    }
+
+                    ViewBag.departamento = ds.queryDepartamento();
+                    ViewData["municipio"] = JsonConvert.SerializeObject(ms.queryMunicipio());
+                    return View(Mh);
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return Redirect("~/Views/Shared/BadRequest.cshtml");
+            }
         }
     }
 }
