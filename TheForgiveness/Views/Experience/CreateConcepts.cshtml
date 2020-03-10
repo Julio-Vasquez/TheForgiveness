@@ -5,42 +5,91 @@
     Layout = "~/Views/Shared/DashBoard.cshtml";
     ViewBag.Js = "../Assets/Js/Experience/myhistory.js";
 }
+
+@section scripts{
+<script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+<!--Referencia al script hub SignalR autogenerado. -->
+<script src="~/signalr/hubs"></script>
+
+
+<script>
+        $( ()=> {
+            //Referencia al proxy autogenerado para el hub (concentrador).
+            var notification = $.connection.notificationHub;
+            let mysms = 'Tienes cosas que perdonar?'
+            //-----PARTE 2 (Opcional): JQUERY PARA ALGUNA MAMADA-----/
+            //Crear una función que el hub (concentrador) puede devolver la llamada para mostrar mensajes.
+            notification.client.sendSms = ( mysms ) => {
+                $("#perro").html(mysms);
+            }
+            //-----FIN PARTE 2-----/
+            //Crear una función que el hub (concentrador) puede devolver la llamada para mostrar
+            //El mensaje de logeo, dependiendo del tiempo que lleva sin conectarse.
+            notification.client.sendSms = (sms) => {
+
+                 document.getElementById('perro').textContent = '';
+                
+                //Añadir el mensaje de bienvenida a un div.
+                $('#perro').append('<strong>' + codificarHtml(mysms)
+                    + '</strong>');
+            };
+            //Iniciar la conexión.
+            $.connection.hub.start().done( ()=> {
+                $('#idreferente').click( ()=> {
+                    //Llamar al metodo Enviar en el hub (concentrador).
+                    // => aqui hacer algo
+                    //Limpiar la caja de texto y reestablecer el foco para el próximo comentario.
+                    //aqui debvo limpiar el mensaje cuando lo lea o alguna mamada $('#mensaje').val('').focus();
+                });
+            });
+        });
+        //Esta función opcional codifica los mensajes a HTML para mostrarlos en la pagina.
+        function codificarHtml(valor) {
+            var valorCodificado = $('<div />').text(valor).html();
+            return valorCodificado;
+        }
+</script>
+}
+
+
+
 <div class="midiv" style=" background-image:url(../../Assets/Img/Experience/Experience.jpg);background-size:cover;">
     <h2>View</h2>
 
     @using (Html.BeginForm("CreateConcepts", "Experience", FormMethod.Post, new { @id = "btnExperience" }))
     {
-        @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <h4>PerdonPosCoflicModel</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.ConceptoInicial, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ConceptoInicial, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ConceptoInicial, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
+    <div class="form-horizontal">
+        <h4>PerdonPosCoflicModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ConceptoInicial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ConceptoInicial, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConceptoInicial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
     }
 </div>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+

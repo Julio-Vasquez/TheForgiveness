@@ -88,7 +88,7 @@ namespace TheForgiveness.Controllers
 
         [HttpPost]
         [StatesLogging]
-        [PermissionAttributes(File = "CreateExperience")]
+        //[PermissionAttributes(File = "CreateConcept")]
         [ValidateAntiForgeryToken]
         public ActionResult CreateExperience(Models.MyHistoryModel Mh)
         {
@@ -132,8 +132,6 @@ namespace TheForgiveness.Controllers
         {
             try
             {
-
-
                 if (ModelState.IsValid)
                 {
                     Models.ForgivenessModel fvm = new Models.ForgivenessModel();

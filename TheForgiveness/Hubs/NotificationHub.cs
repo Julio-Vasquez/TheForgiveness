@@ -27,7 +27,7 @@ namespace TheForgiveness.Hubs
 
             if (time > 3)
             {
-                sms = "Usted lleva tiempo sin entrar a los cursos inutil";
+                sms = "Usted lleva tiempo sin entrar a los cursos de nuestro Software";
                 Clients.All.sendSms(sms);
             }
             else
