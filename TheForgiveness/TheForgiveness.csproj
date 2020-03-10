@@ -200,6 +200,7 @@
     <Compile Include="Hubs\NotificationHub.cs" />
     <Compile Include="Models\ActivitiesModel.cs" />
     <Compile Include="Models\MyHistoryModel.cs" />
+    <Compile Include="Models\PerdonPosCoflicModel.cs" />
     <Compile Include="Models\SubjectModel.cs" />
     <Compile Include="Models\AuthorModel.cs" />
     <Compile Include="Models\GroupExtendModel.cs" />
@@ -304,6 +305,12 @@
     <Content Include="Assets\Img\DataTable\sort_both.png" />
     <Content Include="Assets\Img\DataTable\sort_desc.png" />
     <Content Include="Assets\Img\DataTable\sort_desc_disabled.png" />
+    <Content Include="Assets\Img\Experience\1.jpg" />
+    <Content Include="Assets\Img\Experience\2.jpg" />
+    <Content Include="Assets\Img\Experience\3.jpg" />
+    <Content Include="Assets\Img\Experience\4.jpg" />
+    <Content Include="Assets\Img\Experience\5.jpg" />
+    <Content Include="Assets\Img\Experience\6.jpg" />
     <Content Include="Assets\Img\Experience\Experience.jpg" />
     <Content Include="Assets\Img\Login\Login.png" />
     <Content Include="Assets\Img\SignUp\basica.gif" />
@@ -414,6 +421,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error404.cshtml" />
     <Content Include="Assets\Css\ResetPassword\Style.css" />
+    <Content Include="Views\Experience\CreateConcepts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

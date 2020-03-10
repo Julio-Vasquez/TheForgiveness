@@ -12,6 +12,7 @@
 
 .ulli li {
     display: inline-block;
+    color: #000;
 }
 
 input[type="checkbox"][id^="cb-"] {
