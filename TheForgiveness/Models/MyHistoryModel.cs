@@ -11,19 +11,6 @@ namespace TheForgiveness.Models
     public class MyHistoryModel
     {
         [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Breve Descripción del posconflicto:")]
-        [StringLength(2500, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
-        [MinLength(10, ErrorMessage = "Minimo {1}")]
-        [DataType(DataType.Text)]
-        public string Descripcion { get; set; }
-
-        [Required(ErrorMessage = "{0} Requerido")]
-        [DisplayName("Su concepto el perdon!:")]
-        [StringLength(2200, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 20)]
-        [DataType(DataType.Text)]
-        public string ConceptoInicial { get; set; }
-
-        [Required(ErrorMessage = "{0} Requerido")]
         [DisplayName("Hace cuanto tiempo sucedio:")]
         [StringLength(2500, ErrorMessage = "{0} = El número de caracteres  debe ser al menos {2} y Maximo de {1}.", MinimumLength = 11)]
         [MinLength(10, ErrorMessage = "Minimo {1}")]
