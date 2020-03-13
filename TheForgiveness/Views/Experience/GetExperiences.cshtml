@@ -13,7 +13,7 @@
 <h1>Listado de experiencias</h1>
 <hr />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
 <table class="table" id="exp">
     <thead>
@@ -54,9 +54,9 @@
                             @Html.DisplayFor(modelItem => item.Municipio)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "UpdateExperience", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "SpecifyExperiences", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "DeleteExperience", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Editar", "UpdateExperience", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "SpecifyExperiences", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Eliminar", "DeleteExperience", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
@@ -83,7 +83,7 @@
                             </td>
                             <td>
 
-                                @Html.ActionLink("Details", "SpecifyExperiences", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                                @Html.ActionLink("Detalle", "SpecifyExperiences", new { id = item.ID }, new { @class = "btn btn-outline-success" })
 
                             </td>
                         </tr>

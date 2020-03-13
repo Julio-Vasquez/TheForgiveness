@@ -49,9 +49,9 @@
     @{
         if (ViewBag.rol == "Administrador")
         {
-            @Html.ActionLink("Edit", "UpdateConcept", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
+            @Html.ActionLink("Editar", "UpdateConcept", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
         }
     }
 
-    @Html.ActionLink("Back to List", "GetConcepts")
+    @Html.ActionLink("Regresar", "GetConcepts")
 </p>

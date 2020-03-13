@@ -15,7 +15,7 @@
 </script>
 
 <p>
-    @Html.ActionLink("Create New", "CreateSchool")
+    @Html.ActionLink("Crear Nuevo", "CreateSchool")
 </p>
 <table class="table" id="schools">
     <thead>
@@ -44,9 +44,9 @@
                             @Html.DisplayFor(modelItem => item.Municipio)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "UpdateSchool", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "SpecifySchool", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "DeleteSchool", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Editar", "UpdateSchool", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "SpecifySchool", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Eliminar", "DeleteSchool", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
@@ -63,7 +63,7 @@
                             @Html.DisplayFor(modelItem => item.Municipio)
                         </td>
                         <td>
-                            @Html.ActionLink("Details", "SpecifySchool", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "SpecifySchool", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
                         </td>
                     </tr>
                 }

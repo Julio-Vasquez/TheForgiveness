@@ -25,10 +25,10 @@
     @{
         if (ViewBag.rol == "Administrador" || ViewBag.rol == "Docente")
         {
-            @Html.ActionLink("Edit", "UpdateSubject", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
+            @Html.ActionLink("Editar", "UpdateSubject", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
         }
     }
 
 
-    @Html.ActionLink("Back to List", "GetSubjects")
+    @Html.ActionLink("Regresar", "GetSubjects")
 </p>

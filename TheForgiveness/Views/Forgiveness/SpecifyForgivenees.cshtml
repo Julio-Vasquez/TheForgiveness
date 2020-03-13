@@ -41,8 +41,8 @@
     @{
         if (ViewBag.rol == "Estudiante")
         {
-            @Html.ActionLink("Edit", "UpdateForgivenees", new { id = Model.ID }, new { @class = "btn btn-outline-success" })
+            @Html.ActionLink("Editar", "UpdateForgivenees", new { id = Model.ID }, new { @class = "btn btn-outline-success" })
         }
     }
-    @Html.ActionLink("Back to List", "GetForgiveness")
+    @Html.ActionLink("Regresar", "GetForgiveness")
 </p>

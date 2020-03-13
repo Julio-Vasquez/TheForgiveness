@@ -13,7 +13,7 @@
 <h1>Listado de Actividades</h1>
 <hr />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
 <table class="table" id="act">
     <thead>
@@ -38,9 +38,9 @@
                             @Html.DisplayFor(modelItem => item.Actividad)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "SpecifyAtivities", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Editar", "Edit", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "SpecifyAtivities", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
@@ -54,7 +54,7 @@
                             @Html.DisplayFor(modelItem => item.Actividad)
                         </td>
                         <td>
-                            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "Details", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
                         </td>
                     </tr>
                 }

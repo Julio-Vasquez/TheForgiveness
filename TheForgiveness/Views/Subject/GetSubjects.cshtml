@@ -14,7 +14,7 @@
 <h1>Listado de Asignaturas</h1>
 
 <p>
-    @Html.ActionLink("Create New", "CreateSubject")
+    @Html.ActionLink("Crear Nuevo", "CreateSubject")
 </p>
 <table class="table" id="asig">
     <thead>
@@ -40,9 +40,9 @@
                         </td>
 
                         <td>
-                            @Html.ActionLink("Edit", "UpdateSubject", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "SpecifySubject", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "DeleteSubject", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Editar", "UpdateSubject", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "SpecifySubject", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Eliminar", "DeleteSubject", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
@@ -58,8 +58,8 @@
                                 @Html.DisplayFor(modelItem => item.Nombre)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "UpdateSubject", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                                @Html.ActionLink("Details", "SpecifySubject", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                                @Html.ActionLink("Editar", "UpdateSubject", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                                @Html.ActionLink("Detalle", "SpecifySubject", new { id = item.ID }, new { @class = "btn btn-outline-success" })
                             </td>
                         </tr>
                     }

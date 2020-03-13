@@ -9,7 +9,7 @@
 
 <h1>DeleteMunicipality</h1>
 
-<h3 class="text-center">Are you sure you want to delete this?</h3>
+<h3 class="text-center">Esta seguro que desea eliminar esto?</h3>
 <hr />
 <div>
 
@@ -36,8 +36,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-danger" onclick="return del(event, 'Municipio')"/> |
-            @Html.ActionLink("Back to List", "GetMunicipalities")
+            <input type="submit" value="Eliminar" class="btn btn-outline-danger" onclick="return del(event, 'Municipio')"/> |
+            @Html.ActionLink("Regresar", "GetMunicipalities")
         </div>
     }
 </div>

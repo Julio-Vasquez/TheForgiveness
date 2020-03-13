@@ -78,9 +78,9 @@
                     <tr>
                         <td>@Html.Raw(dr["Nombre"].ToString()) </td>
                         <td>
-                            @Html.ActionLink("Edit", "UpdateGroup", "GroupPersons", new { grupo = int.Parse(dr["Grupo"].ToString()), estudiante = int.Parse(dr["Estudiante"].ToString()) }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "SpecifyStudent", "Student", new { ID = int.Parse(dr["NumIdentificacion"].ToString()) }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "DeleteGroup", "GroupPersons", new { grupo = int.Parse(dr["Grupo"].ToString()), estudiante = int.Parse(dr["Estudiante"].ToString()) }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Editar", "UpdateGroup", "GroupPersons", new { grupo = int.Parse(dr["Grupo"].ToString()), estudiante = int.Parse(dr["Estudiante"].ToString()) }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "SpecifyStudent", "Student", new { ID = int.Parse(dr["NumIdentificacion"].ToString()) }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Eliminar", "DeleteGroup", "GroupPersons", new { grupo = int.Parse(dr["Grupo"].ToString()), estudiante = int.Parse(dr["Estudiante"].ToString()) }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
@@ -101,9 +101,9 @@
     @{
         if (ViewBag.rol == "Docente")
         {
-            @Html.ActionLink("Edit", "UpdateGroup", new { id = Model.ID }, new { @class = "btn-outline-warning" })
+            @Html.ActionLink("Editar", "UpdateGroup", new { id = Model.ID }, new { @class = "btn-outline-warning" })
         }
     }
 
-    @Html.ActionLink("Back to List", "GetGroup")
+    @Html.ActionLink("Regresar", "GetGroup")
 </p>
