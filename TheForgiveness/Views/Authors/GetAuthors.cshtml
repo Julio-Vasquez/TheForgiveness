@@ -49,9 +49,9 @@
                     @Html.DisplayFor(modelItem => item.SegApellido)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "UpdateAuthor", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                    @Html.ActionLink("Details", "SpecifyAuthor", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                    @Html.ActionLink("Delete", "DeleteAuthor", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                    @Html.ActionLink("Editar", "UpdateAuthor", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                    @Html.ActionLink("Detalle", "SpecifyAuthor", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                    @Html.ActionLink("Eliminar", "DeleteAuthor", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                 </td>
             </tr>
         }
@@ -60,5 +60,5 @@
 </table>
 
 <p>
-    @Html.ActionLink("Create New", "CreateAuthor")
+    @Html.ActionLink("Crear Nuevo", "CreateAuthor")
 </p>

@@ -16,7 +16,7 @@
 <hr />
 
 <p>
-    @Html.ActionLink("Create New", "CreatePerception")
+    @Html.ActionLink("Crear Nevo", "CreatePerception")
 </p>
 <table class="table" id="for">
     <thead>
@@ -45,8 +45,8 @@
                         @Html.DisplayFor(modelItem => item.Usuario)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "UpdatePerception", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) 
-                        @Html.ActionLink("Details", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" }) 
+                        @Html.ActionLink("Editar", "UpdatePerception", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) 
+                        @Html.ActionLink("Detalle", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" }) 
                         
                     </td>
                 </tr>
@@ -65,7 +65,7 @@
                         @Html.DisplayFor(modelItem => item.Usuario)
                     </td>
                     <td>
-                        @Html.ActionLink("Details", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                        @Html.ActionLink("Detalle", "SpecifyPerception", new { id = item.ID }, new { @class = "btn btn-outline-success" })
                     </td>
                 </tr>
             }

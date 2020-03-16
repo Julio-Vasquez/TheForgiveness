@@ -33,8 +33,8 @@
     @{
         if (ViewBag.rol == "Estudiante")
         {
-            @Html.ActionLink("Edit", "UpdatePerception", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
+            @Html.ActionLink("Editar", "UpdatePerception", new { id = Model.ID }, new { @class = "btn btn-outline-warning" })
         }
     }
-    @Html.ActionLink("Back to List", "GetPerception")
+    @Html.ActionLink("Regresar", "GetPerception")
 </p>

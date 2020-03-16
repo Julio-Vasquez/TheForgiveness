@@ -13,7 +13,7 @@
 <h1>Listado de tipos de documentos de identidad</h1>
 
 <p>
-    @Html.ActionLink("Create New", "CreateDocument")
+    @Html.ActionLink("Crear Nuevo", "CreateDocument")
 </p>
 <table class="table display" id="docs">
     <thead>
@@ -35,9 +35,9 @@
                     @Html.DisplayFor(modelItem => item.TipoDocumento)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "UpdateDocument", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                    @Html.ActionLink("Details", "SpecifyDocument", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                    @Html.ActionLink("Delete", "DeleteDocument", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                    @Html.ActionLink("Editar", "UpdateDocument", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                    @Html.ActionLink("Detalle", "SpecifyDocument", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                    @Html.ActionLink("Eliminar", "DeleteDocument", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                 </td>
             </tr>
         }

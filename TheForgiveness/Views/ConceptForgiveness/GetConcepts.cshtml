@@ -14,7 +14,7 @@
     });
 </script>
 <p>
-    @Html.ActionLink("Create New", "CreateConcept")
+    @Html.ActionLink("Crar Nuevo", "CreateConcept")
 </p>
 <table class="table" id="con">
     <thead>
@@ -57,9 +57,9 @@
                             @Html.DisplayFor(modelItem => item.Autor)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "UpdateConcept", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
-                            @Html.ActionLink("Details", "SpecifyConcept", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                            @Html.ActionLink("Delete", "DeleteConcept", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                            @Html.ActionLink("Editar", "UpdateConcept", new { id = item.ID }, new { @class = "btn btn-outline-warning" })
+                            @Html.ActionLink("Detalle", "SpecifyConcept", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                            @Html.ActionLink("Eliminar", "DeleteConcept", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                         </td>
                     </tr>
                 }
@@ -83,8 +83,9 @@
                                 @Html.DisplayFor(modelItem => item.Autor)
                             </td>
                             <td>
-                                @Html.ActionLink("Details", "SpecifyConcept", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-
+                                @Html.ActionLink("Detalle", "SpecifyConcept", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                                <button class="btn btn-circle">Escuchar</button>
+                                <button class="btn btn-circle">Video</button>
                             </td>
                         </tr>
                     }

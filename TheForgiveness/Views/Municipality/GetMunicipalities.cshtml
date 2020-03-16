@@ -13,7 +13,7 @@
     });
 </script>
 <p>
-    @Html.ActionLink("Create New", "CreateMunicipality")
+    @Html.ActionLink("Crear Nuevo", "CreateMunicipality")
 </p>
 <table class="table display" id="municipios">
     <thead>
@@ -56,12 +56,11 @@
                     }
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "UpdateMunicipality", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) 
-                    @Html.ActionLink("Details", "SpecifyMunicipality", new { id = item.ID }, new { @class = "btn btn-outline-success" })
-                    @Html.ActionLink("Delete", "DeleteMunicipality", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
+                    @Html.ActionLink("Editar", "UpdateMunicipality", new { id = item.ID }, new { @class = "btn btn-outline-warning" }) 
+                    @Html.ActionLink("Detalle", "SpecifyMunicipality", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                    @Html.ActionLink("Eliminar", "DeleteMunicipality", new { id = item.ID }, new { @class = "btn btn-outline-danger" })
                 </td>
             </tr>
         }
     </tbody>
-
 </table>
