@@ -79,7 +79,16 @@
             </ul>
         </div>
         <div class="col-md-6 header-left">
-            <img src="https://img.elcomercio.pe/files/article_content_ec_fotos/uploads/2019/05/02/5ccbb8c670cf5.jpeg" alt="" id="imgprofile">
+            @{
+                if (ViewData["genero"].Equals("Femenino"))
+                {
+                    <img src="https://i.pinimg.com/564x/d1/ad/13/d1ad13605acd060cbcc4b334e2119883.jpg" alt="" id="imgprofilemujer">
+                }
+                else
+                {
+                    <img src="https://i.pinimg.com/564x/e1/77/47/e17747c78dd89a1d9522c5da154128b2.jpg" alt="" id="imgprofilehombre">
+                }
+            }
         </div>
         <div class="clearfix"></div>
     </div>
