@@ -1,0 +1,189 @@
+@font-face {
+    font-family: Diploma;
+    src: url('../../Fonts/Diploma/diploma.ttf');
+}
+
+@font-face {
+    font-family: Cursiva;
+    src: url('../../Fonts/Diploma/shal.ttf');
+}
+
+@font-face {
+    font-family: Student;
+    src: url('../../Fonts/Diploma/Calling_Angels_Personal_Use.ttf');
+}
+
+@font-face {
+    font-family: Rublica;
+    src: url('../../Fonts/Diploma/WaterwaysSeafarers.ttf');
+}
+
+
+main {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.body {
+    width: 80%;
+    margin: 4% 10% 3% 10%;
+    background-image: url('../../Img/Diploma/lienzo.png');
+ 
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.top header h3,
+.mid section h3,
+.mid section h4,
+.mid section h2,
+.mid article p {
+    font-family: Diploma;
+}
+
+.top,
+.mid section h5,
+.mid section h1,
+.mid section h3,
+.mid section h4,
+.mid section h2,
+.mid section p,
+.mid article p,
+.mid article h6 {
+    text-align: center;
+}
+
+.top {
+    padding-top: 8%;
+}
+
+.top header h3 {
+    font-size: 35px;
+}
+
+.top header p {
+    font-size: 23px;
+}
+
+.mid,
+.bot {
+    margin-left: 29%;
+    margin-right: 28%;
+}
+
+.mid section h5,
+.mid section p,
+.mid article h6 {
+    font-family: Cursiva;
+}
+
+.mid section h5,
+.mid section h3 {
+    font-weight: 400;
+}
+
+.mid section h5 {
+    font-size: 22.6px;
+    margin-top: -2px;
+}
+
+.mid section h1 {
+    font-family: Student;
+    font-weight: 600;
+    padding-top:15px;
+}
+
+.mid section h3 {
+    font-size: 16px;
+    padding-bottom: 1px;
+}
+
+.mid section h2 {
+    margin-top: -8px;
+}
+
+.mid section p {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.mid article {
+    padding-top: 4px;
+}
+
+.mid article p {
+    font-weight: bold;
+    font-size: 27px;
+    text-align: center;
+}
+
+.mid article h6 {
+    font-size: 18px;
+    margin-top: -10px;
+}
+
+
+.bot footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bot footer .f-left p,
+.bot footer .f-right p {
+    font-family: Rublica;
+    font-size: 22px;
+    border-bottom: 1px solid #000;
+}
+
+.bot footer .f-mid figure img {
+    width: 80px;
+}
+
+#download {
+    border-radius: 33px;
+    color: #fff;
+    background-color: #57b846;
+    border-color: #28a745;
+    width: 160px;
+    height: 40px;
+}
+#download {
+    margin-left: 40%;
+    margin-bottom: 15px;
+}
+#download:hover {
+    animation: none;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: 0.55s;
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+    #download {
+        float: left;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    main {
+        padding-right: 7%;
+        margin-left: -3%;
+    }
+
+    .body {
+        width: 100%;
+        margin: 4% 4% 4% 0%;
+    }
+
+    .mid section h5 {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .top header h3 {
+        font-size: 28px;
+    }
+}

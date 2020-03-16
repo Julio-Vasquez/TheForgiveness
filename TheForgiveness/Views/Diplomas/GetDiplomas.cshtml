@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "GetDiplomas";
+    Layout = "~/Views/Shared/DashBoard.cshtml";
+    ViewBag.Style = "../../Assets/Css/Diploma/Style.css";
+    ViewBag.Js = "../../Assets/Js/Diploma/html2canvas.min.js";
+}
+
+<script type="text/javascript" src="~/Assets/Js/Diploma/pdf.js"></script>
+
+
+<main>
+    <div class="body" id="body">
+        <div class="top">
+            <header>
+                <h3>Certificado</h3>
+                <p>de Participación</p>
+            </header>
+        </div>
+        <div class="mid">
+            <section>
+                <h5>Creado y aprobado por <b>Universidad De La Amazonia</b> Segun decreto nº <b>000001 de <time datetime="2020-03-16">16 de Marzo, 2020</time></b>. </h5>
+                <h1>@ViewBag.Data["Nombre"]</h1>
+                <h3>Identificado con @ViewBag.Data["TD"] Numero : <b>@ViewBag.Data["Documento"]</b></h3>
+                <h4>El presente </h4>
+                <h2>Certificado</h2>
+                <p>Por haber {{Aprobado, participado, completado}} el modulo del perdon</p>
+            </section>
+            <article>
+                <p>{{EL perdon / Educación Basica}}</p>
+                <h6>Según los planes y metas alcanzadas con el modulo del perdón, se concede una felicitación por su compromiso, esfuerzo y actitud por la dificultad emocional del modulo.</h6>
+            </article>
+        </div>
+        <br>
+        <div class="bot">
+            <footer>
+                <div class="f-left">
+                    <p>Gerardo Antonio Castrillón Artunduaga</p>
+                    <spam>Universidad de la amazonia</spam>
+                </div>
+                <div class="f-mid">
+                    <figure>
+                        <img src="~/Assets/Img/Diploma/2569.png">
+                    </figure>
+                </div>
+                <div class="f-right">
+                    <p>Jorge Alberto Guzmán Maldonado</p>
+                    <spam>Faculta de ingenieria</spam>
+                </div>
+            </footer>
+        </div>
+        <br><br>
+        <br><br>
+        <br>
+    </div>
+</main>
+<button id="download" onclick="downloadCanvas('main');">Descargar</button>

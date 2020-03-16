@@ -172,6 +172,7 @@
     <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\CalificationController.cs" />
+    <Compile Include="Controllers\DiplomasController.cs" />
     <Compile Include="Controllers\ForgivenessController.cs" />
     <Compile Include="Controllers\ConceptForgivenessController.cs" />
     <Compile Include="Controllers\PerceptionController.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ActivitiesService.cs" />
+    <Compile Include="Services\DiplomaService.cs" />
     <Compile Include="Services\SubjectService.cs" />
     <Compile Include="Services\AuthorService.cs" />
     <Compile Include="Services\SchoolService.cs" />
@@ -279,6 +281,7 @@
     <Content Include="Assets\Css\DashBoard\steps.min.css" />
     <Content Include="Assets\Css\DashBoard\bootstrap.min.css" />
     <Content Include="Assets\Css\DataTable\jquery.dataTables.min.css" />
+    <Content Include="Assets\Css\Diploma\Style.css" />
     <Content Include="Assets\Css\Experience\create.css" />
     <Content Include="Assets\Css\Login\font-awesome.min.css" />
     <Content Include="Assets\Css\Login\Style.css" />
@@ -305,6 +308,8 @@
     <Content Include="Assets\Img\DataTable\sort_both.png" />
     <Content Include="Assets\Img\DataTable\sort_desc.png" />
     <Content Include="Assets\Img\DataTable\sort_desc_disabled.png" />
+    <Content Include="Assets\Img\Diploma\2569.png" />
+    <Content Include="Assets\Img\Diploma\lienzo.png" />
     <Content Include="Assets\Img\Experience\1.jpg" />
     <Content Include="Assets\Img\Experience\2.jpg" />
     <Content Include="Assets\Img\Experience\3.jpg" />
@@ -329,6 +334,8 @@
     <Content Include="Assets\Js\DashBoard\wizard.js" />
     <Content Include="Assets\Js\DataTable\jquery.dataTables.min.js" />
     <Content Include="Assets\Js\Delete\sweet.js" />
+    <Content Include="Assets\Js\Diploma\html2canvas.min.js" />
+    <Content Include="Assets\Js\Diploma\pdf.js" />
     <Content Include="Assets\Js\Experience\myhistory.js" />
     <Content Include="Assets\Js\Login\validation.js" />
     <Content Include="Assets\Js\Login\validationFunctions.js" />
@@ -405,6 +412,10 @@
     <Content Include="Assets\Js\Validation\respond.js" />
     <Content Include="Assets\Js\Validation\jquery.unobtrusive-ajax.min.js" />
     <Content Include="LICENSE.txt" />
+    <Content Include="Assets\Fonts\Diploma\Calling_Angels_Personal_Use.ttf" />
+    <Content Include="Assets\Fonts\Diploma\diploma.ttf" />
+    <Content Include="Assets\Fonts\Diploma\shal.ttf" />
+    <Content Include="Assets\Fonts\Diploma\WaterwaysSeafarers.ttf" />
     <None Include="Scripts\jquery-1.8.0.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.0.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
@@ -422,11 +433,11 @@
     <Content Include="Views\Shared\Error404.cshtml" />
     <Content Include="Assets\Css\ResetPassword\Style.css" />
     <Content Include="Views\Experience\CreateConcepts.cshtml" />
+    <Content Include="Views\Diplomas\GetDiplomas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\" />
-    <Folder Include="Views\Diplomas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
